@@ -10,4 +10,4 @@
 //$config = require(__DIR__ . '/../config/web.php');
 //
 //(new yii\web\Application($config))->run();
-echo 1234;
+// echo 1234;
