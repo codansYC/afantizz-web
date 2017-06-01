@@ -30,6 +30,7 @@ class BaseController extends  Controller {
 		if(!parent::beforeAction($action)){
 			return false;
 		}
+		return true;
 		try {
 			$this->requestParam = $_REQUEST;
 //	 		self::validParams();//检验参数合法性
