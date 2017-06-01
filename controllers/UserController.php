@@ -16,6 +16,7 @@ class UserController extends BaseController{
 
     function actionInfo() {
         $token = $this->requestParam['token'];
+        echo $token;
         $data = UserService::getUserByToken($token);
         echo json_encode($data);
 //        try{
@@ -25,7 +26,7 @@ class UserController extends BaseController{
 //        }catch (\Exception $e){
 //            UtilHelper::handleException($e);
 //        }
-        echo 1234;
+
     }
 
 }
