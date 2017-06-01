@@ -13,7 +13,7 @@ use Yii;
 class UserService {
 
     static function getUserByToken($token) {
-        $user = User::find()->where(['token' => '39055c7f3c3ad187f9468f30ffc0a13e'])->all();
+        $user = User::find()->where(['id' => '5'])->all();
         return $user;
     }
 
