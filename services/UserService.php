@@ -15,11 +15,7 @@ class UserService {
     static function getUserByToken($token) {
         $user = User::find()
                 ->where(['token' => $token])
-                ->all();
+                ->one();
         return $user;
-    }
-
-    static function getUsers() {
-        return User::findAll();
     }
 }
