@@ -30,13 +30,12 @@ class BaseController extends  Controller {
 		if(!parent::beforeAction($action)){
 			return false;
 		}
-		return true;
 		try {
 			$this->requestParam = $_REQUEST;
-	 		self::validParams();//检验参数合法性
-	 		self::filterParams();//过滤参数
-			self::apiConfig($action);//获取接口配置
-	 		self::validRequest();//检验请求的合法性
+//	 		self::validParams();//检验参数合法性
+//	 		self::filterParams();//过滤参数
+//			self::apiConfig($action);//获取接口配置
+//	 		self::validRequest();//检验请求的合法性
 		} catch (\Exception $e) {
 			UtilHelper::handleException($e);
 			return false;

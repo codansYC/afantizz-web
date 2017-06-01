@@ -48,6 +48,10 @@ $config = [
 
     ],
     'params' => $params,
+    'gii' => [
+        'class' => 'yii\gii\Module',
+        'allowedIPs' => ['127.0.0.1', '::1', '106.14.162.33'] // 按需调整这里
+    ],
 ];
 
 if (YII_ENV_DEV) {
