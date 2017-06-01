@@ -48,10 +48,6 @@ $config = [
 
     ],
     'params' => $params,
-    'gii' => [
-        'class' => 'yii\gii\Module',
-        'allowedIPs' => ['127.0.0.1', '::1', '106.14.162.33'] // 按需调整这里
-    ],
 ];
 
 if (YII_ENV_DEV) {
@@ -60,7 +56,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+//        'allowedIPs' => ['127.0.0.1', '::1'],
     ];
 
     $config['bootstrap'][] = 'gii';
