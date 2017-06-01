@@ -15,7 +15,7 @@ class UserService {
     static function getUserByToken($token) {
         $user = User::find()
                 ->where(['token' => $token])
-                ->one();
+                ->createCommand()->getRawSql();
         return $user;
     }
 }
