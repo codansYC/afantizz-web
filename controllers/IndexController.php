@@ -9,4 +9,9 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 
-echo 123;
+class IndexController extends Controller {
+    function actionIndex() {
+        echo 12345;
+    }
+}
+
