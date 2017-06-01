@@ -15,9 +15,9 @@ use yii\web\Controller;
 class UserController extends BaseController{
 
     function actionInfo() {
-//        $token = $this->requestParam['token'];
-//        $data = UserService::getUserByToken($token);
-//        echo json_encode($data);
+        $token = $this->requestParam['token'];
+        $data = UserService::getUserByToken($token);
+        echo json_encode($data);
 //        try{
 //            $token = $this->requestParam['token'];
 //            $data = UserService::getUserByToken($token);

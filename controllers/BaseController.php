@@ -30,6 +30,7 @@ class BaseController extends  Controller {
 		if(!parent::beforeAction($action)){
 			return false;
 		}
+        $this->requestParam = $_REQUEST;
 		return true;
 		try {
 			$this->requestParam = $_REQUEST;
