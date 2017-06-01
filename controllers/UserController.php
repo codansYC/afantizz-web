@@ -16,9 +16,9 @@ class UserController extends BaseController{
 
     function actionInfo() {
 //        $token = $this->requestParam['token'];
-        $data['num'] = "123";
+//        $data['num'] = "123";
 
-//        $data = UserService::getUsers();
+        $data = UserService::getUsers();
         echo json_encode($data);
 //        try{
 //            $token = $this->requestParam['token'];
