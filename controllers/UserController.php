@@ -18,8 +18,10 @@ class UserController extends BaseController{
 //        $token = $this->requestParam['token'];
 //        $data['num'] = "123";
 
-        $data = UserService::getUsers();
-        echo json_encode($data);
+        $data = UserService::getUserByToken(5);
+        $num = count($data);
+        $count['num'] = $num;
+        echo json_encode($count);
 //        try{
 //            $token = $this->requestParam['token'];
 //            $data = UserService::getUserByToken($token);
