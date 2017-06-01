@@ -9,7 +9,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 
-class IndexController extends Controller {
+class IndexController extends BaseController {
 
 
     function actionIndex() {
