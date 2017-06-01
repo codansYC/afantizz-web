@@ -11,6 +11,7 @@ namespace app\controllers;
 use app\services\UserService;
 use Yii;
 use yii\web\Controller;
+use app\utils\BizConsts;
 
 class UserController extends BaseController{
 
