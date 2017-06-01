@@ -10,8 +10,16 @@ use Yii;
 use yii\web\Controller;
 
 class IndexController extends Controller {
+
+
     function actionIndex() {
         echo 12345;
     }
+
+    function actionDetail() {
+        echo 2222222222;
+    }
+
+
 }
 
