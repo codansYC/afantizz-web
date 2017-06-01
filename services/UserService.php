@@ -13,7 +13,7 @@ use Yii;
 class UserService {
 
     static function getUserByToken($token) {
-        $user = User::findOne($token);
+        $user = User::find()->where(['token' => $token])->one();
         return $user;
     }
 
