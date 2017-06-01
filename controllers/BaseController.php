@@ -25,11 +25,12 @@ class BaseController extends  Controller {
 	protected  $requestParam = array();
 	protected  $config = array();
 	protected  $managerInfo = array();
-    /*
+
 	public function beforeAction($action){
 		if(!parent::beforeAction($action)){
 			return false;
 		}
+		return ture;
 		try {
 			$this->requestParam = $_REQUEST;
 	 		self::validParams();//检验参数合法性
@@ -42,7 +43,7 @@ class BaseController extends  Controller {
 		}
 		return true;
 	}
-    */
+
 	public function init(){
 	}
 	/*
