@@ -1,0 +1,51 @@
+/*----------------- 公用样式 --------------*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+div {
+    color: #596167;
+}
+input{
+    outline: none;
+}
+.global_box{
+    width: 1000px;
+    border: thin solid #edeff3;
+    margin: 0 auto;
+}
+.green_bg_white_txt {
+    color: white;
+    background-color: #34c86c;
+}
+/*某些种类的标签被选中时*/
+a.selected,button.selected,input[type="button"].selected {
+    color: white; !important;
+    background-color: #34c86c; !important;
+}
+.text_highlight {
+    color: #34c86c; !important;
+}
+.clearfix:after {
+    content: ".";     /*内容为“.”就是一个英文的句号而已。也可以不写。*/
+    display: block;   /*加入的这个元素转换为块级元素。*/
+    clear: both;     /*清除左右两边浮动。*/
+    visibility: hidden;      /*可见度设为隐藏。注意它和display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/
+    line-height: 0;    /*行高为0；*/
+    height: 0;     /*高度为0；*/
+    font-size:0;    /*字体大小为0；*/
+}
+.clearfix { *zoom:1;}   /*这是针对于IE6的，因为IE6不支持:after伪类，这个神奇的zoom:1让IE6的元素可以清除浮动来包裹内部元素。*/
+
+.bcTransition {
+    transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;	/* Firefox 4 */
+    -webkit-transition: background-color 0.2s;	/* Safari 和 Chrome */
+    -o-transition:background-color 0.2s;	/* Opera */
+}

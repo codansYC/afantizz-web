@@ -1,6 +1,7 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
+require(__DIR__.'/redis.php');
 
 $config = [
     'id' => 'afantizz',
@@ -48,6 +49,7 @@ $config = [
 
     ],
     'params' => $params,
+    'defaultRoute' => 'index',
 ];
 
 if (YII_ENV_DEV) {

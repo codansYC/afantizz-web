@@ -1,0 +1,302 @@
+
+body {
+    background-color: #edeff3;
+}
+
+.header {
+    height: 50px;
+}
+
+.header .header_wrap {
+    height: 50px;
+}
+
+.header_wrap .header_menu .header_menu_item a {
+    line-height: 50px;
+}
+
+.header .header_wrap .title {
+
+    width: 100px;
+    font-size: 15px;
+    line-height: 50px;
+    height: 100%;
+    box-sizing: border-box;
+    color: #cdcdcd;
+    position: absolute;
+    top: 0px;
+    left: 280px;
+}
+
+.mc-content {
+    margin-top: 20px;
+    width: 1000px;
+}
+
+.mc-content .menu-box {
+    float: left;
+    width: 250px;
+    height: 500px;
+    background-color: white;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.mc-content .info-box {
+    float: right;
+    width: 720px;
+    min-height: 500px;
+    margin-left: 20px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.mc-content .menu-box ul.menu-lst {
+    list-style: none;
+}
+
+.mc-content .menu-box ul.menu-lst li {
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mc-content .menu-box ul.menu-lst li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.mc-content .menu-box ul.menu-lst li .line {
+    background-color: #edeff3;
+    height: 1px;
+    clear: both;
+}
+
+/**/
+.mc-content .info-box ul.info-lst {
+    list-style: none;
+    padding: 20px 15px 20px 15px;
+    background-color: white;
+    height: 100%;
+}
+
+.info-box ul.info-lst>li {
+    border: 1px solid #b3b3b3;
+    margin-top: 15px;
+    position: relative;
+}
+
+.info-box ul.info-lst>li .top-info {
+    height: 30px;
+    background-color: #dbdbdb;;
+    padding-left: 10px;
+}
+
+.info-box ul.info-lst>li .more-btns {
+
+    position: absolute;
+    top: 32px;
+    right: 5px;
+    width: 77px;
+    visibility: hidden;
+    list-style: none;
+    background-color: black;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    z-index: 999;
+}
+
+.info-box ul.info-lst>li .more-btns li {
+    height: 35px;
+
+}
+
+.info-box ul.info-lst>li .more-btns li a {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.info-box ul.info-lst>li .more-btns li a:hover {
+    background-color: #23ec7d;
+}
+
+.info-box ul.info-lst>li .more-btns li a div {
+    float: right;
+    font-size: 14px;
+    line-height: 35px;
+    color: white;
+
+}
+
+.info-box ul.info-lst>li .more-btns li a img {
+    height: 20px;
+    float: left;
+    line-height: 35px;
+    margin-top: 7px;
+}
+
+.info-box ul.info-lst>li .top-info .release-date,.release-state {
+    color: #8c8c8c;
+    line-height: 30px;
+    float: left;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.info-box ul.info-lst>li .top-info .release-state.sell {
+    color: #34c86c;
+}
+
+.info-box ul.info-lst>li .top-info ul.btn-container {
+    float: right;
+    list-style: none;
+    height: 100%;
+}
+
+.info-box ul.info-lst>li .top-info ul.btn-container li {
+
+    float: right;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.accusation:hover,.cancel-collection:hover {
+    color: #34c86c;
+}
+
+.info-box ul.info-lst>li .top-info ul.btn-container li a {
+    line-height: 30px;
+    display: inline-block;
+
+}
+
+.info-box ul.info-lst>li .top-info ul.btn-container li a img {
+    height: 20px;
+    margin-top: 5px;
+}
+
+.info-box ul.info-lst>li .house-desc {
+    clear: both;
+    padding: 10px;
+    height: 135px;
+}
+
+.info-box ul.info-lst>li .house-desc .img-info {
+    float: left;
+}
+
+.info-box ul.info-lst>li .house-desc .img-info img {
+    width: 180px;
+    height: 135px;
+}
+
+.info-box ul.info-lst>li .house-desc .text-info {
+    float: left;
+    margin-left: 10px;
+    height: 135px;
+}
+
+.info-box ul.info-lst>li .house-desc .text-info div {
+    height: 25%;
+    line-height: 34px;
+}
+
+.info-box ul.info-lst>li .look-history {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.info-box ul.info-lst>li .look-history p {
+    font-size: 8px;
+    line-height: 20px;
+    color: #B8B8B8;
+}
+
+/*绑定手机号*/
+.info-box #bind-phone {
+    margin: 40px auto;
+    width: 450px;
+    height: 450px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(136, 136, 136, 0.2);
+
+}
+
+#bind-phone form {
+    margin: 80px auto;
+}
+#bind-phone form>div{
+    width: 300px;
+    height: 35px;
+    border: thin solid #a0a0a0;
+    margin: 0 auto;
+}
+
+#bind-phone form .phone-container {
+    background-color: yellow;
+}
+
+#bind-phone form .code-container {
+    margin: 40px auto;
+}
+
+#bind-phone form input {
+    line-height: 35px;
+    display: inline-block;
+    border-style: none;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+#bind-phone form .phone-container input {
+    width: 100%;
+    font-size: 15px;
+}
+
+#bind-phone form .code-container input {
+    width: 65%;
+    font-size: 15px;
+
+}
+
+#bind-phone form .code-container a {
+    display: inline-block;
+    width: 35%;
+    line-height: 35px;
+    text-align: center;
+    font-size: 15px;
+    color: #a0a0a0;
+}
+
+#bind-phone form .bind-bg {
+    margin-top: 100px;
+    border-style: none;
+    font-size: 15px;
+
+}
+
+#bind-phone form .bind-bg input {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    background-color: #34c86c;
+    font-size: 17px;
+    border-radius: 4px;
+
+}
+
+/*footer*/
+.footer {
+    height: 60px;
+    clear: both;
+}
+
+

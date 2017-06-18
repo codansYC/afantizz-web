@@ -8,6 +8,7 @@ use app\utils\RedisUtil;
 use app\exception\BaseException;
 use app\utils\Logger;
 use app\utils\SysConsts;
+use app\utils\GlobalAction;
 //use app\modules\v1\exception\LoginException;
 //use app\modules\v1\services\TokenService;
 

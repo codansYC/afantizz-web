@@ -24,6 +24,32 @@ class UserController extends BaseController{
         }catch (\Exception $e){
             UtilHelper::handleException($e);
         }
+    }
+
+    function actionRelease() {
+        try{
+            $token = $this->requestParam['token'];
+            if (!isset($token) || $token == '') {
+                UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE,BizConsts::UNLOGIN_ERRMSG);
+            }
+            $data = UserService::getUserReleaseHouse($token);
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$data);
+        }catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
+    }
+
+    function actionCollection() {
+        try{
+            $token = $this->requestParam['token'];
+            if (!isset($token) || $token == '') {
+                UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE,BizConsts::UNLOGIN_ERRMSG);
+            }
+            $data = UserService::getUserCollectionHouse($token);
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$data);
+        }catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
 
     }
 

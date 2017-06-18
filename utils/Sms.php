@@ -3,13 +3,13 @@ namespace app\utils;
 
 class Sms {
 	// 主帐号
-	public  $accountSid = '8a48b55148fe48600149075978d20444';
+	public  $accountSid = '8aaf07085c62aa66015c76146286047a';
 	
 	// 主帐号Token
-	public $accountToken = 'b333475b558d4a0ba0db12d5eefb39ef';
+	public $accountToken = '80486217f90848bebe296d89d134ff20';
 	
 	// 应用Id
-	public $appId = '8a216da85519f45401552918947e0f20';
+	public $appId = '8aaf07085c62aa66015c761462c4047e';
 	
 	// 请求地址，格式如下，不需要写https://
 	public $serverIP = 'app.cloopen.com';
@@ -53,7 +53,7 @@ class Sms {
 		$result = $rest->billRecords ( $date, $keywords );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 		if ($result->statusCode != 0) {
 			echo "error code :" . $result->statusCode . "<br>";
@@ -96,7 +96,7 @@ class Sms {
 		$result = $rest->callBack ( $from, $to, $customerSerNum, $fromSerNum, $promptTone );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 		if ($result->statusCode != 0) {
 			echo "error code :" . $result->statusCode . "<br>";
@@ -133,7 +133,7 @@ class Sms {
 		$result = $rest->CreateSubAccount ( $friendlyName );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 		if ($result->statusCode != 0) {
 			echo "error code :" . $result->statusCode . "<br/>";
@@ -175,7 +175,7 @@ class Sms {
 		$result = $rest->getSubAccounts ( $startNo, $offset );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 		if ($result->statusCode != 0) {
 			echo "error code :" . $result->statusCode . "<br/>";
@@ -222,7 +222,7 @@ class Sms {
 		$result = $rest->ivrDial ( $number, $userdata, $record );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 		if ($result->statusCode != 0) {
 			echo "error code :" . $result->statusCode . "<br>";
@@ -266,7 +266,7 @@ class Sms {
 		$result = $rest->landingCall ( $to, $mediaName, $mediaTxt, $displayNum, $playTimes, $respUrl );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 		if ($result->statusCode != 0) {
 			echo "error code :" . $result->statusCode . "<br>";
@@ -298,7 +298,7 @@ class Sms {
 		$result = $rest->queryAccountInfo ();
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 		if ($result->statusCode != 0) {
 			echo "error code :" . $result->statusCode . "<br>";
@@ -338,7 +338,7 @@ class Sms {
 		$result = $rest->querySubAccount ( $friendlyName );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 	
 		if ($result->statusCode != 0) {
@@ -411,7 +411,7 @@ class Sms {
 		$result = $rest->voiceVerify ( $verifyCode, $playTimes, $to, $displayNum, $respUrl );
 		if ($result == NULL) {
 			echo "result error!";
-			break;
+			return;
 		}
 	
 		if ($result->statusCode != 0) {

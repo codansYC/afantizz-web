@@ -7,15 +7,11 @@ class BizConsts {
 	const AMAP_KEY = '15872e89e4709238d1c637643de9e4a4';
 	const DEFAULT_DISTANCE = -1;
 	
-	const DEFAULT_GYM = 2;//默认凌空店
-	
-	const SERVERPREFIX = 'liking';
-	
 	const API_V1 = 'v1';//v1 api
 	const API_V2 = 'v2';//v2 api
 	const BIG_VERSION_INTERVAL = 5;//大版本间隔，5个版本 
 	
-	const APPLE_WHITELIST_PHONE = '18621345565';
+	const APPLE_WHITELIST_PHONE = '15801569925';
 	
 	const API_KEY = 'B9E526DIAHC047FG1K8J3';
 	
@@ -34,10 +30,6 @@ class BizConsts {
 	//默认城市区域，上海徐汇
 	const DEFAULT_CITY = 310100;
 	const DEFAULT_DISTRICT = 310104;
-	
-	//拉取团体课时间跨度，三天内数据
-	const COURSE_SCHEDULE_INTERVAL = 6;
-	const COURSE_APPLY_QUOTA = 5;
 	
 	//数据库名
 	const DBNAME = 'liking';
@@ -637,6 +629,21 @@ class BizConsts {
 	
 	const GYM_NOTSAME_ERRCODE =240001;
 	const GYM_NOTSAME_ERRMSG = "您购卡健身房与当前健身房不相同，不能进行续卡升级卡操作";
+
+    const IMAGE_INVALID_ERRCODE = 300001;
+    const IMAGE_INVALID_ERRMSG = "图片格式不支持";
+    const UPLOAD_FAIL_ERRCODE = 300002;
+    const UPLOAD_FAIL_ERRMSG = "图片上传失败";
+
+    const UNLOGIN_ERRCODE = 10000;
+    const UNLOGIN_ERRMSG = "用户未登录";
+    const RELEASE_HOUSE_ERRCODE = 10001; //发布房源失败
+    const RELEASE_HOUSE_ERRMSG = "发布房源失败";
+    const House_Has_Collected_ERRCODE = 10002;   //房源已收藏
+    const House_Has_Collected_ERRMSG = "您已收藏过该房源";   //房源已收藏
+    const House_UnCollected_ERRCODE = 10003;   //房源未收藏
+    const House_UnCollected_ERRMSG = "您未收藏该房源";   //房源已收藏
+
 }
 
 

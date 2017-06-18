@@ -610,7 +610,7 @@ class UtilHelper {
 	 * @return bool
 	 */
 	public static function checkCaptcha($captcha) {
-		return preg_match ( "/^\d{6}$/", $captcha );
+		return preg_match ( "/^\\d{6}$/", $captcha );
 	}
 	
 	/**

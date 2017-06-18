@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#login-container {
+    position: relative;
+    z-index: 999999999;
+}
+
+#login-container .overlay_bg {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 9990;
+}
+
+#login-container .panel_login {
+    width: 360px;
+    height: 500px;
+    /*background-color: #f3f3f3;*/
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -80px;
+    margin-top: -205px;
+    box-shadow: 1px 3px 14px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 3px 14px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 1px 3px 14px rgba(0,0,0,0.3);
+    -o-box-shadow: 1px 3px 14px rgba(0,0,0,0.3);
+    display: block;
+    z-index: 10000;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#login-container .panel_login .close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 35px;
+    height: 35px;
+}
+
+#login-container .panel_login .close img {
+    width: 100%;
+}
+
+#login-container .panel_login .panel_info {
+    margin: 30px auto;
+    width: 90%;
+}
+
+#login-container .panel_login .panel_info ul {
+    list-style: none;
+    height: 100%;
+    padding: 80px 30px 0;
+    box-sizing: border-box;
+}
+
+#login-container .panel_login .panel_info ul li input {
+    line-height: 35px;
+    border-style: none;
+    background-color: white;
+    font-size: 15px;
+}
+
+#login-container .panel_login .panel_info ul .panel_phone,.panel_code {
+    height: 35px;
+    border-bottom: 1px solid rgba(154, 154, 154, 0.45);
+}
+
+#login-container .panel_login .panel_info ul li.panel_phone input#login_phone_tf {
+    float: left;
+    padding-left: 10px;
+    width: 170px;
+}
+
+#login-container .panel_login .panel_info ul li.panel_phone input#login_getCode_btn {
+    background-color: transparent;
+    border-style: none;
+    float: right;
+    color: #a9a9a9;
+}
+
+#login-container .panel_login .panel_info ul li.panel_phone input#login_getCode_btn.phoneValid {
+    color: #34c86c;
+}
+
+#login-container .panel_login .panel_info ul li.panel_code {
+    margin-top: 30px;
+}
+
+#login-container .panel_login .panel_info ul li.panel_code input#login_code_tf {
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+#login-container .panel_login .panel_info ul li.panel_action {
+    margin-top: 50px;
+}
+
+#login-container .panel_login .panel_info ul li.panel_action #login_btn {
+    background-color: #34c86c;
+    color: white;
+    width: 100%;
+    font-size: 19px;
+    border-radius: 4px;
+}
+
+#login-container .panel_login .panel_info ul li.panel_otherLogin {
+    margin-top: 50px;
+}
+
+#login-container .panel_login .panel_info ul li.panel_otherLogin .otherLoginTitle {
+    text-align: center;
+    line-height: 35px;
+    color: #9a9a9a;
+}
+
+#login-container .panel_login .panel_info ul li.panel_otherLogin .wxLogin {
+    margin-top: 30px;
+    padding-left: 102px;
+}
+
+

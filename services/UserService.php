@@ -8,16 +8,87 @@
 namespace app\services;
 
 use app\models\User;
+use app\models\House;
+use app\models\Collection;
+use app\utils\BizConsts;
+use app\utils\GlobalAction;
+use app\utils\UtilHelper;
+use phpDocumentor\Reflection\Types\Array_;
 use Yii;
 
-class UserService {
+class UserService
+{
 
-    static function getUserByToken($token) {
+    static function getUserByToken($token)
+    {
         $user = User::find()
-                ->where(['token' => $token])
-                ->asArray()
-                ->one();
+            ->where(['token' => $token])
+            ->asArray()
+            ->one();
         return $user;
     }
 
+    static function getUserByPhone($phone)
+    {
+        $user = User::find()
+            ->where(['phone' => $phone])
+            ->asArray()
+            ->one();
+        return $user;
+    }
+
+    static function addNewUserWithPhone($phone)
+    {
+        $user = new User();
+        $user->phone = $phone;
+        $user->token = md5($phone);
+        $user->save();
+    }
+
+    static function getUserReleaseHouse($token)
+    {
+        $today = date("Y-m-d");
+        $houses = House::find()->where(["token" => $token, "user_delete" => 0])
+            ->orderBy("release_date DESC")
+            ->asArray()
+            ->all();
+        foreach ($houses AS $index => $house) {
+            $date = $house['release_date'];
+            $houseId = $house['house_id'];
+            $today_browse_count = Collection::find()->where(['house_id' => $houseId])
+                                                    ->count();
+            if ($house['today'] == $today) {
+                $houses[$index]['today_browse_count'] = $today_browse_count;
+            } else {
+                $houses[$index]['today_browse_count'] = 0;
+            }
+            $houses[$index]['release_date'] = GlobalAction::computeTime($date);
+            $houses[$index]['images'] = House::getThumbImages($house);
+        }
+        return $houses;
+    }
+
+    static function getUserCollectionHouse($token)
+    {
+        $houseIds = Collection::find()->select('house_id')
+                                      ->where(["token" => $token])
+                                      ->orderBy('collection_date DESC')
+                                      ->asArray()
+                                      ->all();
+
+        $houses = Array();
+        foreach ($houseIds AS $houseId) {
+            $house = House::find()->where(["house_id" => $houseId])
+                                  ->asArray()
+                                  ->one();
+            $date = $house['release_date'];
+            $house['release_date'] = GlobalAction::computeTime($date);
+            $house['images'] = House::getThumbImages($house);
+            array_push($houses,$house);
+        }
+        return $houses;
+
+    }
+
 }
+

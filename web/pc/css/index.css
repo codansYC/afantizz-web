@@ -1,0 +1,263 @@
+
+/*----------------头部--------------*/
+.header {
+    height: 80px;
+}
+
+.header .header_wrap {
+    height: 80px;
+    line-height: 80px;
+}
+
+.header .header_wrap .header_menu {
+    width: 320px;
+}
+
+.header_wrap .header_menu .header_menu_item a {
+    line-height: 80px;
+}
+.header_wrap .search{
+    margin: 0 auto;
+    padding-top: 23px;
+    width: 400px;
+    height: 100%;
+}
+.header_wrap .search a{
+    padding: 0 12px;
+    line-height: 34px;
+    font-size: 18px;
+    float: right;
+    text-align: center;
+    box-sizing: border-box;
+}
+.header_wrap .search a:hover {
+    background-color: #34b06c;
+}
+.header_wrap .search input{
+    width: 330px;
+    height: 34px;
+    box-sizing: border-box;
+    float: right;
+    border-style: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 10px;
+}
+/*筛选框*/
+.filter {
+    padding-top: 20px;
+}
+
+.filter dt{
+    float: left;
+    font-size: 15px;
+    line-height: 25px;
+    padding-left: 20px;
+    color: black;
+}
+.filter dd{
+
+    padding-left: 70px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.filter a{
+
+    height: 23px;
+    line-height: 25px;
+    font-size: 15px;
+    font-family: "微软雅黑 arial";
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 7px;
+    padding: 0 4px;
+    border-radius: 3px;
+    color: #596167;
+}
+.filter a.selected {
+    color: white;
+    background-color: #34c86c;
+}
+.filter a.text_highlight {
+    color: #34c86c;
+}
+.shadow{
+    -webkit-box-shadow: 0px 0px 10px #909090;/*safari或chrome*/
+    -moz-box-shadow: 0px 0px 10px #909090;/*firefox*/
+    box-shadow:0px 0px 10px #909090;/*opera或ie9*/
+}
+/*----------------内容--------------*/
+.content{
+    padding-top: 20px;
+
+}
+
+.content .content-box {
+    min-height: 400px;
+}
+
+.search-notice {
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    /*font-style: oblique;*/
+    line-height: 55px;
+    display: none;
+}
+
+.content .content-box .sort {
+    height: 40px;
+    border-bottom: 2px solid #34c86c;
+}
+
+.content .sort ul{
+    list-style: none;
+}
+
+.content .content-box .sort ul li {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+
+.content .content-box .sort ul li a {
+    line-height: 40px;
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+}
+
+.content ul.house_list{
+    list-style: none;
+    margin-top: 10px;
+}
+
+.content ul.house_list li{
+
+    width: 300px;
+    height: 366px;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 22px;
+    position: relative;
+}
+
+
+.content ul.house_list li .house-info {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: #edeff3;
+
+}
+
+.show-benefit {
+    position: relative;
+    z-index: 999999;
+}
+
+.house-info .pic-panel img {
+    width: 300px;
+    height: 225px;
+    background-color: #edeff3;
+}
+
+.house-info .house-intro {
+   
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.house-info .house-intro div{
+    height: 30px;
+}
+.house-intro .price{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+
+}
+.house-intro .expiration-time{
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+.house-intro .house-style{
+    color: cornflowerblue;
+}
+
+
+.house-intro .near-subway>div{
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    margin-right: 10px;
+    padding: 0 5px;
+    border-radius: 2px;
+    background-color: #f1f1f1;
+    color: #606060;
+    font-size: 14px;
+}
+
+
+.house-intro .benefit {
+    position: absolute;
+    right: 10px;
+    top: 58px;
+    padding: 2px 4px;
+    font-size: 13px;
+    color: #34c86c;
+    border: thin solid #34c86c;
+    box-sizing: border-box;
+}
+
+
+.benefit-desc {
+    display: none;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.benefit-desc>p {
+    /*background-color: #f1f1f1;*/
+    background-color: white;
+    line-height: 20px;
+    box-sizing: border-box;
+    width: 300px;
+    padding: 5px 10px 0px;
+}
+
+.house_wrap .look-more{
+
+    clear: both;
+    height: 100px;
+    line-height: 45px;
+    padding-top: 45px;
+    box-sizing: border-box;
+}
+
+.house_wrap .look-more a{
+
+    width: 300px;
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+    font-weight: bold;
+    background-color: #34c86c;
+}
+
+.house_wrap .look-more a:hover{
+    background-color: #34b06c;
+}
+

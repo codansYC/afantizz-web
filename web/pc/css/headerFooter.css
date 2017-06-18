@@ -1,0 +1,90 @@
+
+.header {
+    clear: both;
+}
+
+.header .header_wrap {
+    width: 100%;
+    position: fixed;
+    margin: 0 auto;
+    z-index: 9999999;
+    color: white;
+    background-color: #30333d;
+    /*background-color: #337ab7;  手机端的蓝色*/
+}
+.header_wrap .logo{
+    height: 100%;
+    width: 150px;
+    float: left;
+    color: white !important;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Impact;
+}
+.header_wrap .header_menu {
+    height: 100%;
+    width: 800px;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+}
+.header_menu_ul {
+    list-style: none;
+}
+.header_wrap .header_menu .header_menu_item {
+    /*width: 4em;*/
+    height: 100%;
+    float: right;
+    margin-left: 25px;
+}
+.header_wrap .header_menu .header_menu_item a{
+
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #cdcdcd;
+    font-weight: bold;
+    font-size: 15px;
+}
+.header_wrap .header_menu .header_menu_item a:hover {
+    color: white;
+}
+.footer{
+    padding-top: 30px;
+}
+.footer .foot-wrap{
+    height: 90px;
+    background-color: #2e2f34;
+    font-size: 12px;
+    color: #cdcdcd;
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+.footer .foot-wrap>p {
+    line-height: 30px;
+}
+
+/*login-info*/
+.header_wrap .login-info {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    height: 100%;
+    width: 140px;
+
+}
+
+.header_wrap .login-info>div {
+    margin-right: 5px;
+    float: left;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.login-info>div>img {
+    height: 28px;
+}
+
+

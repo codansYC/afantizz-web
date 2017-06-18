@@ -9,10 +9,12 @@ use \Redis;
  */
 class RedisUtil {
 	public static function getRedisConn($type = 'xz'){
+
 		if (!extension_loaded('redis')) {
 			dl('redis.so');
 		}
 		$redis = new Redis();
+
 		if($type == 'xz'){
 			$redis->pconnect(REDIS_ADDRESS,REDIS_PORT);
 		}else{
@@ -39,7 +41,9 @@ class RedisUtil {
 	 * @return boolean
 	 */
 	public static function setCache($cachename, $value, $lifeTime=0,$type = 'xz'){
+
 		$redis = self::getRedisConn($type);
+
 		if($lifeTime){// 带生存时间的写入
 			$result = $redis->setex($cachename,$lifeTime,$value);
 		}else{
