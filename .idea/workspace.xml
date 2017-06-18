@@ -2,103 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/IMG_1317.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/arrow-dowm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/delete-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/delete-normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/edit-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/edit-normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/airconditioning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/balcony.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/bed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/fridge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/heating.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/kitchen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/shower.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/sofa.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/toilet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/tv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/wardrobe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/washer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/facility/wifi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/head-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/icon-trigon-down.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/left-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/location.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/login-code.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/more-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/more-normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/nosell-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/nosell-normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/phone.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/placeholder_first_page@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/right-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/share-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/share-normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/sprite_cj.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/sticktop-hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/sticktop-normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/subway.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/upimg_loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/weixin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/厕所.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/redis.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/HouseController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/LoginController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/UploadController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Collection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/House.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Image.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ManagePlace.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Manager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ManagerDevice.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ManagerLog.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ManagerMsg.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ManagerToken.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/accusation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/services/HouseService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/services/ManagerService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/services/TokenService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utils/GlobalAction.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/index/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pc/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/common/jquery-3.1.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/common/jquery.form.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/common/jquery.uploadify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/css/detail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/css/headerFooter.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/css/member.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/css/release.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/detail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/loadHouse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/mapManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/member.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/release.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/member.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/release.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/css/site.css" afterPath="$PROJECT_DIR$/web/pc/css/site.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/web.php" afterPath="$PROJECT_DIR$/config/web.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/BaseController.php" afterPath="$PROJECT_DIR$/controllers/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/IndexController.php" afterPath="$PROJECT_DIR$/controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UserController.php" afterPath="$PROJECT_DIR$/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/UserService.php" afterPath="$PROJECT_DIR$/services/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/BizConsts.php" afterPath="$PROJECT_DIR$/utils/BizConsts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/RedisUtil.php" afterPath="$PROJECT_DIR$/utils/RedisUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/Sms.php" afterPath="$PROJECT_DIR$/utils/Sms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/UtilHelper.php" afterPath="$PROJECT_DIR$/utils/UtilHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/detail.html" afterPath="$PROJECT_DIR$/web/pc/detail.html" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -129,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="115" column="40" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
+            <state relative-caret-position="274">
+              <caret line="162" column="46" selection-start-line="162" selection-start-column="46" selection-end-line="162" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -155,6 +60,28 @@
             <state relative-caret-position="119">
               <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HouseController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services/HouseService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="391" column="51" selection-start-line="391" selection-start-column="51" selection-end-line="391" selection-end-column="51" />
+              <folding>
+                <element signature="e#115#141#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,7 +139,6 @@
         <option value="$PROJECT_DIR$/utils/GlobalAction.php" />
         <option value="$PROJECT_DIR$/utils/BizConsts.php" />
         <option value="$PROJECT_DIR$/models/accusation.php" />
-        <option value="$PROJECT_DIR$/services/HouseService.php" />
         <option value="$PROJECT_DIR$/controllers/HouseController.php" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
         <option value="$PROJECT_DIR$/services/UserService.php" />
@@ -226,6 +152,7 @@
         <option value="$PROJECT_DIR$/web/pc/css/detail.css" />
         <option value="$PROJECT_DIR$/web/pc/js/detail.js" />
         <option value="$PROJECT_DIR$/web/pc/detail.html" />
+        <option value="$PROJECT_DIR$/services/HouseService.php" />
       </list>
     </option>
   </component>
@@ -240,7 +167,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="119" />
+    <option name="x" value="34" />
+    <option name="y" value="38" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
   </component>
@@ -311,11 +239,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -329,15 +253,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="facility" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -452,15 +368,15 @@
       <workItem from="1497582653713" duration="1927000" />
       <workItem from="1497603741764" duration="1829000" />
       <workItem from="1497625045874" duration="2733000" />
-      <workItem from="1497704834616" duration="29695000" />
+      <workItem from="1497704834616" duration="30282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124703000" />
+    <option name="totallyTimeSpent" value="125290000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="119" width="1280" height="709" extended-state="0" />
+    <frame x="34" y="38" width="1280" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21486267" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -734,26 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
-          <folding>
-            <element signature="e#117#137#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="117" column="26" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
-          <folding>
-            <element signature="e#115#141#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/UserService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -868,16 +764,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/facility/washer.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/facility/wardrobe.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/images/facility/toilet.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -901,21 +787,49 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/facility/airconditioning.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/images/facility/balcony.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/facility/airconditioning.png">
+    <entry file="file://$PROJECT_DIR$/web/images/facility/wardrobe.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/facility/washer.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="115" column="40" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
+        <state relative-caret-position="274">
+          <caret line="162" column="46" selection-start-line="162" selection-start-column="46" selection-end-line="162" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="391" column="51" selection-start-line="391" selection-start-column="51" selection-end-line="391" selection-end-column="51" />
+          <folding>
+            <element signature="e#115#141#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

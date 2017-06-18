@@ -389,6 +389,7 @@ class HouseService {
         $accusation = new Accusation();
         $accusation->house_id = $houseId;
         $accusation->reason = isset($reason) ? $reason : "无理由举报";
+        $accusation->accusate_date = $accusateDate;
         $accusation->save();
 
     }
