@@ -484,6 +484,7 @@ class BaseFileHelper
         if ($recursive && !is_dir($parentDir) && $parentDir !== $path) {
             static::createDirectory($parentDir, $mode, true);
         }
+        echo $path;
         try {
             if (!mkdir($path, $mode)) {
                 return false;

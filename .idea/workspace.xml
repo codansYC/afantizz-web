@@ -2,108 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/camera.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/mineBg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/images/qq.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/AdminController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/FeedbackController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/Feedback.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ImageCaptcha.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/services/CaptchaService.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/test/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/common/imageCode.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/complain.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/complain.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/detail.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/feedback.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/footer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/header.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/houseList.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/login.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/mine.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/myCollection.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/myRelease.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/release.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/css/search.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/feedback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/complain.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/detail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/feedback.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/footer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/houseList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/layout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/mapManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/mine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/myCollection.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/myRelease.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/netWorker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/release.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/js/search.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/mine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/myCollection.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/myRelease.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/release.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/search.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/pc/js/admin.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/login.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/images/IMG_1317.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/index/index.php" afterPath="$PROJECT_DIR$/web/m/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/db.php" afterPath="$PROJECT_DIR$/config/db.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/test_db.php" afterPath="$PROJECT_DIR$/config/test_db.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/HouseController.php" afterPath="$PROJECT_DIR$/controllers/HouseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/IndexController.php" afterPath="$PROJECT_DIR$/controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LoginController.php" afterPath="$PROJECT_DIR$/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UploadController.php" afterPath="$PROJECT_DIR$/controllers/UploadController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UserController.php" afterPath="$PROJECT_DIR$/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/House.php" afterPath="$PROJECT_DIR$/models/House.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Image.php" afterPath="$PROJECT_DIR$/models/Image.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/accusation.php" afterPath="$PROJECT_DIR$/models/accusation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/TokenService.php" afterPath="$PROJECT_DIR$/services/TokenService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/UserService.php" afterPath="$PROJECT_DIR$/services/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/BizConsts.php" afterPath="$PROJECT_DIR$/utils/BizConsts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/Logger.php" afterPath="$PROJECT_DIR$/utils/Logger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/REST.php" afterPath="$PROJECT_DIR$/utils/REST.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/Sms.php" afterPath="$PROJECT_DIR$/utils/Sms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/UtilHelper.php" afterPath="$PROJECT_DIR$/utils/UtilHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/common.css" afterPath="$PROJECT_DIR$/web/pc/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/detail.css" afterPath="$PROJECT_DIR$/web/pc/css/detail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/headerFooter.css" afterPath="$PROJECT_DIR$/web/pc/css/headerFooter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/index.css" afterPath="$PROJECT_DIR$/web/pc/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/login.css" afterPath="$PROJECT_DIR$/web/pc/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/member.css" afterPath="$PROJECT_DIR$/web/pc/css/member.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/release.css" afterPath="$PROJECT_DIR$/web/pc/css/release.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/detail.html" afterPath="$PROJECT_DIR$/web/pc/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/index.html" afterPath="$PROJECT_DIR$/web/pc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/common.js" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/detail.js" afterPath="$PROJECT_DIR$/web/pc/js/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/index.js" afterPath="$PROJECT_DIR$/web/pc/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/login.js" afterPath="$PROJECT_DIR$/web/pc/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/mapManager.js" afterPath="$PROJECT_DIR$/web/pc/js/mapManager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/member.js" afterPath="$PROJECT_DIR$/web/pc/js/member.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/release.js" afterPath="$PROJECT_DIR$/web/pc/js/release.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/member.html" afterPath="$PROJECT_DIR$/web/pc/member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/release.html" afterPath="$PROJECT_DIR$/web/pc/release.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseFileHelper.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseFileHelper.php" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,31 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="release.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/release.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="308" column="17" selection-start-line="308" selection-start-column="17" selection-end-line="308" selection-end-column="17" />
-              <folding>
-                <element signature="n#select#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-68">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-              <folding>
-                <marker date="1500172859000" expanded="false" signature="7663:10390" ph="{...}" />
-                <marker date="1500172859000" expanded="true" signature="8869:8886" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -187,11 +61,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/db.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runtime/logs/app.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseFileHelper.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseFileHelper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="486" column="19" selection-start-line="486" selection-start-column="19" selection-end-line="486" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runtime/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -227,18 +131,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/js/admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="334" column="5" selection-start-line="331" selection-start-column="4" selection-end-line="334" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#42#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -256,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/controllers/FeedbackController.php" />
         <option value="$PROJECT_DIR$/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/web/m/feedback.html" />
@@ -307,6 +198,7 @@
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
         <option value="$PROJECT_DIR$/controllers/UploadController.php" />
         <option value="$PROJECT_DIR$/config/db.php" />
+        <option value="$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseFileHelper.php" />
       </list>
     </option>
   </component>
@@ -321,8 +213,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="79" />
-    <option name="y" value="477" />
+    <option name="x" value="19" />
+    <option name="y" value="26" />
     <option name="width" value="1201" />
     <option name="height" value="709" />
   </component>
@@ -381,7 +273,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,33 +287,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="yiisoft" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -435,33 +305,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
+              <option name="myItemId" value="yiisoft" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
+              <option name="myItemId" value="yii2" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -475,47 +327,19 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
+              <option name="myItemId" value="yiisoft" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
+              <option name="myItemId" value="yii2" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -530,20 +354,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,7 +480,7 @@
       <workItem from="1499071017798" duration="17701000" />
       <workItem from="1499491408319" duration="24598000" />
       <workItem from="1499570228975" duration="44038000" />
-      <workItem from="1500172520078" duration="24682000" />
+      <workItem from="1500172520078" duration="25766000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -683,10 +493,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400728000" />
+    <option name="totallyTimeSpent" value="401812000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="79" y="477" width="1201" height="709" extended-state="0" />
+    <frame x="19" y="26" width="1201" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27868852" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -762,28 +572,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/CaptchaService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1185,6 +973,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime/logs/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/helpers/BaseFileHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="486" column="19" selection-start-line="486" selection-start-column="19" selection-end-line="486" selection-end-column="19" />
           <folding />
         </state>
       </provider>
