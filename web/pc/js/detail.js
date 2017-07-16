@@ -130,7 +130,7 @@ $(function () {
         $('.deadline-date-desc').text(deadlineDate)
         //交通
         $('.traffic').text(house.traffic)
-        var lookMapA = $("<a href='javascript:lookMap()' class='look-map'>查看地图</a>"
+        var lookMapA = $("<a href='javascript:lookMap()' class='look-map'>查看地图</a>")
         $('.traffic').append(lookMapA)
         if (house.traffic != null && house.traffic != '') {
             lookMapA.css('margin-left','20px')

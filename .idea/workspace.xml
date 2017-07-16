@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/complain.html" afterPath="$PROJECT_DIR$/web/m/complain.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/detail.html" afterPath="$PROJECT_DIR$/web/m/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/feedback.html" afterPath="$PROJECT_DIR$/web/m/feedback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/index.html" afterPath="$PROJECT_DIR$/web/m/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/login.html" afterPath="$PROJECT_DIR$/web/m/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/mine.html" afterPath="$PROJECT_DIR$/web/m/mine.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/myCollection.html" afterPath="$PROJECT_DIR$/web/m/myCollection.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/myRelease.html" afterPath="$PROJECT_DIR$/web/m/myRelease.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/release.html" afterPath="$PROJECT_DIR$/web/m/release.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/search.html" afterPath="$PROJECT_DIR$/web/m/search.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/admin.html" afterPath="$PROJECT_DIR$/web/pc/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/detail.html" afterPath="$PROJECT_DIR$/web/pc/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/index.html" afterPath="$PROJECT_DIR$/web/pc/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/detail.js" afterPath="$PROJECT_DIR$/web/pc/js/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/member.html" afterPath="$PROJECT_DIR$/web/pc/member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/release.html" afterPath="$PROJECT_DIR$/web/pc/release.html" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,10 +36,10 @@
       <file leaf-file-name="detail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="133" column="38" selection-start-line="133" selection-start-column="38" selection-end-line="133" selection-end-column="38" />
+            <state relative-caret-position="234">
+              <caret line="132" column="84" selection-start-line="132" selection-start-column="84" selection-end-line="132" selection-end-column="84" />
               <folding>
-                <element signature="e#8026#13453#0" expanded="false" />
+                <element signature="e#8027#13454#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -470,7 +454,7 @@
       <workItem from="1499071017798" duration="17701000" />
       <workItem from="1499491408319" duration="24598000" />
       <workItem from="1499570228975" duration="44038000" />
-      <workItem from="1500172520078" duration="27754000" />
+      <workItem from="1500172520078" duration="27858000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -483,7 +467,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="403800000" />
+    <option name="totallyTimeSpent" value="403904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="26" width="1201" height="709" extended-state="0" />
@@ -990,10 +974,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="133" column="38" selection-start-line="133" selection-start-column="38" selection-end-line="133" selection-end-column="38" />
+        <state relative-caret-position="234">
+          <caret line="132" column="84" selection-start-line="132" selection-start-column="84" selection-end-line="132" selection-end-column="84" />
           <folding>
-            <element signature="e#8026#13453#0" expanded="false" />
+            <element signature="e#8027#13454#0" expanded="false" />
           </folding>
         </state>
       </provider>
