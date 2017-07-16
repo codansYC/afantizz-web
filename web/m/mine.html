@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>阿凡提转租</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mine.css">
+    <script src="js/layout.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/mine.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="imgBg equalScreenWidth"></div>
+    <div class="mainInfo whiteColorFullScreen">
+        <div class="headIcon">
+            <a href="javascript:">
+                <img src="/images/head-icon.png" alt="">
+            </a>
+        </div>
+        <div class="number text-center cellHeight">未登录</div>
+    </div>
+    <div class="section" ></div>
+    <!--我的发布-->
+    <div class="myRelease cellHeight whiteColorFullScreen">
+        <a href="javascript:" class="cellHeight" id="myRelease">
+            <span class="glyphicon glyphicon-edit text-primary cellHeight"></span>
+            <span style="position: relative;top: -2px;">我的发布</span>
+            <span class="glyphicon glyphicon-menu-right text-muted pull-right cellHeight"></span>
+        </a>
+    </div>
+    <div class="line"></div>
+    <!--我的收藏-->
+    <div class="myCollection cellHeight whiteColorFullScreen">
+        <a href="javascript:" class="cellHeight" id="myCollection">
+            <span class="glyphicon glyphicon-heart-empty text-primary cellHeight"></span>
+            <span style="position: relative;top: -2px;">我的收藏</span>
+            <span class="glyphicon glyphicon-menu-right text-muted pull-right cellHeight"></span>
+        </a>
+    </div>
+    <div class="section"></div>
+    <!--意见反馈-->
+    <div class="feedback cellHeight whiteColorFullScreen">
+        <a href="feedback.html" class="cellHeight">
+            <span class="glyphicon glyphicon-pencil text-primary cellHeight"></span>
+            <span style="position: relative;top: -2px;">意见反馈</span>
+            <span class="glyphicon glyphicon-menu-right text-muted pull-right cellHeight"></span>
+        </a>
+    </div>
+    <div class="section" style="height: 20px;"></div>
+    <div class="clearfix" style="margin-top: 10px;margin-bottom: 45px">
+        <button class="btn btn-success btn-block loginOrLogout">登录</button>
+    </div>
+    <!--footer-->
+    <div class="footer navbar-fixed-bottom clearfix row">
+        <div class="text-center col-xs-4">
+            <a id="main" href="http://afantizz.com" class="text-muted">
+                <span class="glyphicon glyphicon-home" aria-readonly="true"></span>
+                <span class="title center-block">首页</span>
+            </a>
+        </div>
+        <div class="text-center col-xs-4">
+            <a id="release" href="release.html" class="text-muted">
+                <span class="glyphicon glyphicon-edit" aria-readonly="true"></span>
+                <span class="title center-block">发布</span>
+            </a>
+        </div>
+        <div class="text-center col-xs-4">
+            <a id="mine" href="mine.html" class="active">
+                <span class="glyphicon glyphicon-user" aria-readonly="true"></span>
+                <span class="title center-block">我的</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

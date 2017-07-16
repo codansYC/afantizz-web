@@ -2,7 +2,6 @@
 .header {
     clear: both;
 }
-
 .header .header_wrap {
     width: 100%;
     position: fixed;
@@ -14,10 +13,17 @@
 }
 .header_wrap .logo{
     height: 100%;
-    width: 150px;
+    width: 160px;
     float: left;
+    margin-left: 5px;
+}
+.header_wrap .logo>div{
+    float: left;
+    margin-right: 8px;
+}
+.header_wrap .logo span{
     color: white !important;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     font-family: Impact;
 }
@@ -37,7 +43,7 @@
     float: right;
     margin-left: 25px;
 }
-.header_wrap .header_menu .header_menu_item a{
+.header_menu_item a{
 
     display: inline-block;
     width: 100%;
@@ -46,7 +52,7 @@
     font-weight: bold;
     font-size: 15px;
 }
-.header_wrap .header_menu .header_menu_item a:hover {
+.header_menu_item a:hover {
     color: white;
 }
 .footer{

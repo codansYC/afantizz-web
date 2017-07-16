@@ -1,0 +1,20 @@
+
+.layout:before{
+    display: table;
+    content: " ";
+}
+.layout:after{
+    clear: both;
+    display: table;
+    content: " ";
+}
+.layout-static{
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+}
+.layout-dynamic{
+    display: inline-block;
+    float: right;
+    box-sizing: border-box;
+}

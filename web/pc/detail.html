@@ -16,7 +16,14 @@
 <body>
     <div class="header">
         <div class="header_wrap">
-            <div class="logo">这是logo</div>
+            <div class="logo">
+                <div class="imgBg">
+                    <img src="/images/logo.png" alt="">
+                </div>
+                <div class="textBg">
+                    <span>阿凡提转租</span>
+                </div>
+            </div>
             <div class="header_menu">
                 <ul id="header_menu_ul" class="header_menu_ul">
                     <li>
@@ -31,6 +38,12 @@
     <div class="detail-content global_box">
         <div class="general">
             <div class="title"></div>
+            <div class="top-info">
+                <div class="address"></div>
+                <div class="village"></div>
+                <a href="javascript:lookMap()" class="look-map">查看地图</a>
+                <div class="date"></div>
+            </div>
             <div class="extra-bg">
                 <ul>
                     <li class="collection-bg">
@@ -41,7 +54,6 @@
                     </li>
                 </ul>
             </div>
-            <div class="date"></div>
             <div class="house-resume-box">
                 <div class="house-images">
                     <div class="big-image-bg">
@@ -71,36 +83,67 @@
                 </div>
                 <div class="house-desc">
                     <div class="house-desc-info">
-                        <div class="rent-price"><span style="color: #333; font-size: 16px;">房租:</span>&nbsp;&nbsp;&nbsp;<span class="price" style="color: red; font-size: 25px; font-weight: bold;"></span></div>
-                        <div class="house-style-desc"><span style="color: #333; font-size: 16px;">房间概况:</span>&nbsp;&nbsp;&nbsp;<span class="style" style="font-weight: bold; font-size: 18px"></span></div>
-                        <div class="house-address" id="house-address"><span style="color: #333; font-size: 16px;">地址:</span>&nbsp;&nbsp;&nbsp;<span id="house-address-desc" style="font-size: 18px"></span></div>
-                        <div class="community"><span style="color: #333; font-size: 16px;">小区:</span>&nbsp;&nbsp;&nbsp;<span class="village" style="font-size: 18px"></span></div>
-                        <div class="usable-date"><span style="color: #333; font-size: 16px;">可入住日期:</span>&nbsp;&nbsp;&nbsp;<span class="usable-date-desc" style="font-size: 18px"></span></div>
-                        <div class="deadline-date"><span style="color: #333; font-size: 16px;">房间到期:</span>&nbsp;&nbsp;&nbsp;<span class="deadline-date-desc" style="font-size: 18px"></span></div>
+                        <div class="rent-price">
+                            <span class="key">房间租金:</span>
+                            <span class="value price"></span>
+                            <span class="priceUnit">元/月</span>
+                            <span class="value pay-mode"></span>
+                        </div>
+                        <div class="rent-mode">
+                            <span class="key">出租方式:</span>
+                            <span class="value rent-mode-desc"></span>
+                            <span class="value room-type"></span>
+                        </div>
+                        <div class="house-style-desc">
+                            <span class="key">房间户型:</span>
+                            <span class="value mainStyle"></span>
+                            <span class="value area"></span>
+                            <span class="value toilet"></span>
+                            <span class="value kitchen"></span>
+                        </div>
+                        <div class="house-floor">
+                            <span class="key">所在楼层:</span>
+                            <span class="value floor"></span>
+                            <span class="value orientation"></span>
+                        </div>
+                        <div class="usable-date">
+                            <span class="key">入住日期:</span>
+                            <span class="value usable-date-desc"></span>
+                            <span class="usable-date-desc-extra">后可入住</span>
+                        </div>
+                        <div class="deadline-date">
+                            <span class="key">房间到期:</span>
+                            <span class="value deadline-date-desc"></span>
+                        </div>
+                        <div class="nearby-traffic">
+                            <div class="key">附近交通:</div>
+                            <div class="value traffic"></div>
+                        </div>
                     </div>
                     <div class="house-contact">
                         <div class="contact-phone">
-                            <ul>
-                                <li class="phone-icon">
-                                    <img src="/images/phone.png" alt="">
-                                </li>
-                                <li class="phone-no">
-                                    <a href="javascript:"></a>
-                                </li>
-                                <li class="phone-owner">
-                                    <span></span>
-                                </li>
-                            </ul>
+                            <div class="iconBg">
+                                <img src="/images/tell.png" alt="">
+                            </div>
+                            <p class="numberBg">15801569925</p>
                         </div>
                         <div class="contact-wx">
-                            <ul>
-                                <!--<li class="wx-icon">-->
-                                    <!--<img src="images/weixin.png" alt="">-->
-                                <!--</li>-->
-                                <!--<li class="wx-no">-->
-                                    <!--<span></span>-->
-                                </li>
-                            </ul>
+                            <div class="iconBg">
+                                <img src="/images/wx.png" alt="">
+                            </div>
+                            <p class="numberBg">15801569925wxlove</p>
+                        </div>
+                        <div class="contact-qq">
+                            <div class="iconBg">
+                                <img src="/images/qq.png" alt="">
+                            </div>
+                            <p class="numberBg">2807064028</p>
+                        </div>
+                        <div class="contact-owner">
+                            <div class="iconBg">
+                                <img src="/images/person.png" alt="">
+                            </div>
+                            <p class="numberBg">樱木花道</p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +170,7 @@
                                     <p>衣柜</p>
                                 </li>
                                 <li>
-                                    <img src="/images/facility/sofa.png" alt="">
+                                    <img class="facility-image" src="/images/facility/sofa.png" alt="">
                                     <p>沙发</p>
                                 </li>
                                 <li>

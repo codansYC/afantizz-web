@@ -1,10 +1,10 @@
 /**
  * Created by lekuai on 17/2/2.
  */
-
+var pro = true;
 var cityCode = "021" //城市编码,目前只服务上海
-var basicUrl = "http://afantizz.com"//"http://101.200.63.241/AfantiYii/backend/controllers"; //"http://localhost:8080/AfantiYii/backend/controllers"; //
-var imageUrl = "http://afantizz.com/"//"http://101.200.63.241/AfantiYii"
+var basicUrl = pro ? "http://afantizz.com/" : "http://localhost:8000/"
+var imageUrl = pro ? "http://afantizz.com/" : "http://localhost:8000/"
 
 $(function () {
     //验证手机号是否输入正确
@@ -68,14 +68,18 @@ function showLoginInfo(no) {
     var headIcon = $("<img src='/images/head-icon.png' alt=''/>");
     iconContainer.append(headIcon);
     loginInfo.append(iconContainer);
-    var loginNum = $("<div></div>");
+    var loginNum = $("<div style='font-size: 12px;'></div>");
     loginNum.text(no);
     loginNum.css("line-height",wrapH+"px");
     loginInfo.append(loginNum);
     //调整图片的margin-top
-    var imgH = headIcon.height();
+    var imgH = 22//headIcon.height();
     var imgMarginTop = (wrapH - imgH) / 2;
-    headIcon.css("margin-top",imgMarginTop+"px");
+    headIcon.css({
+        "margin-top": imgMarginTop+"px",
+        "margin-left": "30px",
+        "height": imgH+"px"
+    });
 }
 
 //移除登录信息
@@ -92,8 +96,8 @@ function showFooter() {
     var footer = $("<div class='footer'></div>");
     var footerWrap = $("<div class='foot-wrap'></div>");
     footer.append(footerWrap);
-    footerWrap.append($("<p>上海阿凡提网络技术有限公司 | 网络经营许可证 泸ICP备11024601号-12</p>"));
-    footerWrap.append($("<p>© Copyright©2017 阿凡提转租Afantizhuanzu.com版权所有</p>"));
+    footerWrap.append($("<p>网络经营许可证 蜀ICP备17018294号</p>"));
+    footerWrap.append($("<p>© Copyright©2017 阿凡提转租Afantizz.com版权所有</p>"));
     $("body").append(footer);
 }
 
@@ -156,7 +160,7 @@ function response(data) {
 //退出登录
 function logout(success) {
     var token = getToken();
-    document.cookie = "token="+token+"; expires=Thu, 26 Feb 1971 11:50:25 GMT";
+    document.cookie = "token="+token+";path=/;" + "expires=Thu, 26 Feb 1971 11:50:25 GMT";
     if (success) {
         success(true);
     }
@@ -175,21 +179,6 @@ function getToken() {
         if (info[i].indexOf("token") >= 0) {
             var token = info[i].split("=")[1];
             return token;
-        }
-    }
-    return ""
-}
-
-function getPhone() {
-    var cookie = document.cookie;
-    if (cookie=="") {
-        return ""
-    }
-    var info = cookie.split(";");
-    for (var i=0; i<info.length; i++) {
-        if (info[i].indexOf("phone") >= 0) {
-            var phone = info[i].split("=")[1];
-            return phone;
         }
     }
     return ""
@@ -286,15 +275,17 @@ function accusate(houseId,reason) {
 
     request(basicUrl + "house/accusation",{
         house_id: houseId,
-        reason: reason
+        reason: reason,
+        token: getToken(),
+        phone: '',
+        desc: ''
     },function (resp) {
         showModel('举报成功')
     })
 }
 
-var basicUrl = "../../"
 function request(url,params,respBlock) {
-    $.post(basicUrl + url, params, function (response, status) {
+    $.post(url, params, function (response, status) {
         if (status != 'success') {
             showModel('操作失败,请稍后重试')
             return
@@ -311,6 +302,37 @@ function request(url,params,respBlock) {
         respBlock(resp.data)
 
     });
+}
+
+//处理地铁线路
+function handleSubways(pois) {
+
+    var subwayArr = new Array();
+
+    for (var i = 0; i < pois.length; i++) {
+        var addressArr = pois[i].address.split(';')
+        for (var j=0; j<addressArr.length;j++) {
+            var address = addressArr[j]
+            if (address.indexOf('号线')>=0 && subwayArr.indexOf(address)<0) {
+                if (address.indexOf('在建')<0) {
+                    subwayArr.push(addressArr[j])
+                }
+            }
+        }
+    }
+    subways = subwayArr.join(';')
+    return subways
+}
+//处理交通
+function handleTraffic(pois) {
+    var trafficArr = new Array();
+    for (var i = 0; i < pois.length; i++) {
+        var subwayLine = pois[i].address.replace(';','、')
+        var desc = '距离' + subwayLine + pois[i].name + pois[i].distance+'米'
+        trafficArr.push(desc)
+    }
+    traffic = trafficArr.join(';')
+    return traffic
 }
 
 

@@ -14,6 +14,15 @@ body {
 .header_wrap .header_menu .header_menu_item a {
     line-height: 50px;
 }
+.header .logo img {
+    display: inline-block;
+    height: 34px;
+    margin-top: 8px;
+}
+.header .logo span {
+    display: inline-block;
+    line-height: 50px;
+}
 
 .header .header_wrap .title {
 
@@ -25,7 +34,7 @@ body {
     color: #cdcdcd;
     position: absolute;
     top: 0px;
-    left: 280px;
+    left: 300px;
 }
 
 .mc-content {
@@ -56,11 +65,10 @@ body {
 }
 
 .mc-content .menu-box ul.menu-lst li {
-    height: 45px;
+    height: 40px;
     text-align: center;
-    line-height: 45px;
-    font-size: 18px;
-    font-weight: bold;
+    line-height: 40px;
+    font-size: 16px;
 }
 .mc-content .menu-box ul.menu-lst li a {
     width: 100%;
@@ -75,150 +83,174 @@ body {
 }
 
 /**/
-.mc-content .info-box ul.info-lst {
+ul.info-lst {
     list-style: none;
     padding: 20px 15px 20px 15px;
     background-color: white;
     height: 100%;
 }
 
-.info-box ul.info-lst>li {
-    border: 1px solid #b3b3b3;
+ul.info-lst>li {
+    border: 0.5px solid rgba(179, 179, 179, 0.2);
     margin-top: 15px;
     position: relative;
 }
 
-.info-box ul.info-lst>li .top-info {
+.top-info {
     height: 30px;
-    background-color: #dbdbdb;;
+    background-color: rgb(250,250,250);
     padding-left: 10px;
 }
-
-.info-box ul.info-lst>li .more-btns {
-
-    position: absolute;
-    top: 32px;
-    right: 5px;
-    width: 77px;
-    visibility: hidden;
-    list-style: none;
-    background-color: black;
-    opacity: .7;
-    filter: alpha(opacity=70);
-    z-index: 999;
-}
-
-.info-box ul.info-lst>li .more-btns li {
-    height: 35px;
-
-}
-
-.info-box ul.info-lst>li .more-btns li a {
-    height: 100%;
-    width: 100%;
-    display: inline-block;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
-
-.info-box ul.info-lst>li .more-btns li a:hover {
-    background-color: #23ec7d;
-}
-
-.info-box ul.info-lst>li .more-btns li a div {
-    float: right;
-    font-size: 14px;
-    line-height: 35px;
-    color: white;
-
-}
-
-.info-box ul.info-lst>li .more-btns li a img {
-    height: 20px;
-    float: left;
-    line-height: 35px;
-    margin-top: 7px;
-}
-
-.info-box ul.info-lst>li .top-info .release-date,.release-state {
+.release-date{
     color: #8c8c8c;
     line-height: 30px;
-    float: left;
-    font-size: 14px;
-    margin-right: 20px;
-}
+    font-size: 12px;
 
-.info-box ul.info-lst>li .top-info .release-state.sell {
+}
+.release-state{
+    float: right;
+    padding: 1px 3px;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 10px;
+}
+.release-state.sell {
     color: #34c86c;
+    background-color: rgba(52, 200, 108, 0.15);
 }
-
-.info-box ul.info-lst>li .top-info ul.btn-container {
+.release-state.unsell{
+    color: rgb(131,131,131);
+    background-color: rgba(131,131,131,0.15);
+}
+.num{
+    color: #8c8c8c;
+    font-size: 10px;
+    display: inline-block;
+    width: 70px;
+    line-height: 30px;
+}
+.house-title{
+    color: #333;
+    font-weight: bold;
+    width: 26em;
+}
+.house-address{
+    color: #596167;
+    font-size: 13px;
+}
+.house-price{
+    color: #ec613e;
+    font-weight: bold;
+}
+.house-deadline{
+    color: #596167;
+    padding-left: 20px;
+    font-size: 13px;
+}
+.action-list{
     float: right;
     list-style: none;
-    height: 100%;
+    width: 4em;
+    margin-right: -10px;
 }
-
-.info-box ul.info-lst>li .top-info ul.btn-container li {
-
-    float: right;
+.action-list a{
+    display: inline-block;
+    width: 100%;
     text-align: center;
-    font-size: 15px;
-    margin-right: 15px;
-}
+    color: #337ab7;
+    line-height: 28px;
+    font-size: 13px;
 
-.accusation:hover,.cancel-collection:hover {
+}
+.action-list a:hover{
     color: #34c86c;
 }
 
-.info-box ul.info-lst>li .top-info ul.btn-container li a {
-    line-height: 30px;
-    display: inline-block;
-
-}
-
-.info-box ul.info-lst>li .top-info ul.btn-container li a img {
-    height: 20px;
-    margin-top: 5px;
-}
-
-.info-box ul.info-lst>li .house-desc {
+.house-desc {
+    clear: both;
     clear: both;
     padding: 10px;
-    height: 135px;
+    height: 120px;
 }
 
-.info-box ul.info-lst>li .house-desc .img-info {
+.img-info {
     float: left;
 }
 
-.info-box ul.info-lst>li .house-desc .img-info img {
-    width: 180px;
-    height: 135px;
+.img-info img {
+    width: 160px;
+    height: 120px;
 }
 
-.info-box ul.info-lst>li .house-desc .text-info {
+.text-info {
     float: left;
     margin-left: 10px;
-    height: 135px;
+    height: 120px;
 }
 
-.info-box ul.info-lst>li .house-desc .text-info div {
+.text-info div {
     height: 25%;
-    line-height: 34px;
+    line-height: 30px;
 }
 
-.info-box ul.info-lst>li .look-history {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+.tags{
+    padding: 5px 0;
+    box-sizing: border-box;
 }
+.tags>div{
 
-.info-box ul.info-lst>li .look-history p {
-    font-size: 8px;
     line-height: 20px;
-    color: #B8B8B8;
+    float: left;
+    margin-right: 8px;
+    font-size: 12px;
+    background-color: #f1f1f1;
+    color: #606060;
+    height: 17px !important;
+    line-height: 17px !important;
+    padding: 0 3px;
 }
 
+.tags>div.house-rentMode{
+    background-color: rgba(51, 122, 183, 0.23);
+    color: #337ab7;
+}
+.tags>div.benefit {
+    color: #34c86c;
+    background-color: rgba(52, 200, 108, 0.15);
+}
+#collection-lst .release-date{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+.accusationList{
+    list-style: none;
+    position: absolute;
+    top: 62px;
+    right: 0px;
+    padding: 3px 0;
+    border-radius: 4px;
+    visibility: hidden;
+    background-color: black;
+    box-sizing: border-box;
+    opacity: .7;
+    filter: alpha(opacity=70);
+}
+.accusationList>li{
+    line-height: 20px;
+    font-size: 10px;
+    padding: 0 6px;
+    width: 90px;
+}
+.accusationList>li>a{
+    color: #cdcdcd;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+.accusationList>li>a:hover{
+    color: #34c86c;
+}
 /*绑定手机号*/
 .info-box #bind-phone {
     margin: 40px auto;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>阿凡提转租</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/houseList.css">
+    <script src="js/layout.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/houseList.js"></script>
+    <script src="js/search.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="header bg-primary equalScreenWidth">
+        <div class="serviceCity">上海</div>
+        <div class="title text-center">搜索房源</div>
+    </div>
+    <div class="search defaultBgColor equalScreenWidth layout">
+        <div class="layout-dynamic pull-left defaultBorder inputBg">
+            <form action="javascript:">
+                <input type="search" class="text-center" placeholder="请输入关键字">
+            </form>
+        </div>
+        <div class="layout-static pull-right">
+            <button id="cancelBtn" class="" onclick="javascript :history.back(-1);">取消</button>
+        </div>
+    </div>
+    <div class="houseBox clearfix">
+        <ul class="houseList list-unstyled">
+        </ul>
+    </div>
+</div>
+</body>
+</html>

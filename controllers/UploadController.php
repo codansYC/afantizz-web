@@ -13,20 +13,26 @@ use app\utils\GlobalAction;
 use app\utils\UtilHelper;
 use app\utils\BizConsts;
 use app\models\Image;
-
+header("Access-Control-Allow-Origin: *"); # 跨域处理
 class UploadController extends BaseController {
 
     function actionUpload()
     {
-        $targetFolder = 'upload'; // Relative to the root
-        if ($_FILES['file']) {
-            $file = $_FILES['file'];
-        } else {
-            $file = $_FILES['Filedata'];
+        $folder = 'upload';//'devUpload';
+        //pc端多图上传、移动端单图上传 key的命名: file0,file1,file2 ...
+        $images = array();
+        for ($i = 0; $i < count($_FILES); $i++) {
+            $key = 'file'.$i;
+            $file = $_FILES[$key];
+            $img = $this->handleFile($file,$key,$folder);
+            array_push($images, $img);
         }
+        UtilHelper::echoResult(BizConsts::SUCCESS, BizConsts::SUCCESS_MSG, $images);
+    }
 
+    function handleFile($file,$key,$folder) {
         $tempFile = $file['tmp_name'];
-        $targetPath = $targetFolder;
+        $targetPath = $folder;
         $type = next(explode(".", $file['name']));
         $extension = next(explode("/", $file['type']));
         $needRotate = ($type != $extension);
@@ -49,7 +55,8 @@ class UploadController extends BaseController {
         $image = new Image();
         $image->origin_url = $originImageFile;
         $image->thumb_url = $thumbImageFile;
-        UtilHelper::echoResult(BizConsts::SUCCESS, BizConsts::SUCCESS_MSG, $image);
+        $image->key = $key;
+        return $image;
     }
 
     /*
@@ -88,7 +95,6 @@ class UploadController extends BaseController {
 
             if (!$this->cropImage($bigImageFile,$smallImageFile)) {
                 $this->saveImage($extension,$compress,$smallImageFile);
-                echo "图片裁剪失败";
             }
             return true;
         }
@@ -166,7 +172,6 @@ class UploadController extends BaseController {
                 }
                 return false;
             case 'png':
-//            echo 'png';die;
                 if (imagepng($image,$file)) {
                     return true;
                 }

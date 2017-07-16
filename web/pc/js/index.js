@@ -3,6 +3,7 @@
  */
 
 var page = 1
+var cellW = 300
 $(function () {
 
     var isLogin = getToken() != "" && getToken() != null;
@@ -26,7 +27,6 @@ $(function () {
         memberLi.click(function () {
             if (getToken() == "") {
                 location.reload();
-                $().showLoginPage();
                 return
             }
             location.href = "/pc/member.html";
@@ -137,7 +137,108 @@ $(function () {
 
     }
 
+    //动态添加房源列表中的li标签
+    function insertOneHouse(house) {
 
+        var img = imageUrl + house.images[0]
+        var houseId = house.house_id + "";
+
+        var oHouseUl = $("#house_list")
+        var oLi = $("<li></li>");
+        oHouseUl.append(oLi);
+
+        var oHouseInfoDiv = $("<div></div>");
+        oHouseInfoDiv.addClass("house-info");
+        oLi.append(oHouseInfoDiv);
+        var oPicPanelDiv = $("<div></div>");
+        oPicPanelDiv.addClass("pic-panel");
+        oHouseInfoDiv.append(oPicPanelDiv);
+        var url = '/pc/detail.html?house_id='+houseId
+        var oA = $("<a href='"+url+"' target='_blank'></a>");
+        oPicPanelDiv.append(oA);
+        var oImg =  $("<img alt=''>");
+        oImg.attr('src',img);
+        oA.append(oImg);
+        var oIntro = $("<div></div>");
+        oHouseInfoDiv.append(oIntro);
+        oIntro.addClass("house-intro");
+        /*标题*/
+        var title = house.title
+        if (title.length>18) {
+            title = title.slice(0,17) + '...'
+        }
+        var oTitleDiv = $("<div class='house-title'></div>");
+        oTitleDiv.text(title);
+        oIntro.append(oTitleDiv)
+
+        /*地址*/
+        var oPlaceDiv = $("<div class='house-address'></div>");
+        oPlaceDiv.text(house.district+"-"+house.address);
+        oIntro.append(oPlaceDiv)
+        /*标签*/
+        var oTags = $("<div class='tags'></div>");
+        oIntro.append(oTags)
+        //出租方式
+        var oRentMode = $("<div class='house-rentMode'></div>");
+        oRentMode.text(house.rent_mode)
+        oTags.append(oRentMode)
+        //房间结构(几室几厅)
+        if (house.style != null || house.style != '') {
+            var mainStyle = house.style.split('厅')[0] + '厅'
+            var oStyle = $("<div class='mainStyle'></div>");
+            oStyle.text(mainStyle)
+            oTags.append(oStyle)
+        }
+        //主卧或次卧
+        if (house.rent_mode == '合租') {
+            var secondStyle = house.style.slice(-2)
+            var oStyle = $("<div class='secondStyle'></div>");
+            oStyle.text(secondStyle)
+            oTags.append(oStyle)
+        }
+        //独立卫生间
+        if (house.facilities.indexOf('独立卫生间') > -1) {
+            var oToilet = $("<div class='toilet'></div>");
+            oToilet.text('独卫')
+            oTags.append(oToilet)
+        }
+
+        /*价格*/
+        var oPriceDiv = $("<div class='price'></div>");
+        oPriceDiv.text('¥'+house.price)
+        oIntro.append(oPriceDiv);
+
+        /*发布时间*/
+        var oTimeDiv = $("<div class='release-time'></div>");
+        oTimeDiv.text(house.release_date);
+        oIntro.append(oTimeDiv);
+
+        /*转租优惠*/
+        if (house.benefit != "" && house.benefit != null) {
+            var oBenefitA = $("<a>转租优惠</a>");
+            oBenefitA.addClass("benefit");
+            oBenefitA.attr("href","javascript:");
+            oIntro.append(oBenefitA);
+            var oBenefitDesc = $("<div class='benefit-desc'></div>");
+            var p = $("<p></p>");
+            p.text(house.benefit);
+            oBenefitDesc.append(p);
+            oHouseInfoDiv.append(oBenefitDesc);
+        }
+
+        /*交通*/
+        var oTraffic = $("<div class='traffic'></div>");
+        oIntro.append(oTraffic)
+        var traffic = house.traffic
+        if (traffic != null && traffic != '') {
+            if (traffic.length > 23) {
+                traffic = traffic.slice(0, 23) + '...'
+                oTraffic.text(traffic)
+            }
+        }
+    }
+
+    /*
     //动态添加房源列表中的li标签
     function insertOneHouse(houseId,img,style,district,address,usableDate,deadlineDate,subways,price,benefit,releaseDate) {
         var oLi = $("<li></li>");
@@ -166,9 +267,11 @@ $(function () {
         var releaseDateSpan = $("<span></span>");
         releaseDateSpan.text(releaseDate);
         oTimeDiv.append(releaseDateSpan);
-        var deadlineDateSpan = $("<span style='margin-left: 15px'>2017-1-21到期</span>");
-        deadlineDateSpan.text(deadlineDate+"到期");
-        oTimeDiv.append(deadlineDateSpan);
+        if (deadlineDate != null && deadlineDate != '') {
+            var deadlineDateSpan = $("<span style='margin-left: 15px'></span>");
+            deadlineDateSpan.text(deadlineDate+"到期");
+            oTimeDiv.append(deadlineDateSpan);
+        }
         oTimeDiv.addClass("expiration-time");
         oIntro.append(oTitleDiv,oPlaceDiv,oTimeDiv);
         var oSubwayDiv = $("<div></div>");
@@ -187,7 +290,7 @@ $(function () {
         }
         var oPriceDiv = $("<div></div>");
         var priceSpan = $("<span></span>");
-        priceSpan.text(price+'元/月');
+        priceSpan.text('¥'+price);
         oPriceDiv.append(priceSpan);
         oPriceDiv.addClass("price");
         oIntro.append(oPriceDiv);
@@ -207,17 +310,15 @@ $(function () {
         $("#house_list").append(oLi);
 
     }
-
+    */
 
     var allHouse = new Array();
     //获取到数据后展示
     function loadHouse(houses) {
         for (var i=0; i<houses.length; i++) {
             var house = houses[i];
-            var img = imageUrl + house.images[0]
-            var styleDes = house.rent_mode + house.style;
-            var houseId = house.house_id + "";
-            insertOneHouse(houseId,img,styleDes,house.district,house.address,house.usable_date,house.deadline_date,house.subways,house.price,house.benefit,house.release_date);
+
+            insertOneHouse(house);
         }
         controlLookBenefit();
         addShadowEffect();

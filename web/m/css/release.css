@@ -1,0 +1,226 @@
+body{
+    background-color: #edeff3;
+}
+/*container*/
+.releaseBg{
+    background-color: #edeff3;
+    margin: 0 -15px;
+    margin-bottom: 44px;
+}
+
+/*content*/
+.content{
+}
+.content ul{
+
+}
+.content>ul>li {
+    background-color: white;
+    padding: 0px 15px;
+    margin-top: 10px;
+    border-width: 1px 0px;
+    border-color: #d9d9d9;
+    border-style: solid;
+}
+/*分割线*/
+.line{
+    background-color: #d9d9d9;
+    height: 1px;
+    width: 100%;
+}
+.lineInner{
+    background-color: #edeff3;
+    height: 1px;
+    width: 100%;
+
+}
+.key{
+    color: #a6a6a6;
+    font-size: 14px;
+    font-weight: 300;
+    width: 4em;
+}
+input{
+    text-align: right;
+    border: none;
+    outline: none;
+}
+textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px 0px;
+    resize: none;
+}
+select{
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+button{
+    border: none;
+    outline: none;
+}
+.inputHeight{
+    height: 42px;
+    line-height: 40px;
+}
+.imgBg{
+    /*overflow: scroll;*/
+    /*overflow-y: hidden;*/
+}
+.imgBg>ul{
+    padding: 0px 0px 5px 0px;
+}
+.imgBg li{
+    width: 70px;
+    height: 70px;
+    max-width: 70px;
+    margin-right: 5px;
+    float: left;
+    margin-top: 5px;
+}
+
+.imgBg li.camera{
+    background-color: #edeff3;
+}
+.imgBg li.camera .localUpload{
+    width: 100%;
+    height: 100%;
+    background: url("http://afantizz.com/images/camera.png");
+    background-repeat: no-repeat;
+    background-position: 10px 15px;
+    background-size: 50px 39px;
+}
+#file_input{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    opacity: 0;
+    background-color: rebeccapurple;
+}
+.imgBg{
+    overflow: hidden;
+    position: relative;
+    height: 82px;
+    width: 100%;
+}
+#img-container{
+    position: absolute;
+    left: 15px;
+    top: 0;
+    min-width: 100%;
+}
+#img-container li{
+    float: left;
+}
+.imgBg li.uploadImgLi{
+    position: relative;
+    background: url("http://afantizz.com/images/upimg_loading.gif");
+    background-size: 70px 70px;
+    background-repeat: no-repeat;
+}
+.imgBg li.uploadImgLi>img{
+    width: 70px;
+    height: 70px;
+    padding-left: 0px;
+}
+.imgBg li.uploadImgLi .close{
+    position: absolute;
+    right: 0px;
+    top: -5px;
+}
+/*小区和地址*/
+li.locationBg {
+
+}
+/*房间概况*/
+li.houseStyle .key{
+    width: 2em;
+}
+.jointRentStyle{
+    margin-left: 15px;
+}
+input.room,input.hall,input.toilet{
+    width: 30px;
+    padding: 0px 3px;
+    text-align: center;
+}
+#kitchen-type{
+    margin-left: 15px;
+}
+.glyphicon-menu-right{
+    color: #a6a6a6;
+}
+/*房间设施*/
+.facility .checkBox{
+    float: left;
+    height: 16px;
+    width: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+.facility .checkBox:last-child{
+    width: 85px;
+}
+.facility .checkBox label{
+    text-align: center;
+    line-height: 16px;
+    position: absolute;
+    top: 0px;
+    left: 18px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.facility .checkBox i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("http://afantizz.com/images/icons.png");
+    background-position: -32px 0px;
+}
+.facility .checkBox i.check{
+    background-position: -32px -57px;
+}
+.facility .select_all span{
+    display: inline-block;
+    border: 1px solid #ccc;
+    line-height: 24px;
+    padding: 0px 5px;
+}
+/*发布标题*/
+.titleArea{
+    height: 60px;
+}
+/*转租优惠*/
+.benefitArea{
+    height: 80px;
+}
+/*房间描述*/
+.descArea{
+    height: 100px;
+}
+
+/*确认发布*/
+.sureRelease{
+    padding: 10px 15px 50px 15px;
+}
+.sureRelease button{
+    height: 34px;
+    font-size: 16px;
+}
+
+
+/*查看大图*/
+.bigImageBg{
+    background-color: black;
+    z-index: 999999999999999999999999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,115 @@
+body{
+    background-color: #edeff3;
+}
+.header{
+    margin: 0 -15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.back button{
+    background-color: transparent;
+    border: none;
+}
+.alert{
+    margin-top: 44px;
+    margin-bottom: 0px;
+    height: 45px;
+    padding-top: 0px;
+    position: relative;
+}
+.alert i{
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    width: 23px;
+    height: 16px;
+    background-image: url("http://afantizz.com/images/icons.png");
+    background-position: -63px -375px;
+}
+.alert span{
+    position: absolute;
+    font-size: 11px;
+    left: 40px;
+    top: 14px;
+    color: rgba(89, 97, 103, 0.65);
+}
+.reason{
+    padding-top: 11px;
+    background-color: white;
+
+}
+.reason ul {
+    border: solid 1px #d9d9d9;
+}
+.reason ul li{
+    height: 38px;
+    line-height: 38px;
+    padding-left: 10px;
+    position: relative;
+
+}
+.reason ul li i{
+    position: absolute;
+    left: 10px;
+    top: 11px;
+    width: 16px;
+    height: 16px;
+    background-image: url("http://afantizz.com/images/icons.png");
+    background-position: -66px 0px;
+}
+.reason ul li i.checked{
+    background-position: -66px -57px;
+}
+.reason ul li span{
+    padding-left: 22px;
+    display: inline-block;
+
+}
+.content{
+    margin-top: 15px;
+    padding-top: 11px;
+    background-color: white;
+}
+p{
+    color: #596167;
+    padding-left: 7px;
+}
+.complainBg{
+    border: solid 1px #d9d9d9;
+    /*border-radius: 3px;*/
+}
+textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    resize: none;
+    height: 100px;
+}
+.phone{
+    margin-top: 15px;
+    padding-top: 11px;
+    background-color: white;
+}
+.phoneBg{
+    border: solid 1px #d9d9d9;
+}
+.phone-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    resize: none;
+    height: 40px;
+    display: inline-block;
+}
+.publish{
+    border: none;
+    width: 100%;
+    display: block;
+    margin: 34px 0;
+    height: 34px;
+    font-size: 17px;
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+.header{
+    margin: 0 -15px;
+    position: fixed;
+    width: 100%;
+}
+.back button{
+    background-color: transparent;
+    border: none;
+}
+.content{
+    margin-top: 44px;
+    padding-top: 20px;
+}
+p{
+    color: #596167;
+    padding-left: 7px;
+}
+form{
+    margin-top: 5px;
+}
+.feedBg{
+    border: solid 1px #d9d9d9;
+    border-radius: 3px;
+}
+textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+    resize: none;
+    height: 200px;
+    border-radius: 3px;
+}
+.publish{
+    border: none;
+    width: 100%;
+    display: block;
+    margin: 34px 0;
+    height: 34px;
+    font-size: 17px;
+    font-weight: bold;
+}

@@ -1,0 +1,28 @@
+.search{
+    padding: 10px 15px;
+}
+.search .inputBg{
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.search input{
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+}
+.search button{
+    padding-left: 15px;
+    border: none;
+    background-color: transparent;
+    height: 30px;
+    text-align: right;
+    color: #34c86c;
+    outline: none;
+}
+.houseBox{
+
+    margin: 0 -15px;
+}

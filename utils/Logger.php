@@ -86,8 +86,8 @@ class Logger {
 			@umask ( 0 );
 			@mkdir ( $logDir, 0777, true );
 		}
-		
-		$this->logFile = fopen ( $logDir . $this->logFileName, 'a' );
+		/*这句不知道什么问题*/
+//		$this->logFile = fopen ( $logDir . $this->logFileName, 'a' );
 	}
 	
 	private function _transFilename($filename) {
@@ -134,9 +134,9 @@ class Logger {
 				self::$log->_setHandle ();
 			}
 			$str = implode ( "\n", self::$log->records );
-			fwrite ( self::$log->logFile, $str . "\n" );
-			self::$log->curRecordCount = 0;
-			self::$log->records = array ();
+//			fwrite ( self::$log->logFile, $str . "\n" );
+//			self::$log->curRecordCount = 0;
+//			self::$log->records = array ();
 		}
 		
 		return true;

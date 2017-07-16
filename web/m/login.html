@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>阿凡提转租</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/common/imageCode.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="inputBg defaultBorder">
+        <div id="codeBg" class="codeBg clearfix">
+            <div style="float: left;">
+                <input type="text" placeholder="输入图形码" id="imageCodeInput" class="singleRowHeight imageCode" style="width: 80px;">
+            </div>
+            <div class="imageCodeBg" style="float: right;margin-top: 4px;">
+                <canvas id="codeCanvas" width="100" height="36"></canvas>
+                <a href="javascript:" id="changeImg" style="font-size: 11px;text-decoration: none;">看不清,换一张</a>
+            </div>
+        </div>
+        <div class="line" style="margin: 0px; background-color: #ccc"></div>
+        <div class="phone">
+            <input type="text" placeholder="输入手机号" class="singleRowHeight phoneField">
+            <button class="btn btn-success pull-right disabled sendCode" type="button">发送验证码</button>
+        </div>
+        <div class="line" style="margin: 0px; background-color: #ccc"></div>
+        <div class="code">
+            <input type="text" placeholder="输入验证码" class="singleRowHeight codeField">
+        </div>
+    </div>
+    <button class="login btn btn-block btn-success disabled">登录</button>
+    <div class="text-center row" style="padding-top: 30px;font-size: 13px">
+        <div class="thinLine col-xs-4"></div>
+        <div class="text-muted col-xs-4">第三方登录</div>
+        <div class="thinLine col-xs-4"></div>
+    </div>
+    <div class="text-center" style="padding-top: 20px">
+        <a href="javascript:showModel('暂未开放~')">
+            <img src="/images/weixin.png" alt="" style="width: 45px; opacity: 0.5">
+        </a>
+    </div>
+</div>
+</body>
+</html>

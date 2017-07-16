@@ -1,0 +1,37 @@
+.inputBg{
+    margin: 80px auto 0px;
+    /*border: solid 1px ;*/
+}
+.inputBg .phone, .inputBg .code, .inputBg .codeBg{
+    padding: 0 10px;
+}
+#imgCode {
+    display: block;
+    float: right;
+    width: 100px;
+    height: 34px;
+}
+.inputBg .phone button{
+    font-size: 12px;
+    font-weight: 300;
+    height: 28px;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+input{
+    border: none;
+    font-size: 13px;
+    outline: none;
+}
+button.login{
+    margin-top: 50px;
+    outline: none !important;
+    height: 37px;
+    font-size: 17px;
+}
+.thinLine{
+    height: 1px;
+    background-color: #ddd;
+    margin-top: 8px;
+
+}

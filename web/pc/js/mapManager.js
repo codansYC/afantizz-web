@@ -43,8 +43,8 @@ $(function () {
 
 });
 
-function startLocating() {
-    geocoder.getLocation($('#house-address-desc').text(), function(status, result) {
+function startLocating(address) {
+    geocoder.getLocation(address, function(status, result) {
 
         var coor = [116.480983, 40.0958]
         if (status === 'complete' && result.info === 'OK') {
@@ -72,7 +72,7 @@ function startLocating() {
             position: coor,
             title: "房源地址",
             map: map,
-            icon: "images/location.png"
+            icon: "/images/location.png"
         });
 
         //search
@@ -95,4 +95,36 @@ function startLocating() {
 
         })
     });
+}
+
+var subways = ''
+var traffic = ''
+function handleSubways(pois) {
+    var subwayArr = new Array();
+
+    for (var i = 0; i < pois.length; i++) {
+        var addressArr = pois[i].address.split(';')
+        for (var j=0; j<addressArr.length;j++) {
+            var address = addressArr[j]
+            if (address.indexOf('号线')>=0 && subwayArr.indexOf(address)<0) {
+                if (address.indexOf('在建')<0) {
+                    subwayArr.push(addressArr[j])
+                }
+            }
+        }
+    }
+
+    subways = subwayArr.join(';')
+    return subways
+}
+
+function handleTraffic(pois) {
+    var trafficArr = new Array();
+    for (var i = 0; i < pois.length; i++) {
+        var subwayLine = pois[i].address.replace(';','、')
+        var desc = '距离' + subwayLine + pois[i].name + pois[i].distance+'米'
+        trafficArr.push(desc)
+    }
+    traffic = trafficArr.join(';')
+    return traffic
 }

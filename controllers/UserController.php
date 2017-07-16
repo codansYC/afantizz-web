@@ -13,7 +13,7 @@ use Yii;
 use yii\web\Controller;
 use app\utils\UtilHelper;
 use app\utils\BizConsts;
-
+header("Access-Control-Allow-Origin: *"); # 跨域处理
 class UserController extends BaseController{
 
     function actionInfo() {

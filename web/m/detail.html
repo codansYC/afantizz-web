@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>阿凡提转租</title>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cbaec5d29d4bc79098e74433bc52cdb5"></script>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="js/layout.js"></script>
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="js/common.js"></script>
+    <script src="js/detail.js"></script>
+    <script src="js/mapManager.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="carousel">
+        <ul class="imgList list-unstyled">
+            <!--<li class="pull-left">-->
+                <!--<img src="http://101.200.63.241/upload/201705131545AAFZ5lpe6EjL.jpeg" alt="">-->
+            <!--</li>-->
+            <!--<li class="pull-left">-->
+                <!--<img src="http://101.200.63.241/upload/201705131545AAFZ5lpe6EjL.jpeg" alt="">-->
+            <!--</li>-->
+            <!--<li class="pull-left">-->
+                <!--<img src="http://101.200.63.241/upload/201705131545AAFZ5lpe6EjL.jpeg" alt="">-->
+            <!--</li>-->
+        </ul>
+        <div class="numIndicator">
+            <span class="currentIndex">0</span>
+            /
+            <span class="totalNum">0</span>
+        </div>
+        <div class="back">
+            <a href="javascript:">
+                <span class="glyphicon glyphicon-menu-left"></span>
+            </a>
+        </div>
+        <div class="lookImgHint">
+            <span>点击查看大图</span>
+        </div>
+    </div>
+    <!--标题及发布时间、收藏-->
+    <div class="houseBg">
+        <div class="titleInfo clearfix" style="padding-top: 8px">
+            <div class="pull-left">
+                <div style="font-weight: bold">
+                    <span class="house-title" style="margin-right: 10px"></span>
+                </div>
+                <div class="address">
+                    <div class="detailAddress text-muted singleRowHeight" style="font-size: 12px; height: 20px">
+                        <span class="district"></span>
+                        <span class="detail"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="collection pull-right" style="margin-top: 3px">
+                <a href="javascript:collectionRequest()">
+                    <span class="glyphicon"></span>
+                    <span>收藏</span>
+                </a>
+            </div>
+        </div>
+        <div class="tagsAndDate clearfix">
+            <div class="tags pull-left clearfix">
+            </div>
+            <div class="releaseDate singleRowHeight pull-right">
+                <span>发布时间</span><span class="date"></span>
+            </div>
+        </div>
+
+        <div class="line"></div>
+        <!--房间概况-->
+        <div class="paddingTopBottom10 text-muted general">
+            <!--<div class="row">-->
+                <!--<div class="col-xs-6 price">-->
+                    <!--<span class="key">租金:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+                <!--<div class="col-xs-6 pay-mode">-->
+                    <!--<span class="key">付款:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-6 village">-->
+                    <!--<span class="key">小区:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+                <!--<div class="col-xs-6 floor">-->
+                    <!--<span class="key">楼层:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-6 orientation">-->
+                    <!--<span class="key">朝向:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+                <!--<div class="col-xs-6 area">-->
+                    <!--<span class="key">面积:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+                <!--<div class="col-xs-6 usableDate">-->
+                    <!--<span class="key">入住:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+                <!--<div class="col-xs-6 deadline">-->
+                    <!--<span class="key">到期:</span>-->
+                    <!--<span class="value"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="section"></div>
+        <!--联系人-->
+        <div class="contact-accusation clearfix">
+            <div class="pull-left contact">
+                <div class="phone" style="display: none">
+                    <span class="name" style="margin-right: 10px"></span>
+                    <span class="phoneNo" style="margin-right: 10px"></span>
+                    <a href="javascript:" class="call">
+                        <span class="glyphicon glyphicon-earphone text-success" aria-hidden="true"></span>
+                    </a>
+                    <a href="javascript:" class="sms">
+                        <span class="glyphicon glyphicon-envelope text-success" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="weixin" style="display: none">
+                    <!--<img src="/images/weixin.png" alt="">-->
+                    <span class="" style="width: 28px;display: inline-block;">微信</span>
+                    <span>:</span>
+                    <span class="weixinNo"></span>
+                </div>
+                <div class="qq" style="display: none">
+                    <!--<img src="/images/weixin.png" alt="">-->
+                    <span class="" style="width: 28px;display: inline-block;">QQ</span>
+                    <span>:</span>
+                    <span class="qqNo"></span>
+                </div>
+            </div>
+            <div class="accusation pull-right" style="margin-bottom: 6px">
+                <a href="javascript:accusate()" class="accusation">
+                    <span class="glyphicon glyphicon-bell text-danger"></span>
+                    <span class="text-danger">举报</span>
+                </a>
+            </div>
+        </div>
+        <div class="section"></div>
+        <!--房间配套-->
+        <div class="">
+            <span class="singleRowHeight">房间配套</span>
+            <div class="line"></div>
+            <div class="facilities clearfix">
+                <ul class="list-unstyled">
+                    <li>
+                        <img class="facility-image" src="/images/facility/bed.png" alt="">
+                        <p class="text-center">床</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/wardrobe.png" alt="">
+                        <p class="text-center">衣柜</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/sofa.png" alt="">
+                        <p class="text-center">沙发</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/tv.png" alt="">
+                        <p class="text-center">电视</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/fridge.png" alt="">
+                        <p class="text-center">冰箱</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/washer.png" alt="">
+                        <p class="text-center">洗衣机</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/airconditioning.png" alt="">
+                        <p class="text-center">空调</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/shower.png" alt="">
+                        <p class="text-center">热水器</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/wifi.png" alt="">
+                        <p class="text-center">宽带</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/heating.png" alt="">
+                        <p class="text-center">暖气</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/kitchen.png" alt="">
+                        <p class="text-center">可做饭</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/toilet.png" alt="">
+                        <p class="text-center">独立卫生间</p>
+                    </li>
+                    <li>
+                        <img class="facility-image" src="/images/facility/balcony.png" alt="">
+                        <p class="text-center">阳台</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section"></div>
+        <!--转租优惠-->
+        <div class="benefit">
+            <span class="singleRowHeight">转租优惠</span>
+            <div class="line"></div>
+            <p class="paddingTopBottom5"></p>
+        </div>
+        <div class="section"></div>
+        <!--房间描述-->
+        <div class="desc">
+            <span class="singleRowHeight">房间描述</span>
+            <div class="line"></div>
+            <p class="paddingTopBottom5"></p>
+        </div>
+        <div class="section"></div>
+        <!--附近配套-->
+        <div class="nearby">
+            <span class="singleRowHeight">附近配套</span>
+            <div class="line"></div>
+            <p class="paddingTopBottom5 traffic"></p>
+            <p class="paddingTopBottom5 catering"></p>
+            <p class="paddingTopBottom5 shopping"></p>
+        </div>
+        <div class="section"></div>
+    </div>
+    <!--大图页面-->
+    <div class="bigCarousel hidden">
+        <ul class="bigImgList list-unstyled"></ul>
+        <div class="numIndicatorBg">
+            <div class="numIndicator">
+                <span class="currentIndex">0</span>
+                /
+                <span class="totalNum">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

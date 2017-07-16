@@ -55,10 +55,11 @@ class UserService
         foreach ($houses AS $index => $house) {
             $date = $house['release_date'];
             $houseId = $house['house_id'];
-            $today_browse_count = Collection::find()->where(['house_id' => $houseId])
-                                                    ->count();
+            $collection_count = Collection::find()->where(['house_id' => $houseId])
+                                                  ->count();
+            $houses[$index]['collection_count'] = $collection_count;
             if ($house['today'] == $today) {
-                $houses[$index]['today_browse_count'] = $today_browse_count;
+                $houses[$index]['today_browse_count'] = $house['today_browse_count'];
             } else {
                 $houses[$index]['today_browse_count'] = 0;
             }

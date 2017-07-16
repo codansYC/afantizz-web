@@ -1,0 +1,33 @@
+.defaultBgColor {
+    background-color: #edeff3;
+}
+.equalScreenWidth {
+    margin: 0 -15px;
+}
+.defaultBorder{
+    border: 1px solid #ccc;
+}
+.selected {
+    color: #34c86c !important;
+}
+.section{
+    background-color: #edeff3;
+    height: 10px;
+    margin: 0 -15px;
+}
+
+.line {
+    background-color: #edeff3;
+    height: 1px;
+    margin: 0 -15px;
+}
+.singleRowHeight{
+    height: 40px;
+    line-height: 34px;
+}
+.paddingTopBottom5{
+    padding: 5px 0;
+}
+.paddingTopBottom10{
+    padding: 10px 0;
+}

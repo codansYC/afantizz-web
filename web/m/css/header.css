@@ -1,0 +1,23 @@
+.header {
+    height: 44px;
+    padding-top: 11px;
+}
+.header>div{
+    width: 33.33333333333%;
+    float: left;
+}
+.title{
+    font-size: 16px;
+    font-weight: bold;
+}
+.serviceCity {
+    padding-top: 1px;
+    font-size: 15px;
+    padding-left: 15px;
+}
+.sort{
+    padding-top: 2px;
+}
+.sort span{
+    font-size: 15px;
+}

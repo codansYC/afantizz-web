@@ -9,7 +9,7 @@ class Sms {
 	public $accountToken = '80486217f90848bebe296d89d134ff20';
 	
 	// 应用Id
-	public $appId = '8aaf07085c62aa66015c761462c4047e';
+	public $appId = '8a216da85c62c9ad015c76166af204a3';
 	
 	// 请求地址，格式如下，不需要写https://
 	public $serverIP = 'app.cloopen.com';
@@ -375,9 +375,9 @@ class Sms {
 		if(isset($_SERVER['RUNTIME_ENV']) && $_SERVER['RUNTIME_ENV'] == 'dev' ){
 			return true;
 		}
-		
 		// 发送模板短信
 		// 	echo "Sending TemplateSMS to $to <br/>";
+
 		$result = $this->REST->sendTemplateSMS ( $to, $datas, $tempId );
 	
 		return $result;exit();

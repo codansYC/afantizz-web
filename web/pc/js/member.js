@@ -71,56 +71,28 @@ $(function () {
             var house = houses[i];
             var li = $('<li></li>')
             ul.append(li)
-            var topInfo = $('<div></div>')
-            topInfo.addClass('top-info')
+            /*topInfo*/
+            var topInfo = $("<div class='top-info'></div>")
             li.append(topInfo)
-            var releaseDate = $('<div></div>')
-            releaseDate.text("发布日期:"+house.release_date);
-            releaseDate.addClass('release-date')
+            //发布时间
+            var releaseDate = $("<span class='release-date'></span>")
+            releaseDate.text("最近更新 "+house.release_date);
             topInfo.append(releaseDate)
+            //出租状态
             var state
             var houseState = house.sell_state
             if (houseState == "在架") {
-                state = $('<div class="release-state sell">在架</div>')
+                state = $('<div class="release-state sell">转租中</div>')
             } else {
                 state  = $('<div class="release-state unsell">已下架</div>')
             }
             topInfo.append(state)
 
-            var optionsUl = $('<ul></ul>')
-            optionsUl.addClass('btn-container')
-            topInfo.append(optionsUl)
-            var moreLi = $('<li></li>')
-            optionsUl.append(moreLi)
-            var moreA = $('<a></a>')
-            moreA.addClass('more')
-            moreLi.append(moreA)
-            var moreImg = $('<img/>')
-            moreImg.attr('src','/images/more-normal.png')
-            moreA.append(moreImg)
-            var editLi = $('<li></li>')
-            optionsUl.append(editLi)
-            var editA = $('<a></a>')
-            editA.addClass('edit')
-            editA.attr('href','/pc/release.html?house_id='+house.house_id)
-            editLi.append(editA)
-            var editImg = $('<img/>')
-            editImg.attr({
-                'src':'/images/edit-normal.png'
-            })
-            editA.append(editImg)
-            var moreBtns
-            if (houseState == "在架") {
-                moreBtns = generateMoreOptionsWithSelling(house.house_id);
-            } else {
-                moreBtns  = generateMoreOptionsWithNotSell(house.house_id);
-            }
-            li.append(moreBtns)
-            var houseDesc = $('<div></div>')
-            houseDesc.addClass('house-desc')
+            /*房源介绍*/
+            var houseDesc = $("<div class='house-desc'></div>")
             li.append(houseDesc)
-            var imgInfo = $('<div></div>')
-            imgInfo.addClass('img-info')
+            //图片
+            var imgInfo = $("<div class='img-info'></div>")
             houseDesc.append(imgInfo)
             var houseImgA = $('<a></a>')
             houseImgA.attr({
@@ -131,125 +103,103 @@ $(function () {
             var houseImg = $('<img/>')
             houseImg.attr('src',basicUrl+house.images[0])
             houseImgA.append(houseImg)
-            var textInfo = $('<div></div>')
-            textInfo.addClass('text-info')
+
+            /*文本信息*/
+            var textInfo = $("<div class='text-info'></div>")
             houseDesc.append(textInfo)
-            var price = $('<div></div>')
-            price.text(house.price+'元/月')
-            textInfo.append(price)
-            var general = $('<div>合租|三室一厅主卧|25m²|朝南|29层|共33层</div>')
-            var fullStyle = house.rent_mode+"|"+house.style+"|"+house.area+"m²"+"|"+house.orientation+"|"+house.floor+"|"+house.max_floor
-            general.text(fullStyle)
-            textInfo.append(general)
-            var address = $('<div></div>')
-            address.text(house.address)
-            textInfo.append(address)
-            var deadline = $('<div>2017-09-13到期</div>')
-            deadline.text(house.deadline_date+"到期")
-            textInfo.append(deadline)
-            var history = $('<div class="look-history"></div>')
-            li.append(history)
-            var collectionNum = $('<p></p>')
-            var numDesc = $("<span style='display: inline-block; width: 6em; text-align: center;'>关注量</span>")
-            var numSpan = $("<span style='text-align: center;'></span>")
-            numSpan.text(house.collection_count)
-            collectionNum.append(numDesc,numSpan);
-            var todayHistory = $('<p></p>')
-            var numDesc = $("<span style='display: inline-block; width: 6em; text-align: center;'>今日浏览量</span>")
-            var numSpan = $("<span style='text-align: center;'></span>")
-            numSpan.text(house.today_browse_count+"")
-            todayHistory.append(numDesc,numSpan)
-            var totalHistory = $('<p></p>')
-            var numDesc = $("<span style='display: inline-block; width: 6em; text-align: center;'>总浏览量</span>")
-            var numSpan = $("<span style='text-align: center;'></span>")
-            numSpan.text(house.browse_count+"")
-            totalHistory.append(numDesc,numSpan)
-            history.append(collectionNum,todayHistory,totalHistory);
+            //标题
+            var title = house.title
+            if (title.length > 25) {
+                title = title.substr(0,25) + '...'
+            }
+            var oTitle = $("<div class='house-title'></div>")
+            oTitle.text(title)
+            textInfo.append(oTitle)
+            //地址
+            var address = house.district + '-' + house.address
+            var oAddress = $("<div class='house-address'></div>")
+            oAddress.text(address)
+            textInfo.append(oAddress)
+            //价格和到期日期
+            var oPriceAndDeadlineBg = $("<div class='priceAndDeadlineBg'></div>")
+            textInfo.append(oPriceAndDeadlineBg)
+            //价格
+            var oPrice = $("<span class='house-price'></span>")
+            oPrice.text('¥' + house.price)
+            oPriceAndDeadlineBg.append(oPrice)
+            //到期
+            if (house.deadline_date != null && house.deadline_date != '') {
+                var oDeadline = $("<span class='house-deadline'></span>")
+                oDeadline.text('2017-09-09到期')
+                oPriceAndDeadlineBg.append(oDeadline)
+            }
+
+            //浏览/收藏量
+            var oNumberInfo = $("<div class='number-info'></div>")
+            textInfo.append(oNumberInfo)
+            //收藏量
+            var oCollectionNum = $("<span class='num collection-num'></span>")
+            oCollectionNum.text('收藏 '+house.collection_count)
+            oNumberInfo.append(oCollectionNum)
+            var oTotalBrowseNum = $("<span class='num total-browse-num'></span>")
+            oTotalBrowseNum.text('浏览 '+house.browse_count)
+            oNumberInfo.append(oTotalBrowseNum)
+            var oTodayBrowseNum = $("<span class='num today-browse-num'></span>")
+            oTodayBrowseNum.text('今日浏览 '+house.today_browse_count)
+            oNumberInfo.append(oTodayBrowseNum)
+
+
+            /*各个操作按钮*/
+            var oActions = $("<ul class='action-list'></ul>")
+            houseDesc.append(oActions)
+            //修改
+            var oEdit = $("<a href='javascript:' class='edit'>修改</a>")
+            oEdit.attr('href','/pc/release.html?house_id='+house.house_id)
+            var oEditLi = $("<li></li>")
+            oEditLi.append(oEdit)
+            oActions.append(oEditLi)
+            //置顶
+            if (house.sell_state == '在架') {
+                var oStick = $("<a href='javascript:' class='stick'>置顶</a>")
+                oStick.click(function () {
+                    stick(house.house_id)
+                })
+                var oStickLi = $("<li></li>")
+                oStickLi.append(oStick)
+                oActions.append(oStickLi)
+            }
+            //下架
+            if (house.sell_state == '在架') {
+                var oUnsell = $("<a href='javascript:' class='unsell'>下架</a>")
+                oUnsell.click(function () {
+                    changeSellState(house.house_id,0)
+                })
+                var oUnsellLi = $("<li></li>")
+                oUnsellLi.append(oUnsell)
+                oActions.append(oUnsellLi)
+            } else {
+                var oSell = $("<a href='javascript:' class='sell'>上架</a>")
+                oSell.click(function () {
+                    changeSellState(house.house_id,1)
+                })
+                var oSellLi = $("<li></li>")
+                oSellLi.append(oSell)
+                oActions.append(oSellLi)
+            }
+
+            //删除
+            var oDelete = $("<a href='javascript:' class='delete'>删除</a>")
+            oDelete.click(function () {
+                deleteHouse(house.house_id)
+            })
+            var oDeleteLi = $("<li></li>")
+            oDeleteLi.append(oDelete)
+            oActions.append(oDeleteLi)
         }
-
-        handleSmallAAction();
-    }
-
-    //已下架的更多按钮展示
-    function generateMoreOptionsWithNotSell(houseId) {
-        var moreBtns = $('<ul></ul>')
-        moreBtns.addClass('more-btns')
-        var moreBtns_li1 = $('<li></li>')
-        var moreBtns_li2 = $('<li></li>')
-        moreBtns.append(moreBtns_li1)
-        moreBtns.append(moreBtns_li2)
-        var stickTopA = $('<a></a>')
-        stickTopA.addClass('stickTop')
-        moreBtns_li1.append(stickTopA)
-        var stickImg = $('<img src="/images/sticktop-normal.png"/>')
-        var stickDes = $('<div>上架</div>')
-        stickTopA.append(stickImg)
-        stickTopA.append(stickDes)
-        var deleteA = $('<a></a>')
-        deleteA.addClass('deleteHistory')
-        moreBtns_li2.append(deleteA)
-        var deleteImg = $('<img src="/images/delete-normal.png"/>')
-        var deleteDes = $('<div>删除</div>')
-        deleteA.append(deleteImg)
-        deleteA.append(deleteDes)
-
-        stickTopA.click(function () {
-            changeSellState(houseId,1)
-        })
-        deleteA.click(function () {
-            deleteHouse(houseId)
-        })
-
-        return moreBtns
-    }
-
-    //在架中的更多按钮展示
-    function generateMoreOptionsWithSelling(houseId) {
-        var moreBtns = $('<ul></ul>')
-        moreBtns.addClass('more-btns')
-        var moreBtns_li1 = $('<li></li>')
-        var moreBtns_li2 = $('<li></li>')
-        var moreBtns_li3 = $('<li></li>')
-        moreBtns.append(moreBtns_li1)
-        moreBtns.append(moreBtns_li2)
-        moreBtns.append(moreBtns_li3)
-        var stickTopA = $('<a></a>')
-        stickTopA.addClass('stickTop')
-        moreBtns_li1.append(stickTopA)
-        var stickImg = $('<img src="/images/sticktop-normal.png"/>')
-        var stickDes = $('<div>置顶</div>')
-        stickTopA.append(stickImg)
-        stickTopA.append(stickDes)
-        var deleteA = $('<a></a>')
-        deleteA.addClass('deleteHistory')
-        moreBtns_li2.append(deleteA)
-        var deleteImg = $('<img src="/images/delete-normal.png"/>')
-        var deleteDes = $('<div>删除</div>')
-        deleteA.append(deleteImg)
-        deleteA.append(deleteDes)
-        var unsellA = $('<a></a>')
-        unsellA.addClass('unsell')
-        moreBtns_li3.append(unsellA)
-        var unsellImg = $('<img src="/images/nosell-normal.png"/>')
-        var unsellDes = $('<div>下架</div>')
-        unsellA.append(unsellImg)
-        unsellA.append(unsellDes)
-
-        stickTopA.click(function () {
-            stickie(houseId)
-        })
-        unsellA.click(function () {
-            changeSellState(houseId,0)
-        })
-        deleteA.click(function () {
-            deleteHouse(houseId)
-        })
-
-        return moreBtns
     }
 
     //置顶房源
-    function stickie(houseId) {
+    function stick(houseId) {
         request(basicUrl + "house/stick",{
             token: getToken(),
             house_id: houseId
@@ -297,77 +247,21 @@ $(function () {
         })
     }
 
-
-    function handleSmallAAction() {
-        $('.edit').hover(function () {
-            var img = $(this).children('img')
-            img.attr('src','/images/edit-hover.png')
-        },function () {
-            var img = $('.edit').children('img')
-            img.attr('src','/images/edit-normal.png')
-        })
-
-        $('.more').hover(function () {
-            clearTimeout(moreBtnHoverTimer)
-            var img = $(this).children('img')
-            img.attr('src','/images/more-hover.png')
-            var moreBtns = $(this).parents('.top-info').parents('li').children('.more-btns')
-            moreBtns.css('visibility','visible')
-        },function () {
-            var img = $(this).children('img')
-            var moreBtns = $(this).parents('.top-info').parents('li').children('.more-btns')
-            moreBtnHoverTimer = setTimeout(function () {
-                img.attr('src','/images/more-normal.png')
-                moreBtns.css('visibility','hidden')
-            },10)
-        })
-
-        $('.more-btns').hover(function () {
-            clearTimeout(moreBtnHoverTimer)
-        },function () {
-            var moreBtns = $(this)
-            var img = $(this).parents('li').children('.top-info').children('.btn-container').children('li').children('.more').children('img')
-            moreBtnHoverTimer = setTimeout(function () {
-                moreBtns.css('visibility','hidden')
-                img.attr('src','/images/more-normal.png')
-            },10)
-        })
-    }
-
     function showMyCollection(houses) {
         var ul = $('<ul></ul>')
         ul.addClass('info-lst')
         ul.attr('id','collection-lst')
         $('#info-box').append(ul)
         for (var i=0; i<houses.length; i++) {
-            var house = houses[i]
+            var house = houses[i];
             var li = $('<li></li>')
             ul.append(li)
-            var topInfo = $('<div></div>')
-            topInfo.addClass('top-info')
-            li.append(topInfo)
-            var releaseDate = $('<div></div>')
-            releaseDate.text("发布日期:"+house.release_date);
-            releaseDate.addClass('release-date')
-            topInfo.append(releaseDate)
-            var optionsUl = $('<ul></ul>')
-            optionsUl.addClass('btn-container')
-            topInfo.append(optionsUl)
-            var deleteLi = $('<li></li>')
-            optionsUl.append(deleteLi)
-            var cancelCollectionA = $('<a href="javascript:">取消收藏</a>')
-            cancelCollectionA.addClass('cancel-collection')
-            deleteLi.append(cancelCollectionA)
-            var accusationLi = $('<li></li>');
-            optionsUl.append(accusationLi);
-            var accusationA = $('<a href="javascript:">举报</a>');
-            accusationA.addClass('accusation');
-            accusationLi.append(accusationA);
-            var houseDesc = $('<div></div>')
-            houseDesc.addClass('house-desc')
+
+            /*房源介绍*/
+            var houseDesc = $("<div class='house-desc'></div>")
             li.append(houseDesc)
-            var imgInfo = $('<div></div>')
-            imgInfo.addClass('img-info')
+            //图片
+            var imgInfo = $("<div class='img-info'></div>")
             houseDesc.append(imgInfo)
             var houseImgA = $('<a></a>')
             houseImgA.attr({
@@ -378,53 +272,125 @@ $(function () {
             var houseImg = $('<img/>')
             houseImg.attr('src',basicUrl+house.images[0])
             houseImgA.append(houseImg)
-            var textInfo = $('<div></div>')
-            textInfo.addClass('text-info')
-            houseDesc.append(textInfo)
-            var price = $('<div>2000元/月</div>')
-            price.text(house.price+'元/月')
-            textInfo.append(price)
-            var general = $('<div>合租|三室一厅主卧|25m²|朝南|29层|共33层</div>')
-            general.text(house.rent_mode+"|"+house.style+"|"+house.area+"m²"+"|"+house.orientation+"|"+house.floor+"|"+house.max_floor)
-            textInfo.append(general)
-            var address = $('<div>浦东新区三舒路181弄</div>')
-            address.text(house.address)
-            textInfo.append(address)
-            var deadline = $('<div>2017-09-13到期</div>')
-            deadline.text(house.deadline_date+"到期");
-            textInfo.append(deadline)
 
+            /*文本信息*/
+            var textInfo = $("<div class='text-info'></div>")
+            houseDesc.append(textInfo)
+            //标题
+            var title = house.title
+            if (title.length > 25) {
+                title = title.substr(0,25) + '...'
+            }
+            var oTitle = $("<div class='house-title'></div>")
+            oTitle.text(title)
+            textInfo.append(oTitle)
+            //地址
+            var address = house.district + '-' + house.address
+            var oAddress = $("<div class='house-address'></div>")
+            oAddress.text(address)
+            textInfo.append(oAddress)
+            /*标签*/
+            var oTags = $("<div class='tags'></div>");
+            textInfo.append(oTags)
+            //出租方式
+            var oRentMode = $("<div class='house-rentMode'></div>");
+            oRentMode.text(house.rent_mode)
+            oTags.append(oRentMode)
+            //房间结构(几室几厅)
+            if (house.style != null || house.style != '') {
+                var mainStyle = house.style.split('厅')[0] + '厅'
+                var oStyle = $("<div class='mainStyle'></div>");
+                oStyle.text(mainStyle)
+                oTags.append(oStyle)
+            }
+            //主卧或次卧
+            if (house.rent_mode == '合租') {
+                var secondStyle = house.style.slice(-2)
+                var oStyle = $("<div class='secondStyle'></div>");
+                oStyle.text(secondStyle)
+                oTags.append(oStyle)
+            }
+            //独立卫生间
+            if (house.facilities.indexOf('独立卫生间') > -1) {
+                var oToilet = $("<div class='toilet'></div>");
+                oToilet.text('独立卫生间')
+                oTags.append(oToilet)
+            }
+            //是否有转租优惠
+            if (house.benefit != null && house.benefit != '') {
+                var oBenefit = $("<div class='benefit'></div>");
+                oBenefit.text('转租优惠')
+                oTags.append(oBenefit)
+            }
+            //价格和到期日期、更新日期
+            var oPriceAndDeadlineBg = $("<div class='priceAndDeadlineBg'></div>")
+            textInfo.append(oPriceAndDeadlineBg)
+            //价格
+            var oPrice = $("<span class='house-price'></span>")
+            oPrice.text('¥' + house.price)
+            oPriceAndDeadlineBg.append(oPrice)
+            //到期
+            if (house.deadline_date != null && house.deadline_date != '') {
+                var oDeadline = $("<span class='house-deadline'></span>")
+                oDeadline.text('2017-09-09到期')
+                oPriceAndDeadlineBg.append(oDeadline)
+            }
+            //发布时间
+            var releaseDate = $("<span class='release-date'></span>")
+            releaseDate.text("最近更新 "+house.release_date);
+            houseDesc.append(releaseDate)
+
+            /*各个操作按钮*/
+            var oActions = $("<ul class='action-list'></ul>")
+            houseDesc.append(oActions)
+            //取消收藏
+            var oCancelCollection = $("<a href='javascript:' class='cancel-collection'>删除</a>")
+            oCancelCollection.click(function () {
+                cancelCollection(house.house_id)
+            })
+            var oCancelCollectionLi = $("<li></li>")
+            oCancelCollectionLi.append(oCancelCollection)
+            oActions.append(oCancelCollectionLi)
+            //举报
+            var oComplain = $("<a href='javascript:' class='accusation'>举报</a>")
+            oComplain.click(function () {
+
+            })
+            var oComplainLi = $("<li></li>")
+            oComplainLi.append(oComplain)
+            oActions.append(oComplainLi)
+
+            /*举报理由列表*/
             var accusationUl = $("<ul class='accusationList'></ul>");
-            accusationUl.css({
-                "list-style": "none",
-                "position": "absolute",
-                "top": "35px",
-                "right": "44px",
-                "padding": "6px 0",
-                "border-radius": "4px",
-                "visibility": "hidden",
-                "background-color": "black",
-                "box-sizing": "border-box",
-                'opacity': '.7',
-                'filter': 'alpha(opacity=70)',
-            });
-            var falseLi = $("<li style='line-height: 25px; font-size: 13px; padding: 0 6px; width: 106px;'></li>");
-            var falseA = $("<a href='javascript:' style='color: #cdcdcd;text-align: center; width: 100%; display: block;'>虚假房源</a>");
+            houseDesc.append(accusationUl)
+            var falseLi = $("<li></li>");
+            var falseA = $("<a href='javascript:'>虚假房源</a>");
             falseLi.append(falseA);
-            var agencyLi = $("<li style='line-height: 25px; font-size: 13px; padding: 0 6px;'></li>");
-            var agencyA = $("<a href='javascript:' style='color: #cdcdcd;text-align: center; width: 100%; display: block;'>中介房源</a>");
+            var agencyLi = $("<li></li>");
+            var agencyA = $("<a href='javascript:'>中介房源</a>");
             agencyLi.append(agencyA);
-            var infoErrorLi = $("<li style='line-height: 25px; font-size: 13px; padding: 0 6px;'></li>");
-            var infoErrorA = $("<a href='javascript:' style='color: #cdcdcd;text-align: center; width: 100%; display: block;'>房源信息不符实</a>");
+            var infoErrorLi = $("<li></li>");
+            var infoErrorA = $("<a href='javascript:'>房源信息不符实</a>");
             infoErrorLi.append(infoErrorA);
             ul.append(falseLi,agencyLi,infoErrorLi);
             accusationUl.append(falseLi,agencyLi,infoErrorLi);
-            li.append(accusationUl);
 
-            //取消收藏
-            cancelCollectionA.click(function () {
-                cancelCollection(house.house_id);
-            })
+            oComplain.hover(function () {
+                clearTimeout(accusationHoverTimer);
+                accusationUl.css("visibility","visible");
+            }, function () {
+                accusationHoverTimer = setTimeout(function () {
+                    accusationUl.css("visibility","hidden");
+                },30)
+            });
+
+            accusationUl.hover(function () {
+                clearTimeout(accusationHoverTimer);
+            },function () {
+                accusationHoverTimer = setTimeout(function () {
+                    accusationUl.css("visibility","hidden");
+                },30)
+            });
 
             falseA.click(function () {
                 accusate(house.house_id,$(this).text())
@@ -435,12 +401,7 @@ $(function () {
             infoErrorA.click(function () {
                 accusate(house.house_id,$(this).text())
             })
-
         }
-
-
-
-        handleAccusation();
     }
 
 
@@ -460,39 +421,6 @@ $(function () {
 
     //处理举报
     var accusationHoverTimer
-    function handleAccusation() {
-
-        $(".accusation").hover(function () {
-            clearTimeout(accusationHoverTimer);
-            var accusationList = $(this).parents('.top-info').parents('li').children('.accusationList');
-            accusationList.css("visibility","visible");
-        }, function () {
-            var accusationList = $(this).parents('.top-info').parents('li').children('.accusationList');
-            accusationHoverTimer = setTimeout(function () {
-                accusationList.css("visibility","hidden");
-            },30)
-        });
-
-        $(".accusationList").hover(function () {
-            clearTimeout(accusationHoverTimer);
-        },function () {
-            var accusationList = $(this);
-            accusationHoverTimer = setTimeout(function () {
-                accusationList.css("visibility","hidden");
-            },30)
-        });
-
-        $(".accusationList a").hover(function () {
-            $(this).css({
-                "color": "white"
-            })
-        },function () {
-            $(this).css({
-                "color": "#cdcdcd"
-            })
-        });
-    }
-
 
     function showBindPhone() {
         var outerDiv = $('<div id="bind-phone"></div>');

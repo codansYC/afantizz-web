@@ -1,0 +1,102 @@
+.header{
+    margin: 0 -15px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+.back button{
+    background-color: transparent;
+    border: none;
+}
+/*房源列表*/
+body,.container{
+    background-color: #edeff3;
+}
+.releaseList{
+    margin-top: 44px;
+}
+.releaseList>li{
+    border-bottom: thin solid #edeff3;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 10px 0;
+}
+.releaseList>li>.basicInfo>img{
+    width: 100px;
+    height: 75px;
+    cursor: pointer;
+}
+.releaseList>li .basicInfo .desc {
+    padding-left: 10px;
+    position: relative;
+}
+.releaseList>li .basicInfo .desc .house-title{
+    font-weight: bold;
+}
+.releaseList>li .basicInfo .desc .address{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.releaseList>li .basicInfo .desc .date{
+    color: #b3b3b3;
+    font-size: 11px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.releaseList>li .basicInfo .desc .tag{
+    font-size: 11px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0px 3px;
+    box-sizing: border-box;
+}
+.tag.sell{
+    color: #34c86c;
+    background-color: rgba(52, 200, 108, 0.21);
+}
+.tag.unsell{
+    color: rgb(131,131,131);
+    background-color: rgba(131,131,131,0.15);
+}
+.releaseList>li .basicInfo .desc .price{
+    color: red;
+    margin-top: 18px;
+}
+.releaseList>li .count{
+    border-top: thin solid #edeff3;
+    border-bottom: thin solid #edeff3;
+    padding: 5px 0;
+    margin-top: 5px;
+}
+.releaseList>li .count .collectionNum span:first-child,
+.releaseList>li .count .totalBrowseNum span:first-child,
+.releaseList>li .count .todayBrowseNum span:first-child
+{
+    font-size: 10px;
+    font-weight: 200;
+}
+.releaseList>li .count .collectionNum span:last-child,
+.releaseList>li .count .totalBrowseNum span:last-child,
+.releaseList>li .count .todayBrowseNum span:last-child
+{
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.actionBtns{
+    padding-top: 5px;
+}
+.actionBtns li{
+    float: right;
+    margin-left: 12px;
+}
+.actionBtns li button{
+    padding: 4px 14px;
+    font-size: 13px;
+    border-radius: 0px;
+}
+

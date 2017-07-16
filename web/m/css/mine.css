@@ -1,0 +1,63 @@
+body{
+    background-color: #edeff3;
+}
+.container{
+    background-color: #edeff3;
+    margin-bottom: 44px;
+}
+
+.imgBg{
+    background-image: url("http://afantizz.com/images/mineBg.jpg");
+    background-position: -300px -130px;
+    height: 220px;
+}
+.mainInfo{
+    position: relative;
+}
+.mainInfo .headIcon{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: -30px;
+    left: 0px;
+}
+.mainInfo .headIcon a{
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    display: block;
+
+}
+.mainInfo .headIcon a img{
+    height: 60px;
+}
+.mainInfo .number{
+    padding: 30px;
+    padding-bottom: 35px;
+}
+
+.whiteColorFullScreen{
+    margin: 0 -15px;
+    background-color: white;
+    padding: 0 15px;
+}
+.myRelease span:first-child,
+.myCollection span:first-child,
+.feedback span:first-child {
+    margin-right: 5px;
+    font-size: 17px;
+    font-weight: normal;
+}
+.myRelease a,
+.myCollection a,
+.feedback a {
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+}
+
+.cellHeight{
+    height: 44px;
+    line-height: 44px;
+}

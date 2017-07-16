@@ -1,0 +1,16 @@
+.footer{
+    height: 49px;
+    padding-top: 8px;
+    border-top: solid thin #edeff0;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 3px #e3e3e3;/*safari或chrome*/
+    -moz-box-shadow: 0px 0px 3px #e3e3e3;/*firefox*/
+    box-shadow:0px 0px 3px #e3e3e3;/*opera或ie9*/
+}
+.footer .title{
+    font-size: 11px;
+}
+.footer a:hover{
+    color: #777;
+    text-decoration: none;
+}

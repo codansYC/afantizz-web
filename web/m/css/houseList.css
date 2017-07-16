@@ -1,0 +1,65 @@
+/*房源列表*/
+.houseList>li{
+    border-bottom: thin solid #edeff3;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+.houseList>li>.mainInfo>img{
+    width: 100px;
+    height: 75px;
+    background-color: #edeff3;
+}
+.houseList>li .desc {
+    padding-left: 10px;
+    position: relative;
+}
+/*.houseList>li .desc .style{*/
+    /*font-weight: bold;*/
+/*}*/
+.houseList>li .desc .house-title{
+    font-weight: bold;
+}
+.houseList>li .desc .address{
+    font-size: 12px;
+    float: left;
+}
+.houseList>li .desc .rent-mode{
+    font-size: 10px;
+    float: right;
+    color: #337ab7;
+    background-color: rgba(51, 122, 183, 0.2);
+    padding: 0 2px;
+    box-sizing: border-box;
+}
+.houseList>li .desc .tags>span{
+    font-size: 11px;
+    /*border: thin solid sandybrown;*/
+    /*color: sandybrown;*/
+    padding: 0 2px;
+    box-sizing: border-box;
+    margin-right: 2px;
+    background-color: rgba(89, 97, 103, 0.2);
+}
+.houseList>li .desc .tags>span.benefit{
+    color: #34c86c;
+    background-color: rgba(52, 200, 108, 0.2);
+    /*border: thin solid #34c86c;*/
+}
+.houseList>li .desc .priceAndDate{
+    position: relative;
+}
+.houseList>li .desc .releaseTime{
+    color: #b3b3b3;
+    font-size: 11px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.houseList>li .desc .price{
+    color: #ec613e;
+}
+.houseList>li .traffic{
+    font-size: 11px;
+    color: #888b8a;
+    padding-top: 10px;
+}

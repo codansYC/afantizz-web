@@ -1,0 +1,61 @@
+.header{
+    margin: 0 -15px;
+    position: fixed;
+    width: 100%;
+}
+.back button{
+    background-color: transparent;
+    border: none;
+}
+/*房源列表*/
+.collectionList{
+    margin-top: 44px;
+}
+.collectionList>li{
+    border-bottom: thin solid #edeff3;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.collectionList>li>img{
+    width: 100px;
+    height: 75px;
+    cursor: pointer;
+}
+.collectionList>li .desc {
+    padding-left: 10px;
+    position: relative;
+}
+.collectionList>li .desc .house-title{
+    font-weight: bold;
+}
+.collectionList>li .desc .address{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.collectionList>li .desc .date{
+    color: #b3b3b3;
+    font-size: 11px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.collectionList>li .desc .price{
+    color: red;
+    margin-top: 15px;
+}
+.collectionList>li .desc .collection{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.collectionList>li .desc .collection a{
+    text-decoration: none;
+    text-align: center;
+}
+.collection a span{
+    font-size: 11px;
+    border: 1px solid #a94442;
+    padding: 0 3px;
+}
+

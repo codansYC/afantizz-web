@@ -11,4 +11,5 @@ namespace app\models;
 class Image {
     public $origin_url;
     public $thumb_url;
+    public $key = '';  //上传图片时的key
 }

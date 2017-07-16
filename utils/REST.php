@@ -875,7 +875,7 @@ function billRecords($date, $keywords) {
 	$result = $rest->billRecords ( $date, $keywords );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+        return;
 	}
 	if ($result->statusCode != 0) {
 		echo "error code :" . $result->statusCode . "<br>";
@@ -918,7 +918,7 @@ function callBack($from, $to, $customerSerNum, $fromSerNum, $promptTone) {
 	$result = $rest->callBack ( $from, $to, $customerSerNum, $fromSerNum, $promptTone );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 	if ($result->statusCode != 0) {
 		echo "error code :" . $result->statusCode . "<br>";
@@ -955,7 +955,7 @@ function createSubAccount($friendlyName) {
 	$result = $rest->CreateSubAccount ( $friendlyName );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 	if ($result->statusCode != 0) {
 		echo "error code :" . $result->statusCode . "<br/>";
@@ -997,7 +997,7 @@ function getSubAccounts($startNo, $offset) {
 	$result = $rest->getSubAccounts ( $startNo, $offset );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 	if ($result->statusCode != 0) {
 		echo "error code :" . $result->statusCode . "<br/>";
@@ -1044,7 +1044,7 @@ function ivrDial($number, $userdata, $record) {
 	$result = $rest->ivrDial ( $number, $userdata, $record );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 	if ($result->statusCode != 0) {
 		echo "error code :" . $result->statusCode . "<br>";
@@ -1088,7 +1088,7 @@ function landingCall($to, $mediaName, $mediaTxt, $displayNum, $playTimes, $respU
 	$result = $rest->landingCall ( $to, $mediaName, $mediaTxt, $displayNum, $playTimes, $respUrl );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 	if ($result->statusCode != 0) {
 		echo "error code :" . $result->statusCode . "<br>";
@@ -1120,7 +1120,7 @@ function queryAccountInfo() {
 	$result = $rest->queryAccountInfo ();
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 	if ($result->statusCode != 0) {
 		echo "error code :" . $result->statusCode . "<br>";
@@ -1160,7 +1160,7 @@ function querySubAccount($friendlyName) {
 	$result = $rest->querySubAccount ( $friendlyName );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 
 	if ($result->statusCode != 0) {
@@ -1239,7 +1239,7 @@ function voiceVerify($verifyCode, $playTimes, $to, $displayNum, $respUrl) {
 	$result = $rest->voiceVerify ( $verifyCode, $playTimes, $to, $displayNum, $respUrl );
 	if ($result == NULL) {
 		echo "result error!";
-		break;
+		return;
 	}
 
 	if ($result->statusCode != 0) {

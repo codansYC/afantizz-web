@@ -14,6 +14,11 @@ class BizConsts {
 	const APPLE_WHITELIST_PHONE = '15801569925';
 	
 	const API_KEY = 'B9E526DIAHC047FG1K8J3';
+
+    //验证码时间 (300s)
+    const CAPTCHA_LIFE = 300;
+    //默认图片
+    const DEFAULT_HOUSE_IMAGE = 'upload/defaultHouseImage.png';
 	
 	//分页数据量
 	const TEAM_COURSE_PAGE = 7;
@@ -32,7 +37,7 @@ class BizConsts {
 	const DEFAULT_DISTRICT = 310104;
 	
 	//数据库名
-	const DBNAME = 'liking';
+	const DBNAME = 'afantizz';
 	
 	const EMPTY_STR = "";
 	
@@ -57,7 +62,7 @@ class BizConsts {
 	const RAND_CHAR_NUM = 12;  //随机字符串个数
 	
 	//短信模板
-	const SMS_VERIFY_TEMPLATE = 95402;//登录验证码模板
+	const SMS_VERIFY_TEMPLATE = 185133;//登录验证码模板
 	const SMS_FETCH_FOOD_TEMPLATE = 97653; // [取餐时间,健身房名称,营养餐（写死),客服电话] 前30分钟通知领餐  1
 	const SMS_CANCEL_FOOD_TEMPLATE = 97655; // [营养餐（写死),订单号,客服电话]  取消营养餐
 	const SMS_COMPLETE_FOOD_TEMPLATE = 97656; // [营养餐（写死),订单号,客服电话]  确认领餐  1
@@ -643,6 +648,10 @@ class BizConsts {
     const House_Has_Collected_ERRMSG = "您已收藏过该房源";   //房源已收藏
     const House_UnCollected_ERRCODE = 10003;   //房源未收藏
     const House_UnCollected_ERRMSG = "您未收藏该房源";   //房源已收藏
+    const FEEDBACK_INPUT_ERRCODE = 10004;   //意见反馈提示输入内容
+    const FEEDBACK_INPUT_ERRMSG = "请填写反馈意见";   //意见反馈提示输入内容
+    const ABSENCE_COMPLAIN_REASON_ERRCODE = 10005;   //缺少举报理由
+    const ABSENCE_COMPLAIN_REASON_ERRMSG = "请选择举报理由或简要描述举报理由";
 
 }
 

@@ -100,5 +100,6 @@ class TokenService{
 		RedisUtil::setCache(self::REDIS_KEY.$token, json_encode($managerInfo), self::REDIS_TOKEN_EXPIRE);
 		return $managerInfo;
 	}
+
 	
 }

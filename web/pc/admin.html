@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阿凡提管理页</title>
+    <link rel="stylesheet" href="/pc/css/common.css" type="text/css">
+    <link rel="stylesheet" href="/pc/css/headerFooter.css">
+    <link rel="stylesheet" href="/pc/css/release.css" type="text/css">
+    <link rel="stylesheet" href="/pc/css/login.css" type="text/css">
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cbaec5d29d4bc79098e74433bc52cdb5"></script>
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/pc/js/common.js"></script>
+    <script src="/pc/js/login.js" type="text/javascript"></script>
+    <script src="/pc/js/admin.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="header">
+    <div class="header_wrap">
+        <div class="logo">
+            <div class="imgBg">
+                <img src="/images/logo.png" alt="">
+            </div>
+            <div class="textBg">
+                <span>阿凡提转租</span>
+            </div>
+        </div>
+        <div class="header_menu">
+            <ul id="header_menu_ul" class="header_menu_ul">
+                <li>
+                    <div class="header_menu_item">
+                        <a href="javascript:showLoginPage()" id="release-page-login">登录</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="header_menu_item">
+                        <a href="http://afantizz.com" id="look-resource">首页</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="release-box global_box">
+        <div class="title">发布转租房源</div>
+        <div class="publish-info">
+            <!--房间概况-->
+            <div class="house-general clearfix">
+                <p class="section-title">房间概况</p>
+                <div class="section-container">
+                    <div class="section-content rent-mode clearfix">
+                        <div class="small-title">
+                            <span class="need">*</span>
+                            <span class="">出租方式</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <ul class="rent-mode-list">
+                                <li>
+                                    <i id="rent-joint" class="check-ratio"></i>
+                                    <label for="rent-joint">合租</label>
+                                </li>
+                                <li>
+                                    <i id="rent-whole" class="check-ratio"></i>
+                                    <label for="rent-whole">整租</label>
+                                </li>
+                                <li>
+                                    <i id="rent-apartment" class="check-ratio"></i>
+                                    <label for="rent-apartment">公寓</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section-content location-info clearfix">
+                        <div class="small-title">
+                            <span class="need">*</span>
+                            <span class="">位置信息</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <select name="" id="district-select">
+                                <option value="pudong" selected="selected">浦东新区</option>
+                                <option value="xuhui">徐汇区</option>
+                                <option value="huangpu">黄浦区</option>
+                                <option value="jingan">静安区</option>
+                                <option value="minhang">闵行区</option>
+                                <option value="baoshan">宝山区</option>
+                                <option value="putuo">普陀区</option>
+                                <option value="yangpu">杨浦区</option>
+                                <option value="changning">长宁区</option>
+                                <option value="songjiang">松江区</option>
+                                <option value="jiading">嘉定区</option>
+                                <option value="jiabei">闸北区</option>
+                                <option value="hongkou">虹口区</option>
+                                <option value="qingpu">青浦区</option>
+                                <option value="fengxian">奉贤区</option>
+                                <option value="jingshan">金山区</option>
+                                <option value="congming">崇明区</option>
+                                <option value="shanghaizhoubian">上海周边</option>
+                            </select>
+                            <!--<div class="input-bg">-->
+                            <input id="address-detail" type="text" placeholder="请输入详细地址" required="required" oninvalid="this.setCustomValidity('请填写房间地址')">
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="">小区名称</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input type="text" id="village-field" placeholder="请输入小区名">
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="need">*</span>
+                            <span class="">房间户型</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <div class="input-bg">
+                                <input type="number" id="style-room" class="input-bg-inner" required="required" min="0">室
+                            </div>
+                            <div class="input-bg">
+                                <input type="number" id="style-hall" class="input-bg-inner" required="required" min="0">厅
+                            </div>
+                            <div class="input-bg">
+                                <input type="number" id="style-toilet" class="input-bg-inner" required="required" min="0" oninvalid="this.setCustomValidity('请填写户型')">卫
+                            </div>
+                            <select name="" id="room-style">
+                                <option value="room-main">主卧</option>
+                                <option value="room-second">次卧</option>
+                            </select>
+                            <div class="kitchen">
+                                <ul class="kitchen-list">
+                                    <li>
+                                        <i id="kitchen-common" class="check-ratio"></i>
+                                        <label for="kitchen-common">公共厨房</label>
+                                    </li>
+                                    <li>
+                                        <i id="kitchen-private" class="check-ratio"></i>
+                                        <label for="kitchen-private">独立厨房</label>
+                                    </li>
+                                    <li>
+                                        <i id="kitchen-absence" class="check-ratio"></i>
+                                        <label for="kitchen-absence">无厨房</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="">所在楼层</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <div class="input-bg">
+                                <input type="number" class="current_floor input-bg-inner" required="required"> 层&nbsp;&nbsp;/&nbsp;&nbsp;
+                                共
+                                <input type="number" class="max_floor input-bg-inner" required="required"> 层
+                            </div>
+                            <select name="" id="orientation">
+                                <option value="east">朝东</option>
+                                <option value="west">朝西</option>
+                                <option value="south">朝南</option>
+                                <option value="north">朝北</option>
+                                <option value="east-north">东北</option>
+                                <option value="west-north">西北</option>
+                                <option value="east-south">东南</option>
+                                <option value="west-south">西南</option>
+                                <option value="unknown">未知朝向</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="">房间面积</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <div class="input-bg">
+                                <input type="number" id="area-field" class="input-bg-inner" placeholder="请输入房间面积" value="0">平方米
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="need">*</span>
+                            <span class="">房间租金</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <div class="input-bg">
+                                <input type="number" id="price-field" class="input-bg-inner" required="required" min="0" placeholder="请输入房租">元/月
+                            </div>
+                            <select name="" id="pay-mode" class="pay-mode">
+                                <option value="yayifuyi">押一付一</option>
+                                <option value="yayifuer">押一付二</option>
+                                <option value="yayifusan">押一付三</option>
+                                <option value="yaerfuyi">押二付一</option>
+                                <option value="yaerfuer">押二付二</option>
+                                <option value="yaerfusan">押二付三</option>
+                                <option value="kemaintan">面议</option>
+                                <!--<option value="qita">其他</option>-->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="">入住日期</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input id="usable-date" type="date" value="" placeholder="请选择租客可入住日期" required="required"/>
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="">到期日期</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input id="deadline-date" type="date" value="" placeholder="请选择房间到期日期" required="required"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--房间设施-->
+            <div class="house-facilities clearfix">
+                <p class="section-title"><span class="need">*</span>房间设施</p>
+                <div class="section-container">
+                    <div class="checkbox">
+                        <i></i><label>床</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>衣柜</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>沙发</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>电视</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>冰箱</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>洗衣机</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>空调</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>热水器</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>宽带</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>暖气</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>可做饭</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>独立卫生间</label>
+                    </div>
+                    <div class="checkbox">
+                        <i></i><label>阳台</label>
+                    </div>
+                    <div class="select_all"><span>全选</span></div>
+                </div>
+            </div>
+            <!--描述信息-->
+            <div class="house-desc clearfix">
+                <p class="section-title">描述信息</p>
+                <div class="section-container">
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="need">*</span>
+                            <span class="">标题</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input type="text" id="house-title-field" placeholder="请输入标题名">
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="">转租优惠</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <div class="text-area-bg">
+                                <textarea id="benefit-field" placeholder="输入转租优惠,提高您的租房效率"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span class="">房间描述</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <div class="text-area-bg">
+                                <textarea id="desc-field" placeholder="详细描述您的房间"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--上传图片-->
+            <div class="house-images clearfix">
+                <p class="section-title">上传图片</p>
+                <div class="section-container">
+                    <div class="section-content">
+                        <div class="img-content">
+                            <ul id="img-container" class="clearfix"></ul>
+                        </div>
+                        <div class="localUpload_wrap">
+                            <div class="localTitle">上传电脑中图片</div>
+                            <div class="localUpload">
+                                <div id="imgUpload">
+                                    <div class="html5">
+                                        <input type="file" multiple="multiple" id="file_input" name="file" enctype="multipart/form-data">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--联系人信息-->
+            <div class="house-contact clearfix">
+                <p class="section-title">联系人信息</p>
+                <div class="section-container">
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span>联系人</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input type="text" id="owner-field">
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span>手机号</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input type="text" id="phone-field" placeholder="手机、微信、QQ至少填一项">
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span>微信号</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input type="text" id="wx-field" placeholder="手机、微信、QQ至少填一项">
+                        </div>
+                    </div>
+                    <div class="section-content clearfix">
+                        <div class="small-title">
+                            <span>QQ号</span>
+                        </div>
+                        <div class="section-sub-content">
+                            <input type="text" id="qq-field" placeholder="手机、微信、QQ至少填一项">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--发布时间-->
+            <div class="section-content clearfix">
+                <div class="small-title">
+                    <span class="need">*</span><span class="">发布时间</span>
+                </div>
+                <div class="section-sub-content">
+                    <input type="text" id="release-date" placeholder="2017-07-16 00:00:00">
+                </div>
+            </div>
+            <div class="release-action clearfix">
+                <div class="publish-content">
+                    <!--<input type="submit" value="确认发布" id="release">-->
+                    <a id="release" href="javascript:">确认发布</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--尾部-->
+<script>showFooter()</script>
+
+</body>
+</html>

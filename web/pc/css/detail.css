@@ -6,6 +6,16 @@
     height: 50px;
     position: static;
 }
+.header .logo img {
+    display: inline-block;
+    height: 34px;
+    margin-top: 8px;
+}
+.header .logo span {
+    display: inline-block;
+    line-height: 50px;
+}
+
 .header_wrap .header_menu .header_menu_item a {
     line-height: 50px;
 }
@@ -23,8 +33,8 @@
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
-}
 
+}
 
 .detail-content .other-info-box {
     padding-left: 10px;
@@ -69,15 +79,70 @@
 .detail-content .general .extra-bg>ul li  a:hover {
     background-color: #34b06c;
 }
-.detail-content .general .title {
+.title {
     font-weight: bolder;
     font-size: 21px;
     color: black;
     line-height: 50px;
 }
-.detail-content .general .date{
-    padding-top: 5px;
+.top-info{
+    position: relative;
+    height: 20px;
     font-size: 14px;
+}
+.address,.village{
+    float: left;
+    margin-right: 20px;
+}
+.date{
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #888b9a;
+}
+
+.key{
+    color: #888b9a;
+    padding-right: 15px;
+}
+.nearby-traffic .key,.nearby-traffic .key{
+    float: left;
+}
+.value{
+    color: #303030;
+    padding-right: 8px;
+}
+.value.traffic{
+    margin-left: 90px;
+    font-size: 15px;
+}
+.price,.usable-date-desc{
+    padding-right: 0px;
+}
+.price{
+    color: #ec613e;
+    font-size: 28px;
+    font-weight: bold;
+}
+.priceUnit{
+    color: #ec613e;
+}
+.pay-mode{
+    padding-left: 15px;
+}
+.usable-date-desc-extra{
+    color: #303030;
+    font-size: 12px;
+}
+.look-map{
+    color: #337ab7;
+    font-size: 13px;
+    padding-left: 30px;
+}
+.nearby-traffic .look-map{
+    padding-left: 15px;
 }
 
 .detail-content .general .house-resume-box {
@@ -193,91 +258,103 @@
 }
 
 .house-resume-box .house-desc .house-desc-info{
-    height: 350px;
+    height: 360px;
     padding-top: 10px;
     box-sizing: border-box;
 }
 
 .house-resume-box .house-desc .house-desc-info div{
-    height: 40px;
+    height: 30px;
     margin-bottom: 15px;
 }
 
 .house-resume-box .house-desc .house-desc-info span{
     display: inline-block;
-    line-height: 40px;
+    line-height: 30px;
 }
 
-.house-resume-box .house-desc .house-contact{
-    margin-top: 15px;
+.house-contact{
+    margin-top: 5px;
     height: 75px;
-    position: relative;
-}
-
-.house-contact .contact-phone {
-    position: absolute;
-}
-
-.house-contact .contact-phone ul {
-    list-style: none;
-
-}
-
-.house-contact .contact-phone li {
-    float: left;
-
-}
-
-.contact-phone li.phone-icon img {
-     width: 30px;
  }
-
-.contact-phone li.phone-no {
-    margin-left: 15px;
-    line-height: 30px;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.contact-phone li.phone-owner {
-    margin-left: 30px;
-    line-height: 30px;
-    font-size: 20px;
-}
-
-/*没有微信号*/
-.house-contact .contact-phone.no-wx {
-    top: 22.5px;
-}
-
-/*有微信号*/
-.house-contact .contact-phone.has-wx {
-    top: 0px;
-}
-
-.house-contact .contact-wx {
-    position: absolute;
-    bottom: 0px;
-}
-
-.house-contact .contact-wx ul {
-    list-style: none;
-}
-
-.house-contact .contact-wx li {
+.house-contact>div{
     float: left;
+    margin-right: 10px;
 }
-
-.contact-wx li.wx-icon img {
-    width: 30px;
+.house-contact .iconBg img {
+    height: 33.5px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 2px;
 }
-
-.contact-wx li.wx-no {
-    margin-left: 15px;
-    line-height: 30px;
-    font-size: 20px;
+.contact-phone{
+    width: 120px;
+    height: 75px;
 }
-
+.contact-phone .iconBg{
+    height: 37.5px;
+    background-color: rgba(83, 132, 237, 0.90);
+}
+.contact-phone .numberBg{
+    height: 37.5px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(83, 132, 237);
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+.contact-wx{
+    width: 120px;
+    height: 75px;
+}
+.contact-wx .iconBg{
+    height: 37.5px;
+    background-color: rgba(216, 81, 64, 0.9);
+}
+.contact-wx .numberBg{
+    height: 37.5px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(216, 81, 64);
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+.contact-qq{
+    width: 120px;
+    height: 75px;
+}
+.contact-qq .iconBg{
+    height: 37.5px;
+    background-color: rgba(241, 191, 66, 0.90);
+}
+.contact-qq .numberBg{
+    height: 37.5px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(241, 191, 66);
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+.contact-owner{
+    width: 80px;
+    height: 75px;
+}
+.contact-owner .iconBg{
+    height: 37.5px;
+    background-color: rgba(88, 166, 93, 0.9);
+}
+.contact-owner .numberBg{
+    height: 37.5px;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(88, 166, 93);
+    padding-top: 8px;
+    box-sizing: border-box;
+}
 .detail-content {
     display: none;
 }

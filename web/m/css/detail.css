@@ -1,0 +1,239 @@
+body{
+    background-color: #edeff3;
+}
+.container{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*轮播图*/
+#carousel{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#carousel .imgList{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+.imgList>img{
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+#carousel .numIndicator{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.numIndicator{
+
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.21);
+    color: white;
+    font-size: 12px;
+    padding: 2px 8px;
+}
+
+.numIndicator .currentIndex{
+    color: #34c86c;
+}
+#carousel .back{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    background-color: rgba(0, 0, 0, 0.21);
+    color: white;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+
+}
+#carousel .back a span{
+    color: white;
+    line-height: 30px;
+}
+.lookImgHint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+}
+.lookImgHint span{
+    background-color: rgba(0, 0, 0, 0.21);
+    padding: 2px 6px;
+    margin-top:8px;
+    display: inline-block;
+}
+
+.houseBg{
+    background-color: white;
+    padding: 0 15px;
+}
+
+/*标题及发布时间*/
+.titleInfo{
+
+}
+.titleInfo .collection{
+
+}
+.titleInfo .collection a{
+    height: 100%;
+    text-decoration: none;
+    /*width: 60px;*/
+}
+.titleInfo .collection a span{
+    text-align: center;
+    display: block;
+    color: #34c86c;
+    font-size: 13px;
+}
+.titleInfo .collection a span.glyphicon{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.tags{
+    height: 34px;
+    padding-top: 8px;
+}
+.tags>div,.tags>span{
+    float: left;
+    margin-right: 5px;
+    font-size: 11px;
+    line-height: 17px;
+    padding: 0 3px;
+    background-color: rgba(89, 97, 103, 0.2);
+}
+.tags .rent-mode{
+    color: #337ab7;
+    background-color: rgba(51, 122, 183, 0.2);
+}
+.tags .benefit{
+    color: #34c86c;
+    background-color: rgba(52, 200, 108, 0.2);
+}
+
+.releaseDate{
+
+}
+.releaseDate span{
+    color: #8b8b8b;
+    font-size: 10px;
+    font-weight: normal;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+/*房间概况*/
+.general {
+   font-size: 13px;
+}
+.general .row{
+    height: 25px;
+    margin-left: 0;
+    margin-right: 0;
+}
+.col-xs-6{
+    padding-left: 0;
+    padding-right: 0;
+}
+.general .key{
+    margin-right: 8px;
+}
+
+/*房间配套*/
+.facilities{
+    margin-top: 10px;
+    width: 100%;
+}
+.facilities ul li {
+    float: left;
+    /*margin-right: 5px;*/
+    margin-bottom: 10px;
+    width: 25%;
+    display: none;
+}
+.facilities ul li .okSign {
+    font-size: 11px;
+    font-weight: 100;
+}
+.facilities ul li .facility{
+    font-size: 12px;
+    padding-top: 5px;
+}
+.facility-image {
+    height: 28px;
+    margin: 0 auto;
+    display: block;
+}
+/*联系人以及举报*/
+
+.glyphicon-earphone, .glyphicon-envelope{
+    height: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 15px;
+    color: #34c86c;
+}
+.contact {
+    padding-top: 10px;
+}
+.phone,.weixin,.qq{
+    /*height: 40px;*/
+    padding-bottom: 10px;
+}
+.contact-accusation .weixin>img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+.contact-accusation .accusation{
+    margin-top: 10px;
+}
+.contact-accusation .accusation a{
+    text-decoration: none;
+}
+.contact-accusation .accusation a span{
+    text-align: center;
+    display: block;
+    font-size: 13px;
+}
+.contact-accusation .accusation a span.glyphicon{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+/*查看大图页面*/
+.bigCarousel{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.bigCarousel .bigImgList{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.hidden{
+    display: none;
+}
+.numIndicatorBg{
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+}
+.bigCarousel .numIndicatorBg .numIndicator{
+    position: relative;
+    margin: 0 auto;
+    width: 50px;
+}

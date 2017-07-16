@@ -17,8 +17,13 @@ use Yii;
 use yii\web\Controller;
 use app\utils\BizConsts;
 
+header("Access-Control-Allow-Origin: *"); # 跨域处理
+
 class HouseController extends BaseController {
 
+    /**
+     * 房源列表
+     */
     function actionList() {
         try {
 
@@ -29,16 +34,16 @@ class HouseController extends BaseController {
             $rentMode = $this->requestParam['rent_mode'];
             $sort = $this->requestParam['sort'];
             $page = $this->requestParam['page'];
-
             $houses = HouseService::getHouseList($district,$subway,$price,$style,$rentMode,$sort,$page);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$houses);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
         }
-
-
     }
 
+    /**
+     * 搜索房源
+     */
     function actionSearch() {
         try {
             $keyword = $this->requestParam['search_keyword'];
@@ -49,6 +54,9 @@ class HouseController extends BaseController {
         }
     }
 
+    /**
+     * 房源详情
+     */
     function actionDetail() {
         try {
             $hid = $this->requestParam['house_id'];
@@ -78,7 +86,9 @@ class HouseController extends BaseController {
     function actionModify() {
         try {
             $params = $this->requestParam;
+
             HouseService::validData($params);
+
             HouseService::modifyHouse($params);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);
@@ -159,6 +169,9 @@ class HouseController extends BaseController {
         }
     }
 
+    /**
+     * 举报房源
+     */
     function actionAccusation() {
         try {
             HouseService::complainHouse($this->requestParam);

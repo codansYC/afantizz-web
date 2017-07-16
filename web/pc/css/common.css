@@ -26,8 +26,8 @@ input{
 }
 /*某些种类的标签被选中时*/
 a.selected,button.selected,input[type="button"].selected {
-    color: white; !important;
-    background-color: #34c86c; !important;
+    color: white !important;
+    background-color: #34c86c !important;
 }
 .text_highlight {
     color: #34c86c; !important;

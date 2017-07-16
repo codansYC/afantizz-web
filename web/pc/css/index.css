@@ -9,6 +9,25 @@
     line-height: 80px;
 }
 
+.header .logo img {
+    display: inline-block;
+    height: 34px;
+    margin-top: 23px;
+}
+.header .logo span {
+    display: inline-block;
+    line-height: 80px;
+}
+
+.header .location {
+    width: 50px;
+    height: 100%;
+    float: left;
+    margin-left: 20px;
+    /*color: #cdcdcd;*/
+    font-size: 13px;
+}
+
 .header .header_wrap .header_menu {
     width: 320px;
 }
@@ -158,7 +177,6 @@
     position: relative;
     z-index: 999999;
 }
-
 .house-info .pic-panel img {
     width: 300px;
     height: 225px;
@@ -166,54 +184,72 @@
 }
 
 .house-info .house-intro {
-   
-    margin-top: 10px;
     padding-left: 10px;
-    padding-bottom: 5px;
+    /*padding-bottom: 5px;*/
     position: relative;
 }
 
 .house-info .house-intro div{
-    height: 30px;
+    height: 28px;
+    line-height: 28px;
 }
-.house-intro .price{
-    position: absolute;
-    right: 10px;
-    top: 0px;
+.price{
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*top: 0px;*/
     font-weight: bold;
     font-size: 20px;
     color: red;
 
 }
-.house-intro .expiration-time{
-    font-size: 14px;
+.release-time{
+    font-size: 12px;
     color: #b3b3b3;
+    position: absolute;
+    right: 10px;
+    top: 87px;
+}
+.traffic{
+    font-size: 12px;
+    color: #888b8a;
 }
 
-.house-intro .house-style{
-    color: cornflowerblue;
+.house-title{
+    /*color: cornflowerblue;*/
+    color: black;
+    font-weight: bold;
+    /*background-color: blue;*/
 }
+.house-address{
+    font-size: 14px;
+}
+.tags{
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+.tags>div{
 
-
-.house-intro .near-subway>div{
-    height: 25px;
-    line-height: 25px;
+    line-height: 20px;
     float: left;
-    margin-right: 10px;
-    padding: 0 5px;
-    border-radius: 2px;
+    margin-right: 8px;
+    font-size: 12px;
     background-color: #f1f1f1;
     color: #606060;
-    font-size: 14px;
+    height: 17px !important;
+    line-height: 17px !important;
+    padding: 0 3px;
 }
 
-
-.house-intro .benefit {
+.tags>div.house-rentMode{
+    background-color: rgba(51, 122, 183, 0.23);
+    color: #337ab7;
+}
+.benefit {
     position: absolute;
     right: 10px;
     top: 58px;
     padding: 2px 4px;
-    font-size: 13px;
+    font-size: 12px;
     color: #34c86c;
     border: thin solid #34c86c;
     box-sizing: border-box;
@@ -223,19 +259,19 @@
 .benefit-desc {
     display: none;
     background-color: #f1f1f1;
-    font-size: 14px;
     display: none;
     width: 100%;
     box-sizing: border-box;
 }
 
 .benefit-desc>p {
-    /*background-color: #f1f1f1;*/
     background-color: white;
     line-height: 20px;
     box-sizing: border-box;
     width: 300px;
     padding: 5px 10px 0px;
+    font-size: 13px;
+    color: #596167;
 }
 
 .house_wrap .look-more{

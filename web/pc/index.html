@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>【转租网】- 让转租更简单</title>
+    <title>阿凡提转租</title>
     <script src="common/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="pc/css/common.css" type="text/css">
     <link rel="stylesheet" href="pc/css/headerFooter.css" type="text/css">
@@ -17,7 +17,14 @@
 <!--头部-->
 <div class="header">
     <div class="header_wrap">
-        <div class="logo">阿凡提转租</div>
+        <div class="logo">
+            <div class="imgBg">
+                <img src="images/logo.png" alt="">
+            </div>
+            <div class="textBg">
+                <span>阿凡提转租</span>
+            </div>
+        </div>
         <div class="search">
             <a href="javascript:" id="search" class="green_bg_white_txt bcTransition">搜 索</a>
             <input value="" class="" name="keyword" placeholder="请输入区域、地址或地铁线路" id="keyword-box" maxlength="20">
@@ -26,7 +33,7 @@
             <ul id="header_menu_ul" class="header_menu_ul">
                 <li>
                     <div id="" class="header_menu_item">
-                        <a href="javascript:$().showLoginPage()" id="resource-page-login">登录</a>
+                        <a href="javascript:showLoginPage()" id="resource-page-login">登录</a>
                     </div>
                 </li>
                 <li>
@@ -157,13 +164,14 @@
             </ul>
         </div>
         <div class="house_wrap">
-            <ul id="house_list" class="house_list"></ul>
+            <ul id="house_list" class="house_list">
+
+            </ul>
             <div class="look-more">
                 <a href="javascript:" id="loadHouse" class="green_bg_white_txt bcTransition">点击查看更多房源</a>
             </div>
         </div>
     </div>
-
 </div>
 <!--尾部-->
 <script>showFooter()</script>

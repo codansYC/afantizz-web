@@ -300,6 +300,7 @@ class UtilHelper {
 	 */
 	public static function handleException($e) {
 		Logger::err($e->getMessage());
+        echo $e->__toString();
 		// DB异常
 		if ($e instanceof Exception) {
 			UtilHelper::echoResult ( BizConsts::DB_UNREACH_ERRCODE, BizConsts::DB_UNREACH_ERRMSG );
@@ -628,8 +629,10 @@ class UtilHelper {
 		}
 		// 检验是否有效验证码，必须是6位数字
 		if (! self::checkCaptcha ( $captcha )) {
+		    echo $captcha;
 			self::echoExitResult( BizConsts::INVALID_CAPTCHA_ERRCODE, BizConsts::INVALID_CAPTCHA_ERRMSG );
 		}
+		/*
 		// 检验验证码是否已过期
 		$validCaptcha = RedisUtil::getCache ( BizConsts::USER_LOGIN_VERIFY . $phone );
 		if (! $validCaptcha) {
@@ -639,6 +642,7 @@ class UtilHelper {
 		if ($captcha != $validCaptcha) {
 			self::echoExitResult( BizConsts::WRONG_CAPTCHA_ERRCODE, BizConsts::WRONG_CAPTCHA_ERRMSG );
 		}
+		*/
 	}
 	
 	/**

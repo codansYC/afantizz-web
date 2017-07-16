@@ -17,6 +17,9 @@ class House extends ActiveRecord {
         return 'house';
     }
 
+    //添加数据库之外的属性字段
+    public $collection_count = 0;  //关注量
+
     static function handleImages($house) {
         $images = array();
         if ($house["thumb_images"] && $house["thumb_images"] != '') {
@@ -39,8 +42,9 @@ class House extends ActiveRecord {
 
     static function getThumbImages($house) {
         $thumbImages = array();
-        if ($house["thumb_images"] && $house["thumb_images"] != '') {
-            $thumbImages = explode(';',$house["thumb_images"]);
+        $thumbImagesStr = $house["thumb_images"];
+        if ($thumbImagesStr != null && $thumbImagesStr != '') {
+            $thumbImages = explode(';',$thumbImagesStr);
         } else {
             $thumbImages = explode(';',$house["images"]);
         }

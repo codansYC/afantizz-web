@@ -2,6 +2,8 @@
  * Created by lekuai on 17/1/9.
  */
 
+var house
+
 $(function () {
 
     handleLoginState();
@@ -20,7 +22,9 @@ $(function () {
         request(basicUrl + "house/detail",params,function (resp) {
             $('.detail-content').css('display','block')
             $('.footer').css('display','block')
-            loadHouseDetailInfo(resp);
+            house = resp
+            loadHouseDetailInfo(house);
+
         })
     }
 
@@ -28,8 +32,19 @@ $(function () {
     var thumbImages = new Array()
     //展示房源详情
     function loadHouseDetailInfo(house) {
-        $('.title').text(house.rent_mode+"|"+house.address+house.style);
-        $('.date').text('发布时间:'+house.release_date);
+        //标题
+        var title = house.title
+        // '转租芦恒路三室一厅主卧,精装修,近地铁站'
+        $('.title').text(title);
+        //地址
+        $('.address').text(house.district + '-' + house.address)
+        //小区
+        if (house.village != null && house.village != '' && house.village != '未知') {
+            $('.village').text(house.village)
+        }
+
+        $('.date').text('最后更新 '+house.release_date);
+        //图片
         var bigImgUl = $('#big-img-ul');
         var smallImgUl = $('#small-img-ul');
         var originImgBg = $('#zz-images .images-content');
@@ -51,15 +66,95 @@ $(function () {
             originImg.attr('src',imageUrl+originImages[i]);
             originImgBg.append(originImg);
         }
-        $('.price').text(house.price+'元/月');
-        $('.style').text(house.rent_mode+'|'+house.style);
-        $('#house-address-desc').text(house.address);
-        $('.village').text("未知");
-        $('.usable-date-desc').text(house.usable_date);
-        $('.deadline-date-desc').text(house.deadline_date);
-        $('.phone-no a').text(house.phone);
-        $('.phone-owner span').text(house.contact);
-        $('.wx-no span').text(house.wx);
+        //租金
+        if (house.price > 0) {
+            $('.price').text(house.price);
+        } else {
+            $('.price').text("面议");
+        }
+        //付款方式
+        var payMode = house.pay_mode
+        if (payMode.indexOf('押') < 0) {
+            payMode = '付款方式'+ payMode
+        }
+        $('.pay-mode').text(payMode)
+        //出租方式
+        $('.rent-mode-desc').text(house.rent_mode)
+        if (house.rent_mode == '合租') {
+            var roomType = house.style.slice(-2)
+            $('.room-type').text(roomType)
+        }
+        //房间户型
+        var mainStyle = '房间户型未知'
+        if (house.style.indexOf('厅') > -1) {
+            mainStyle = house.style.split('厅')[0] + '厅'
+        }
+        $('.mainStyle').text(mainStyle)
+        //面积
+        if (house.area > 0) {
+            $('.area').text(house.area+'m²')
+        } else {
+            $('.area').css('display','none')
+        }
+        //卫生间情况
+        if (house.facilities.indexOf('独立卫生间') > -1){
+            $('.toilet').text('独立卫生间')
+        } else {
+            $('.toilet').css('display','none')
+        }
+        //厨房情况
+        if (house.facilities.indexOf('可做饭') > -1) {
+            $('.kitchen').text('可做饭')
+        } else {
+            $('.kitchen').css('display','none')
+        }
+        //楼层
+        if (house.floor == null || house.floor == '') {
+            $('.floor').text('未知楼层')
+        } else {
+            if (house.max_floor == null || house.max_floor == '') {
+                $('.floor').text('第' + house.floor + '层')
+            } else {
+                $('.floor').text('第' + house.floor + '层' + '/' + '共' + house.max_floor + '层')
+            }
+        }
+        //朝向
+        $('.orientation').text(house.orientation)
+        //入住
+        $('.usable-date-desc').text(house.usable_date)
+        //到期
+        var deadlineDate = house.deadline_date
+        if (deadlineDate == null || deadlineDate == '') {
+            deadlineDate = '请咨询联系人'
+        }
+        $('.deadline-date-desc').text(deadlineDate)
+        //交通
+        $('.traffic').text(house.traffic)
+        $('.traffic').append($("<a href='javascript:lookMap()' class='look-map' style='margin-left: 20px'>查看地图</a>"))
+        //电话
+        if (house.phone == null || house.phone == '') {
+            $('.contact-phone').css('display','none')
+        } else {
+            $('.contact-phone .numberBg').text(house.phone)
+        }
+        //微信
+        if (house.wx == null || house.wx == '') {
+            $('.contact-wx').css('display','none')
+        } else {
+            $('.contact-wx .numberBg').text(house.wx)
+        }
+        //QQ
+        if (house.qq == null || house.qq == '') {
+            $('.contact-qq').css('display','none')
+        } else {
+            $('.contact-qq .numberBg').text(house.qq)
+        }
+        //联系人
+        if (house.contact == null || house.contact == '') {
+            $('.contact-owner').css('display','none')
+        } else {
+            $('.contact-owner .numberBg').text(house.contact)
+        }
 
         var otherInfoMenu = $('#other-info-menu');
         var menuItemsUl = $('#menu-items-container .menu-items');
@@ -73,8 +168,10 @@ $(function () {
         }
         var facilityLi = $("<li id='menu-facility'><a href='javascript:'>房间配置</a></li>");
         otherInfoMenu.append(facilityLi);
-        var imagesLi = $("<li id='menu-images'><a href='javascript:'>房间图片</a></li>");
-        otherInfoMenu.append(imagesLi);
+        if (house.images.length > 0) {
+            var imagesLi = $("<li id='menu-images'><a href='javascript:'>房间图片</a></li>");
+            otherInfoMenu.append(imagesLi);
+        }
         var mapLi = $("<li id='menu-map'><a href='javascript:'>附近设施</a></li>");
         otherInfoMenu.append(mapLi);
 
@@ -94,22 +191,7 @@ $(function () {
             menuItemsUl.prepend(benefitDescLi);
         }
 
-        if (house.wx == "" || house.wx == 'undefined') {
-            $('.house-contact .contact-phone').addClass('no-wx');
-            $('.house_contact .contact-wx').css('display','none');
-        } else {
-            $('.house-contact .contact-phone').addClass('has-wx');
-            var iconLi = $("<li class='wx-icon'><img src='/images/weixin.png' alt=''></li>");
-            $('.house-contact .contact-wx ul').append(iconLi);
-            var wxNoLi = $("<li class='wx-no'></li>");
-            var wxNo = $("<span></span>");
-            wxNo.text(house.wx);
-            wxNoLi.append(wxNo);
-            $('.house_contact .contact-wx').append(wxNoLi);
-        }
-
         // 房间设施
-
         var facilities = house.facilities.split(";");
         for (var i=0; i<facilities.length; i++) {
             $('#zz-facility ul li p').each(function () {
@@ -117,6 +199,11 @@ $(function () {
                     $(this).parent().css('display','block');
                 }
             })
+        }
+
+        //图片
+        if (house.images.length == 0) {
+            $("#zz-images").remove()
         }
 
 
@@ -141,14 +228,151 @@ $(function () {
         handleEvents();
 
     }
+    /*
+    function loadHouseDetailInfo(house) {
+        var title = '转租芦恒路三室一厅主卧,精装修,近地铁站'
+        $('.title').text(title);
+        $('.date').text('发布时间 '+house.release_date);
+        var bigImgUl = $('#big-img-ul');
+        var smallImgUl = $('#small-img-ul');
+        var originImgBg = $('#zz-images .images-content');
+        for (var i = 0; i < house.images.length; i++) {
+            var image = house.images[i];
+            originImages[i] = image.origin_url
+            thumbImages[i] = image.thumb_url;
+        }
+        for (var i=0; i<thumbImages.length; i++) {
+            var bigImg = $('<img/>');
+            bigImg.attr('src',imageUrl+originImages[i]);
+            var bigLi = $('<li></li>').append(bigImg);
+            bigImgUl.append(bigLi);
+            var smallImg = $('<img/>');
+            smallImg.attr('src',imageUrl+thumbImages[i]);
+            var smallLi = $('<li></li>').append(smallImg);
+            smallImgUl.append(smallLi);
+            var originImg = $('<img/>');
+            originImg.attr('src',imageUrl+originImages[i]);
+            originImgBg.append(originImg);
+        }
+        if (house.price > 0) {
+            $('.price').text(house.price+'元/月');
+        } else {
+            $('.price').text("面议");
+        }
+        $('.style').text(house.rent_mode+'|'+house.style);
+        $('#house-address-desc').text(house.address);
+        var village = house.village
+        if (village == '' || village == null) {
+            village = '未知'
+        }
+        $('.village').text(village);
+        $('.usable-date-desc').text(house.usable_date);
+        var deadlineDate = house.deadline_date
+        if (deadlineDate == '' || deadlineDate == null) {
+            deadlineDate = '未知'
+        }
+        $('.deadline-date-desc').text(deadlineDate);
 
+        var otherInfoMenu = $('#other-info-menu');
+        var menuItemsUl = $('#menu-items-container .menu-items');
+        if (house.benefit != "" && house.benefit != 'undefined') {
+            var benefitLi = $("<li id='menu-benefit'><a href='javascript:' class='selected'>转租优惠</a></li>");
+            otherInfoMenu.append(benefitLi);
+        }
+        if (house.house_desc != "" && house.house_desc != 'undefined') {
+            var houseDescLi = $("<li id='menu-desc'><a href='javascript:'>房源描述</a></li>");
+            otherInfoMenu.append(houseDescLi);
+        }
+        var facilityLi = $("<li id='menu-facility'><a href='javascript:'>房间配置</a></li>");
+        otherInfoMenu.append(facilityLi);
+        if (house.images.length > 0) {
+            var imagesLi = $("<li id='menu-images'><a href='javascript:'>房间图片</a></li>");
+            otherInfoMenu.append(imagesLi);
+        }
+        var mapLi = $("<li id='menu-map'><a href='javascript:'>附近设施</a></li>");
+        otherInfoMenu.append(mapLi);
+
+        if (house.house_desc != "" && house.house_desc != 'undefined') {
+            var houseDescLi = $("<li id='zz-desc'><div class='desc-title'>房源描述</div><div class='zz-line'></div>");
+            var houseDescDiv = $("<div class='desc-content'></div>");
+            houseDescLi.append(houseDescDiv);
+            houseDescDiv.text(house.house_desc);
+            menuItemsUl.prepend(houseDescLi);
+        }
+
+        if (house.benefit != "" && house.benefit != 'undefined') {
+            var benefitDescLi = $("<li id='zz-benefit'><div class='benefit-title'>转租优惠</div><div class='zz-line'></div>");
+            var benefitDescDiv = $("<div class='benefit-content'></div>");
+            benefitDescLi.append(benefitDescDiv);
+            benefitDescDiv.text(house.benefit);
+            menuItemsUl.prepend(benefitDescLi);
+        }
+
+        $('.phone-no a').text(house.phone);
+        $('.phone-owner span').text(house.contact);
+        $('.wx-no span').text(house.wx);
+        $('.qq-no span').text(house.qq)
+        if (house.phone == null || house.phone == '') {
+            $(".phone-icon,.phone-no").css('display','none')
+        }
+        if (house.contact == null || house.contact == '') {
+            $(".phone-owner").css('display','none')
+        }
+        if ((house.phone == null || house.phone == '') && (house.contact == null || house.contact == '')) {
+            $(".contact-phone").css('display','none')
+        }
+        if (house.wx == null || house.wx == '') {
+            $(".contact-wx").css('display','none')
+        }
+        if (house.qq == null || house.qq == '') {
+            $(".contact-qq").css('display','none')
+        }
+        // 房间设施
+
+        var facilities = house.facilities.split(";");
+        for (var i=0; i<facilities.length; i++) {
+            $('#zz-facility ul li p').each(function () {
+                if ($(this).text() == facilities[i]) {
+                    $(this).parent().css('display','block');
+                }
+            })
+        }
+
+        //图片
+        if (house.images.length == 0) {
+            $("#zz-images").remove()
+        }
+
+
+        var collection = $("#collection");
+        //是否关注
+        if (house.isCollection) {
+            collection.text("取消关注");
+            collection.css({
+                "background-color":"#E0E0E0",
+                "color":"#A8A8A8",
+                "visibility":"visible"
+            })
+        } else {
+            collection.text("关注");
+            collection.css({
+                "background-color":"#34c86c",
+                "color":"white",
+                "visibility":"visible"
+            })
+        }
+
+        handleEvents();
+
+    }
+    */
     //处理交互事件
     function handleEvents() {
         handleImagesChange();
         handleOtherInfoMenuEvent();
         handleNavEvent();
         handleMapEvent();
-        startLocating();
+        startLocating(house.address);
     }
 
     //处理图片切换的逻辑
@@ -442,7 +666,7 @@ $(function () {
         var that = $(this);
         var isLogin = getToken() != ""
         if (!isLogin) {
-            $().showLoginPage();
+            showLoginPage();
             return
         }
 
@@ -512,7 +736,6 @@ function handleNavEvent() {
         moduleList.push($(this).attr("id"));
     });
 
-
     adjustNavPosition();
     //监测页面滚动
     $(window).scroll(function(event){
@@ -537,7 +760,7 @@ function handleNavEvent() {
         }
 
         $.each(moduleList, function(index, node){
-            if($(document).scrollTop() >= ($("#"+node).position().top - navHeight)){
+            if($(document).scrollTop() >= ($("#"+node).position().top - navHeight - 5)){
                 $("#other-info-menu li a.selected").removeClass("selected");
                 $("#other-info-menu li a").eq(index).addClass("selected");
             }
@@ -548,24 +771,31 @@ function handleNavEvent() {
         menuUl.find("a.selected").removeClass("selected");
         $(this).addClass("selected");
         var index = menuUl.find("a").index($(this));
-        var extra = menuContiner.css("position") == "static" ? 50 : 0
+        var extra = menuContiner.css("position") == "static" ? 45 : 0
         $(window).scrollTop($("#"+moduleList[index]).position().top - navHeight - extra);
     });
 
     menuUl.find("a").eq(0).addClass("selected");
-
 }
 
 //关注或者取消关注
 //if collction == 1 关注 else 取消关注
 function reportCollectionState(collection,success) {
-    var url = collection == 1 ? basicUrl + "house/collection" : "house/cancel-collection"
-    request(url,{
+    var url = collection == 1 ? "house/collection" : "house/cancel-collection"
+    request(basicUrl + url,{
         token: getToken(),
         house_id: parseInt(getParams("house_id")),
     },function (resp) {
         success(true);
     })
+}
+
+//查看地图
+function lookMap() {
+    var menuContiner = $("#other-info-menu-container");
+    var navHeight = menuContiner.outerHeight();
+    var extra = menuContiner.css("position") == "static" ? 45 : 0
+    $(window).scrollTop($('#zz-map').position().top - navHeight - extra);
 }
 
 

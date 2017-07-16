@@ -23,14 +23,13 @@
 
 #login-container .panel_login {
     width: 360px;
-    height: 500px;
-    /*background-color: #f3f3f3;*/
+    height: 530px;
     background-color: white;
     position: fixed;
     left: 50%;
     top: 50%;
     margin-left: -80px;
-    margin-top: -205px;
+    margin-top: -265px;
     box-shadow: 1px 3px 14px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 3px 14px rgba(0,0,0,0.3);
     -webkit-box-shadow: 1px 3px 14px rgba(0,0,0,0.3);
@@ -54,79 +53,99 @@
 }
 
 #login-container .panel_login .panel_info {
-    margin: 30px auto;
+    margin: 20px auto;
     width: 90%;
 }
 
 #login-container .panel_login .panel_info ul {
     list-style: none;
     height: 100%;
-    padding: 80px 30px 0;
+    padding: 50px 30px 0;
     box-sizing: border-box;
 }
 
-#login-container .panel_login .panel_info ul li input {
+.panel_login .panel_info ul li input {
     line-height: 35px;
     border-style: none;
     background-color: white;
     font-size: 15px;
 }
 
-#login-container .panel_login .panel_info ul .panel_phone,.panel_code {
+#login-container .panel_login .panel_info ul .panel_phone,.panel_code, .panel_imageCode {
     height: 35px;
     border-bottom: 1px solid rgba(154, 154, 154, 0.45);
 }
 
-#login-container .panel_login .panel_info ul li.panel_phone input#login_phone_tf {
+#login_phone_tf {
     float: left;
     padding-left: 10px;
     width: 170px;
 }
 
-#login-container .panel_login .panel_info ul li.panel_phone input#login_getCode_btn {
+#login_getCode_btn {
     background-color: transparent;
     border-style: none;
     float: right;
     color: #a9a9a9;
 }
 
-#login-container .panel_login .panel_info ul li.panel_phone input#login_getCode_btn.phoneValid {
+#login_getCode_btn.phoneValid {
     color: #34c86c;
 }
 
-#login-container .panel_login .panel_info ul li.panel_code {
-    margin-top: 30px;
+.panel_code,.panel_phone {
+    margin-top: 20px;
 }
 
-#login-container .panel_login .panel_info ul li.panel_code input#login_code_tf {
+#login_code_tf {
     width: 100%;
     padding-left: 10px;
     box-sizing: border-box;
 }
+#login_imageCode_tf {
+    padding-left: 10px;
+    width: 80px;
+    display: inline-block;
+}
+.imageCodeBg {
+    float: right;
+    height: 34px;
+}
+#changeImg{
+    color: #596167;
+    font-size: 12px;
+    line-height: 34px;
+    display: inline-block;
+    box-sizing: border-box;
+    display: block;
+    float: right;
+    margin-left: 5px;
+}
 
-#login-container .panel_login .panel_info ul li.panel_action {
+li.panel_action {
     margin-top: 50px;
 }
 
-#login-container .panel_login .panel_info ul li.panel_action #login_btn {
+#login_btn {
     background-color: #34c86c;
     color: white;
     width: 100%;
     font-size: 19px;
     border-radius: 4px;
+    display: block;
 }
 
-#login-container .panel_login .panel_info ul li.panel_otherLogin {
+li.panel_otherLogin {
     margin-top: 50px;
 }
 
-#login-container .panel_login .panel_info ul li.panel_otherLogin .otherLoginTitle {
+.otherLoginTitle {
     text-align: center;
     line-height: 35px;
     color: #9a9a9a;
 }
 
-#login-container .panel_login .panel_info ul li.panel_otherLogin .wxLogin {
+.wxLogin {
     margin-top: 30px;
     padding-left: 102px;
 }

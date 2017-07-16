@@ -1,0 +1,163 @@
+.sort {
+    padding-right: 10px;
+    font-size: 14px;
+    height: 21px;
+}
+.sort button{
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    text-align: right;
+}
+.sort button span{
+    font-weight: 300;
+    font-size: 14px;
+}
+#slideMask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 44px;
+    left: 0;
+    background-color: black;
+    opacity: .0;
+    filter: alpha(opacity=0);
+    display: none;
+    z-index: 999;
+}
+#slide{
+    width: 0;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 44px;
+    right: 0;
+    display: none;
+    z-index: 999;
+    padding-top: 20px;
+}
+.sortList{
+    text-align: center;
+    width: 100%;
+}
+.sortList li{
+    height: 40px;
+    line-height: 45px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.search{
+    padding: 10px 10px;
+}
+.search>input{
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    border-radius: 4px;
+    outline: none;
+    background-color: white;
+    border-color: rgba(51, 51, 51, 0.14);
+    color: #a6a6a6;
+}
+/*遮盖*/
+#mask{
+    width: 100%;
+    height: 10086px;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    z-index: 998;
+}
+/*过滤*/
+.filterBg{
+
+}
+.filterCondition{
+    border-bottom: thin solid #edeff3;
+}
+.area-zone,.rent-price,.room-type,.subway{
+    width: 25%;
+    height: 43px;
+    line-height: 43px;
+    background-color: #fff;
+    border-right: thin solid #edeff3;
+    overflow: hidden;
+}
+.caret{
+    color: #a6a6a6;
+}
+.caretUp{
+    transform: rotate(180deg);
+}
+.caret
+{
+    transition: transform 0.15s;
+    -moz-transition: -moz-transform 0.15s;
+    -webkit-transition: -webkit-transform 0.15s;
+    -o-transition: -o-transform 0.15s;
+}
+.filterCommon{
+    position: absolute;
+    top: 44px;
+    z-index: 1000;
+    width: 100%;
+    overflow: visible;
+}
+
+/*可供筛选的内容*/
+.filterBox{
+    z-index: 999999;
+    width: 100%;
+    display: none;
+    line-height: 40px;
+}
+.areaList{
+    
+}
+.areaList li {
+    float: left;
+    width: 20%;
+}
+
+.filterShadow{
+    background-color: black;
+    opacity: .1;
+    filter: alpha(opacity=10);
+    height: 1000px;
+}
+
+.areaList,.priceList,.subwayList,.styleList{
+    background-color: white;
+    width: 100%;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.styleList>ul{
+    float: left;
+    list-style: none;
+    width: 50%;
+}
+.styleGroupList span.glyphicon{
+    font-size: 10px;
+    color: #a6a6a6;
+    margin-left: 10px;
+    font-weight: 100;
+}
+.styleEntiretyList{
+    display: none;
+    border-left: solid 1px #edeff3;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+

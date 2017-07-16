@@ -15,7 +15,7 @@ class Accusation extends ActiveRecord
 {
     public static function tableName()
     {
-        return "accusation";
+        return 'accusation';
     }
 
 }
