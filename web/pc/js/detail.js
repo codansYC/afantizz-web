@@ -130,7 +130,11 @@ $(function () {
         $('.deadline-date-desc').text(deadlineDate)
         //交通
         $('.traffic').text(house.traffic)
-        $('.traffic').append($("<a href='javascript:lookMap()' class='look-map' style='margin-left: 20px'>查看地图</a>"))
+        var lookMapA = $("<a href='javascript:lookMap()' class='look-map'>查看地图</a>"
+        $('.traffic').append(lookMapA)
+        if (house.traffic != null && house.traffic != '') {
+            lookMapA.css('margin-left','20px')
+        }
         //电话
         if (house.phone == null || house.phone == '') {
             $('.contact-phone').css('display','none')
