@@ -415,7 +415,9 @@ $(function () {
             }
             address.text(addressDesc)
             var rentMode = $("<div class='rent-mode'></div>")
-            rentMode.text(house.rent_mode)
+            var rentModeDesc = $("<span class='rent-mode-span'></span>")
+            rentModeDesc.text(house.rent_mode)
+            rentMode.append(rentModeDesc)
             addressAndRentMode.append(rentMode)
             var tags = $("<div class='tags'></div>")
             desc.append(tags)
