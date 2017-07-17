@@ -35,11 +35,14 @@ function handleEvents() {
     $('.rent-mode-list li').click(function () {
         $('.rent-mode-list .check-ratio').removeClass('checked')
         $(this).children('.check-ratio').addClass('checked')
-        //户型的主次卧的显隐控制
-        if ($(this).index() == 0) {
+        //户型的主次卧的显隐控制 以及 厨房类型的切换
+        $('.kitchen-list .check-ratio').removeClass('checked')
+        if ($(this).index() == 0) { //合租
             $('#room-style').css('display','inline-block')
-        } else {
+            $('#kitchen-common').addClass('checked')
+        } else { //整租或公寓
             $('#room-style').css('display','none')
+            $('#kitchen-private').addClass('checked')
         }
         //调整标题
         adjustTitle()
