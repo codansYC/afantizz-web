@@ -188,13 +188,23 @@ function handleSubways(pois) {
     subways = subwayArr.join(';')
     return subways
 }
+
 //处理交通
 function handleTraffic(pois) {
+
     var trafficArr = new Array();
     for (var i = 0; i < pois.length; i++) {
         var subwayLine = pois[i].address.replace(';','、')
-        var desc = '距离' + subwayLine + pois[i].name + pois[i].distance+'米'
-        trafficArr.push(desc)
+        var canPush = true
+        for (var j = 0; j < trafficArr.length; j++) {
+            if (trafficArr[j].indexOf(subwayLine) > -1) {
+                canPush = false
+            }
+        }
+        if (canPush) {
+            var desc = '距离' + subwayLine + pois[i].name + pois[i].distance+'米'
+            trafficArr.push(desc)
+        }
     }
     traffic = trafficArr.join(';')
     return traffic
