@@ -3,24 +3,7 @@
  */
 $(function () {
 
-    var isLogin = getToken() != "" && getToken() != null;
-    //根据登录态显示header
 
-    if (isLogin) {
-        var logoutLi = $("<li><div class='header_menu_item'><a href='javascript:' id='resource-page-logout'>退出登录</a></div></li>");
-        var memberLi = $("<li><div class='header_menu_item'><a href='/pc/member.html' id='to-memberCenter'>个人中心</a></div></li>");
-        $("#header_menu_ul").prepend(logoutLi,memberLi);
-        var loginLi = $("#release-page-login");
-        loginLi.remove();
-        $('#resource-page-logout').click(function () {
-            logout(function (flag) {
-                location.reload()
-            })
-        })
-
-        //获取用户信息
-        getUserInfo();
-    }
 
     //页面逻辑处理
     handleEvents()

@@ -13,7 +13,6 @@ use app\utils\BizConsts;
 use app\utils\GlobalAction;
 use app\models\House;
 
-
 class AdminController extends BaseController
 {
     public function actionAdmin()
