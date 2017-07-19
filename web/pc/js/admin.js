@@ -282,11 +282,6 @@ $(function () {
 
     $("#release").click(function () {
 
-        //如果未登录,先登录
-        if (getToken() == "") {
-            showLoginPage();
-            return;
-        }
         var address = $("#district-select option:selected").text() + $('#address-detail').val()
         searchSubway(address); //找到地铁线路后,发起发布房源的请求
     })
