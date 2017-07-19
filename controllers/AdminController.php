@@ -168,6 +168,7 @@ class AdminController extends BaseController
         $house->phone = $data['phone'];
         $house->wx = $data['wx'];
         $house->orientation = $data['orientation'];
+        echo $data['traffic'];exit();
         $house->traffic = $data['traffic'];
         $house->subways = isset($data['subways']) ? $data['subways'] : "";
         $house->sell_state = '在架';
