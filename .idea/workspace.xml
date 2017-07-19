@@ -108,8 +108,8 @@
       <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="170" column="37" selection-start-line="170" selection-start-column="37" selection-end-line="170" selection-end-column="37" />
+            <state relative-caret-position="276">
+              <caret line="169" column="51" selection-start-line="169" selection-start-column="51" selection-end-line="169" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -530,7 +530,7 @@
       <workItem from="1499071017798" duration="17701000" />
       <workItem from="1499491408319" duration="24598000" />
       <workItem from="1499570228975" duration="44038000" />
-      <workItem from="1500172520078" duration="34343000" />
+      <workItem from="1500172520078" duration="34446000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -543,7 +543,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="410389000" />
+    <option name="totallyTimeSpent" value="410492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="36" width="1201" height="709" extended-state="0" />
@@ -1050,8 +1050,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="170" column="37" selection-start-line="170" selection-start-column="37" selection-end-line="170" selection-end-column="37" />
+        <state relative-caret-position="276">
+          <caret line="169" column="51" selection-start-line="169" selection-start-column="51" selection-end-line="169" selection-end-column="51" />
           <folding />
         </state>
       </provider>
