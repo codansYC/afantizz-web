@@ -462,8 +462,12 @@ $(function () {
             var charNum = Math.floor((ul.width()-30)/(345.0/28))
             var traffic = house.traffic
             if (traffic != null && traffic != '') {
-                if (traffic.length > charNum-1) {
-                    traffic = traffic.slice(0,charNum-1) + '...'
+                var numberCount = traffic.match(/[0-9]/g).length
+                var signCount = traffic.match(/[();]/g).length
+                if (traffic.length-numberCount/2-signCount/2 > charNum-1) {
+                    var numberCount = traffic.slice(0,charNum-1).match(/[0-9]/g).length
+                    var signCount = traffic.slice(0,charNum-1).match(/[();]/g).length
+                    traffic = traffic.slice(0,charNum-1+numberCount/2+signCount/2) + '...'
                 }
                 var oTraffic = $("<div class='traffic'></div>");
                 oTraffic.text(traffic)

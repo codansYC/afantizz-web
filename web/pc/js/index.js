@@ -231,10 +231,14 @@ $(function () {
         oIntro.append(oTraffic)
         var traffic = house.traffic
         if (traffic != null && traffic != '') {
-            if (traffic.length > 23) {
-                traffic = traffic.slice(0, 23) + '...'
-                oTraffic.text(traffic)
+            var numberCount = traffic.match(/[0-9]/g).length
+            var signCount = traffic.match(/[();]/g).length
+            if (traffic.length-numberCount/2-signCount/2 > 23) {
+                var numberCount = traffic.slice(0,23).match(/[0-9]/g).length
+                var signCount = traffic.slice(0,23).match(/[();]/g).length
+                traffic = traffic.slice(0,23+numberCount/2+signCount/2) + '...'
             }
+            oTraffic.text(traffic)
         }
     }
 

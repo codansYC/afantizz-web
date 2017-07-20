@@ -194,7 +194,14 @@ function handleTraffic(pois) {
 
     var trafficArr = new Array();
     for (var i = 0; i < pois.length; i++) {
-        var subwayLine = pois[i].address.replace(';','、')
+        // var subwayLine = pois[i].address.replace(';','、')
+        var subwaylines = pois[i].address.split(';')
+        for (var k = 0; k < subwaylines.length; k++) {
+            if (subwaylines.indexOf("在建") > -1) {
+                subwaylines.splice(i,1)
+            }
+        }
+        var subwayline = subwaylines.join('、')
         var canPush = true
         for (var j = 0; j < trafficArr.length; j++) {
             if (trafficArr[j].indexOf(subwayLine) > -1) {
