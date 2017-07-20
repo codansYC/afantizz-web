@@ -272,7 +272,6 @@ function searchSubway(address) {
 var subways = ""
 var traffics = ""
 var searchSubwaysCallback = function (subways,traffics) {
-    alert(traffics)
     sureRelease();
 }
 
