@@ -322,11 +322,11 @@ var imageCodeIsShow = false   //图形验证码部分是否展示给用户
 var sendCodeTimes = 0         //发送手机验证码的次数
 
 function showImageCode() {
-    $('#codeBg,.codeBg-next-line').css('display','block')
+    $('.imageCodeLi').css('display','block')
     imageCodeIsShow = true
 }
 function hideImageCode() {
-    $('#codeBg,.codeBg-next-line').css('display','none')
+    $('.imageCodeLi').css('display','none')
     imageCodeIsShow = false
 }
 
