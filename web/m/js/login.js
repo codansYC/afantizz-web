@@ -30,14 +30,25 @@ $(function () {
         if (isCounting || !phoneIsValid()) {
             return
         }
-        //判断
-        var inputImageCode = $("#imageCodeInput").val()
-
-        if (inputImageCode.toLowerCase() != imageCodeText.toLowerCase()) {
-            showModel('图形验证码不正确');
-            resetImageCode()
-            return;
+        sendCodeTimes++
+        //图形验证码判断
+        //如果重复发送验证码次数超过3,提示用户输入图形验证码
+        if (sendCodeTimes > 3 && !imageCodeIsShow) {
+            showImageCode()
+            showModel('请输入图形验证码')
+            return
         }
+        if (imageCodeIsShow) {
+            var inputImageCode = $("#imageCodeInput").val()
+            if (inputImageCode.toLowerCase() != imageCodeText.toLowerCase()) {
+                showModel('图形验证码不正确');
+                resetImageCode()
+                return;
+            }
+            sendCodeTimes = 0
+            hideImageCode()
+        }
+
         isCounting = true
 
         //发送验证码的请求
@@ -149,6 +160,19 @@ $(function () {
         })
     }
 })
+
+/*****图形验证码的显隐控制*****/
+var imageCodeIsShow = false   //图形验证码部分是否展示给用户
+var sendCodeTimes = 0         //发送手机验证码的次数
+
+function showImageCode() {
+    $('#codeBg,.codeBg-next-line').css('display','block')
+    imageCodeIsShow = true
+}
+function hideImageCode() {
+    $('#codeBg,.codeBg-next-line').css('display','none')
+    imageCodeIsShow = false
+}
 
 
 
