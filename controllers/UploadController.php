@@ -18,7 +18,7 @@ class UploadController extends BaseController {
 
     function actionUpload()
     {
-        $folder = 'upload';//'devUpload';
+        $folder = 'devUpload';//'upload';//'devUpload';
         //pc端多图上传、移动端单图上传 key的命名: file0,file1,file2 ...
         $images = array();
         for ($i = 0; $i < count($_FILES); $i++) {

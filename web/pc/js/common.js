@@ -1,7 +1,7 @@
 /**
  * Created by lekuai on 17/2/2.
  */
-var pro = true;
+var pro = false;
 var cityCode = "021" //城市编码,目前只服务上海
 var basicUrl = pro ? "http://afantizz.com/" : "http://localhost:8000/"
 var imageUrl = pro ? "http://afantizz.com/" : "http://localhost:8000/"
@@ -348,6 +348,7 @@ function handleTraffic(pois) {
         }
     }
     traffic = trafficArr.join(';')
+    alert(traffic)
     return traffic
 }
 

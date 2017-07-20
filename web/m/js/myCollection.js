@@ -73,9 +73,10 @@ function updateLayout() {
     var imgW = $('.collectionList>li>img').outerWidth()
     var title = $('.house-title').text()
     var descW = totalW-imgW-10
+    $('.collectionList>li .desc').width(descW)
     //标题调整
     var titleW = descW-48
-    var charCount = Math.floor(titleW/15)
+    var charCount = Math.floor(titleW/15) + 1
     $('.house-title').each(function () {
         var title = $(this).text()
         if(title.length>charCount) {
