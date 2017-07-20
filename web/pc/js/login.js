@@ -27,7 +27,7 @@ function showLoginPage() {
     dialog.append(panelInfo)
     var ul = $("<ul></ul>")
     panelInfo.append(ul)
-    var li5 = $("<li></li>")
+    var li5 = $("<li class='imageCodeLi' style='display: none'></li>")
     var imageCode = $("<div id='codeBg' class='codeBg'>" +
         "<div style='float:left;'><input type='text' placeholder='输入图形码' class='singleRowHeight imageCode' id='login_imageCode_tf'></div>" +
         "<div class='imageCodeBg'>" +
@@ -112,18 +112,28 @@ function showLoginPage() {
 
 
     getCodeBtn.click(function () {
-        if (!validImageCode()) {
-            showModel('图形验证码不正确')
-            resetImageCode()
-            return;
+        sendCodeTimes++
+        if (sendCodeTimes>3 && !imageCodeIsShow) {
+            showImageCode()
+            showModel('请输入图形验证码')
+            return
         }
+        if (imageCodeIsShow) {
+            if (!validImageCode()) {
+                showModel('图形验证码不正确')
+                resetImageCode()
+                return
+            }
+            sendCodeTimes = 0
+            hideImageCode()
+        }
+
         isCounting = true
         count = 60
         getCodeBtn.val(count + "s后重新发送")
         getCodeBtn.css("font-size", "12px")
         getCodeBtn.attr("disabled", "disabled")
         /*测试代码*/
-        // codeTf.val("0000")
         captchaRequest()
         timer = setInterval(function () {
             count--
@@ -223,10 +233,10 @@ function loginRequest() {
             showModel(resp.err_msg)
             return
         }
-
         var token = resp.data.token
         document.cookie = "token=" + token+ ";path=/";
         refreshPageWhenLogin();
+        sendCodeTimes = 0
     });
 }
 
@@ -306,3 +316,17 @@ function randomColor(min,max){
     var b = randomNum(min,max);
     return "rgb("+r+","+g+","+b+")";
 }
+
+/*****图形验证码的显隐控制*****/
+var imageCodeIsShow = false   //图形验证码部分是否展示给用户
+var sendCodeTimes = 0         //发送手机验证码的次数
+
+function showImageCode() {
+    $('#codeBg,.codeBg-next-line').css('display','block')
+    imageCodeIsShow = true
+}
+function hideImageCode() {
+    $('#codeBg,.codeBg-next-line').css('display','none')
+    imageCodeIsShow = false
+}
+

@@ -94,6 +94,7 @@ $(function () {
             showModel('登录成功', function () {
                 codeField.val('')
                 location = document.referrer
+                sendCodeTimes = 0
             })
             resetImageCode()
         });
