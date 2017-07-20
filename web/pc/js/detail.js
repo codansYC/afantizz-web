@@ -55,7 +55,7 @@ $(function () {
         }
         for (var i=0; i<thumbImages.length; i++) {
             var bigImg = $('<img/>');
-            bigImg.attr('src',imageUrl+originImages[i]);
+            bigImg.attr('src',imageUrl+thumbImages[i]);
             var bigLi = $('<li></li>').append(bigImg);
             bigImgUl.append(bigLi);
             var smallImg = $('<img/>');
