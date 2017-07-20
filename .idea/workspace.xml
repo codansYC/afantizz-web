@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/common.js" afterPath="$PROJECT_DIR$/web/m/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/mapManager.js" afterPath="$PROJECT_DIR$/web/m/js/mapManager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/release.html" afterPath="$PROJECT_DIR$/web/m/release.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/admin.js" afterPath="$PROJECT_DIR$/web/pc/js/admin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/release.css" afterPath="$PROJECT_DIR$/web/pc/css/release.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/common.js" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/mapManager.js" afterPath="$PROJECT_DIR$/web/pc/js/mapManager.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/release.html" afterPath="$PROJECT_DIR$/web/pc/release.html" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,26 +31,26 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="342" column="13" selection-start-line="342" selection-start-column="13" selection-end-line="342" selection-end-column="13" />
+            <state relative-caret-position="246">
+              <caret line="335" column="13" selection-start-line="335" selection-start-column="13" selection-end-line="335" selection-end-column="13" />
               <folding>
-                <marker date="1500525427000" expanded="true" signature="1973:1989" ph="..." />
-                <marker date="1500525427000" expanded="true" signature="3520:3585" ph="..." />
-                <marker date="1500525427000" expanded="true" signature="3645:3708" ph="..." />
-                <marker date="1500525427000" expanded="true" signature="3783:3834" ph="..." />
-                <marker date="1500525427000" expanded="true" signature="3895:3958" ph="..." />
-                <marker date="1500525427000" expanded="true" signature="4038:4089" ph="..." />
-                <marker date="1500525427000" expanded="true" signature="4153:4216" ph="..." />
+                <marker date="1500525756000" expanded="true" signature="1973:1989" ph="..." />
+                <marker date="1500525756000" expanded="true" signature="3520:3585" ph="..." />
+                <marker date="1500525756000" expanded="true" signature="3645:3708" ph="..." />
+                <marker date="1500525756000" expanded="true" signature="3783:3834" ph="..." />
+                <marker date="1500525756000" expanded="true" signature="3895:3958" ph="..." />
+                <marker date="1500525756000" expanded="true" signature="4038:4089" ph="..." />
+                <marker date="1500525756000" expanded="true" signature="4153:4216" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="285" column="34" selection-start-line="285" selection-start-column="34" selection-end-line="285" selection-end-column="34" />
+            <state relative-caret-position="158">
+              <caret line="271" column="13" selection-start-line="269" selection-start-column="12" selection-end-line="271" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -60,18 +59,8 @@
       <file leaf-file-name="mapManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/mapManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="132" column="36" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="release.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9920">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="226">
+              <caret line="133" column="10" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -80,11 +69,21 @@
       <file leaf-file-name="release.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/release.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="299" column="89" selection-start-line="299" selection-start-column="75" selection-end-line="299" selection-end-column="89" />
+            <state relative-caret-position="194">
+              <caret line="280" column="72" selection-start-line="280" selection-start-column="55" selection-end-line="280" selection-end-column="72" />
               <folding>
                 <element signature="n#select#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="release.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/pc/css/release.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="219" column="35" selection-start-line="219" selection-start-column="35" selection-end-line="219" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,8 +113,8 @@
       <file leaf-file-name="release.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/release.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
+            <state relative-caret-position="255">
+              <caret line="269" column="76" selection-start-line="269" selection-start-column="67" selection-end-line="269" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -124,8 +123,8 @@
       <file leaf-file-name="mapManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/js/mapManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="203" column="36" selection-start-line="203" selection-start-column="36" selection-end-line="203" selection-end-column="36" />
+            <state relative-caret-position="195">
+              <caret line="201" column="13" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -173,7 +172,6 @@
         <option value="$PROJECT_DIR$/web/pc/js/member.js" />
         <option value="$PROJECT_DIR$/web/pc/css/index.css" />
         <option value="$PROJECT_DIR$/web/pc/css/detail.css" />
-        <option value="$PROJECT_DIR$/web/pc/css/release.css" />
         <option value="$PROJECT_DIR$/web/pc/css/member.css" />
         <option value="$PROJECT_DIR$/web/m/js/detail.js" />
         <option value="$PROJECT_DIR$/web/m/js/myRelease.js" />
@@ -206,11 +204,12 @@
         <option value="$PROJECT_DIR$/web/pc/js/index.js" />
         <option value="$PROJECT_DIR$/web/pc/release.html" />
         <option value="$PROJECT_DIR$/web/m/release.html" />
-        <option value="$PROJECT_DIR$/web/pc/js/mapManager.js" />
+        <option value="$PROJECT_DIR$/web/pc/js/admin.js" />
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
         <option value="$PROJECT_DIR$/web/m/js/mapManager.js" />
-        <option value="$PROJECT_DIR$/web/pc/js/admin.js" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
+        <option value="$PROJECT_DIR$/web/pc/js/mapManager.js" />
+        <option value="$PROJECT_DIR$/web/pc/css/release.css" />
       </list>
     </option>
   </component>
@@ -343,29 +342,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
+              <option name="myItemId" value="pc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -538,7 +519,7 @@
       <workItem from="1499071017798" duration="17701000" />
       <workItem from="1499491408319" duration="24598000" />
       <workItem from="1499570228975" duration="44038000" />
-      <workItem from="1500172520078" duration="40090000" />
+      <workItem from="1500172520078" duration="40617000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -551,7 +532,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="416136000" />
+    <option name="totallyTimeSpent" value="416663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="50" width="1201" height="709" extended-state="0" />
@@ -630,14 +611,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/m/css/release.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/css/member.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -970,24 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="299" column="89" selection-start-line="299" selection-start-column="75" selection-end-line="299" selection-end-column="89" />
-          <folding>
-            <element signature="n#select#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9920">
@@ -1024,42 +979,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
+    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="342" column="13" selection-start-line="342" selection-start-column="13" selection-end-line="342" selection-end-column="13" />
-          <folding>
-            <marker date="1500525427000" expanded="true" signature="1973:1989" ph="..." />
-            <marker date="1500525427000" expanded="true" signature="3520:3585" ph="..." />
-            <marker date="1500525427000" expanded="true" signature="3645:3708" ph="..." />
-            <marker date="1500525427000" expanded="true" signature="3783:3834" ph="..." />
-            <marker date="1500525427000" expanded="true" signature="3895:3958" ph="..." />
-            <marker date="1500525427000" expanded="true" signature="4038:4089" ph="..." />
-            <marker date="1500525427000" expanded="true" signature="4153:4216" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/mapManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="132" column="36" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="36" />
+        <state relative-caret-position="158">
+          <caret line="271" column="13" selection-start-line="269" selection-start-column="12" selection-end-line="271" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/mapManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="203" column="36" selection-start-line="203" selection-start-column="36" selection-end-line="203" selection-end-column="36" />
+        <state relative-caret-position="195">
+          <caret line="201" column="13" selection-start-line="201" selection-start-column="13" selection-end-line="201" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
+    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="285" column="34" selection-start-line="285" selection-start-column="34" selection-end-line="285" selection-end-column="34" />
+        <state relative-caret-position="246">
+          <caret line="335" column="13" selection-start-line="335" selection-start-column="13" selection-end-line="335" selection-end-column="13" />
+          <folding>
+            <marker date="1500525756000" expanded="true" signature="1973:1989" ph="..." />
+            <marker date="1500525756000" expanded="true" signature="3520:3585" ph="..." />
+            <marker date="1500525756000" expanded="true" signature="3645:3708" ph="..." />
+            <marker date="1500525756000" expanded="true" signature="3783:3834" ph="..." />
+            <marker date="1500525756000" expanded="true" signature="3895:3958" ph="..." />
+            <marker date="1500525756000" expanded="true" signature="4038:4089" ph="..." />
+            <marker date="1500525756000" expanded="true" signature="4153:4216" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/mapManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="133" column="10" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/release.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="269" column="76" selection-start-line="269" selection-start-column="67" selection-end-line="269" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/release.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="280" column="72" selection-start-line="280" selection-start-column="55" selection-end-line="280" selection-end-column="72" />
+          <folding>
+            <element signature="n#select#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/css/release.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="219" column="35" selection-start-line="219" selection-start-column="35" selection-end-line="219" selection-end-column="35" />
           <folding />
         </state>
       </provider>

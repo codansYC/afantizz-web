@@ -331,8 +331,8 @@ function handleTraffic(pois) {
         // var subwayLine = pois[i].address.replace(';','、')
         var subwayLines = pois[i].address.split(';')
         for (var k = 0; k < subwayLines.length; k++) {
-            if (subwayLines.indexOf("在建") > -1) {
-                subwayLines.splice(i,1)
+            if (subwayLines[k].indexOf("在建") > -1) {
+                subwayLines.splice(k,1)
             }
         }
         var subwayLine = subwayLines.join('、')
