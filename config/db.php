@@ -1,6 +1,6 @@
 <?php
 
-$pro = false;
+$pro = true;
 
 if (!$pro) {
     return [
