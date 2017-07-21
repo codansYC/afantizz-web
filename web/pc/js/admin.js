@@ -298,12 +298,13 @@ function sureRelease() {
     var village = $("#village-field").val();
     //户型
     var style = $("#style-room").val() + "室" + $("#style-hall").val() + "厅" + $("#style-toilet").val() + "卫";
-    if (rentMode == "合租") {
+    if (style == null || style == '') {
+        style = ''
+    } else if (rentMode == "合租") {
         style += $("#room-style option:selected").text();
     }
-    if (style == null) {
-        style = ''
-    }
+
+
     //厨房类型 1: 公共厨房; 2: 独立厨房; 3 无厨房
     var kitchenType = $('.kitchen-list .check-ratio.checked').parent('li').index() + 1
     //楼层

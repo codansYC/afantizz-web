@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/AdminController.php" afterPath="$PROJECT_DIR$/controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/admin.html" afterPath="$PROJECT_DIR$/web/pc/admin.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/admin.js" afterPath="$PROJECT_DIR$/web/pc/js/admin.js" />
     </list>
     <ignored path="afantizz.iws" />
@@ -54,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/web/pc/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="232">
-              <caret line="304" column="17" selection-start-line="304" selection-start-column="17" selection-end-line="304" selection-end-column="17" />
+              <caret line="304" column="5" selection-start-line="304" selection-start-column="5" selection-end-line="304" selection-end-column="5" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
@@ -552,7 +550,7 @@
       <workItem from="1499491408319" duration="24598000" />
       <workItem from="1499570228975" duration="44038000" />
       <workItem from="1500172520078" duration="51977000" />
-      <workItem from="1500651343995" duration="606000" />
+      <workItem from="1500651343995" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -565,7 +563,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="428629000" />
+    <option name="totallyTimeSpent" value="428747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="39" width="1201" height="709" extended-state="0" />
@@ -1047,7 +1045,7 @@
     <entry file="file://$PROJECT_DIR$/web/pc/js/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="304" column="17" selection-start-line="304" selection-start-column="17" selection-end-line="304" selection-end-column="17" />
+          <caret line="304" column="5" selection-start-line="304" selection-start-column="5" selection-end-line="304" selection-end-column="5" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
