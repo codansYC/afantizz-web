@@ -238,7 +238,9 @@ $(function () {
                 var signCount = traffic.slice(0,23).match(/[();]/g).length
                 traffic = traffic.slice(0,23+numberCount/2+signCount/2) + '...'
             }
-            oTraffic.text(traffic)
+            oTraffic.text(' '+traffic)
+            var icon = $("<img src='/images/icon-gprs.png' style='display: inline-block;height: 10px;'/>")
+            oTraffic.prepend(icon)
         }
     }
 

@@ -470,8 +470,12 @@ $(function () {
                     traffic = traffic.slice(0,charNum-1+numberCount/2+signCount/2) + '...'
                 }
                 var oTraffic = $("<div class='traffic'></div>");
-                oTraffic.text(traffic)
+                var icon = $("<span class='glyphicon glyphicon-map-marker'></span>")
+                oTraffic.append(icon)
                 li.append(oTraffic)
+                var txt = $("<span></span>")
+                txt.text(' '+traffic)
+                oTraffic.append(txt)
             }
 
         }
