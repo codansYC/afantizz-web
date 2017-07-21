@@ -301,6 +301,9 @@ function sureRelease() {
     if (rentMode == "合租") {
         style += $("#room-style option:selected").text();
     }
+    if (style == null) {
+        style = ''
+    }
     //厨房类型 1: 公共厨房; 2: 独立厨房; 3 无厨房
     var kitchenType = $('.kitchen-list .check-ratio.checked').parent('li').index() + 1
     //楼层

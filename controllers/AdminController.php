@@ -65,26 +65,26 @@ class AdminController extends BaseController
             UtilHelper::echoExitResult($err_code, '请填写详细地址');
         }
         //户型
-        $room = explode('室', $style);
-        if (count($room) < 2) {
-            UtilHelper::echoExitResult($err_code, '请完善房间户型');
-        } else if (!GlobalAction::isNumber($room[0])) {
-            UtilHelper::echoExitResult($err_code, '房间户型请填入正确的数字');
-        }
-
-        $hall = explode('厅', $room[1]);
-        if (count($hall) < 2) {
-            UtilHelper::echoExitResult($err_code, '请完善房间户型');
-        } else if (!GlobalAction::isNumber($hall[0])) {
-            UtilHelper::echoExitResult($err_code, '房间户型请填入正确的数字');
-        }
-
-        $toilet = explode('卫', $hall[1]);
-        if (count($hall) < 2) {
-            UtilHelper::echoExitResult($err_code, '请完善房间户型');
-        } else if (!GlobalAction::isNumber($toilet[0])) {
-            UtilHelper::echoExitResult($err_code, '房间户型请填入正确的数字');
-        }
+//        $room = explode('室', $style);
+//        if (count($room) < 2) {
+//            UtilHelper::echoExitResult($err_code, '请完善房间户型');
+//        } else if (!GlobalAction::isNumber($room[0])) {
+//            UtilHelper::echoExitResult($err_code, '房间户型请填入正确的数字');
+//        }
+//
+//        $hall = explode('厅', $room[1]);
+//        if (count($hall) < 2) {
+//            UtilHelper::echoExitResult($err_code, '请完善房间户型');
+//        } else if (!GlobalAction::isNumber($hall[0])) {
+//            UtilHelper::echoExitResult($err_code, '房间户型请填入正确的数字');
+//        }
+//
+//        $toilet = explode('卫', $hall[1]);
+//        if (count($hall) < 2) {
+//            UtilHelper::echoExitResult($err_code, '请完善房间户型');
+//        } else if (!GlobalAction::isNumber($toilet[0])) {
+//            UtilHelper::echoExitResult($err_code, '房间户型请填入正确的数字');
+//        }
 
 
         //面积
