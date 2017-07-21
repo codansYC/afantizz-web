@@ -231,8 +231,20 @@ $(function () {
         oIntro.append(oTraffic)
         var traffic = house.traffic
         if (traffic != null && traffic != '') {
-            var numberCount = traffic.match(/[0-9]/g).length
-            var signCount = traffic.match(/[();]/g).length
+            var numbers = traffic.match(/[0-9]/g)
+            var numberCount
+            if (numbers != null) {
+                numberCount = numbers.length
+            } else {
+                numberCount = 0
+            }
+            var signs = traffic.match(/[();]/g)
+            var signCount
+            if (signs != null) {
+                signCount = signs.length
+            } else {
+                signCount = 0
+            }
             if (traffic.length-numberCount/2-signCount/2 > 23) {
                 var numberCount = traffic.slice(0,23).match(/[0-9]/g).length
                 var signCount = traffic.slice(0,23).match(/[();]/g).length
