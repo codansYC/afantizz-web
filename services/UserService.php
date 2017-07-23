@@ -35,6 +35,7 @@ class UserService
             ->one();
         $user->platform = $platform;
         $user->login_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
+        $user->save();
         return $user;
     }
 
@@ -43,8 +44,6 @@ class UserService
         $user = new User();
         $user->phone = $phone;
         $user->token = md5($phone);
-        $user->platform = $platform;
-        $user->login_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
         $user->save();
     }
 
