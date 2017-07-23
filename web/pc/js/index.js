@@ -597,6 +597,11 @@ function showListStateUI() {
     $('.search-notice').css('display','none')
 }
 
+/******************统计********************/
+function record() {
+    request()
+}
+
 
 
 

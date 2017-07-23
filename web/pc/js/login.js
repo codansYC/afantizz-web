@@ -220,7 +220,8 @@ function captchaRequest() {
 function loginRequest() {
     var params = {
         phone: $("#login_phone_tf").val(),
-        captcha: $("#login_code_tf").val()
+        captcha: $("#login_code_tf").val(),
+        platform: 'pc'
     }
     $.post(basicUrl + 'login/login', params, function (response, status) {
         resetImageCode()

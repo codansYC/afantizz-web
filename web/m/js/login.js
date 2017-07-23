@@ -78,7 +78,8 @@ $(function () {
     function loginRequest(phone, code) {
         var params = {
             phone: phone,
-            captcha: code
+            captcha: code,
+            platform: 'm'
         }
         $.post(basicUrl + 'login/login', params, function (response, status) {
             if (status != 'success') {

@@ -73,6 +73,7 @@ class LoginController extends BaseController{
 
 			$phone = $this->requestParam['phone'];
 			$captcha = $this->requestParam['captcha'];
+            $platform = $this->requestParam['platform'];
             $valid = true;
 			if(BizConsts::APPLE_WHITELIST_PHONE != $phone ){
 				UtilHelper::validLogin($phone,$captcha);//校验手机号及验证码
@@ -82,10 +83,10 @@ class LoginController extends BaseController{
             if (!$valid) {
                 UtilHelper::echoExitResult(BizConsts::WRONG_CAPTCHA_ERRCODE,BizConsts::WRONG_CAPTCHA_ERRMSG);
             }
-            $user = UserService::getUserByPhone($phone);
+            $user = UserService::getUserByPhone($phone,$platform);
             if (!$user) {
-                UserService::addNewUserWithPhone($phone);
-                $user = UserService::getUserByPhone($phone);
+                UserService::addNewUserWithPhone($phone,$platform);
+                $user = UserService::getUserByPhone($phone,$platform);
             }
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$user);
             /*

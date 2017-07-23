@@ -28,20 +28,23 @@ class UserService
         return $user;
     }
 
-    static function getUserByPhone($phone)
+    static function getUserByPhone($phone,$platform)
     {
         $user = User::find()
             ->where(['phone' => $phone])
-            ->asArray()
             ->one();
+        $user->platform = $platform;
+        $user->login_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
         return $user;
     }
 
-    static function addNewUserWithPhone($phone)
+    static function addNewUserWithPhone($phone,$platform)
     {
         $user = new User();
         $user->phone = $phone;
         $user->token = md5($phone);
+        $user->platform = $platform;
+        $user->login_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
         $user->save();
     }
 
