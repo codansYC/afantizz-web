@@ -538,6 +538,7 @@ function loadHouseDetailInfo(house) {
     $("#style-hall").val(hallSplit[0])
     var toiletSplit = hallSplit[1].split('卫')
     $("#style-toilet").val(toiletSplit[0])
+    $("#room-style option").removeAttr('selected')
     if (house.rent_mode == "合租") {
         $("#room-style option").each(function () {
             if ($(this).text() == toiletSplit[1]) {
@@ -557,6 +558,7 @@ function loadHouseDetailInfo(house) {
     //租金
     $("#price-field").val(house.price);
     //支付方式
+    $("#pay-mode option").removeAttr('selected')
     $("#pay-mode option").each(function () {
         if ($(this).text() == house.pay_mode) {
             $(this).attr('selected','selected');
@@ -567,6 +569,7 @@ function loadHouseDetailInfo(house) {
     //最高楼层
     $(".max_floor").val(house.max_floor);
     //朝向
+    $("#orientation option").removeAttr('selected')
     $("#orientation option").each(function () {
         if ($(this).text() == house.orientation) {
             $(this).attr('selected','selected')

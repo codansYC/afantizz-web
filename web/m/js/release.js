@@ -128,13 +128,12 @@ function loadHouseDetailInfo(house) {
     //地址
     $("#detailAddress").val(house.address);
     //出租方式
+    $("#rentMode option").removeAttr('selected')
     $("#rentMode option").each(function () {
         if ($(this).text() == house.rent_mode) {
             $(this).attr('selected','selected');
         }
     })
-    //区域
-    var district = $("#district option:selected").text();
     //户型
     var roomSplit = house.style.split('室')
     $(".styleDesc .room").val(roomSplit[0])
@@ -142,17 +141,13 @@ function loadHouseDetailInfo(house) {
     $(".styleDesc .hall").val(hallSplit[0])
     var toiletSplit = hallSplit[1].split('卫')
     $(".styleDesc .toilet").val(toiletSplit[0])
-    $("#jointRentStyle option").removeAttr('selected')
-    if (house.rent_mode == "合租") {
-        $("#jointRentStyle option").each(function () {
-            if ($(this).text() == toiletSplit[1]) {
-                $(this).attr('selected','selected')
-            }
-        })
-        $("#jointRentStyle").css("visibility","visible");
-
+    $('#kitchen-type option').removeAttr('selected')
+    if (house.rent_mode == '合租') {
+        $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','block')
+        $('#kitchen-type option').eq(0).attr('selected','selected');
     } else {
-        $("#jointRentStyle").css("visibility","hidden");
+        $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','none')
+        $('#kitchen-type option').eq(1).attr('selected','selected');
     }
     //厨房
     $("#kitchen-type option").removeAttr('selected')
