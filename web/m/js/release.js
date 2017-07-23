@@ -145,10 +145,10 @@ function loadHouseDetailInfo(house) {
     $('#kitchen-type option').removeAttr('selected')
     if (house.rent_mode == '合租') {
         $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','block')
-        $('#kitchen-type option').eq(0).attr('selected','selected');
+        $('#kitchen-type option').eq(0).prop('selected','selected');
     } else {
         $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','none')
-        $('#kitchen-type option').eq(1).attr('selected','selected');
+        $('#kitchen-type option').eq(1).prop('selected','selected');
     }
     //面积
     $("#areaInput").val(house.area);
