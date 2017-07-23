@@ -130,7 +130,7 @@ $(function () {
             //到期
             if (house.deadline_date != null && house.deadline_date != '') {
                 var oDeadline = $("<span class='house-deadline'></span>")
-                oDeadline.text('2017-09-09到期')
+                oDeadline.text(house.deadline_date+'到期')
                 oPriceAndDeadlineBg.append(oDeadline)
             }
 
@@ -332,7 +332,7 @@ $(function () {
             //到期
             if (house.deadline_date != null && house.deadline_date != '') {
                 var oDeadline = $("<span class='house-deadline'></span>")
-                oDeadline.text('2017-09-09到期')
+                oDeadline.text(house.deadline_date+'到期')
                 oPriceAndDeadlineBg.append(oDeadline)
             }
             //发布时间

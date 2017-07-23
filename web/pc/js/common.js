@@ -348,7 +348,6 @@ function handleTraffic(pois) {
         }
     }
     traffic = trafficArr.join(';')
-    alert(traffic)
     return traffic
 }
 

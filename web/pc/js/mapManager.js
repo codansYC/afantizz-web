@@ -120,7 +120,6 @@ function handleSubways(pois) {
 
 //处理交通
 function handleTraffic(pois) {
-    alert(111)
     var trafficArr = new Array();
     for (var i = 0; i < pois.length; i++) {
         // var subwayLine = pois[i].address.replace(';','、')

@@ -556,10 +556,8 @@ function loadHouseDetailInfo(house) {
     //租金
     $("#price-field").val(house.price);
     //支付方式
-    var otherPayMode = true
     $("#pay-mode option").each(function () {
         if ($(this).text() == house.pay_mode) {
-            otherPayMode = false
             $(this).attr('selected','selected');
         }
     })
