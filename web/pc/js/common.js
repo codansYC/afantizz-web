@@ -292,7 +292,7 @@ function request(url,params,respBlock) {
         }
         var resp = $.parseJSON(response);
         if (resp.err_code == 10000) {
-            $().showLoginPage()
+            showLoginPage()
             return;
         }
         if (resp.err_code != 0) {
