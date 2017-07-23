@@ -130,7 +130,6 @@ function loadHouseDetailInfo(house) {
     //出租方式
     $("#rentMode option").removeAttr('selected')
     $("#rentMode option").each(function () {
-        alert($(this.text()))
         if ($(this).text() == house.rent_mode) {
             $(this).attr('selected','selected');
         }
