@@ -130,6 +130,7 @@ function loadHouseDetailInfo(house) {
     //出租方式
     $("#rentMode option").removeAttr('selected')
     $("#rentMode option").each(function () {
+        alert($(this.text()))
         if ($(this).text() == house.rent_mode) {
             $(this).attr('selected','selected');
         }
@@ -142,7 +143,6 @@ function loadHouseDetailInfo(house) {
     var toiletSplit = hallSplit[1].split('卫')
     $(".styleDesc .toilet").val(toiletSplit[0])
     $('#kitchen-type option').removeAttr('selected')
-    alert(house.rent_mode)
     if (house.rent_mode == '合租') {
         $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','block')
         $('#kitchen-type option').eq(0).attr('selected','selected');
