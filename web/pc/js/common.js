@@ -355,7 +355,7 @@ function handleTraffic(pois) {
 function record() {
     var params = {
         token: getToken(),
-        platform: 'm',
+        platform: 'pc',
         size: window.screen.width + '*' + window.screen.height,
         user_agent: navigator.userAgent
     }

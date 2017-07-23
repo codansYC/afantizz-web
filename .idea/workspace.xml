@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/RecordController.php" afterPath="$PROJECT_DIR$/controllers/RecordController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/common.js" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecordController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RecordController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/RecordController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state relative-caret-position="119">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -77,19 +77,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="362" column="0" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="357" column="21" selection-start-line="357" selection-start-column="21" selection-end-line="357" selection-end-column="21" />
               <folding>
-                <marker date="1500793458000" expanded="true" signature="1973:1989" ph="..." />
-                <marker date="1500793458000" expanded="true" signature="3520:3585" ph="..." />
-                <marker date="1500793458000" expanded="true" signature="3645:3708" ph="..." />
-                <marker date="1500793458000" expanded="true" signature="3783:3834" ph="..." />
-                <marker date="1500793458000" expanded="true" signature="3895:3958" ph="..." />
-                <marker date="1500793458000" expanded="true" signature="4038:4089" ph="..." />
-                <marker date="1500793458000" expanded="true" signature="4153:4216" ph="..." />
+                <marker date="1500794014000" expanded="true" signature="1973:1989" ph="..." />
+                <marker date="1500794014000" expanded="true" signature="3520:3585" ph="..." />
+                <marker date="1500794014000" expanded="true" signature="3645:3708" ph="..." />
+                <marker date="1500794014000" expanded="true" signature="3783:3834" ph="..." />
+                <marker date="1500794014000" expanded="true" signature="3895:3958" ph="..." />
+                <marker date="1500794014000" expanded="true" signature="4038:4089" ph="..." />
+                <marker date="1500794014000" expanded="true" signature="4153:4216" ph="..." />
               </folding>
             </state>
           </provider>
@@ -200,9 +200,9 @@
         <option value="$PROJECT_DIR$/models/IndexRecord.php" />
         <option value="$PROJECT_DIR$/web/m/js/index.js" />
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
-        <option value="$PROJECT_DIR$/web/pc/js/common.js" />
         <option value="$PROJECT_DIR$/web/pc/js/index.js" />
         <option value="$PROJECT_DIR$/controllers/RecordController.php" />
+        <option value="$PROJECT_DIR$/web/pc/js/common.js" />
       </list>
     </option>
   </component>
@@ -578,7 +578,7 @@
       <workItem from="1499570228975" duration="44038000" />
       <workItem from="1500172520078" duration="51977000" />
       <workItem from="1500651343995" duration="3959000" />
-      <workItem from="1500779738194" duration="7701000" />
+      <workItem from="1500779738194" duration="7764000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -591,7 +591,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439683000" />
+    <option name="totallyTimeSpent" value="439746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="38" width="1201" height="709" extended-state="0" />
@@ -1062,22 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="362" column="0" selection-start-line="362" selection-start-column="0" selection-end-line="362" selection-end-column="0" />
-          <folding>
-            <marker date="1500793458000" expanded="true" signature="1973:1989" ph="..." />
-            <marker date="1500793458000" expanded="true" signature="3520:3585" ph="..." />
-            <marker date="1500793458000" expanded="true" signature="3645:3708" ph="..." />
-            <marker date="1500793458000" expanded="true" signature="3783:3834" ph="..." />
-            <marker date="1500793458000" expanded="true" signature="3895:3958" ph="..." />
-            <marker date="1500793458000" expanded="true" signature="4038:4089" ph="..." />
-            <marker date="1500793458000" expanded="true" signature="4153:4216" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
@@ -1088,9 +1072,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/RecordController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        <state relative-caret-position="119">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="357" column="21" selection-start-line="357" selection-start-column="21" selection-end-line="357" selection-end-column="21" />
+          <folding>
+            <marker date="1500794014000" expanded="true" signature="1973:1989" ph="..." />
+            <marker date="1500794014000" expanded="true" signature="3520:3585" ph="..." />
+            <marker date="1500794014000" expanded="true" signature="3645:3708" ph="..." />
+            <marker date="1500794014000" expanded="true" signature="3783:3834" ph="..." />
+            <marker date="1500794014000" expanded="true" signature="3895:3958" ph="..." />
+            <marker date="1500794014000" expanded="true" signature="4038:4089" ph="..." />
+            <marker date="1500794014000" expanded="true" signature="4153:4216" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
