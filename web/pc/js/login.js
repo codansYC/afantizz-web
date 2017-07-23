@@ -218,7 +218,7 @@ function captchaRequest() {
 
 /**登录请求**/
 function loginRequest() {
-    alert($("#login_phone_tf").val())
+   
     var params = {
         phone: $("#login_phone_tf").val(),
         captcha: $("#login_code_tf").val(),
