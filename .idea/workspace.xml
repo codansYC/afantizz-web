@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/RecordController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LoginController.php" afterPath="$PROJECT_DIR$/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/UserService.php" afterPath="$PROJECT_DIR$/services/UserService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/login.js" afterPath="$PROJECT_DIR$/web/m/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/index.js" afterPath="$PROJECT_DIR$/web/pc/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/login.js" afterPath="$PROJECT_DIR$/web/pc/js/login.js" />
     </list>
     <ignored path="afantizz.iws" />
@@ -56,17 +50,17 @@
       <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="391">
               <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/UserService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="-306">
               <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
               <folding />
             </state>
@@ -101,14 +95,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="223" column="22" selection-start-line="223" selection-start-column="22" selection-end-line="223" selection-end-column="22" />
+            <state relative-caret-position="221">
+              <caret line="220" column="36" selection-start-line="220" selection-start-column="36" selection-end-line="220" selection-end-column="36" />
               <folding>
-                <marker date="1500791256000" expanded="true" signature="900:913" ph="..." />
-                <marker date="1500791256000" expanded="true" signature="1003:1014" ph="..." />
+                <marker date="1500791726000" expanded="true" signature="900:913" ph="..." />
+                <marker date="1500791726000" expanded="true" signature="1003:1014" ph="..." />
               </folding>
             </state>
           </provider>
@@ -177,11 +171,11 @@
         <option value="$PROJECT_DIR$/services/HouseService.php" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
         <option value="$PROJECT_DIR$/web/m/js/login.js" />
-        <option value="$PROJECT_DIR$/web/pc/js/login.js" />
         <option value="$PROJECT_DIR$/web/pc/js/index.js" />
         <option value="$PROJECT_DIR$/controllers/RecordController.php" />
         <option value="$PROJECT_DIR$/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/services/UserService.php" />
+        <option value="$PROJECT_DIR$/web/pc/js/login.js" />
       </list>
     </option>
   </component>
@@ -196,8 +190,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
-    <option name="y" value="160" />
+    <option name="y" value="49" />
     <option name="width" value="1201" />
     <option name="height" value="709" />
   </component>
@@ -557,7 +550,7 @@
       <workItem from="1499570228975" duration="44038000" />
       <workItem from="1500172520078" duration="51977000" />
       <workItem from="1500651343995" duration="3959000" />
-      <workItem from="1500779738194" duration="5546000" />
+      <workItem from="1500779738194" duration="5704000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -570,10 +563,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="437528000" />
+    <option name="totallyTimeSpent" value="437686000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="160" width="1201" height="709" extended-state="0" />
+    <frame x="0" y="49" width="1201" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28731665" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1043,30 +1036,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/login.js">
+    <entry file="file://$PROJECT_DIR$/services/UserService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="223" column="22" selection-start-line="223" selection-start-column="22" selection-end-line="223" selection-end-column="22" />
-          <folding>
-            <marker date="1500791256000" expanded="true" signature="900:913" ph="..." />
-            <marker date="1500791256000" expanded="true" signature="1003:1014" ph="..." />
-          </folding>
+        <state relative-caret-position="-306">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="391">
           <caret line="85" column="43" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/UserService.php">
+    <entry file="file://$PROJECT_DIR$/web/pc/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="220" column="36" selection-start-line="220" selection-start-column="36" selection-end-line="220" selection-end-column="36" />
+          <folding>
+            <marker date="1500791726000" expanded="true" signature="900:913" ph="..." />
+            <marker date="1500791726000" expanded="true" signature="1003:1014" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
