@@ -500,7 +500,8 @@ function restoreHouseIfModify() {
 function requestHouseDetail(houseId) {
     $.post(basicUrl + "house/detail",
         {
-            house_id: houseId
+            house_id: houseId,
+            token: getToken()
         },
         function (data, status) {
             if (status == 'success') {

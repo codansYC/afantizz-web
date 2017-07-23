@@ -91,7 +91,10 @@ function restoreHouseIfModify() {
     requestHouseDetail(houseId);
 }
 function requestHouseDetail(houseId) {
-    var params = {house_id: houseId}
+    var params = {
+        house_id: houseId,
+        token: getToken()
+    }
     request(basicUrl+'house/detail',params,function (resp) {
         var house = resp;
         loadHouseDetailInfo(house);

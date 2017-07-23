@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/UserService.php" afterPath="$PROJECT_DIR$/services/UserService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/release.js" afterPath="$PROJECT_DIR$/web/m/js/release.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/release.js" afterPath="$PROJECT_DIR$/web/pc/js/release.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/UserService.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -93,19 +94,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
+      <file leaf-file-name="release.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="357" column="21" selection-start-line="357" selection-start-column="21" selection-end-line="357" selection-end-column="21" />
+            <state relative-caret-position="298">
+              <caret line="503" column="29" selection-start-line="503" selection-start-column="29" selection-end-line="503" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="release.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
               <folding>
-                <marker date="1500794014000" expanded="true" signature="1973:1989" ph="..." />
-                <marker date="1500794014000" expanded="true" signature="3520:3585" ph="..." />
-                <marker date="1500794014000" expanded="true" signature="3645:3708" ph="..." />
-                <marker date="1500794014000" expanded="true" signature="3783:3834" ph="..." />
-                <marker date="1500794014000" expanded="true" signature="3895:3958" ph="..." />
-                <marker date="1500794014000" expanded="true" signature="4038:4089" ph="..." />
-                <marker date="1500794014000" expanded="true" signature="4153:4216" ph="..." />
+                <marker date="1500795153000" expanded="true" signature="8044:8051" ph="×" />
               </folding>
             </state>
           </provider>
@@ -114,21 +119,11 @@
       <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2788">
-              <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
+            <state relative-caret-position="187">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
               <folding>
                 <element signature="e#8056#13483#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="213" column="11" selection-start-line="213" selection-start-column="11" selection-end-line="213" selection-end-column="11" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -183,9 +178,7 @@
         <option value="$PROJECT_DIR$/web/m/js/search.js" />
         <option value="$PROJECT_DIR$/controllers/UploadController.php" />
         <option value="$PROJECT_DIR$/web/pc/js/mapManager.js" />
-        <option value="$PROJECT_DIR$/web/pc/js/release.js" />
         <option value="$PROJECT_DIR$/web/pc/js/member.js" />
-        <option value="$PROJECT_DIR$/web/m/js/release.js" />
         <option value="$PROJECT_DIR$/models/House.php" />
         <option value="$PROJECT_DIR$/controllers/HouseController.php" />
         <option value="$PROJECT_DIR$/services/HouseService.php" />
@@ -198,9 +191,11 @@
         <option value="$PROJECT_DIR$/web/pc/js/index.js" />
         <option value="$PROJECT_DIR$/controllers/RecordController.php" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
-        <option value="$PROJECT_DIR$/web/pc/js/detail.js" />
         <option value="$PROJECT_DIR$/web/m/js/detail.js" />
         <option value="$PROJECT_DIR$/services/UserService.php" />
+        <option value="$PROJECT_DIR$/web/pc/js/detail.js" />
+        <option value="$PROJECT_DIR$/web/pc/js/release.js" />
+        <option value="$PROJECT_DIR$/web/m/js/release.js" />
       </list>
     </option>
   </component>
@@ -576,7 +571,7 @@
       <workItem from="1499570228975" duration="44038000" />
       <workItem from="1500172520078" duration="51977000" />
       <workItem from="1500651343995" duration="3959000" />
-      <workItem from="1500779738194" duration="8509000" />
+      <workItem from="1500779738194" duration="8833000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -589,7 +584,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="440491000" />
+    <option name="totallyTimeSpent" value="440815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="38" width="1201" height="709" extended-state="0" />
@@ -897,24 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="62" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="415" column="62" selection-start-line="415" selection-start-column="62" selection-end-line="415" selection-end-column="62" />
-          <folding>
-            <marker date="1500787303000" expanded="true" signature="8003:8010" ph="×" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/member.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -1002,16 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2788">
-          <caret line="45" column="52" selection-start-line="45" selection-start-column="52" selection-end-line="45" selection-end-column="52" />
-          <folding>
-            <element signature="e#8056#13483#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1089,6 +1056,34 @@
         <state relative-caret-position="374">
           <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#8056#13483#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="503" column="29" selection-start-line="503" selection-start-column="29" selection-end-line="503" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+          <folding>
+            <marker date="1500795153000" expanded="true" signature="8044:8051" ph="×" />
+          </folding>
         </state>
       </provider>
     </entry>
