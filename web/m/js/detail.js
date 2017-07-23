@@ -202,6 +202,7 @@ function showHouseInfo() {
         tags.append(benefit)
     }
 
+    //是否收藏
     if (house.isCollection) {
         $('.collection .glyphicon').addClass('glyphicon-star')
         $('.collection span:last-child').text('已收藏')

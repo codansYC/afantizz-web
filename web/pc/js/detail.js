@@ -44,8 +44,6 @@ $(function () {
             $('.village').text(house.village)
         }
         $('.date').text('最后更新 '+house.release_date);
-        //是否关注
-
         //图片
         var bigImgUl = $('#big-img-ul');
         var smallImgUl = $('#small-img-ul');
