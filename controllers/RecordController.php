@@ -12,7 +12,7 @@ namespace app\controllers;
 
 use app\models\IndexRecord;
 
-class RecordController {
+class RecordController extends BaseController{
 
     function actionIndex() {
         try {
