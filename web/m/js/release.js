@@ -120,6 +120,7 @@ function loadHouseDetailInfo(house) {
     //小区
     $(".village input").val(house.village)
     //区域
+    $("#district option").removeAttr('selected')
     $("#district option").each(function () {
         if ($(this).text() == house.district) {
             $(this).attr('selected','selected');
@@ -131,6 +132,7 @@ function loadHouseDetailInfo(house) {
     $("#rentMode option").removeAttr('selected')
     $("#rentMode option").each(function () {
         if ($(this).text() == house.rent_mode) {
+            alert($(this).text())
             $(this).attr('selected','selected');
         }
     })
@@ -156,6 +158,7 @@ function loadHouseDetailInfo(house) {
     //最高楼层
     var max_floor = $(".max_floor").val(house.max_floor);
     //朝向
+    $("#orientation option").removeAttr('selected')
     $("#orientation option").each(function () {
         if ($(this).text() == house.orientation) {
             $(this).attr('selected','selected')
@@ -164,6 +167,7 @@ function loadHouseDetailInfo(house) {
     //租金
     $("#priceInput").val(house.price)
     //支付方式
+    $("#pay-mode option").removeAttr('selected')
     $("#pay-mode option").each(function () {
         if ($(this).text() == house.pay_mode) {
             $(this).attr('selected','selected')
