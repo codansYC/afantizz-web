@@ -288,6 +288,19 @@ function handleTraffic(pois) {
 }
 
 
+/********************统计***********************/
+function record() {
+    var params = {
+        token: getToken(),
+        platform: 'm',
+        size: window.screen.width + '*' + window.screen.height,
+        user_agent: navigator.userAgent
+    }
+    request(basicUrl+'record/index',params,function () {
+
+    })
+}
+
 
 
 

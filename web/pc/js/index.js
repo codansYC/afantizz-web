@@ -6,6 +6,9 @@ var page = 1
 var cellW = 300
 $(function () {
 
+    //记录用户访问
+    record()
+
     var isLogin = getToken() != "" && getToken() != null;
 
     //根据登录态显示header
