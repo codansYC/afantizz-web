@@ -17,13 +17,13 @@ $(function () {
     //
     $("#rentMode").change(function () {
         var rentMode = $(this).children('option:selected').text()
-        $('#kitchen-type option').removeAttr('selected')
+        $('#kitchen-type option').removeProp('selected')
         if (rentMode == '合租') {
             $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','block')
-            $('#kitchen-type option').eq(0).attr('selected','selected');
+            $('#kitchen-type option').eq(0).prop('selected','selected');
         } else {
             $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','none')
-            $('#kitchen-type option').eq(1).attr('selected','selected');
+            $('#kitchen-type option').eq(1).prop('selected','selected');
         }
         adjustTitle()
     })
@@ -120,10 +120,10 @@ function loadHouseDetailInfo(house) {
     //小区
     $(".village input").val(house.village)
     //区域
-    $("#district option").removeAttr('selected')
+    $("#district option").removeProp('selected')
     $("#district option").each(function () {
         if ($(this).text() == house.district) {
-            $(this).attr('selected','selected');
+            $(this).prop('selected','selected');
         }
     })
     //地址
