@@ -32,10 +32,16 @@ class UserService
     {
         $user = User::find()
             ->where(['phone' => $phone])
+            ->asArray()
             ->one();
-        $user->platform = $platform;
-        $user->login_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
-        $user->save();
+        if ($user) {
+            $updateUser = User::find()
+                ->where(['phone' => $phone])
+                ->one();
+            $updateUser->platform = $platform;
+            $updateUser->login_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
+            $updateUser->update();
+        }
         return $user;
     }
 
