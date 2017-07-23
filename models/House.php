@@ -19,6 +19,8 @@ class House extends ActiveRecord {
 
     //添加数据库之外的属性字段
     public $collection_count = 0;  //关注量
+    //是否被当前用户收藏
+    public $isCollection = false;  //false 未收藏;  true 已收藏
 
     static function handleImages($house) {
         $images = array();

@@ -60,7 +60,8 @@ class HouseController extends BaseController {
     function actionDetail() {
         try {
             $hid = $this->requestParam['house_id'];
-            $house = HouseService::getHouseInfo($hid);
+            $token = $this->requestParam['token'];
+            $house = HouseService::getHouseInfo($hid,$token);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$house);
         } catch (\Exception $e) {
             UtilHelper::handleException($e);

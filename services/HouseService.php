@@ -144,7 +144,7 @@ class HouseService {
         return $houseList;
     }
 
-    static function getHouseInfo($houseId) {
+    static function getHouseInfo($houseId,$token) {
 
         $house = House::find()->where(['house_id' => $houseId])
                                   ->asArray()
@@ -166,8 +166,11 @@ class HouseService {
         } else {
             $house["images"] = House::handleImages($house);
         }
-
         $house["release_date"] = GlobalAction::computeTime($house['release_date']);
+        if ($token != '') {
+            $house["isCollection"] = Collection::find()->where(['house_id' => $houseId, 'token' => $token])
+                                                       ->count() > 0;
+        }
         return $house;
     }
 
