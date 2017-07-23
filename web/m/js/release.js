@@ -149,10 +149,6 @@ function loadHouseDetailInfo(house) {
         $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','none')
         $('#kitchen-type option').eq(1).attr('selected','selected');
     }
-    //厨房
-    $("#kitchen-type option").removeAttr('selected')
-    $("#kitchen-type option").eq(house.kitchen_type-1).attr('selected','selected')
-
     //面积
     $("#areaInput").val(house.area);
     //楼层

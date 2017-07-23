@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/release.js" afterPath="$PROJECT_DIR$/web/m/js/release.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/release.js" afterPath="$PROJECT_DIR$/web/pc/js/release.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,7 +109,7 @@
             <state relative-caret-position="264">
               <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
               <folding>
-                <marker date="1500796003000" expanded="true" signature="8047:8054" ph="×" />
+                <marker date="1500796168000" expanded="true" signature="7901:7908" ph="×" />
               </folding>
             </state>
           </provider>
@@ -571,7 +570,7 @@
       <workItem from="1499570228975" duration="44038000" />
       <workItem from="1500172520078" duration="51977000" />
       <workItem from="1500651343995" duration="3959000" />
-      <workItem from="1500779738194" duration="9671000" />
+      <workItem from="1500779738194" duration="9827000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -584,7 +583,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="441653000" />
+    <option name="totallyTimeSpent" value="441809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="38" width="1201" height="709" extended-state="0" />
@@ -1082,7 +1081,7 @@
         <state relative-caret-position="264">
           <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
           <folding>
-            <marker date="1500796003000" expanded="true" signature="8047:8054" ph="×" />
+            <marker date="1500796168000" expanded="true" signature="7901:7908" ph="×" />
           </folding>
         </state>
       </provider>
