@@ -194,10 +194,9 @@ $(function () {
         if (fullAddress.length-numberCount/2-signCount/2 > 23) {
             var numberCount = fullAddress.slice(0,23).match(/[0-9]/g).length
             var signCount = fullAddress.slice(0,23).match(/[();]/g).length
-            traffic = fullAddress.slice(0,23+numberCount/2+signCount/2) + '...'
+            fullAddress = fullAddress.slice(0,23+numberCount/2+signCount/2) + '...'
         }
-        fullAddress.text(' '+traffic)
-        oPlaceDiv.text(house.district+"-"+house.address);
+        oPlaceDiv.text(fullAddress);
         oIntro.append(oPlaceDiv)
 
         /*标签*/
