@@ -207,7 +207,7 @@ $(function () {
         }
 
         /*价格*/
-        var oPriceDiv = $("<div class='price'><span>¥</span></div>");
+        var oPriceDiv = $("<div class='price'><span style='width: 15px;display: inline-block;'>¥</span></div>");
         var pSpan = $("<span></span>")
         oPriceDiv.append(pSpan)
         pSpan.text(house.price)
