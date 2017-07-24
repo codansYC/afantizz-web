@@ -208,7 +208,7 @@ $(function () {
 
         /*价格*/
         var oPriceDiv = $("<div class='price'></div>");
-        oPriceDiv.text('¥ '+house.price)
+        oPriceDiv.text('¥'+house.price)
         oIntro.append(oPriceDiv);
 
         /*发布时间*/
