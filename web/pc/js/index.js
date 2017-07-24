@@ -167,11 +167,8 @@ $(function () {
         oIntro.addClass("house-intro");
         /*标题*/
         var title = house.title
-        if (title.length>16) {
-            title = title.slice(0,16) + '...'
-        }
         var oTitleDiv = $("<div class='house-title'></div>");
-        oTitleDiv.text(title);
+        oTitleDiv.text(handleStr(title,16));
         oIntro.append(oTitleDiv)
 
         /*地址*/
