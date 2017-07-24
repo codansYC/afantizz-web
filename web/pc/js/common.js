@@ -364,5 +364,40 @@ function record() {
     })
 }
 
+//处理字符   字数超过某个数 后面的变为省略号
+function handleStr(str,maxCount) {
+    var tempStr = str
+    var numbers = tempStr.match(/[0-9]/g)
+    var numberCount
+    if (numbers != null) {
+        numberCount = numbers.length
+    } else {
+        numberCount = 0
+    }
+    var signs = tempStr.match(/[();]/g)
+    var signCount
+    if (signs != null) {
+        signCount = signs.length
+    } else {
+        signCount = 0
+    }
+    if (tempStr.length-numberCount/2-signCount/2 > maxCount) {
+        var numbers = tempStr.slice(0,maxCount).match(/[0-9]/g)
+        if (numbers == null) {
+            numberCount = 0
+        } else {
+            numberCount = numbers.length
+        }
+        var signs = tempStr.slice(0,maxCount).match(/[();]/g)
+        if (signs == null) {
+            signCount = 0
+        } else {
+            signCount = signs.length
+        }
+        tempStr = tempStr.slice(0,maxCount+numberCount/2+signCount/2) + '...'
+    }
+    return tempStr
+}
+
 
 

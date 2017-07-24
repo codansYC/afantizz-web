@@ -177,26 +177,7 @@ $(function () {
         /*地址*/
         var oPlaceDiv = $("<div class='house-address'></div>");
         var fullAddress = house.district+"-"+house.address
-        var numbers = fullAddress.match(/[0-9]/g)
-        var numberCount
-        if (numbers != null) {
-            numberCount = numbers.length
-        } else {
-            numberCount = 0
-        }
-        var signs = fullAddress.match(/[();]/g)
-        var signCount
-        if (signs != null) {
-            signCount = signs.length
-        } else {
-            signCount = 0
-        }
-        if (fullAddress.length-numberCount/2-signCount/2 > 23) {
-            var numberCount = fullAddress.slice(0,23).match(/[0-9]/g).length
-            var signCount = fullAddress.slice(0,23).match(/[();]/g).length
-            fullAddress = fullAddress.slice(0,23+numberCount/2+signCount/2) + '...'
-        }
-        oPlaceDiv.text(fullAddress);
+        oPlaceDiv.text(handleStr(fullAddress,23));
         oIntro.append(oPlaceDiv)
 
         /*标签*/
@@ -257,26 +238,7 @@ $(function () {
         oIntro.append(oTraffic)
         var traffic = house.traffic
         if (traffic != null && traffic != '') {
-            var numbers = traffic.match(/[0-9]/g)
-            var numberCount
-            if (numbers != null) {
-                numberCount = numbers.length
-            } else {
-                numberCount = 0
-            }
-            var signs = traffic.match(/[();]/g)
-            var signCount
-            if (signs != null) {
-                signCount = signs.length
-            } else {
-                signCount = 0
-            }
-            if (traffic.length-numberCount/2-signCount/2 > 23) {
-                var numberCount = traffic.slice(0,23).match(/[0-9]/g).length
-                var signCount = traffic.slice(0,23).match(/[();]/g).length
-                traffic = traffic.slice(0,23+numberCount/2+signCount/2) + '...'
-            }
-            oTraffic.text(' '+traffic)
+            oTraffic.text(' '+handleStr(traffic,23))
             var icon = $("<img src='/images/icon-gprs.png' style='display: inline-block;height: 10px;'/>")
             oTraffic.prepend(icon)
         }
