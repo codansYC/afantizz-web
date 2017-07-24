@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/common.js" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/index.js" afterPath="$PROJECT_DIR$/web/pc/js/index.js" />
     </list>
     <ignored path="afantizz.iws" />
@@ -27,13 +26,13 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="239" column="47" selection-start-line="239" selection-start-column="47" selection-end-line="239" selection-end-column="47" />
+            <state relative-caret-position="255">
+              <caret line="179" column="47" selection-start-line="179" selection-start-column="47" selection-end-line="179" selection-end-column="47" />
               <folding>
-                <marker date="1500895875000" expanded="true" signature="6525:6559" ph="..." />
-                <marker date="1500895875000" expanded="true" signature="7668:7703" ph="..." />
-                <marker date="1500895875000" expanded="false" signature="7911:10638" ph="{...}" />
-                <marker date="1500895875000" expanded="true" signature="9117:9134" ph="..." />
+                <marker date="1500896042000" expanded="true" signature="6525:6559" ph="..." />
+                <marker date="1500896042000" expanded="true" signature="7668:7703" ph="..." />
+                <marker date="1500896042000" expanded="false" signature="7911:10638" ph="{...}" />
+                <marker date="1500896042000" expanded="true" signature="9117:9134" ph="..." />
               </folding>
             </state>
           </provider>
@@ -42,8 +41,8 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="384" column="46" selection-start-line="384" selection-start-column="46" selection-end-line="384" selection-end-column="46" />
+            <state relative-caret-position="191">
+              <caret line="367" column="9" selection-start-line="367" selection-start-column="9" selection-end-line="367" selection-end-column="9" />
               <folding>
                 <marker date="1500895875000" expanded="true" signature="1973:1989" ph="..." />
                 <marker date="1500895875000" expanded="true" signature="3520:3585" ph="..." />
@@ -223,8 +222,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-68" />
-    <option name="y" value="51" />
+    <option name="x" value="92" />
+    <option name="y" value="46" />
     <option name="width" value="1201" />
     <option name="height" value="709" />
   </component>
@@ -584,7 +583,7 @@
       <workItem from="1499570228975" duration="44038000" />
       <workItem from="1500172520078" duration="51977000" />
       <workItem from="1500651343995" duration="3959000" />
-      <workItem from="1500779738194" duration="15266000" />
+      <workItem from="1500779738194" duration="15433000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -597,10 +596,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="447248000" />
+    <option name="totallyTimeSpent" value="447415000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-68" y="51" width="1201" height="709" extended-state="0" />
+    <frame x="92" y="46" width="1201" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28731665" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1074,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="384" column="46" selection-start-line="384" selection-start-column="46" selection-end-line="384" selection-end-column="46" />
+        <state relative-caret-position="191">
+          <caret line="367" column="9" selection-start-line="367" selection-start-column="9" selection-end-line="367" selection-end-column="9" />
           <folding>
             <marker date="1500895875000" expanded="true" signature="1973:1989" ph="..." />
             <marker date="1500895875000" expanded="true" signature="3520:3585" ph="..." />
@@ -1090,13 +1089,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="239" column="47" selection-start-line="239" selection-start-column="47" selection-end-line="239" selection-end-column="47" />
+        <state relative-caret-position="255">
+          <caret line="179" column="47" selection-start-line="179" selection-start-column="47" selection-end-line="179" selection-end-column="47" />
           <folding>
-            <marker date="1500895875000" expanded="true" signature="6525:6559" ph="..." />
-            <marker date="1500895875000" expanded="true" signature="7668:7703" ph="..." />
-            <marker date="1500895875000" expanded="false" signature="7911:10638" ph="{...}" />
-            <marker date="1500895875000" expanded="true" signature="9117:9134" ph="..." />
+            <marker date="1500896042000" expanded="true" signature="6525:6559" ph="..." />
+            <marker date="1500896042000" expanded="true" signature="7668:7703" ph="..." />
+            <marker date="1500896042000" expanded="false" signature="7911:10638" ph="{...}" />
+            <marker date="1500896042000" expanded="true" signature="9117:9134" ph="..." />
           </folding>
         </state>
       </provider>

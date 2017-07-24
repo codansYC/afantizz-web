@@ -177,7 +177,7 @@ $(function () {
         /*地址*/
         var oPlaceDiv = $("<div class='house-address'></div>");
         var fullAddress = house.district+"-"+house.address
-        oPlaceDiv.text(handleStr(fullAddress,23));
+        oPlaceDiv.text(handleStr(fullAddress,21));
         oIntro.append(oPlaceDiv)
 
         /*标签*/
