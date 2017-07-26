@@ -215,14 +215,5 @@ class AdminController extends BaseController
         $pattern = '/^[0-9]*$/';
         return preg_match($pattern,$style);
     }
-
-    //用于将房间设施移到facility表
-    function actionMove() {
-        $houseList = House::find()->all();
-        foreach ($houseList AS $index => $house) {
-            $houseId = $house->house_id;
-            $facilities = explode(';',$house->facilities);
-            self::saveFacilities($facilities,$houseId);
-        }
-    }
+    
 }
