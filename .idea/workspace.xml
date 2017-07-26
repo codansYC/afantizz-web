@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/AdminController.php" afterPath="$PROJECT_DIR$/controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/release.css" afterPath="$PROJECT_DIR$/web/pc/css/release.css" />
     </list>
     <ignored path="afantizz.iws" />
@@ -118,8 +116,8 @@
       <file leaf-file-name="release.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/css/release.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+            <state relative-caret-position="262">
+              <caret line="225" column="19" selection-start-line="225" selection-start-column="19" selection-end-line="225" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -584,7 +582,7 @@
       <workItem from="1499570228975" duration="44038000" />
       <workItem from="1500172520078" duration="51977000" />
       <workItem from="1500651343995" duration="3959000" />
-      <workItem from="1500779738194" duration="28768000" />
+      <workItem from="1500779738194" duration="28868000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -597,7 +595,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="460750000" />
+    <option name="totallyTimeSpent" value="460850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="148" y="23" width="1201" height="709" extended-state="0" />
@@ -1099,8 +1097,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/css/release.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="125" column="17" selection-start-line="125" selection-start-column="17" selection-end-line="125" selection-end-column="17" />
+        <state relative-caret-position="262">
+          <caret line="225" column="19" selection-start-line="225" selection-start-column="19" selection-end-line="225" selection-end-column="19" />
           <folding />
         </state>
       </provider>
