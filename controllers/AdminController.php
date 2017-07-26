@@ -215,5 +215,5 @@ class AdminController extends BaseController
         $pattern = '/^[0-9]*$/';
         return preg_match($pattern,$style);
     }
-    
+
 }

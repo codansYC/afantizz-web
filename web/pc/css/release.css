@@ -123,6 +123,7 @@ select{
 input{
     display: inline-block;
     border: solid 1px #edeff3;
+    height: 28px;
     line-height: 28px;
     box-sizing: border-box;
     padding: 0 5px;

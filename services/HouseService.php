@@ -24,6 +24,13 @@ class HouseService {
 
     static function getHouseList($district,$subway,$price,$style,$rentMode,$sort,$page) {
 
+//        $field = [
+//            'house_id',
+//            'rent_mode',
+//            'district',
+//            'address',
+//            'style',
+//        ];
         $houseList = House::find()->where(['sell_state' => '在架']);
 
         if (isset($district) && $district != null) {
