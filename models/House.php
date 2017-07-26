@@ -8,6 +8,7 @@
 
 namespace app\models;
 
+use phpDocumentor\Reflection\Types\Array_;
 use yii\db\ActiveRecord;
 
 class House extends ActiveRecord {
@@ -21,6 +22,7 @@ class House extends ActiveRecord {
     public $collection_count = 0;  //关注量
     //是否被当前用户收藏
     public $isCollection = false;  //false 未收藏;  true 已收藏
+    public $facilities = array();  //房源设施
 
     static function handleImages($house) {
         $images = array();

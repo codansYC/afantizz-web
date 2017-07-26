@@ -196,7 +196,7 @@ $(function () {
         }
 
         // 房间设施
-        var facilities = house.facilities.split(";");
+        var facilities = house.facilities
         for (var i=0; i<facilities.length; i++) {
             $('#zz-facility ul li p').each(function () {
                 if ($(this).text() == facilities[i]) {

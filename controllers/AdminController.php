@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\Facility;
 use app\utils\UtilHelper;
 use app\utils\BizConsts;
 use app\utils\GlobalAction;
@@ -99,7 +100,7 @@ class AdminController extends BaseController
         }
 
         //房间设施
-        if (self::invalid($facilities)) {
+        if (self::invalid($facilities) || count($facilities) == 0) {
             UtilHelper::echoExitResult($err_code, '请选择房间设施');
         }
         //价格
@@ -158,7 +159,6 @@ class AdminController extends BaseController
         $house->deadline_date = $data['deadline_date'];
         $house->floor = $data['floor'];
         $house->max_floor = $data['max_floor'];
-        $house->facilities = $data['facilities'];
         $house->price = $data['price'];
         $house->pay_mode = $data['pay_mode'];
         $house->title = $data['title'];
@@ -187,6 +187,20 @@ class AdminController extends BaseController
         }
         $house->thumb_images = $thumb_images;
         $house->save();
+        $houseId = $house->attributes['house_id'];
+        self::saveFacilities($data['facilities'],$houseId);
+    }
+
+    function saveFacilities($facilities, $houseId) {
+        foreach ($facilities AS $index => $f) {
+            if ($f == '') {
+                continue;
+            }
+            $facility = new Facility();
+            $facility->house_id = $houseId;
+            $facility->name = $f;
+            $facility->save();
+        }
     }
 
     function priceIsValid($price) {
@@ -200,5 +214,15 @@ class AdminController extends BaseController
     function styleIsValid($style) {
         $pattern = '/^[0-9]*$/';
         return preg_match($pattern,$style);
+    }
+
+    //用于将房间设施移到facility表
+    function actionMove() {
+        $houseList = House::find()->all();
+        foreach ($houseList AS $index => $house) {
+            $houseId = $house->house_id;
+            $facilities = explode(';',$house->facilities);
+            self::saveFacilities($facilities,$houseId);
+        }
     }
 }

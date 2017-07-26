@@ -332,7 +332,7 @@ function showHouseInfo() {
     }
 
     //房间配套
-    var facilities = house.facilities.split(';')
+    var facilities = house.facilities
     var facilityLis = $('.facilities>ul>li')
     facilityLis.each(function () {
         var name = $(this).children('p').text();

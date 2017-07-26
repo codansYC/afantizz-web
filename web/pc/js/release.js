@@ -418,7 +418,8 @@ function sureRelease() {
     $(".house-facilities .checkbox i.check").each(function () {
         facilityArr.push($(this).next("label").text())
     })
-    var facilities = facilityArr.join(';')
+    // var facilities = facilityArr.join(';')
+    var facilities = facilityArr
     //标题
     var title = $('#house-title-field').val()
     //转租优惠
@@ -581,7 +582,7 @@ function loadHouseDetailInfo(house) {
     //到期日期
     $("#deadline-date").val(house.deadline_date);
     //设施
-    var facilities = house.facilities.split(';')
+    var facilities = house.facilities
     $(".house-facilities .checkbox i").each(function () {
         if (facilities.indexOf($(this).next("label").text())>-1) {
             $(this).addClass('check')

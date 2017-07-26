@@ -340,7 +340,8 @@ function sureRelease() {
     $(".house-facilities .checkbox i.check").each(function () {
         facilityArr.push($(this).next("label").text())
     })
-    var facilities = facilityArr.join(';')
+    // var facilities = facilityArr.join(';')
+    var facilities = facilityArr
     //标题
     var title = $('#house-title-field').val()
     //转租优惠

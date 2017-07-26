@@ -9,6 +9,7 @@
 namespace app\services;
 
 use app\models\Collection;
+use app\models\Facility;
 use app\models\House;
 use app\models\Accusation;
 use app\models\Image;
@@ -119,6 +120,7 @@ class HouseService {
             $date = $house['release_date'];
             $houseList[$index]['release_date'] = GlobalAction::computeTime($date);
             $houseList[$index]['images'] = House::getThumbImages($house);
+            $houseList[$index]['facilities'] = self::getFacilities($house['house_id']);
         }
 
         return $houseList;
@@ -140,6 +142,7 @@ class HouseService {
             $date = $house['release_date'];
             $houseList[$index]['release_date'] = GlobalAction::computeTime($date);
             $houseList[$index]['images'] = House::getThumbImages($house);
+            $houseList[$index]['facilities'] = self::getFacilities($house['house_id']);
         }
         return $houseList;
     }
@@ -171,6 +174,7 @@ class HouseService {
             $house["isCollection"] = Collection::find()->where(['house_id' => $houseId, 'token' => $token])
                                                        ->count() > 0;
         }
+        $house['facilities'] = self::getFacilities($house['house_id']);
         return $house;
     }
 
@@ -268,7 +272,7 @@ class HouseService {
             UtilHelper::echoExitResult($err_code,'请选择房间到期日期');
         }
         //房间设施
-        if (self::invalid($facilities)) {
+        if (self::invalid($facilities) || isEmpty($facilities)) {
             UtilHelper::echoExitResult($err_code,'请选择房间设施');
         }
 
@@ -334,7 +338,6 @@ class HouseService {
         $house->deadline_date = $data['deadline_date'];
         $house->floor = $data['floor'];
         $house->max_floor = $data['max_floor'];
-        $house->facilities = $data['facilities'];
         $house->price = $data['price'];
         $house->pay_mode = $data['pay_mode'];
         $house->title = $data['title'];
@@ -363,6 +366,26 @@ class HouseService {
         $house->sell_state = '在架';
         $house->release_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
         $house->save();
+        $houseId = $house->attributes['house_id'];
+        self::saveFacilities($data['facilities'],$houseId);
+    }
+
+    static function saveFacilities($facilities, $houseId) {
+        foreach ($facilities AS $index => $f) {
+            $facility = new Facility();
+            $facility->house_id = $houseId;
+            $facility->name = $f;
+            $facility->save();
+        }
+    }
+
+    static function getFacilities($houseId) {
+        $facilityArr = array();
+        $facilities = Facility::find()->where(['house_id' => $houseId])->all();
+        foreach ($facilities AS $index => $facility) {
+            array_push($facilityArr,$facility->name);
+        }
+        return $facilityArr;
     }
 
     static function stickHouse($houseId) {

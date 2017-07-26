@@ -73,6 +73,7 @@ class UserService
             }
             $houses[$index]['release_date'] = GlobalAction::computeTime($date);
             $houses[$index]['images'] = House::getThumbImages($house);
+            $house['facilities'] = HouseService::getFacilities($house['house_id']);
         }
         return $houses;
     }
@@ -93,6 +94,7 @@ class UserService
             $date = $house['release_date'];
             $house['release_date'] = GlobalAction::computeTime($date);
             $house['images'] = House::getThumbImages($house);
+            $house['facilities'] = HouseService::getFacilities($houseId);
             array_push($houses,$house);
         }
         return $houses;

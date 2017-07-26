@@ -177,7 +177,7 @@ function loadHouseDetailInfo(house) {
     //到期日期
     $(".deadline").val(house.deadline_date);
     //设施
-    var facilities = house.facilities.split(';')
+    var facilities = house.facilities
     $(".facility .checkBox i").each(function () {
         if (facilities.indexOf($(this).next("label").text())>-1) {
             $(this).addClass('check')
@@ -403,9 +403,9 @@ function release(subways,traffics) {
     //最高楼层
     var max_floor = $(".max_floor").val();
     //设施
-    var facilities = ""
+    var facilities = new Array();
     $(".facility .checkBox i.check").each(function () {
-        facilities += $(this).next("label").text() + ";"
+        facilities.append($(this).next("label").text())
     })
     //租金
     var price = $("#priceInput").val();
