@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LikingfitController.php" afterPath="$PROJECT_DIR$/controllers/LikingfitController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/coupon.html" afterPath="$PROJECT_DIR$/web/m/coupon.html" />
     </list>
     <ignored path="afantizz.iws" />
@@ -23,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+            <state relative-caret-position="289">
+              <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
               <folding>
                 <element signature="e#119#141#0#PHP" expanded="true" />
               </folding>
@@ -103,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coupon.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="coupon.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="140" column="79" selection-start-line="140" selection-start-column="79" selection-end-line="140" selection-end-column="79" />
+            <state relative-caret-position="340">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -196,11 +197,11 @@
         <option value="$PROJECT_DIR$/services/HouseService.php" />
         <option value="$PROJECT_DIR$/web/pc/css/release.css" />
         <option value="$PROJECT_DIR$/models/Coupon.php" />
-        <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
         <option value="$PROJECT_DIR$/config/db.php" />
         <option value="$PROJECT_DIR$/web/m/getCoupon.html" />
         <option value="$PROJECT_DIR$/web/m/coupon.html" />
+        <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
       </list>
     </option>
   </component>
@@ -215,8 +216,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="118" />
-    <option name="y" value="45" />
+    <option name="x" value="179" />
+    <option name="y" value="44" />
     <option name="width" value="979" />
     <option name="height" value="709" />
   </component>
@@ -407,6 +408,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -540,7 +555,7 @@
       <workItem from="1500651343995" duration="3959000" />
       <workItem from="1500779738194" duration="35273000" />
       <workItem from="1501231092183" duration="7977000" />
-      <workItem from="1501241139792" duration="5579000" />
+      <workItem from="1501241139792" duration="5714000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -553,10 +568,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="480811000" />
+    <option name="totallyTimeSpent" value="480946000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="118" y="45" width="979" height="709" extended-state="0" />
+    <frame x="179" y="44" width="979" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29242262" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -916,16 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
-          <folding>
-            <element signature="e#119#141#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1018,9 +1023,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="140" column="79" selection-start-line="140" selection-start-column="79" selection-end-line="140" selection-end-column="79" />
+        <state relative-caret-position="340">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+          <folding>
+            <element signature="e#119#141#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

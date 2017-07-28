@@ -39,9 +39,9 @@ class LikingfitController extends BaseController{
             UtilHelper::echoExitResult(22222, "您已领取过优惠券,不能重复领取");
         }
         $totolCount = Coupon::find()->count();
-        if ($totolCount>=300) {
-            UtilHelper::echoExitResult(22222, "优惠券已领完");
-        }
+//        if ($totolCount>=300) {
+//            UtilHelper::echoExitResult(22222, "优惠券已领完");
+//        }
         $coupon = new Coupon();
         $coupon->name = $name;
         $coupon->phone = $phone;
