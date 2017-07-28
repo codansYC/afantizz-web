@@ -20,7 +20,9 @@
         }
         .bg{
             background: url("/images/likingbg.png");
-            height: 800px;
+            height: 736px;
+            background-repeat: no-repeat;
+
         }
         .title{
             color: white;
@@ -68,7 +70,7 @@
             display: inline-block;
             width: 100%;
             height: 40px;
-            font-size: 17px;
+            font-size: 20px;
         }
         .price{
             margin: 0px auto;
@@ -91,6 +93,18 @@
     </style>
     <script>
         $(function () {
+            //设置背景图尺寸
+            var screenW = $(window).width()
+            var screenH = $(window).height()
+            var bigImgW = 458
+            var bigImgH = 736
+            var bcoX = -(bigImgW - screenW)/2 + 'px'
+            var bcoY = -(bigImgH - screenH)/2 + 'px'
+            $('.bg').height(screenH)
+            $('.bg').css({
+                'background-position-x': bcoX,
+                'background-position-y': bcoY,
+            })
             var isRequest = false
             $("button").click(function () {
 //                location.href = "/m/coupon.html"
