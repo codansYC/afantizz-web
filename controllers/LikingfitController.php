@@ -47,6 +47,7 @@ class LikingfitController extends BaseController{
         $coupon->phone = $phone;
         $coupon->get_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
         $coupon->no = $totolCount+1;
+        $coupon->coupon_state = 1;
         $coupon->save();
         UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
     }
@@ -64,5 +65,29 @@ class LikingfitController extends BaseController{
             UtilHelper::echoExitResult(22222, "暂时没有优惠券");
         }
         UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$coupon);
+    }
+
+    function actionAdmin() {
+        echo \Yii::$app->view->renderFile('@app/web/m/couponAdmin.html');
+    }
+
+    function actionCouponList() {
+        $list =  Coupon::find()->asArray()->all();
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$list);
+    }
+
+    function actionUseCoupon() {
+        $id = $this->requestParam['id'];
+        if (!isset($id) || $id == '') {
+            UtilHelper::echoExitResult(22222, "参数错误");
+        }
+        $coupon = Coupon::find()->where(['id' => $id])->one();
+        if (!$coupon) {
+            UtilHelper::echoExitResult(22222, "优惠券不存在");
+        }
+        $coupon->coupon_state = 0;
+        $coupon->update();
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,null);
+
     }
 }

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LikingFit烟台鲁大店-优惠券管理页</title>
+    <link rel="Shortcut Icon" href="images/logo.png"/>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style type="text/css">
+        .top{
+            position: fixed;
+            background-color: white;
+            padding-bottom: 10px;
+            border-bottom: #34c86c solid 2px;
+            width: 480px;
+        }
+        .amount{
+            line-height: 50px;
+        }
+        .amount ul{
+            list-style: none;
+        }
+        .amount ul li {
+            float: left;
+            margin-right: 20px;
+        }
+        .search input{
+            display: inline-block;
+            outline: none;
+            border: #34c86c solid 1px;
+            width: 200px;
+            height: 34px;
+            padding-left: 7px;
+        }
+        .search a{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .content{
+            margin-top: 120px;
+            width: 440px;
+        }
+        .content ul{
+            list-style: none;
+        }
+        .content ul li{
+            border-bottom: #edeff3 solid 1px ;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            /*position: relative;*/
+        }
+        .phone{
+            color: #596167;
+        }
+        .content ul li .action{
+            line-height: 50px;
+            height: 50px;
+            padding-right: 100px;
+        }
+        .content ul li a{
+            display: inline-block;
+            line-height: 50px;
+            height: 50px;
+        }
+        .content ul li p{
+            line-height: 15px;
+            margin-bottom: 10px;
+        }
+        /*.line{*/
+            /*height: 1px;*/
+            /*color: #edeff3;*/
+        /*}*/
+
+    </style>
+    <script>
+        $(function () {
+            var allCoupons = new Array()
+            var unuseCoupons = new Array()
+            var usedCoupons = new Array()
+
+            //请求
+//            var url = 'http://localhost:8000/likingfit/coupon-list'
+            var url = 'http://afantizz.com/likingfit/coupon-list'
+            request(url,{},function (resp) {
+                clearData()
+                allCoupons = resp
+                for (var i=0; i<resp.length;i++) {
+                    var coupon = resp[i]
+                    if (coupon.coupon_state == 1) {
+                        unuseCoupons.push(coupon)
+                    } else {
+                        usedCoupons.push(coupon)
+                    }
+                }
+                handleAmount()
+                addCouponList(resp)
+            })
+
+            function clearData() {
+                allCoupons.pop()
+                unuseCoupons.pop()
+                usedCoupons.pop()
+            }
+
+            function addCoupon(coupon) {
+                var ul = $('.content ul')
+                var li = $("<li class='clearfix'></li>")
+                ul.append(li)
+                var div1 = $("<div class='pull-left'></div>")
+                var div2 = $("<div class='action pull-right'></div>")
+                li.append(div1)
+                li.append(div2)
+                var p1 = $("<p class='name'></p>")
+                p1.text(coupon.name)
+                var p2 = $("<p class='phone'></p>")
+                p1.text(coupon.name)
+                p2.text(coupon.phone)
+                div1.append(p1)
+                div1.append(p2)
+                if (coupon.coupon_state == 1) {
+                    var a = $("<a href='javascript:'>兑换</a>")
+                    div2.append(a)
+                    a.click(function () {
+                        useCoupon(coupon.id)
+                    })
+                }
+
+            }
+
+            function useCoupon(id) {
+//                var url = 'http://localhost:8000/likingfit/use-coupon'
+                var url = 'http://afantizz.com/likingfit/use-coupon'
+                var params = {
+                    id: id
+                }
+                request(url,params,function () {
+                    location.reload()
+                })
+            }
+
+            $('.all').click(function () {
+                addCouponList(allCoupons)
+            })
+            $('.used').click(function () {
+                addCouponList(usedCoupons)
+            })
+            $('.unused').click(function () {
+                addCouponList(unuseCoupons)
+            })
+            $('.refresh').click(function () {
+                location.reload()
+            })
+
+            function addCouponList(coupons) {
+                $('.content ul li').remove()
+                for (var i=0;i<coupons.length;i++) {
+                    addCoupon(coupons[i])
+                }
+            }
+
+            function handleAmount() {
+                $(".amount .all").text("总数量: "+allCoupons.length)
+                $(".amount .used").text("已兑换: "+usedCoupons.length)
+                $(".amount .unused").text("未兑换: "+unuseCoupons.length)
+            }
+
+            //搜索
+            $('input').bind('input propertychange',function () {
+
+                var searchCoupons = new Array()
+                var tx = $('input').val()
+                for (var i=0;i<allCoupons.length;i++){
+                    var coupon = allCoupons[i]
+                    if (coupon.phone.indexOf(tx) > -1) {
+                        searchCoupons.push(coupon)
+                    }
+                }
+                addCouponList(searchCoupons)
+            })
+
+        })
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="top">
+        <div class="amount clearfix">
+            <ul>
+                <li class="all">总数量:</li>
+                <li class="used">已兑换:</li>
+                <li class="unused">未兑换:</li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="输入手机号">
+            <a class="all" href="javascript:">全部</a>
+            <a class="used" href="javascript:">已兑换</a>
+            <a class="unused" href="javascript:">未兑换</a>
+            <a class="refresh" href="javascript:">刷新</a>
+        </div>
+    </div>
+    <div class="content">
+        <ul>
+            <!--<li class="clearfix">-->
+                <!--<div class="pull-left">-->
+                    <!--<p class="name">袁超</p>-->
+                    <!--<p class="phone">15801569925</p>-->
+                <!--</div>-->
+                <!--<div class="action pull-right">-->
+                    <!--<a href="javascript:">兑换</a>-->
+                <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
+</body>
+</html>
