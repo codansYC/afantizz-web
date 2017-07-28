@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>likingfit鲁大店</title>
+    <link rel="Shortcut Icon" href="images/logo.png"/>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style type="text/css">
+        .bg{
+            background: url("/images/likingbg.png");
+            height: 800px;
+        }
+        .title{
+            color: white;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+        .coupon-bg{
+            background: url("/images/coupon-background.png");
+            width: 280px;
+            height: 125px;
+            margin: 20px auto;
+            background-size: 280px 125px;
+        }
+        .name-bg,.phone-bg,.submit-bg{
+            margin: 0px auto;
+            background-color: red;
+            width: 280px;
+        }
+        .name-bg{
+            margin-top: 40px;
+        }
+        .phone-bg{
+            margin-top: 30px;
+        }
+        .submit-bg{
+            margin-top: 60px;
+        }
+        input{
+            display: inline-block;
+            width: 100%;
+            height: 34px;
+            outline: none;
+            border: none;
+            background-color: white;
+            padding: 0 5px;
+            text-align: center;
+        }
+        button{
+            background-color: #34c86c;
+            outline: none;
+            border: none;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            height: 34px;
+        }
+        .price{
+            margin: 0px auto;
+            padding-top: 25px;
+            text-align: center;
+            color: white;
+        }
+        .number{
+            font-size: 40px;
+        }
+        .sign{
+            font-size: 25px;
+            padding-right: 5px;
+        }
+        .desc{
+            color: #227b56;
+            font-size: 10px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(function () {
+            var isRequest = false
+            $("button").click(function () {
+//                location.href = "/m/coupon.html"
+                if (isRequest) {
+                    return
+                }
+                isRequest = true
+                var name = $('.name-bg input').val()
+                if (name == null) {
+                    name = ''
+                }
+                var phone = $('.phone-bg input').val()
+                if (phone == null) {
+                    phone = ''
+                }
+                var params = {
+                    name: name,
+                    phone: phone
+                }
+                var pro = false
+                var basicUrl = pro ? "http://afantizz.com" : "http://localhost:8000"
+                $.post(basicUrl+"/likingfit/get-coupon", params, function (response, status) {
+                    isRequest = false
+                    if (status != 'success') {
+                        showModel('操作失败,请稍后重试')
+                        return
+                    }
+                    var resp = $.parseJSON(response);
+                    if (resp.err_code != 0) {
+                        showModel(resp.err_msg,function () {
+
+                        },1200)
+                        return
+                    }
+                    showModel("领取成功",function () {
+                        location.href = "/m/coupon.html?phone="+phone
+                    },1200)
+
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="bg">
+        <h4 class="title">领取优惠券</h4>
+        <div class="coupon-bg">
+            <div class="price">
+                <span class="sign">¥</span><span class="number">200</span>
+            </div>
+            <div class="desc">
+                <span>*仅适用于likingfit烟台鲁大店</span>
+            </div>
+        </div>
+
+        <div class="name-bg">
+            <input type="text" placeholder="请输入姓名">
+        </div>
+        <div class="phone-bg">
+            <input type="text" placeholder="请输入手机号">
+        </div>
+        <div class="submit-bg">
+            <button class="">提交</button>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
