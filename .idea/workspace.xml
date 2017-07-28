@@ -106,8 +106,8 @@
       <file leaf-file-name="coupon.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+            <state relative-caret-position="221">
+              <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -540,7 +540,7 @@
       <workItem from="1500651343995" duration="3959000" />
       <workItem from="1500779738194" duration="35273000" />
       <workItem from="1501231092183" duration="7977000" />
-      <workItem from="1501241139792" duration="5271000" />
+      <workItem from="1501241139792" duration="5355000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -553,7 +553,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="480503000" />
+    <option name="totallyTimeSpent" value="480587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="118" y="45" width="979" height="709" extended-state="0" />
@@ -1018,8 +1018,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="83" column="25" selection-start-line="83" selection-start-column="25" selection-end-line="83" selection-end-column="25" />
+        <state relative-caret-position="221">
+          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
           <folding />
         </state>
       </provider>
