@@ -36,7 +36,7 @@ class LikingfitController extends BaseController{
         //检查数据库
         $isExist = Coupon::find()->where(['phone' => $phone])->count() > 0;
         if ($isExist) {
-            UtilHelper::echoExitResult(22222, "您已领取过优惠券,不能重复领取");
+            UtilHelper::echoExitResult(66666, "您已领取过优惠券");
         }
         $totolCount = Coupon::find()->count();
 //        if ($totolCount>=300) {
