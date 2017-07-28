@@ -13,16 +13,23 @@
     <script src="/m/js/common.js"></script>
     <script src="/m/js/layout.js"></script>
     <style type="text/css">
+        .container{
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+        }
         .bg{
             background: url("/images/likingbg.png");
-            height: 800px;
+            height: 736px;
             background-repeat: no-repeat;
+
         }
         .title{
             color: white;
             height: 60px;
             line-height: 60px;
             text-align: center;
+            margin-top: 0px !important;
         }
         .coupon-bg{
             background: url("/images/coupon-background.png");
@@ -55,7 +62,7 @@
             padding-right: 5px;
         }
         .desc{
-            color: #888b9a;
+            color: #596167;
             font-size: 10px;
             text-align: center;
             margin-top: 5px;
@@ -79,10 +86,24 @@
             text-align: center;
             color: white;
         }
+        .point{
+            color: #34c86c;
+        }
 
     </style>
     <script>
         $(function () {
+            var screenW = $(window).width()
+            var screenH = Math.max(504,$(window).height())
+            var bigImgW = 458
+            var bigImgH = 736
+            var bcoX = -(bigImgW - screenW)/2 + 'px'
+            var bcoY = -(bigImgH - screenH)/2 + 'px'
+            $('.bg').height(screenH)
+            $('.bg').css({
+                'background-position-x': bcoX,
+                'background-position-y': bcoY,
+            })
             var phone = getParams('phone')
             if (phone == null) {
                 phone = ''
@@ -90,7 +111,7 @@
             var params = {
                 phone: phone
             }
-            var pro = false
+            var pro = true
             var basicUrl = pro ? "http://afantizz.com" : "http://localhost:8000"
             $.post(basicUrl+"/likingfit/coupon", params, function (response, status) {
                 if (status != 'success') {
@@ -143,8 +164,7 @@
             </div>
         </div>
         <div class="other-info">
-            <p>请将本页截屏保存</p>
-            <p>购买会员卡时凭截图兑换优惠券</p>
+            <p>购买会员卡时凭<span class="point">姓名</span>+<span class="point">手机号</span>兑换优惠券</p>
         </div>
     </div>
 </div>

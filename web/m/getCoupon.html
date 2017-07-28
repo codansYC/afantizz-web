@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>likingfit鲁大店</title>
+    <title>LikingFit烟台鲁大店</title>
     <link rel="Shortcut Icon" href="images/logo.png"/>
     <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
     <script src="/common/jquery-3.1.1.min.js"></script>
@@ -95,10 +95,9 @@
         $(function () {
             //设置背景图尺寸
             var screenW = $(window).width()
-            var screenH = Math.max(500,$(window).height())
+            var screenH = Math.max(504,$(window).height())
             var bigImgW = 458
             var bigImgH = 736
-            alert($(window).height())
             var bcoX = -(bigImgW - screenW)/2 + 'px'
             var bcoY = -(bigImgH - screenH)/2 + 'px'
             $('.bg').height(screenH)
@@ -125,7 +124,7 @@
                     name: name,
                     phone: phone
                 }
-                var pro = false
+                var pro = true
                 var basicUrl = pro ? "http://afantizz.com" : "http://localhost:8000"
                 $.post(basicUrl+"/likingfit/get-coupon", params, function (response, status) {
                     isRequest = false
@@ -158,7 +157,7 @@
                 <span class="sign">¥</span><span class="number">200</span>
             </div>
             <div class="desc">
-                <span>*仅适用于likingfit烟台鲁大店</span>
+                <span>*仅适用于LikingFit烟台鲁大店</span>
             </div>
         </div>
 
