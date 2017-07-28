@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/LikingfitController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/getCoupon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/db.php" afterPath="$PROJECT_DIR$/config/db.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/common.js" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/coupon.html" afterPath="$PROJECT_DIR$/web/m/coupon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/getCoupon.html" afterPath="$PROJECT_DIR$/web/m/getCoupon.html" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,8 +59,18 @@
       <file leaf-file-name="getCoupon.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/getCoupon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+            <state relative-caret-position="68">
+              <caret line="4" column="131" selection-start-line="4" selection-start-column="131" selection-end-line="4" selection-end-column="131" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="131" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -72,8 +79,8 @@
       <file leaf-file-name="coupon.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="-51">
+              <caret line="4" column="131" selection-start-line="4" selection-start-column="131" selection-end-line="4" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -199,8 +206,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="222" />
-    <option name="y" value="40" />
+    <option name="x" value="146" />
+    <option name="y" value="102" />
     <option name="width" value="979" />
     <option name="height" value="709" />
   </component>
@@ -426,7 +433,7 @@
       <workItem from="1500651343995" duration="3959000" />
       <workItem from="1500779738194" duration="35273000" />
       <workItem from="1501231092183" duration="7977000" />
-      <workItem from="1501241139792" duration="273000" />
+      <workItem from="1501241139792" duration="457000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -439,10 +446,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475505000" />
+    <option name="totallyTimeSpent" value="475689000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="222" y="40" width="979" height="709" extended-state="0" />
+    <frame x="146" y="102" width="979" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29242262" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -518,13 +525,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/pc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -688,6 +688,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="334" column="18" selection-start-line="334" selection-start-column="8" selection-end-line="334" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -843,6 +844,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -882,18 +884,26 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="131" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="-51">
+          <caret line="4" column="131" selection-start-line="4" selection-start-column="131" selection-end-line="4" selection-end-column="131" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getCoupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        <state relative-caret-position="68">
+          <caret line="4" column="131" selection-start-line="4" selection-start-column="131" selection-end-line="4" selection-end-column="131" />
           <folding />
         </state>
       </provider>
