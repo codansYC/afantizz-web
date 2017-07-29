@@ -68,7 +68,18 @@ class LikingfitController extends BaseController{
     }
 
     function actionAdmin() {
-        echo \Yii::$app->view->renderFile('@app/web/m/couponAdmin.html');
+        try{
+            $key = $this->requestParam['key'];
+            if (!isset($key) || $key == '') {
+                return;
+                //UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE,BizConsts::UNLOGIN_ERRMSG);
+            }
+            if ($key == 1024) {
+                echo \Yii::$app->view->renderFile('@app/web/m/couponAdmin.html');
+            }
+        }catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
     }
 
     function actionCouponList() {
