@@ -78,7 +78,7 @@ class LikingfitController extends BaseController{
                 echo \Yii::$app->view->renderFile('@app/web/m/couponAdmin.html');
             }
         }catch (\Exception $e){
-            UtilHelper::handleException($e);
+//            UtilHelper::handleException($e);
         }
     }
 
