@@ -146,12 +146,15 @@
             }
 
             $('.all').click(function () {
+                $('input').val('')
                 addCouponList(allCoupons)
             })
             $('.used').click(function () {
+                $('input').val('')
                 addCouponList(usedCoupons)
             })
             $('.unused').click(function () {
+                $('input').val('')
                 addCouponList(unuseCoupons)
             })
             $('.refresh').click(function () {
