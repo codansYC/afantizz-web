@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/coupon.html" afterPath="$PROJECT_DIR$/web/m/coupon.html" />
     </list>
     <ignored path="afantizz.iws" />
@@ -101,8 +100,8 @@
       <file leaf-file-name="coupon.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+            <state relative-caret-position="272">
+              <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -460,7 +459,7 @@
       <workItem from="1501380745743" duration="483000" />
       <workItem from="1501383833397" duration="64000" />
       <workItem from="1501385204265" duration="4000" />
-      <workItem from="1501570611531" duration="80000" />
+      <workItem from="1501570611531" duration="185000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -473,7 +472,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="492079000" />
+    <option name="totallyTimeSpent" value="492184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="97" y="30" width="979" height="709" extended-state="0" />
@@ -911,8 +910,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+        <state relative-caret-position="272">
+          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
           <folding />
         </state>
       </provider>
