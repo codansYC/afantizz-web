@@ -1,6 +1,7 @@
 /**
  * Created by lekuai on 17/4/1.
  */
+var url_token = null
 $(function () {
 
     //先判断是否有房源id传过来,如果有,即为编辑,否则为新发布
@@ -39,8 +40,12 @@ $(function () {
     })
 
 
-    if (!isLogin()) {
+    //判断url中是否带有token
+    var url_token = getParams('token')
+    if ((url_token == null || url_token == "") && !isLogin()) {
         location.href = 'login.html'
+    } else {
+        this.url_token = url_token
     }
 
     addMoveEventForImgUl()
@@ -91,9 +96,13 @@ function restoreHouseIfModify() {
     requestHouseDetail(houseId);
 }
 function requestHouseDetail(houseId) {
+    var token = url_token
+    if (url_token == null || url_token == "") {
+        token = getToken()
+    }
     var params = {
         house_id: houseId,
-        token: getToken()
+        token: token
     }
     request(basicUrl+'house/detail',params,function (resp) {
         var house = resp;
@@ -444,9 +453,14 @@ function release(subways,traffics) {
     var traffic = traffics
     //房源id
     var houseId = parseInt(getParams("house_id"));
+    // token
+    var token = url_token
+    if (url_token == null || url_token == "") {
+        token = getToken()
+    }
     //所有参数
     var params = {
-            token: getToken(),
+            token: token,
             house_id: houseId,
             rent_mode: rentMode,
             village: village,
