@@ -196,10 +196,18 @@ function request(url,params,respBlock) {
         }
         var resp = $.parseJSON(response);
         if (resp.err_code == 10000) {
+            if (JSInteraction != null) {
+                JSInteraction.removeLoadingReleaseDone()
+                showModel("用户未登录")
+                return
+            }
             location.href = 'login.html'
             return;
         }
         if (resp.err_code != 0) {
+            if (JSInteraction != null) {
+                JSInteraction.removeLoadingReleaseDone()
+            }
             showModel(resp.err_msg)
             return
         }

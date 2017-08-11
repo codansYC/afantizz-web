@@ -380,6 +380,9 @@ function sureRelease() {
     var address = $("#detailAddress").val();
     if (address == '') {
         showModel('请输入详细地址')
+        if (JSInteraction != null) {
+            JSInteraction.removeLoadingReleaseDone()
+        }
         return
     }
     searchSubway(address,function (subways,traffics) {
@@ -496,8 +499,15 @@ function release(subways,traffics) {
         }
     var url = getParams("house_id") == null ? basicUrl + "house/release" : basicUrl + "house/modify";
     request(url, params, function (resp) {
+        if (JSInteraction != null) {
+            JSInteraction.removeLoadingReleaseDone()
+        }
         showModel('发布成功',function () {
-            location.href = pro ? "http://afantizz.com" : "http://localhost:8000"
+            if (JSInteraction != null) {
+                JSInteraction.turnToHouseListPageAfterReleaseSuccess()
+            } else {
+                location.href = pro ? "http://afantizz.com" : "http://localhost:8000"
+            }
         },1000)
 
 
