@@ -35,6 +35,7 @@ function getUserInfo() {
 
 //提交举报
 function accusate() {
+    alert(123)
     JSInteraction.showLoadingWhileComplain()
     var houseId = parseInt(getParams("house_id"));
     var reason = ''
