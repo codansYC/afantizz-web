@@ -437,7 +437,7 @@ function collectionRequest() {
 //举报
 function accusate() {
     if (JSInteraction != null) {
-        JSInteraction.()
+        JSInteraction.turnToComplainPage()
     }
 }
 
