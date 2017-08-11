@@ -190,6 +190,7 @@ function customAlert(msg) {
 
 function request(url,params,respBlock) {
     $.post(url, params, function (response, status) {
+        alert(2222)
         if (status != 'success') {
             if (JSInteraction != null) {
                 JSInteraction.removeLoadingReleaseDone()
