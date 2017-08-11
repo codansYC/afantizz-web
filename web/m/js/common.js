@@ -189,9 +189,11 @@ function customAlert(msg) {
 
 
 function request(url,params,respBlock) {
-    alert(234)
     $.post(url, params, function (response, status) {
         if (status != 'success') {
+            if (JSInteraction != null) {
+                JSInteraction.removeLoadingReleaseDone()
+            }
             showModel('操作失败,请稍后重试')
             return
         }
