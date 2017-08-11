@@ -54,9 +54,9 @@ function accusate() {
     var params = {
         house_id: houseId,
         reason: reason,
-        token: app_token,
-        phone: phone,
-        desc: desc
+        token: "",
+        phone: "",
+        desc: ""
     }
     alert(reason)
     alert(houseId)
