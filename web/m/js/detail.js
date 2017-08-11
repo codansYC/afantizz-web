@@ -395,6 +395,7 @@ function collectionRequest() {
     var token
     if (JSInteraction != null) {
         var app_token = JSInteraction.getAppToken()
+        alert(app_token)
         if (app_token == "") {
             return
         }
