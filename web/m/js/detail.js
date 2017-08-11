@@ -132,8 +132,12 @@ function moveTo(index) {
 //请求房源详情
 function requestHouseInfo() {
     var houseId = parseInt(getParams("house_id"));
+    var token = getParams("token")
+    if (token == null) {
+        token = getToken()
+    }
     var params = {
-        token: getToken(),
+        token: token,
         house_id: houseId
     }
     request(basicUrl+'house/detail',params,function (resp) {
@@ -395,7 +399,6 @@ function collectionRequest() {
     var token
     if (JSInteraction != null) {
         var app_token = JSInteraction.getAppToken()
-        alert(app_token)
         if (app_token == "") {
             return
         }
