@@ -411,9 +411,9 @@ function release(subways,traffics) {
     //设施
     var facilities = new Array();
     $(".facility .checkBox i.check").each(function () {
-        facilities.append($(this).next("label").text())
+        facilities.push($(this).next("label").text())
     })
-    facilities.append('')
+    facilities.push('')
     //租金
     var price = $("#priceInput").val();
     //支付方式
