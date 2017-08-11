@@ -390,7 +390,7 @@ function release(subways,traffics) {
         alert(333)
     }
     if (JSInteraction != null) {
-        m_model.showLoadingWhileReleasing()
+        JSInteraction.showLoadingWhileReleasing()
     }
     //地址
     var address = $("#detailAddress").val();
