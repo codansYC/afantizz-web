@@ -493,21 +493,25 @@ function release(subways,traffics) {
             thumb_images: thumbImages
         }
     var url = getParams("house_id") == null ? basicUrl + "house/release" : basicUrl + "house/modify";
-    request(url, params, function (resp) {
+    $.post(url, params, function (response, status) {
         if (JSInteraction != null) {
             JSInteraction.removeLoadingReleaseDone()
+        }
+        if (status != 'success') {
+            showModel('操作失败,请稍后重试')
+            return
+        }
+        var resp = $.parseJSON(response);
+        if (resp.err_code != 0) {
+            showModel(resp.err_msg)
+            return
         }
         showModel('发布成功',function () {
             if (JSInteraction != null) {
                 JSInteraction.turnToHouseListPageAfterReleaseSuccess()
-            } else {
-                location.href = pro ? "http://afantizz.com" : "http://localhost:8000"
             }
         },1000)
-
-
-    })
-
+    });
 }
 
 
