@@ -202,6 +202,10 @@ class HouseService {
         $deadline = $data['deadline_date'];
         $floor = $data['floor'];
         $max_floor = $data['max_floor'];
+
+        if (!isset($data['facilities'])) {
+            UtilHelper::echoExitResult($err_code,'请选择房间设施');
+        }
         $facilities = $data['facilities'];
 
         $price = $data['price'];
