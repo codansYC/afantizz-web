@@ -391,8 +391,9 @@ function showHouseInfo() {
 
 //收藏
 function collectionRequest() {
+    alert(12344)
+    return
     //判断是否登录
-    alert(123)
     var token
     if (JSInteraction != null) {
         var app_token = JSInteraction.getAppToken()
