@@ -374,13 +374,10 @@ function addMoveEventForImgUl() {
 //发布房源
 function sureRelease() {
     //检查移动端是否有与js交互相关的对象传过来
-    if (m_model != null) {
-        m_model.showLoadingWhileReleasing()
-    } else {
-        alert(333)
-    }
     if (JSInteraction != null) {
         JSInteraction.showLoadingWhileReleasing()
+    } else {
+        alert(123)
     }
     var address = $("#detailAddress").val();
     if (address == '') {
