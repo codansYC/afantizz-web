@@ -1,6 +1,7 @@
 /**
  * Created by lekuai on 17/4/1.
  */
+var url_token = null
 $(function () {
 
     //先判断是否有房源id传过来,如果有,即为编辑,否则为新发布
@@ -41,8 +42,10 @@ $(function () {
 
     //判断url中是否带有token
     var url_token = getParams('token')
-    if (!isLogin()) {
+    if ((url_token == null || url_token == "") && !isLogin()) {
         location.href = 'login.html'
+    } else {
+        this.url_token = url_token
     }
 
     addMoveEventForImgUl()
@@ -370,9 +373,16 @@ function addMoveEventForImgUl() {
 
 //发布房源
 function sureRelease() {
+    //检查移动端是否有与js交互相关的对象传过来
+    if (JSInteraction != null) {
+        JSInteraction.showLoadingWhileReleasing()
+    }
     var address = $("#detailAddress").val();
     if (address == '') {
         showModel('请输入详细地址')
+        if (JSInteraction != null) {
+            JSInteraction.removeLoadingReleaseDone()
+        }
         return
     }
     searchSubway(address,function (subways,traffics) {
@@ -450,9 +460,14 @@ function release(subways,traffics) {
     var traffic = traffics
     //房源id
     var houseId = parseInt(getParams("house_id"));
+    // token
+    var token = getParams('token')
+    if (url_token == null || url_token == "") {
+        token = getToken()
+    }
     //所有参数
     var params = {
-            token: getToken(),
+            token: token,
             house_id: houseId,
             rent_mode: rentMode,
             village: village,
@@ -484,8 +499,15 @@ function release(subways,traffics) {
         }
     var url = getParams("house_id") == null ? basicUrl + "house/release" : basicUrl + "house/modify";
     request(url, params, function (resp) {
+        if (JSInteraction != null) {
+            JSInteraction.removeLoadingReleaseDone()
+        }
         showModel('发布成功',function () {
-            location.href = pro ? "http://afantizz.com" : "http://localhost:8000"
+            if (JSInteraction != null) {
+                JSInteraction.turnToHouseListPageAfterReleaseSuccess()
+            } else {
+                location.href = pro ? "http://afantizz.com" : "http://localhost:8000"
+            }
         },1000)
 
 
