@@ -402,11 +402,13 @@ function collectionRequest() {
     } else if (getToken() == null || getToken() == '') {
         location.href = 'login.html'
         return
+    } else {
+        token = getToken()
     }
 
     var houseId = parseInt(getParams("house_id"));
     var params = {
-        token: getToken(),
+        token: token,
         house_id: houseId
     }
     var url = isCollection ? basicUrl+'house/cancel-collection' : basicUrl+'house/collection'
