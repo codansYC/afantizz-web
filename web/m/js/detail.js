@@ -391,8 +391,6 @@ function showHouseInfo() {
 
 //收藏
 function collectionRequest() {
-    alert(12344)
-    return
     //判断是否登录
     var token
     if (JSInteraction != null) {
