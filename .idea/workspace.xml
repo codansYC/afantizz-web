@@ -83,21 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_complain.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="m_complain.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/js/m_complain.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="77">
               <caret line="55" column="14" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Accusation.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/models/Accusation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -507,7 +497,7 @@
       <workItem from="1501570611531" duration="622000" />
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
-      <workItem from="1502076448441" duration="20198000" />
+      <workItem from="1502076448441" duration="20331000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -520,7 +510,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="516215000" />
+    <option name="totallyTimeSpent" value="516348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="149" y="58" width="1146" height="709" extended-state="0" />
@@ -988,8 +978,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Accusation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="255">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>
