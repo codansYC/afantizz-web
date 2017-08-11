@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/common.js" afterPath="$PROJECT_DIR$/web/m/js/common.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/netWorker.js" afterPath="$PROJECT_DIR$/web/m/js/netWorker.js" />
     </list>
     <ignored path="afantizz.iws" />
@@ -46,7 +47,7 @@
       <file leaf-file-name="release.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="136">
               <caret line="500" column="8" selection-start-line="500" selection-start-column="8" selection-end-line="500" selection-end-column="8" />
               <folding>
                 <marker date="1502439321000" expanded="true" signature="8314:8321" ph="×" />
@@ -55,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="netWorker.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/m/js/netWorker.js">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="132">
+              <caret line="191" column="14" selection-start-line="191" selection-start-column="14" selection-end-line="191" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -78,7 +79,7 @@
       <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
+            <state relative-caret-position="344">
               <caret line="142" column="32" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
               <folding />
             </state>
@@ -177,12 +178,12 @@
         <option value="$PROJECT_DIR$/controllers/UploadController.php" />
         <option value="$PROJECT_DIR$/web/m/m_release.html" />
         <option value="$PROJECT_DIR$/web/m/release.html" />
-        <option value="$PROJECT_DIR$/web/m/js/common.js" />
         <option value="$PROJECT_DIR$/web/m/detail.html" />
         <option value="$PROJECT_DIR$/web/m/m_detail.html" />
         <option value="$PROJECT_DIR$/web/m/js/detail.js" />
         <option value="$PROJECT_DIR$/web/m/js/release.js" />
         <option value="$PROJECT_DIR$/web/m/js/netWorker.js" />
+        <option value="$PROJECT_DIR$/web/m/js/common.js" />
       </list>
     </option>
   </component>
@@ -477,7 +478,7 @@
       <workItem from="1501570611531" duration="622000" />
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
-      <workItem from="1502076448441" duration="11837000" />
+      <workItem from="1502076448441" duration="12177000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -490,7 +491,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="507854000" />
+    <option name="totallyTimeSpent" value="508194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="148" y="45" width="979" height="709" extended-state="0" />
@@ -909,14 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/m_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -927,15 +920,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
+        <state relative-caret-position="344">
           <caret line="142" column="32" selection-start-line="142" selection-start-column="32" selection-end-line="142" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/netWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="136">
           <caret line="500" column="8" selection-start-line="500" selection-start-column="8" selection-end-line="500" selection-end-column="8" />
           <folding>
             <marker date="1502439321000" expanded="true" signature="8314:8321" ph="×" />
@@ -943,10 +944,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/netWorker.js">
+    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="132">
+          <caret line="191" column="14" selection-start-line="191" selection-start-column="14" selection-end-line="191" selection-end-column="14" />
           <folding />
         </state>
       </provider>
