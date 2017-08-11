@@ -461,7 +461,7 @@ function release(subways,traffics) {
     //房源id
     var houseId = parseInt(getParams("house_id"));
     // token
-    var token = url_token
+    var token = getParams('token')
     if (url_token == null || url_token == "") {
         token = getToken()
     }
