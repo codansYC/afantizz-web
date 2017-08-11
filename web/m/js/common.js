@@ -190,27 +190,20 @@ function customAlert(msg) {
 
 function request(url,params,respBlock) {
     $.post(url, params, function (response, status) {
+        if (JSInteraction != null) {
+            JSInteraction.removeLoadingReleaseDone()
+        }
         if (status != 'success') {
-            if (JSInteraction != null) {
-                JSInteraction.removeLoadingReleaseDone()
-            }
             showModel('操作失败,请稍后重试')
             return
         }
         var resp = $.parseJSON(response);
         if (resp.err_code == 10000) {
-            if (JSInteraction != null) {
-                JSInteraction.removeLoadingReleaseDone()
-                showModel("用户未登录")
-                return
-            }
+            showModel("用户未登录")
             location.href = 'login.html'
             return;
         }
         if (resp.err_code != 0) {
-            if (JSInteraction != null) {
-                JSInteraction.removeLoadingReleaseDone()
-            }
             showModel(resp.err_msg)
             return
         }
