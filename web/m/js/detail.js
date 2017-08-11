@@ -391,11 +391,19 @@ function showHouseInfo() {
 
 //收藏
 function collectionRequest() {
-    //先判断是否登录
-    if (getToken() == null || getToken() == '') {
+    //判断是否登录
+    var token
+    if (JSInteraction != null) {
+        var app_token = JSInteraction.getAppToken()
+        if (app_token == "") {
+            return
+        }
+        token = app_token
+    } else if (getToken() == null || getToken() == '') {
         location.href = 'login.html'
         return
     }
+
     var houseId = parseInt(getParams("house_id"));
     var params = {
         token: getToken(),
