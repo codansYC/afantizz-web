@@ -39,7 +39,7 @@ $(function () {
         adjustTitle()
     })
 
-    
+
     url_token = getParams('token')
 
 
