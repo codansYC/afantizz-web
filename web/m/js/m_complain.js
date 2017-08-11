@@ -5,6 +5,7 @@
 var app_token = null
 $(function () {
 
+    $(".alert").css('margin-top','0px')
     $(".reason ul li").click(function () {
         var i = $(this).children('i')
         if (i.hasClass('checked')) {
@@ -35,7 +36,6 @@ function getUserInfo() {
 
 //提交举报
 function accusate() {
-    alert(123)
     JSInteraction.showLoadingWhileComplain()
     var houseId = parseInt(getParams("house_id"));
     var reason = ''
@@ -47,6 +47,7 @@ function accusate() {
     var desc = $('#complain-desc').val()
     var phone = $('.phone-input').val()
     if (reason == '' && (desc == '' || desc == null)) {
+        JSInteraction.removeLoadingComplainDone()
         showModel('请选择举报理由或简要描述举报理由')
         return
     }
