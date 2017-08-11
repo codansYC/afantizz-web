@@ -374,7 +374,9 @@ function addMoveEventForImgUl() {
 //发布房源
 function sureRelease() {
     //检查移动端是否有与js交互相关的对象传过来
-    JSInteraction.showLoadingWhileReleasing()
+    if (JSInteraction != null) {
+        JSInteraction.showLoadingWhileReleasing()
+    }
     var address = $("#detailAddress").val();
     if (address == '') {
         showModel('请输入详细地址')
