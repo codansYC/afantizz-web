@@ -413,6 +413,7 @@ function release(subways,traffics) {
     $(".facility .checkBox i.check").each(function () {
         facilities.append($(this).next("label").text())
     })
+    facilities.append('')
     //租金
     var price = $("#priceInput").val();
     //支付方式
