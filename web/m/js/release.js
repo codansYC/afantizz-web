@@ -373,6 +373,15 @@ function addMoveEventForImgUl() {
 
 //发布房源
 function sureRelease() {
+    //检查移动端是否有与js交互相关的对象传过来
+    if (m_model != null) {
+        m_model.showLoadingWhileReleasing()
+    } else {
+        alert(333)
+    }
+    if (JSInteraction != null) {
+        JSInteraction.showLoadingWhileReleasing()
+    }
     var address = $("#detailAddress").val();
     if (address == '') {
         showModel('请输入详细地址')
@@ -383,15 +392,7 @@ function sureRelease() {
     })
 }
 function release(subways,traffics) {
-    //检查移动端是否有与js交互相关的对象传过来
-    if (m_model != null) {
-        m_model.showLoadingWhileReleasing()
-    } else {
-        alert(333)
-    }
-    if (JSInteraction != null) {
-        JSInteraction.showLoadingWhileReleasing()
-    }
+
     //地址
     var address = $("#detailAddress").val();
     //出租方式
