@@ -386,6 +386,11 @@ function release(subways,traffics) {
     //检查移动端是否有与js交互相关的对象传过来
     if (m_model != null) {
         m_model.showLoadingWhileReleasing()
+    } else {
+        alert(333)
+    }
+    if (JSInteraction != null) {
+        m_model.showLoadingWhileReleasing()
     }
     //地址
     var address = $("#detailAddress").val();
