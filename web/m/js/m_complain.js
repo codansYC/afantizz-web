@@ -54,14 +54,10 @@ function accusate() {
     var params = {
         house_id: houseId,
         reason: reason,
-        token: "",
-        phone: "",
-        desc: ""
+        token: app_token,
+        phone: phone,
+        desc: desc
     }
-    alert(reason)
-    alert(houseId)
-    alert(phone)
-    alert(desc)
     $.post(basicUrl + 'house/accusation', params, function (response, status) {
 
         JSInteraction.removeLoadingComplainDone()
