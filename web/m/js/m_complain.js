@@ -58,8 +58,12 @@ function accusate() {
         phone: phone,
         desc: desc
     }
+    alert(reason)
+    alert(houseId)
+    alert(phone)
+    alert(desc)
     $.post(basicUrl + 'house/accusation', params, function (response, status) {
-        alert(234)
+
         JSInteraction.removeLoadingComplainDone()
         if (status != 'success') {
             showModel('操作失败,请稍后重试')
