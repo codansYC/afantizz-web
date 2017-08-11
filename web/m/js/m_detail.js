@@ -396,14 +396,24 @@ function showHouseInfo() {
 //收藏
 function collectionRequest() {
     //判断是否登录
-    if (getToken() == null || getToken() == '') {
+    var token
+    if (JSInteraction != null) {
+        var app_token = JSInteraction.getAppToken()
+        if (app_token == "") {
+            return
+        }
+        token = app_token
+    } else if (getToken() == null || getToken() == '') {
 
         location.href = 'login.html'
         return
+    } else {
+        token = getToken()
     }
+
     var houseId = parseInt(getParams("house_id"));
     var params = {
-        token: getToken(),
+        token: token,
         house_id: houseId
     }
     var url = isCollection ? basicUrl+'house/cancel-collection' : basicUrl+'house/collection'
@@ -426,7 +436,9 @@ function collectionRequest() {
 
 //举报
 function accusate() {
-    location.href = "/m/complain.html?house_id="+house.house_id
+    if (JSInteraction != null) {
+        JSInteraction.turnToComplainPage()
+    }
 }
 
 //处理小图幻灯片
