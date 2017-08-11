@@ -39,14 +39,9 @@ $(function () {
         adjustTitle()
     })
 
+    
+    url_token = getParams('token')
 
-    //判断url中是否带有token
-    var url_token = getParams('token')
-    if ((url_token == null || url_token == "") && !isLogin()) {
-        location.href = 'login.html'
-    } else {
-        this.url_token = url_token
-    }
 
     addMoveEventForImgUl()
 
