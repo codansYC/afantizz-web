@@ -51,7 +51,6 @@ function accusate() {
         showModel('请选择举报理由或简要描述举报理由')
         return
     }
-    alert(app_token)
     var params = {
         house_id: houseId,
         reason: reason,
@@ -60,6 +59,7 @@ function accusate() {
         desc: desc
     }
     $.post(basicUrl + 'house/accusation', params, function (response, status) {
+        alert(234)
         JSInteraction.removeLoadingComplainDone()
         if (status != 'success') {
             showModel('操作失败,请稍后重试')
