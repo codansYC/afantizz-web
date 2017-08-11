@@ -401,6 +401,7 @@ function collectionRequest() {
         }
         token = app_token
     } else if (getToken() == null || getToken() == '') {
+        alert(123)
         location.href = 'login.html'
         return
     } else {
