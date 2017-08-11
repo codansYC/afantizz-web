@@ -375,6 +375,7 @@ function addMoveEventForImgUl() {
 function sureRelease() {
     //检查移动端是否有与js交互相关的对象传过来
     if (JSInteraction != null) {
+        alert(22222)
         JSInteraction.showLoadingWhileReleasing()
     } else {
         alert(123)
