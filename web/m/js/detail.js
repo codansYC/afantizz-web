@@ -392,6 +392,7 @@ function showHouseInfo() {
 //收藏
 function collectionRequest() {
     //判断是否登录
+    alert(123)
     var token
     if (JSInteraction != null) {
         var app_token = JSInteraction.getAppToken()
@@ -401,7 +402,7 @@ function collectionRequest() {
         }
         token = app_token
     } else if (getToken() == null || getToken() == '') {
-        alert(123)
+
         location.href = 'login.html'
         return
     } else {
