@@ -51,6 +51,7 @@ function accusate() {
         showModel('请选择举报理由或简要描述举报理由')
         return
     }
+    alert(app_token)
     var params = {
         house_id: houseId,
         reason: reason,
