@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="" />
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -23,52 +21,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/HouseService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7667">
-              <caret line="466" column="39" selection-start-line="466" selection-start-column="39" selection-end-line="466" selection-end-column="39" />
-              <folding>
-                <element signature="e#115#141#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="m_complain.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/js/m_complain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head-icon.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/images/head-icon.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mineBg.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/images/mineBg.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mine.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/css/mine.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="30" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,7 +51,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_feedback.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="m_feedback.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/m_feedback.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -109,11 +61,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HouseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
+      <file leaf-file-name="m_release.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/m_release.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2805">
-              <caret line="177" column="32" selection-start-line="177" selection-start-column="32" selection-end-line="177" selection-end-column="32" />
+            <state relative-caret-position="8551">
+              <caret line="503" column="41" selection-start-line="503" selection-start-column="41" selection-end-line="503" selection-end-column="41" />
+              <folding>
+                <marker date="1502442798000" expanded="true" signature="8134:8141" ph="×" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myRelease.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/myRelease.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+              <folding>
+                <marker date="1500193632000" expanded="true" signature="3211:3226" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myCollection.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/myCollection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m_myRelease.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="168" column="79" selection-start-line="168" selection-start-column="79" selection-end-line="168" selection-end-column="79" />
+              <folding>
+                <marker date="1502622043000" expanded="true" signature="338:536" ph="{...}" />
+                <marker date="1502622043000" expanded="true" signature="3299:3314" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m_feedback.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/m/js/m_feedback.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="m_myCollection.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/m_myCollection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="110" column="79" selection-start-line="110" selection-start-column="79" selection-end-line="110" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -136,9 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/m/js/mapManager.js" />
-        <option value="$PROJECT_DIR$/web/m/js/myCollection.js" />
-        <option value="$PROJECT_DIR$/web/m/login.html" />
         <option value="$PROJECT_DIR$/web/pc/css/detail.css" />
         <option value="$PROJECT_DIR$/web/pc/detail.html" />
         <option value="$PROJECT_DIR$/web/pc/admin.html" />
@@ -187,6 +193,9 @@
         <option value="$PROJECT_DIR$/web/m/m_myRelease.html" />
         <option value="$PROJECT_DIR$/web/m/m_myCollection.html" />
         <option value="$PROJECT_DIR$/web/m/m_feedback.html" />
+        <option value="$PROJECT_DIR$/web/m/js/m_myCollection.js" />
+        <option value="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
+        <option value="$PROJECT_DIR$/web/m/js/m_feedback.js" />
       </list>
     </option>
   </component>
@@ -504,7 +513,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="2116000" />
+      <workItem from="1502608095970" duration="2968000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -517,7 +526,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="518848000" />
+    <option name="totallyTimeSpent" value="519700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="213" y="23" width="1146" height="709" extended-state="0" />
@@ -596,37 +605,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/m/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="42" selection-start-line="6" selection-start-column="4" selection-end-line="18" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/likingbg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/likingbg1.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="243" column="28" selection-start-line="243" selection-start-column="23" selection-end-line="243" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/params.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -671,6 +649,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4658">
           <caret line="276" column="0" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -786,6 +767,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -800,13 +782,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-931">
           <caret line="410" column="8" selection-start-line="410" selection-start-column="8" selection-end-line="410" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/m_release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="503" column="41" selection-start-line="503" selection-start-column="41" selection-end-line="503" selection-end-column="41" />
+          <folding>
+            <marker date="1502442040000" expanded="true" signature="8203:8210" ph="×" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -893,7 +871,7 @@
         <state relative-caret-position="7667">
           <caret line="466" column="39" selection-start-line="466" selection-start-column="39" selection-end-line="466" selection-end-column="39" />
           <folding>
-            <element signature="e#115#141#0#PHP" expanded="true" />
+            <element signature="e#115#141#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -959,6 +937,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/myRelease.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <marker date="1500193632000" expanded="true" signature="3211:3226" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/myCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/m_release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8551">
+          <caret line="503" column="41" selection-start-line="503" selection-start-column="41" selection-end-line="503" selection-end-column="41" />
+          <folding>
+            <marker date="1502442798000" expanded="true" signature="8134:8141" ph="×" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/m_myCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="110" column="79" selection-start-line="110" selection-start-column="79" selection-end-line="110" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="168" column="79" selection-start-line="168" selection-start-column="79" selection-end-line="168" selection-end-column="79" />
+          <folding>
+            <marker date="1502622043000" expanded="true" signature="338:536" ph="{...}" />
+            <marker date="1502622043000" expanded="true" signature="3299:3314" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/m_feedback.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding />
         </state>
       </provider>
