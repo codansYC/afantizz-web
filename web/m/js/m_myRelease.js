@@ -1,11 +1,9 @@
 /**
  * Created by lekuai on 17/4/5.
  */
-var token = ''
+var token = getParams('token')
 $(function () {
-    if (getParams('token') != null) {
-        token = getParams('token')
-    }
+    
     //监听横竖屏
     window.addEventListener("resize", function(event) {
         updateLayout()
