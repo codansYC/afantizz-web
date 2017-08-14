@@ -101,9 +101,9 @@
         <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="165" column="46" selection-start-line="165" selection-start-column="46" selection-end-line="165" selection-end-column="46" />
+              <caret line="165" column="47" selection-start-line="165" selection-start-column="47" selection-end-line="165" selection-end-column="47" />
               <folding>
-                <marker date="1502680527000" expanded="true" signature="3237:3252" ph="..." />
+                <marker date="1502680688000" expanded="true" signature="3237:3252" ph="..." />
               </folding>
             </state>
           </provider>
@@ -514,7 +514,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="5349000" />
+      <workItem from="1502608095970" duration="5487000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -527,7 +527,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="522081000" />
+    <option name="totallyTimeSpent" value="522219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="94" y="156" width="1146" height="709" extended-state="0" />
@@ -989,9 +989,9 @@
     <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="165" column="46" selection-start-line="165" selection-start-column="46" selection-end-line="165" selection-end-column="46" />
+          <caret line="165" column="47" selection-start-line="165" selection-start-column="47" selection-end-line="165" selection-end-column="47" />
           <folding>
-            <marker date="1502680527000" expanded="true" signature="3237:3252" ph="..." />
+            <marker date="1502680688000" expanded="true" signature="3237:3252" ph="..." />
           </folding>
         </state>
       </provider>

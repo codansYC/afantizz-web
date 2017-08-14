@@ -163,7 +163,7 @@ function updateLayout() {
 function addEvents() {
     $('.releaseList>li>.basicInfo>img').click(function () {
         var i = $(this).parents('li').index();
-        var houseId = releaseHouses[i].house_i
+        var houseId = releaseHouses[i].house_id
         JSInteraction.toDetailPage(houseId)
     })
 }
