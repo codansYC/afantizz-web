@@ -108,7 +108,7 @@ function addEvents() {
     $('.collectionList>li>img').click(function () {
         var i = $(this).parents('li').index();
         var houseId = collectionHouses[i].house_id
-        location.href = 'm_detail.html?house_id=' + houseId + '&token=' + token
+        JSInteraction.toDetailPage(houseId)
     })
 
     $('.collection>a').click(function () {

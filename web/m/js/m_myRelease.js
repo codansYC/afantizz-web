@@ -3,7 +3,7 @@
  */
 var token = getParams('token')
 $(function () {
-    
+
     //监听横竖屏
     window.addEventListener("resize", function(event) {
         updateLayout()
@@ -164,7 +164,7 @@ function addEvents() {
     $('.releaseList>li>.basicInfo>img').click(function () {
         var i = $(this).parents('li').index();
         var houseId = releaseHouses[i].house_id
-        location.href = 'm_detail.html?house_id=' + houseId + '&token=' + token
+        JSInteraction.toDetailPage(houseId)
     })
 }
 
