@@ -164,6 +164,7 @@ function addEvents() {
     $('.releaseList>li>.basicInfo>img').click(function () {
         var i = $(this).parents('li').index();
         var houseId = releaseHouses[i].house_id
+        JSInteraction.test()
         JSInteraction.toDetailPage(houseId)
     })
 }

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/m_myCollection.js" afterPath="$PROJECT_DIR$/web/m/js/m_myCollection.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/m_myRelease.js" afterPath="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
     </list>
     <ignored path="afantizz.iws" />
@@ -98,13 +97,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_myRelease.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="m_myRelease.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="166" column="43" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="43" />
+              <caret line="166" column="28" selection-start-line="166" selection-start-column="28" selection-end-line="166" selection-end-column="28" />
               <folding>
-                <marker date="1502678997000" expanded="true" signature="3237:3252" ph="..." />
+                <marker date="1502680138000" expanded="true" signature="3237:3252" ph="..." />
               </folding>
             </state>
           </provider>
@@ -120,7 +119,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_myCollection.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="m_myCollection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/js/m_myCollection.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -196,8 +195,8 @@
         <option value="$PROJECT_DIR$/web/m/m_feedback.html" />
         <option value="$PROJECT_DIR$/web/m/m_myCollection.html" />
         <option value="$PROJECT_DIR$/web/m/m_myRelease.html" />
-        <option value="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
         <option value="$PROJECT_DIR$/web/m/js/m_myCollection.js" />
+        <option value="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
       </list>
     </option>
   </component>
@@ -212,8 +211,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="67" />
-    <option name="y" value="56" />
+    <option name="x" value="127" />
+    <option name="y" value="305" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -515,7 +514,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="4491000" />
+      <workItem from="1502608095970" duration="5010000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -528,10 +527,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521223000" />
+    <option name="totallyTimeSpent" value="521742000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="56" width="1146" height="709" extended-state="0" />
+    <frame x="127" y="305" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2853261" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -979,21 +978,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="166" column="43" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="43" />
-          <folding>
-            <marker date="1502678997000" expanded="true" signature="3237:3252" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/m_myCollection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="166" column="28" selection-start-line="166" selection-start-column="28" selection-end-line="166" selection-end-column="28" />
+          <folding>
+            <marker date="1502680138000" expanded="true" signature="3237:3252" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
