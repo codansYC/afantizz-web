@@ -9,6 +9,8 @@ $(function () {
         updateLayout()
     }, false);
 
+    $('.releaseList').css('margin-top','0px')
+
     requestReleaseHouses()
 })
 

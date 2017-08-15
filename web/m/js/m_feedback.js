@@ -3,6 +3,9 @@
  */
 
 $(function () {
+
+    $('.content').css('margin-top','0px')
+
     $('.publish').click(function () {
         var desc = $('#feedback').val();
         if (!desc || desc == '') {

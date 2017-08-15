@@ -13,6 +13,8 @@ $(function () {
         updateLayout()
     }, false);
 
+    $('.collectionList').css('margin-top','0px')
+
     requestCollectionHouses()
 
 })
