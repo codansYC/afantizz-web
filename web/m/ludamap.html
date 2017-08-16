@@ -55,12 +55,12 @@
 
             map = new AMap.Map('map_container', {
                 center: [121.3590500000, 37.5226700000],
-                zoom: 15
+                zoom: 16
             });
             map.plugin(['AMap.ToolBar','AMap.InfoWindow','AMap.AdvancedInfoWindow'], function() {
                 map.addControl(new AMap.ToolBar());
             });
-//            startLocating()
+            startLocating()
             createMarker(new Data('鲁大东门','','121.362962,37.523638'))
             createMarker(new Data('鲁大图书馆','','121.361506,37.523633'))
             createMarker(new Data('LikingFit24小时智能健身(烟台鲁大店)','','121.363306,37.514801'))
