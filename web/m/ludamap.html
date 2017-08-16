@@ -69,19 +69,29 @@
             map.plugin('AMap.Geolocation', function () {
                 map.addControl(geolocation);
             });
-            for (var i=0; i<coors.length; i++) {
-                var marker = new AMap.Marker({
-                    position: coors[i]
-                });
-                //  ==== marker ====
-                marker.setMap(map);
-                map.setFitView(marker)
-                var info = new AMap.InfoWindow({
-                    content: infos[i],
-                    offset: new AMap.Pixel(0, -30)
-                })
-                info.open(map, marker.getPosition())
-            }
+            createMarker(new Data('鲁大东门','121.362962,37.523638'))
+
+        }
+        var createMarker = function(data,hide) {
+            var div = document.createElement('div');
+            div.className = 'circle';
+//                var r = Math.floor(data.count / 1024);
+//                div.style.backgroundColor = 'rgb('+r*8+',100,255)';
+            div.style.backgroundColor = 'rgb(100,100,255)';
+            div.innerHTML = data;
+            var marker = new AMap.Marker({
+                content: div,
+                title:data.msg,
+                position: data.coor.split(','),
+                offset: new AMap.Pixel(-30, 5),
+            });
+            marker.setMap(mapObj)
+            return marker;
+        }
+        function Data(msg,coor)
+        {
+            this.msg=msg
+            this.coor=coor;
         }
     </script>
 </head>
