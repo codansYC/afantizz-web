@@ -79,7 +79,7 @@
 //                var r = Math.floor(data.count / 1024);
 //                div.style.backgroundColor = 'rgb('+r*8+',100,255)';
             div.style.backgroundColor = 'rgb(100,100,255)';
-            div.innerHTML = data;
+            div.innerHTML = data.msg;
             var marker = new AMap.Marker({
                 content: div,
                 title:data.msg,
