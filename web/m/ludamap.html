@@ -27,6 +27,7 @@
     </style>
     <script>
         function init(){
+            var eastDoor = [121.364378,37.523519]
             var map = new AMap.Map('map_container', {
                 center: [121.3590500000, 37.5226700000],
                 zoom: 15
@@ -54,17 +55,17 @@
                 AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
                 AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
             });
-//            var marker = new AMap.Marker({
-//                position: [116.480983, 39.989628]
-//            });
-//            //  ==== marker ====
-//            marker.setMap(map);
-//            map.setFitView()
-//            var info = new AMap.InfoWindow({
-//                content:"信息窗体<br>这里是方恒科技大厦",
-//                offset:new AMap.Pixel(0,-28)
-//            })
-//            info.open(map,marker.getPosition())
+            var marker = new AMap.Marker({
+                position: eastDoor
+            });
+            //  ==== marker ====
+            marker.setMap(map);
+            map.setFitView()
+            var info = new AMap.InfoWindow({
+                content:"鲁大东门",
+                offset:new AMap.Pixel(0,-28)
+            })
+            info.open(map,marker.getPosition())
         }
     </script>
 </head>
