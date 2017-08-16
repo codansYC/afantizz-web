@@ -31,7 +31,7 @@
                 center: [121.3590500000, 37.5226700000],
                 zoom: 15
             });
-            map.plugin(["AMap.ToolBar"], function() {
+            map.plugin(['AMap.ToolBar','AMap.Geolocation','AMap.AdvancedInfoWindow'], function() {
                 map.addControl(new AMap.ToolBar());
             });
         }
