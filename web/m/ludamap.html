@@ -67,6 +67,9 @@
                 offset: new AMap.Pixel(-30, 5),
             });
             marker.setMap(map)
+            var infoWindowContent = '<div class="infowindow-content">' +
+                    '<div class="amap-info-header">方恒国际中心</div>' +
+                    '<div class="amap-info-body">阜通东大街6号</div></div>';
             AMap.event.addListener(marker, 'click', function () {
                 var infowindow = new AMap.AdvancedInfoWindow({
                     panel: 'panel',
