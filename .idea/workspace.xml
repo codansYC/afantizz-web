@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/ludamap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LikingfitController.php" afterPath="$PROJECT_DIR$/controllers/LikingfitController.php" />
     </list>
     <ignored path="afantizz.iws" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+            <state relative-caret-position="401">
+              <caret line="105" column="61" selection-start-line="105" selection-start-column="61" selection-end-line="105" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -474,7 +472,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="11032000" />
+      <workItem from="1502608095970" duration="11306000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -487,7 +485,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="527764000" />
+    <option name="totallyTimeSpent" value="528038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="48" width="1146" height="709" extended-state="0" />
@@ -974,8 +972,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="105" column="8" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+        <state relative-caret-position="401">
+          <caret line="105" column="61" selection-start-line="105" selection-start-column="61" selection-end-line="105" selection-end-column="61" />
           <folding />
         </state>
       </provider>

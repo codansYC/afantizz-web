@@ -103,6 +103,6 @@ class LikingfitController extends BaseController{
     }
 
     function actionMap() {
-        
+        echo \Yii::$app->view->renderFile('@app/web/m/ludamap.html');
     }
 }
