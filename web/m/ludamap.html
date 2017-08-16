@@ -43,7 +43,7 @@
                 center: [121.3590500000, 37.5226700000],
                 zoom: 15
             });
-            map.plugin(['AMap.ToolBar','AMap.AdvancedInfoWindow'], function() {
+            map.plugin(['AMap.ToolBar','AMap.InfoWindow',AMap.AdvancedInfoWindow'], function() {
                 map.addControl(new AMap.ToolBar());
             });
             startLocating()
@@ -67,7 +67,7 @@
                 offset: new AMap.Pixel(-30, 5),
             });
             marker.setMap(map)
-            var infoWindowContent = '<div class="infowindow-content">' +
+            var infoWindowContent = '<div class="Infowindow-content">' +
                     '<div class="amap-info-header">鲁东大学图书馆</div>' +
                     '<div class="amap-info-body">阜通东大街6号</div></div>';
             AMap.event.addListener(marker, 'click', function () {
