@@ -31,11 +31,10 @@
                 center: [121.3590500000, 37.5226700000],
                 zoom: 15
             });
-            map.plugin(['AMap.ToolBar','AMap.AdvancedInfoWindow'], function() {
+            map.plugin(['AMap.ToolBar'], function() {
                 map.addControl(new AMap.ToolBar());
             });
             //定位
-            /*
             map.plugin('AMap.Geolocation', function () {
                 geolocation = new AMap.Geolocation({
                     enableHighAccuracy: true,//是否使用高精度定位，默认:true
@@ -55,7 +54,6 @@
                 AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
                 AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
             });
-            */
 //            var marker = new AMap.Marker({
 //                position: [116.480983, 39.989628]
 //            });
