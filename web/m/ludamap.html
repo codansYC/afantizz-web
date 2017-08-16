@@ -20,10 +20,14 @@
             padding-right: 0px;
             padding-top: 0px;
         }
+        .main-container{
+            width: 100%;
+            height: 400px;
+        }
     </style>
     <script>
         function init(){
-            var map = new AMap.Map('container', {
+            var map = new AMap.Map('map_container', {
                 center: [117.000923, 36.675807],
                 zoom: 6
             });
@@ -34,6 +38,8 @@
     </script>
 </head>
 <body>
-  <div class="container"></div>
+  <div class="container">
+      <div id="map_container"></div>
+  </div>
 </body>
 </html>
