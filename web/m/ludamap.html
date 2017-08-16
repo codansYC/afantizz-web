@@ -27,6 +27,17 @@
         .Infowindow-content{
             background-color: white;
         }
+        .tag{
+            background-color: #34c86c;
+            color: white;
+            width: auto;
+            direction: ltr;
+            white-space:nowrap;
+            padding: 0 5px 0 5px;
+            border-radius: 4px;
+            border: 1px solid #398439;
+            box-shadow: rgba(52, 200, 108, 0.51);
+        }
     </style>
     <script>
         var map
@@ -49,42 +60,39 @@
             map.plugin(['AMap.ToolBar','AMap.InfoWindow','AMap.AdvancedInfoWindow'], function() {
                 map.addControl(new AMap.ToolBar());
             });
-            startLocating()
-            createMarker(new Data('鲁大东门','121.362962,37.523638'))
-            createMarker(new Data('鲁大图书馆','121.361506,37.523633'))
+//            startLocating()
+            createMarker(new Data('鲁大东门','','121.362962,37.523638'))
+            createMarker(new Data('鲁大图书馆','','121.361506,37.523633'))
+            createMarker(new Data('LikingFit24小时智能健身(烟台鲁大店)','','121.363306,37.514801'))
         }
         var createMarker = function(data) {
             var div = document.createElement('div');
-            div.className = 'circle';
-            div.style.backgroundColor = '#34c86c';
-            div.style.color = 'white'
-            div.style.width = data.msg.length+1+'em'
-            div.style.paddingLeft = '3px'
-            div.style.paddingRight = '3px'
-            div.style.textAlign = 'center'
-            div.innerHTML = data.msg;
+            div.className = 'tag';
+            var span = document.createElement('span')
+            span.innerHTML = data.title
+            div.appendChild(span)
             var marker = new AMap.Marker({
                 content: div,
-                title:data.msg,
+                title:data.title,
                 position: data.coor.split(','),
                 offset: new AMap.Pixel(-30, 5),
             });
             marker.setMap(map)
             var infoWindowContent = '<div class="Infowindow-content">' +
-                    '<div class="amap-info-header">鲁东大学图书馆</div>' +
-                    '<div class="amap-info-body">阜通东大街6号</div></div>';
+                    '<div class="amap-info-header">'+data.title+'</div>'
             AMap.event.addListener(marker, 'click', function () {
                 var infowindow = new AMap.InfoWindow({
-                    isCustom: true,
+                    isCustom: false,
                     content: infoWindowContent,
                 });
                 infowindow.open(map, [data.coor.split(',')[0],data.coor.split(',')[1]]);
             });
             return marker;
         }
-        function Data(msg,coor)
+        function Data(title,detail,coor)
         {
-            this.msg=msg
+            this.title=title
+            this.detail = detail
             this.coor=coor;
         }
         //定位
@@ -110,6 +118,10 @@
 //                AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
             });
         }
+
+        $(function () {
+            $('#map_container').height(window.screen.height)
+        })
     </script>
 </head>
 <body>
