@@ -74,9 +74,9 @@
                 var infowindow = new AMap.AdvancedInfoWindow({
                     panel: 'panel',
                     placeSearch: true,
-                    asOrigin: true,
+                    asOrigin: false,
                     asDestination: true,
-                    content: infoWindowContent
+//                    content: infoWindowContent
                 });
                 infowindow.open(map, [data.coor.split(',')[0],data.coor.split(',')[1]]);
             });
