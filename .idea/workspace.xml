@@ -36,8 +36,8 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            <state relative-caret-position="95">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -472,7 +472,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="11554000" />
+      <workItem from="1502608095970" duration="11624000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -485,7 +485,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="528286000" />
+    <option name="totallyTimeSpent" value="528356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="103" y="135" width="1146" height="709" extended-state="0" />
@@ -972,8 +972,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        <state relative-caret-position="95">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
           <folding />
         </state>
       </provider>
