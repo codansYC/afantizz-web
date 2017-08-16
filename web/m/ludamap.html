@@ -28,10 +28,15 @@
     <script>
         function init(){
             var coors = new Array()
+            var infos = new Array()
             var eastDoor = [121.362962,37.523638]
+            var eastDoorInfo = '鲁大东门'
             var library = [121.361506,37.523633]
+            var libraryInfo = '鲁东大学图书馆'
             coors.push(eastDoor)
             coors.push(library)
+            infos.push(eastDoorInfo)
+            infos.push(libraryInfo)
 
             var map = new AMap.Map('map_container', {
                 center: [121.3590500000, 37.5226700000],
@@ -72,7 +77,7 @@
                 marker.setMap(map);
                 map.setFitView()
                 var info = new AMap.InfoWindow({
-                    content: "鲁大东门",
+                    content: infos[i],
                     offset: new AMap.Pixel(0, -30)
                 })
                 info.open(map, marker.getPosition())
