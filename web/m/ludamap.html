@@ -72,6 +72,7 @@
                     '<div class="amap-info-body">阜通东大街6号</div></div>';
             AMap.event.addListener(marker, 'click', function () {
                 var infowindow = new AMap.AdvancedInfoWindow({
+                    isCustom: true,
                     placeSearch: false,
                     asOrigin: false,
                     asDestination: true,
