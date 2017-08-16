@@ -101,4 +101,8 @@ class LikingfitController extends BaseController{
         UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,null);
 
     }
+
+    function actionMap() {
+        
+    }
 }

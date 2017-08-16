@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>LikingFit烟台鲁大店</title>
+    <link rel="Shortcut Icon" href="/images/liking.png"/>
+    <!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cbaec5d29d4bc79098e74433bc52cdb5"></script>-->
+    <script src="http://webapi.amap.com/maps?v=1.3&amp;key=cbaec5d29d4bc79098e74433bc52cdb5&callback=init"></script>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style type="text/css">
+        .container{
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+        }
+    </style>
+    <script>
+        function init(){
+            var map = new AMap.Map('container', {
+                center: [117.000923, 36.675807],
+                zoom: 6
+            });
+            map.plugin(["AMap.ToolBar"], function() {
+                map.addControl(new AMap.ToolBar());
+            });
+        }
+    </script>
+</head>
+<body>
+  <div class="container"></div>
+</body>
+</html>
