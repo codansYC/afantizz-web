@@ -53,8 +53,6 @@
         var createMarker = function(data) {
             var div = document.createElement('div');
             div.className = 'circle';
-//                var r = Math.floor(data.count / 1024);
-//                div.style.backgroundColor = 'rgb('+r*8+',100,255)';
             div.style.backgroundColor = '#34c86c';
             div.style.color = 'white'
             div.style.width = data.msg.length+1+'em'
@@ -69,6 +67,16 @@
                 offset: new AMap.Pixel(-30, 5),
             });
             marker.setMap(map)
+            AMap.event.addListener(marker, 'click', function () {
+                var infowindow = new AMap.AdvancedInfoWindow({
+                    panel: 'panel',
+                    placeSearch: true,
+                    asOrigin: true,
+                    asDestination: true,
+                    content: infoWindowContent
+                });
+                infowindow.open(map, [data.coor.split(',')[0],data.coor.split(',')[1]]);
+            });
             return marker;
         }
         function Data(msg,coor)
