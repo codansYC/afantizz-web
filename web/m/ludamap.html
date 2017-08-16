@@ -64,17 +64,19 @@
             map.plugin('AMap.Geolocation', function () {
                 map.addControl(geolocation);
             });
-            var marker1 = new AMap.Marker({
-                position: eastDoor
-            });
-            //  ==== marker ====
-            marker.setMap(map);
-            map.setFitView()
-            var info = new AMap.InfoWindow({
-                content:"鲁大东门",
-                offset:new AMap.Pixel(0,-30)
-            })
-            info.open(map,marker.getPosition())
+            for (var i=0; i<coors.length; i++) {
+                var marker = new AMap.Marker({
+                    position: coors[i]
+                });
+                //  ==== marker ====
+                marker.setMap(map);
+                map.setFitView()
+                var info = new AMap.InfoWindow({
+                    content: "鲁大东门",
+                    offset: new AMap.Pixel(0, -30)
+                })
+                info.open(map, marker.getPosition())
+            }
         }
     </script>
 </head>
