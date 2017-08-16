@@ -80,9 +80,10 @@
 //                div.style.backgroundColor = 'rgb('+r*8+',100,255)';
             div.style.backgroundColor = '#34c86c';
             div.style.color = 'white'
-            div.style.width = data.msg.length+'em'
+            div.style.width = data.msg.length+1+'em'
             div.style.paddingLeft = '3px'
             div.style.paddingRight = '3px'
+            div.style.textAlign = 'center'
             div.innerHTML = data.msg;
             var marker = new AMap.Marker({
                 content: div,
