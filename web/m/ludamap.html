@@ -26,6 +26,7 @@
         }
     </style>
     <script>
+        var map
         function init(){
             var coors = new Array()
             var infos = new Array()
@@ -38,7 +39,7 @@
             infos.push(eastDoorInfo)
             infos.push(libraryInfo)
 
-            var map = new AMap.Map('map_container', {
+            map = new AMap.Map('map_container', {
                 center: [121.3590500000, 37.5226700000],
                 zoom: 15
             });
@@ -85,7 +86,7 @@
                 position: data.coor.split(','),
                 offset: new AMap.Pixel(-30, 5),
             });
-            marker.setMap(mapObj)
+            marker.setMap(map)
             return marker;
         }
         function Data(msg,coor)
