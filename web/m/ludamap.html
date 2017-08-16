@@ -27,7 +27,12 @@
     </style>
     <script>
         function init(){
+            var coors = new Array()
             var eastDoor = [121.362962,37.523638]
+            var library = [121.361506,37.523633]
+            coors.push(eastDoor)
+            coors.push(library)
+
             var map = new AMap.Map('map_container', {
                 center: [121.3590500000, 37.5226700000],
                 zoom: 15
@@ -59,7 +64,7 @@
             map.plugin('AMap.Geolocation', function () {
                 map.addControl(geolocation);
             });
-            var marker = new AMap.Marker({
+            var marker1 = new AMap.Marker({
                 position: eastDoor
             });
             //  ==== marker ====
