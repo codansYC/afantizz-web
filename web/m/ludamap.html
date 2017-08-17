@@ -38,9 +38,32 @@
             border: 1px solid #398439;
             box-shadow: rgba(52, 200, 108, 0.51);
         }
+        #panel {
+            position: fixed;
+            background-color: white;
+            max-height: 50%;
+            overflow-y: auto;
+            top: 10px;
+            right: 10px;
+            width: 60%;
+        }
+        .walkBtn,.driveBtn{
+            background-color: #34c86c;
+            color: white;
+            outline: none;
+            border: none;
+            display: block;
+        }
+        .walkBtn{
+            float: left;
+        }
+        .driveBtn{
+            float: right;
+        }
     </style>
     <script>
         var map
+        var userLoc
         function init(){
             var coors = new Array()
             var infos = new Array()
@@ -61,31 +84,34 @@
                 map.addControl(new AMap.ToolBar());
             });
             startLocating()
-            createMarker(new Data('鲁大东门','','121.362962,37.523638'))
-            createMarker(new Data('鲁大图书馆','','121.361506,37.523633'))
-            createMarker(new Data('LikingFit24小时智能健身(烟台鲁大店)','','121.363306,37.514801'))
+            createMarker(new Data('鲁大东门','',[121.362962,37.523638]))
+            createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]))
+            createMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]))
         }
         var createMarker = function(data) {
             var div = document.createElement('div');
             div.className = 'tag';
             var span = document.createElement('span')
             span.innerHTML = data.title
+            var coor = new Coor(data.coor[0], data.coor[1])
             div.appendChild(span)
             var marker = new AMap.Marker({
                 content: div,
                 title:data.title,
-                position: data.coor.split(','),
+                position: data.coor,
                 offset: new AMap.Pixel(-30, 5),
             });
             marker.setMap(map)
-            var infoWindowContent = '<div class="Infowindow-content">' +
-                    '<div class="amap-info-header">'+data.title+'</div>'
+            var infoWindowContent = "<div class='Infowindow-content'>" +
+                    "<div class='amap-info-header'>"+data.title+"</div>" +
+                    "<div><button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
+                    "<button class='driveBtn' onclick=driveToNavi(" + coor.lng + ","+coor.lat+")>驾车</button></div></div>"
             AMap.event.addListener(marker, 'click', function () {
                 var infowindow = new AMap.InfoWindow({
                     isCustom: false,
                     content: infoWindowContent,
                 });
-                infowindow.open(map, [data.coor.split(',')[0],data.coor.split(',')[1]]);
+                infowindow.open(map, data.coor);
             });
             return marker;
         }
@@ -94,6 +120,10 @@
             this.title=title
             this.detail = detail
             this.coor=coor;
+        }
+        function Coor(lng,lat) {
+            this.lng = lng
+            this.lat = lat
         }
         //定位
         function startLocating() {
@@ -114,9 +144,40 @@
                 });
                 map.addControl(geolocation);
                 geolocation.getCurrentPosition();
-//                AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+                AMap.event.addListener(geolocation, 'complete', function (e) {
+                    userLoc = e.position
+                });//返回定位信息
 //                AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
             });
+        }
+
+        var mWalk = null
+        function walkToNavi(lng, lat) {
+            if (mWalk == null) {
+                AMap.service('AMap.Walking',function() {
+                    mWalk = new AMap.Walking({
+                        map: map,
+                        panel: "panel"
+                    })
+                })
+            }
+            mWalk.search([userLoc.lng,userLoc.lat], [121.45267,31.186014], function(status, result){
+
+            })
+
+        }
+
+        var mDrive = null
+        function driveToNavi(lng, lat) {
+            if (mDrive == null) {
+                AMap.service(["AMap.Driving"], function() {
+                    mDrive = new AMap.Driving({
+                        map: map,
+                        panel: "panel"
+                    });
+                });
+            }
+            mDrive.search([userLoc.lng,userLoc.lat], [121.45267,31.186014], function(status, result){})
         }
 
         $(function () {
@@ -127,6 +188,7 @@
 <body>
   <div class="container">
       <div id="map_container"></div>
+      <div id="panel"></div>
   </div>
 </body>
 </html>
