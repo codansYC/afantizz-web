@@ -311,7 +311,7 @@
                         });
                     })
                 }
-                placeSearch.searchNearBy(kw, userLoc, distance, function (status, result) {
+                placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
                     if (status === 'complete' && result.info === 'OK') {
                         console.log(result)
                         alert(result.name)
