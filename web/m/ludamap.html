@@ -19,6 +19,7 @@
             padding-left: 0px;
             padding-right: 0px;
             padding-top: 0px;
+            position: relative;
         }
         #map_container{
             width: 100%;
@@ -93,6 +94,25 @@
             margin-left: 15px;
         }
         .amap-call{
+        }
+        #search-bg{
+            position: fixed;
+            width: 100%;
+            /*height: 40px;*/
+            left: 0;
+            top: 0;
+            background-color: rgba(48, 51, 61, 0.51);
+            padding: 10px 0px;
+        }
+        #search-bg input{
+            display: block;
+            height: 36px;
+            width: 80%;
+            margin: 0 auto;
+            outline: none;
+            border: none;
+            border-radius: 18px;
+            padding: 0 18px;
         }
     </style>
     <script>
@@ -255,6 +275,9 @@
   <div class="container">
       <div id="map_container"></div>
       <div id="panel"></div>
+      <div id="search-bg">
+          <input type="search">
+      </div>
   </div>
 </body>
 </html>
