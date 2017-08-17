@@ -127,6 +127,9 @@
         .list-bg a{
             color: #34c86c;
         }
+        .amap-touch-toolbar .amap-zoomcontrol{
+            bottom: -40px;
+        }
     </style>
     <script>
         var map
@@ -139,7 +142,7 @@
             });
             map.plugin(['AMap.ToolBar','AMap.InfoWindow','AMap.AdvancedInfoWindow'], function() {
                 map.addControl(new AMap.ToolBar({
-                    offset: AMap.Pixel(10,30)
+//                    offset: AMap.Pixel(10,30)
                 }));
             });
             startLocating()
