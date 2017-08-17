@@ -36,18 +36,21 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="158">
+              <caret line="319" column="10" selection-start-line="319" selection-start-column="10" selection-end-line="319" selection-end-column="10" />
+              <folding>
+                <element signature="e#11035#11357#0" expanded="false" />
+                <element signature="e#11448#11679#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/css/index.css">
+      <file leaf-file-name="release.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-7760">
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -56,8 +59,8 @@
       <file leaf-file-name="mapManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/mapManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="95" column="10" selection-start-line="79" selection-start-column="8" selection-end-line="95" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -94,8 +97,8 @@
       <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6477">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="229">
+              <caret line="527" column="24" selection-start-line="527" selection-start-column="24" selection-end-line="527" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -183,8 +186,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="90" />
-    <option name="y" value="27" />
+    <option name="x" value="91" />
+    <option name="y" value="112" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -259,7 +262,29 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="m" />
+              <option name="myItemId" value="pc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -442,7 +467,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="43898000" />
+      <workItem from="1502608095970" duration="44996000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -455,10 +480,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="560630000" />
+    <option name="totallyTimeSpent" value="561728000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="90" y="27" width="1146" height="709" extended-state="0" />
+    <frame x="91" y="112" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2853261" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -530,7 +555,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web/m/ludamap.html</url>
-          <line>145</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -540,14 +565,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/m/myRelease.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1146">
@@ -834,46 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/mapManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1501253213000" expanded="true" signature="1973:1989" ph="..." />
-            <marker date="1501253213000" expanded="true" signature="3520:3585" ph="..." />
-            <marker date="1501253213000" expanded="true" signature="3645:3708" ph="..." />
-            <marker date="1501253213000" expanded="true" signature="3783:3834" ph="..." />
-            <marker date="1501253213000" expanded="true" signature="3895:3958" ph="..." />
-            <marker date="1501253213000" expanded="true" signature="4038:4089" ph="..." />
-            <marker date="1501253213000" expanded="true" signature="4153:4216" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6477">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="121" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/release.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6919">
@@ -888,14 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="465" column="29" selection-start-line="465" selection-start-column="29" selection-end-line="465" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -948,11 +917,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="6" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7760">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="527" column="24" selection-start-line="527" selection-start-column="24" selection-end-line="527" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1501253213000" expanded="true" signature="1973:1989" ph="..." />
+            <marker date="1501253213000" expanded="true" signature="3520:3585" ph="..." />
+            <marker date="1501253213000" expanded="true" signature="3645:3708" ph="..." />
+            <marker date="1501253213000" expanded="true" signature="3783:3834" ph="..." />
+            <marker date="1501253213000" expanded="true" signature="3895:3958" ph="..." />
+            <marker date="1501253213000" expanded="true" signature="4038:4089" ph="..." />
+            <marker date="1501253213000" expanded="true" signature="4153:4216" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/release.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="121" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/mapManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="95" column="10" selection-start-line="79" selection-start-column="8" selection-end-line="95" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="158">
+          <caret line="319" column="10" selection-start-line="319" selection-start-column="10" selection-end-line="319" selection-end-column="10" />
+          <folding>
+            <element signature="e#11035#11357#0" expanded="false" />
+            <element signature="e#11448#11679#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

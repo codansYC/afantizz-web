@@ -143,6 +143,7 @@
     <script>
         var map
         var userLoc
+        var cityCode = 021
         function init(){
             var gymCoor = [121.363306,37.514801]
             map = new AMap.Map('map_container', {
@@ -250,6 +251,7 @@
                 geolocation.getCurrentPosition();
                 AMap.event.addListener(geolocation, 'complete', function (e) {
                     userLoc = e.position
+                    cityCode = e.cityCode
                 });//返回定位信息
 //                AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
             });
@@ -295,6 +297,26 @@
 
         $(function () {
             $('#map_container').height(window.screen.availHeight)
+            $('form').submit(function () {
+                var kw = $('input[type=search]').val()
+                var distance = 2000
+                if (placeSearch == null) {
+                    AMap.service('AMap.PlaceSearch', function () {//回调函数
+                        //分类查询
+                        placeSearch = new AMap.PlaceSearch({
+                            city: cityCode, //城市
+                            map: map,
+                        });
+                    })
+                }
+                placeSearch.searchNearBy(kw, userLoc, distance, function (status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        console.log(result)
+                    } else {
+                        showModel('未搜索到结果')
+                    }
+                });
+            })
         })
     </script>
 </head>
