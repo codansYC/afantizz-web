@@ -119,12 +119,21 @@
         }
         .list-bg{
             position: absolute;
-            right: 10px;
+            right: 15px;
             top: 10px;
             font-size: 18px;
 
         }
         .list-bg a{
+            color: #34c86c;
+        }
+        .refresh-bg{
+            position: absolute;
+            left: 15px;
+            top: 11px;
+            font-size: 18px;
+        }
+        .refresh-bg a{
             color: #34c86c;
         }
         .amap-touch-toolbar .amap-zoomcontrol{
@@ -297,8 +306,11 @@
           <form action="javascript:">
               <input type="search" placeholder="请输入关键字">
           </form>
+          <div class="refresh-bg">
+              <a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+          </div>
           <div class="list-bg">
-              <a href=""><span class="glyphicon glyphicon-th-list"></span></a>
+              <a href="javascript:location.reload()"><span class="glyphicon glyphicon-th-list"></span></a>
           </div>
       </div>
   </div>
