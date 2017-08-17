@@ -298,7 +298,9 @@
         $(function () {
             $('#map_container').height(window.screen.availHeight)
             $('form').submit(function () {
+
                 var kw = $('input[type=search]').val()
+                alert(kw)
                 var distance = 2000
                 if (placeSearch == null) {
                     AMap.service('AMap.PlaceSearch', function () {//回调函数
