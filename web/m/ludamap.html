@@ -72,7 +72,8 @@
         .amap-info-body{
             margin-top: 5px;
         }
-        .walkBtn,.driveBtn{
+
+        .walkBtn,.driveBtn,.detailBtn{
             /*background-color: #34c86c;*/
             color: white;
             outline: none;
@@ -82,13 +83,14 @@
             border: 1px solid #34c86c;
             background-color: transparent;
             padding: 2px 6px !important;
+            margin-right: 0px;
+            float: right;
         }
         .walkBtn{
-            float: right;
             margin-left: 15px;
         }
         .driveBtn{
-            float: right;
+            margin-left: 15px;
         }
         .amap-call{
         }
@@ -126,7 +128,8 @@
             marker.setMap(map)
             var infoWindowContent = "<div class='Infowindow-content'>" +
                     "<div class='amap-info-header'>"+data.title+"</div>" +
-                    "<div class='amap-info-body'><button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
+                    "<div class='amap-info-body'>" +
+                    "<button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
                     "<button class='driveBtn' onclick=driveToNavi(" + coor.lng + ","+coor.lat+")>驾车</button></div></div>"
             AMap.event.addListener(marker, 'click', function () {
                 var infowindow = new AMap.InfoWindow({
@@ -154,8 +157,11 @@
             marker.setMap(map)
             var infoWindowContent = "<div class='Infowindow-content' onclick=toGym()>" +
                     "<div class='amap-info-header'>"+data.title+"</div>" +
-                    "<div class='amap-info-body'><button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
-                    "<button class='driveBtn' onclick=driveToNavi(" + coor.lng + ","+coor.lat+")>驾车</button></div></div>"
+                    "<div class='amap-info-body'>" +
+                    "<button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
+                    "<button class='driveBtn' onclick=driveToNavi(" + coor.lng + ","+coor.lat+")>驾车</button>" +
+                    "<button class='detailBtn'>了解健身房</button>" +
+                    "</div></div>"
             AMap.event.addListener(marker, 'click', function () {
                 var infowindow = new AMap.InfoWindow({
                     isCustom: false,
