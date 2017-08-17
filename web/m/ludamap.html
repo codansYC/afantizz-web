@@ -107,12 +107,22 @@
         #search-bg input{
             display: block;
             height: 30px;
-            width: 80%;
+            width: 70%;
             margin: 0 auto;
             outline: none;
             border: none;
             border-radius: 15px;
             padding: 0 15px;
+        }
+        .list-bg{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 18px;
+
+        }
+        .list-bg a{
+            color: white;
         }
     </style>
     <script>
@@ -279,6 +289,9 @@
           <form action="javascript:">
               <input type="search" class="text-center" placeholder="请输入关键字">
           </form>
+          <div class="list-bg">
+              <a href=""><span class="glyphicon glyphicon-th-list"></span></a>
+          </div>
       </div>
   </div>
 </body>
