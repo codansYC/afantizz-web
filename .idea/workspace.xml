@@ -36,8 +36,8 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+            <state relative-caret-position="374">
+              <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -183,8 +183,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="108" />
-    <option name="y" value="25" />
+    <option name="x" value="-10" />
+    <option name="y" value="90" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -242,46 +242,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="afantizz" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,7 +442,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="41093000" />
+      <workItem from="1502608095970" duration="41308000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -495,10 +455,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="557825000" />
+    <option name="totallyTimeSpent" value="558040000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="108" y="25" width="1146" height="709" extended-state="0" />
+    <frame x="-10" y="90" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2853261" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -585,13 +545,6 @@
         <state relative-caret-position="-123">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -987,10 +940,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="30" column="19" selection-start-line="28" selection-start-column="12" selection-end-line="30" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+        <state relative-caret-position="374">
+          <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
           <folding />
         </state>
       </provider>
