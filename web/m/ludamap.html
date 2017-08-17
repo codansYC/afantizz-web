@@ -298,29 +298,44 @@
         $(function () {
             $('#map_container').height(window.screen.availHeight)
             $('form').submit(function () {
+                search()
+            })
+        })
 
-                var kw = $('input[type=search]').val()
-                alert(kw)
-                var distance = 2000
-                if (placeSearch == null) {
-                    AMap.service('AMap.PlaceSearch', function () {//回调函数
-                        //分类查询
-                        placeSearch = new AMap.PlaceSearch({
-                            city: cityCode, //城市
-                            map: map,
-                        });
-                    })
-                }
+        var placeSearch = null
+        function search() {
+            var kw = $('input[type=search]').val()
+            var distance = 2000
+            if (placeSearch == null) {
+                AMap.service('AMap.PlaceSearch', function () {//回调函数
+                    //分类查询
+                    placeSearch = new AMap.PlaceSearch({
+                        city: cityCode, //城市
+                        map: map,
+                    });
+                })
                 placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
                     if (status === 'complete' && result.info === 'OK') {
                         console.log(result)
-                        alert(result.name)
+//                        alert(result.name)
                     } else {
                         showModel('未搜索到结果')
                     }
                 });
-            })
-        })
+            } else {
+                placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        console.log(result)
+//                        var poi = result.poiList.pois[0]
+//                        createMarker(new Data(poi.address
+//                                ,'',[121.362962,37.523638]))
+                    } else {
+                        showModel('未搜索到结果')
+                    }
+                });
+            }
+
+        }
     </script>
 </head>
 <body>
@@ -335,7 +350,7 @@
               <a href=""><span class="glyphicon glyphicon-refresh"></span></a>
           </div>
           <div class="list-bg">
-              <a href="javascript:location.reload()"><span class="glyphicon glyphicon-th-list"></span></a>
+              <a href="javascript:search()"><span class="glyphicon glyphicon-th-list"></span></a>
           </div>
       </div>
   </div>
