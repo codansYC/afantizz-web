@@ -27,16 +27,20 @@
         .Infowindow-content{
             background-color: white;
         }
-        .tag{
-            background-color: #34c86c;
-            color: white;
+        .tag,.gym-tag{
+            /*background-color: #34c86c;*/
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #34c86c;
             width: auto;
             direction: ltr;
             white-space:nowrap;
             padding: 0 5px 0 5px;
             border-radius: 4px;
-            border: 1px solid #398439;
-            box-shadow: rgba(52, 200, 108, 0.51);
+            /*border: 1px solid #398439;*/
+            /*box-shadow: rgba(52, 200, 108, 0.51);*/
+        }
+        .gym-tag{
+            color: greenyellow;
         }
         #panel {
             position: fixed;
@@ -46,38 +50,55 @@
             top: 10px;
             right: 10px;
             width: 60%;
+            display: none;
+        }
+        .amap-info-content{
+            background-color: rgba(0, 0, 0, 0.7);
+            border: none;
+            box-shadow: 0 3px 14px rgba(0,0,100,.3);
+        }
+        .amap-info-outer:hover, .amap-menu-outer:hover {
+            box-shadow: 0 3px 14px rgba(0,0,0,.3);
+            /*box-shadow: none;*/
+        }
+        .amap-info-close {
+            display: none;
+        }
+        .Infowindow-content{
+            color: white;
+            background-color: transparent;
+        }
+        .amap-info-body{
+            margin-top: 5px;
         }
         .walkBtn,.driveBtn{
-            background-color: #34c86c;
+            /*background-color: #34c86c;*/
             color: white;
             outline: none;
             border: none;
             display: block;
+            border-radius: 4px;
+            border: 1px solid #34c86c;
+            background-color: transparent;
+            padding: 2px 6px !important;
         }
         .walkBtn{
-            float: left;
+            float: right;
+            margin-left: 15px;
         }
         .driveBtn{
             float: right;
+        }
+        .amap-call{
         }
     </style>
     <script>
         var map
         var userLoc
         function init(){
-            var coors = new Array()
-            var infos = new Array()
-            var eastDoor = [121.362962,37.523638]
-            var eastDoorInfo = '鲁大东门'
-            var library = [121.361506,37.523633]
-            var libraryInfo = '鲁东大学图书馆'
-            coors.push(eastDoor)
-            coors.push(library)
-            infos.push(eastDoorInfo)
-            infos.push(libraryInfo)
-
+            var gymCoor = [121.363306,37.514801]
             map = new AMap.Map('map_container', {
-                center: [121.3590500000, 37.5226700000],
+                center: gymCoor,
                 zoom: 16
             });
             map.plugin(['AMap.ToolBar','AMap.InfoWindow','AMap.AdvancedInfoWindow'], function() {
@@ -86,7 +107,7 @@
             startLocating()
             createMarker(new Data('鲁大东门','',[121.362962,37.523638]))
             createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]))
-            createMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]))
+            createGymMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]))
         }
         var createMarker = function(data) {
             var div = document.createElement('div');
@@ -104,12 +125,41 @@
             marker.setMap(map)
             var infoWindowContent = "<div class='Infowindow-content'>" +
                     "<div class='amap-info-header'>"+data.title+"</div>" +
-                    "<div><button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
+                    "<div class='amap-info-body'><button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
                     "<button class='driveBtn' onclick=driveToNavi(" + coor.lng + ","+coor.lat+")>驾车</button></div></div>"
             AMap.event.addListener(marker, 'click', function () {
                 var infowindow = new AMap.InfoWindow({
                     isCustom: false,
                     content: infoWindowContent,
+                    closeWhenClickMap: true,
+                });
+                infowindow.open(map, data.coor);
+            });
+            return marker;
+        }
+        var createGymMarker = function(data) {
+            var div = document.createElement('div');
+            div.className = 'gym-tag';
+            var span = document.createElement('span')
+            span.innerHTML = data.title
+            var coor = new Coor(data.coor[0], data.coor[1])
+            div.appendChild(span)
+            var marker = new AMap.Marker({
+                content: div,
+                title:data.title,
+                position: data.coor,
+                offset: new AMap.Pixel(-30, 5),
+            });
+            marker.setMap(map)
+            var infoWindowContent = "<div class='Infowindow-content' onclick=toGym()>" +
+                    "<div class='amap-info-header'>"+data.title+"</div>" +
+                    "<div class='amap-info-body'><button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
+                    "<button class='driveBtn' onclick=driveToNavi(" + coor.lng + ","+coor.lat+")>驾车</button></div></div>"
+            AMap.event.addListener(marker, 'click', function () {
+                var infowindow = new AMap.InfoWindow({
+                    isCustom: false,
+                    content: infoWindowContent,
+                    closeWhenClickMap: true,
                 });
                 infowindow.open(map, data.coor);
             });
@@ -153,6 +203,7 @@
 
         var mWalk = null
         function walkToNavi(lng, lat) {
+            this.event.stopPropagation()
             if (mWalk == null) {
                 AMap.service('AMap.Walking',function() {
                     mWalk = new AMap.Walking({
@@ -161,7 +212,8 @@
                     })
                 })
             }
-            mWalk.search([userLoc.lng,userLoc.lat], [121.45267,31.186014], function(status, result){
+//            [121.45267,31.186014]
+            mWalk.search([userLoc.lng,userLoc.lat], [lng,lat], function(status, result){
 
             })
 
@@ -169,6 +221,7 @@
 
         var mDrive = null
         function driveToNavi(lng, lat) {
+            this.event.stopPropagation()
             if (mDrive == null) {
                 AMap.service(["AMap.Driving"], function() {
                     mDrive = new AMap.Driving({
@@ -177,7 +230,13 @@
                     });
                 });
             }
-            mDrive.search([userLoc.lng,userLoc.lat], [121.45267,31.186014], function(status, result){})
+//            [121.45267,31.186014]
+            mDrive.search([userLoc.lng,userLoc.lat], [lng,lat], function(status, result){})
+        }
+
+        function toGym() {
+            var url = "http://mp.weixin.qq.com/mp/homepage?__biz=MzIzMDU5Njk3Mw==&hid=3&sn=870d149ce1dd19bd08b96f666a9198c1#wechat_redirect"
+            window.open(url,'_blank')
         }
 
         $(function () {
