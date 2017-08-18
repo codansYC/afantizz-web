@@ -36,8 +36,8 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="311" column="35" selection-start-line="311" selection-start-column="35" selection-end-line="311" selection-end-column="35" />
+            <state relative-caret-position="306">
+              <caret line="161" column="23" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -481,7 +481,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="61474000" />
+      <workItem from="1502608095970" duration="61751000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -494,7 +494,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="578206000" />
+    <option name="totallyTimeSpent" value="578483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="89" width="1146" height="709" extended-state="0" />
@@ -982,8 +982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="311" column="35" selection-start-line="311" selection-start-column="35" selection-end-line="311" selection-end-column="35" />
+        <state relative-caret-position="306">
+          <caret line="161" column="23" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="23" />
           <folding />
         </state>
       </provider>
