@@ -128,7 +128,7 @@ class LikingfitController extends BaseController{
             $place->type_id = $typeId;
             $place->is_show = $isShowInMap;
             $place->save();
-            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,nil);
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,null);
         } catch (\Exception $e){
             UtilHelper::handleException($e);
         }

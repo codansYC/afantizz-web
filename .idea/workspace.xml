@@ -26,8 +26,8 @@
       <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+            <state relative-caret-position="350">
+              <caret line="130" column="81" selection-start-line="130" selection-start-column="81" selection-end-line="130" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -198,7 +198,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="63" />
+    <option name="x" value="6" />
     <option name="y" value="91" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
@@ -497,7 +497,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="72536000" />
+      <workItem from="1502608095970" duration="72689000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -510,10 +510,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="589268000" />
+    <option name="totallyTimeSpent" value="589421000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="63" y="91" width="1146" height="709" extended-state="0" />
+    <frame x="6" y="91" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2853261" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1002,8 +1002,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="350">
+          <caret line="130" column="81" selection-start-line="130" selection-start-column="81" selection-end-line="130" selection-end-column="81" />
           <folding />
         </state>
       </provider>
