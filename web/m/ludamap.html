@@ -371,7 +371,7 @@
                 $('.search-filter').css('display','block')
             });
             $('input[type=search]').blur(function() {
-                $('.search-filter').css('display','none')
+//                $('.search-filter').css('display','none')
             });
         })
 
@@ -398,7 +398,6 @@
             var distance = 2000
             placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
                 if (status === 'complete' && result.info === 'OK') {
-                    console.log(result.poiList.pois[0])
                     var poi = result.poiList.pois[0]
                     map.setZoomAndCenter(16, [poi.location.lng,poi.location.lat]);
                     createMarker(new Data(poi.name,'',[poi.location.lng,poi.location.lat]),true)
