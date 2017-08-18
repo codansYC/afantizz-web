@@ -26,7 +26,6 @@
             height: 400px;
         }
         .Infowindow-content{
-            background-color: white;
         }
         .tag,.gym-tag{
             /*background-color: #34c86c;*/
@@ -46,7 +45,7 @@
         }
         #panel {
             position: fixed;
-            background-color: white;
+            /*background-color: white;*/
             max-height: 50%;
             overflow-y: auto;
             top: 10px;
@@ -58,6 +57,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             border: none;
             box-shadow: 0 3px 14px rgba(0,0,100,.3);
+            padding: 8px;
         }
         .amap-info-outer:hover, .amap-menu-outer:hover {
             box-shadow: 0 3px 14px rgba(0,0,0,.3);
@@ -69,6 +69,7 @@
         .Infowindow-content{
             color: white;
             background-color: transparent;
+            font-size: 12px;
         }
         .amap-info-body{
             margin-top: 5px;
@@ -223,7 +224,7 @@
                 content: div,
                 title:data.title,
                 position: data.coor,
-                offset: new AMap.Pixel(-30, -5),
+                offset: new AMap.Pixel(0, -5),
             });
             marker.setMap(map)
             var infoWindowContent = "<div class='Infowindow-content'>" +
