@@ -341,6 +341,7 @@
         }
         function handleSearch() {
             var kw = $('input[type=search]').val()
+            if (kw == null || kw == '') { return }
             var distance = 2000
             placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
                 if (status === 'complete' && result.info === 'OK') {
