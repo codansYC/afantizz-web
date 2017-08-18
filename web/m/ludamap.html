@@ -139,11 +139,16 @@
         .amap-touch-toolbar .amap-zoomcontrol{
             bottom: -50px;
         }
+        .amap-info-sharp{
+            background-image: url("/images/trigon-down.png");
+            background-repeat: no-repeat;
+            width: 16px;
+        }
     </style>
     <script>
         var map
-        var userLoc
-        var cityCode = 021
+        var userLoc = new Coor(121.359265,37.523353)
+        var cityCode = '0535'
         function init(){
             var gymCoor = [121.363306,37.514801]
             map = new AMap.Map('map_container', {
@@ -156,11 +161,11 @@
                 }));
             });
             startLocating()
-            createMarker(new Data('鲁大东门','',[121.362962,37.523638]))
-            createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]))
-            createGymMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]))
+            createMarker(new Data('鲁大东门','',[121.362962,37.523638]),false)
+            createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]),false)
+            createGymMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]),false)
         }
-        var createMarker = function(data) {
+        var createMarker = function(data,infoIsShow) {
             var div = document.createElement('div');
             div.className = 'tag';
             var span = document.createElement('span')
@@ -171,7 +176,7 @@
                 content: div,
                 title:data.title,
                 position: data.coor,
-                offset: new AMap.Pixel(-30, 5),
+                offset: new AMap.Pixel(-30, -5),
             });
             marker.setMap(map)
             var infoWindowContent = "<div class='Infowindow-content'>" +
@@ -179,14 +184,17 @@
                     "<div class='amap-info-body'>" +
                     "<button class='walkBtn' onclick=walkToNavi(" + coor.lng + ","+coor.lat+")>步行</button>" +
                     "<button class='driveBtn' onclick=driveToNavi(" + coor.lng + ","+coor.lat+")>驾车</button></div></div>"
+            var infowindow = new AMap.InfoWindow({
+                isCustom: false,
+                content: infoWindowContent,
+                closeWhenClickMap: true,
+            });
             AMap.event.addListener(marker, 'click', function () {
-                var infowindow = new AMap.InfoWindow({
-                    isCustom: false,
-                    content: infoWindowContent,
-                    closeWhenClickMap: true,
-                });
                 infowindow.open(map, data.coor);
             });
+            if (infoIsShow) {
+                infowindow.open(map, data.coor);
+            }
             return marker;
         }
         var createGymMarker = function(data) {
@@ -200,7 +208,7 @@
                 content: div,
                 title:data.title,
                 position: data.coor,
-                offset: new AMap.Pixel(-30, 5),
+                offset: new AMap.Pixel(-30, -5),
             });
             marker.setMap(map)
             var infoWindowContent = "<div class='Infowindow-content' onclick=toGym()>" +
@@ -304,37 +312,34 @@
 
         var placeSearch = null
         function search() {
-            var kw = $('input[type=search]').val()
-            var distance = 2000
             if (placeSearch == null) {
                 AMap.service('AMap.PlaceSearch', function () {//回调函数
                     //分类查询
                     placeSearch = new AMap.PlaceSearch({
                         city: cityCode, //城市
-                        map: map,
+//                        map: map,
                     });
                 })
-                placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
-                    if (status === 'complete' && result.info === 'OK') {
-                        console.log(result)
-//                        alert(result.name)
-                    } else {
-                        showModel('未搜索到结果')
-                    }
-                });
+                console.log(userLoc)
+                console.log(cityCode)
+                handleSearch()
             } else {
-                placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
-                    if (status === 'complete' && result.info === 'OK') {
-                        console.log(result)
-//                        var poi = result.poiList.pois[0]
-//                        createMarker(new Data(poi.address
-//                                ,'',[121.362962,37.523638]))
-                    } else {
-                        showModel('未搜索到结果')
-                    }
-                });
+                handleSearch()
             }
-
+        }
+        function handleSearch() {
+            var kw = $('input[type=search]').val()
+            var distance = 2000
+            placeSearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
+                if (status === 'complete' && result.info === 'OK') {
+                    console.log(result.poiList.pois[0])
+                    var poi = result.poiList.pois[0]
+                    map.setZoomAndCenter(16, [poi.location.lng,poi.location.lat]);
+                    createMarker(new Data(poi.name,'',[poi.location.lng,poi.location.lat]),true)
+                } else {
+                    showModel('未搜索到结果')
+                }
+            });
         }
     </script>
 </head>
@@ -347,10 +352,10 @@
               <input type="search" placeholder="请输入关键字">
           </form>
           <div class="refresh-bg">
-              <a href=""><span class="glyphicon glyphicon-refresh"></span></a>
+              <a href="javascript:location.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
           </div>
           <div class="list-bg">
-              <a href="javascript:search()"><span class="glyphicon glyphicon-th-list"></span></a>
+              <a href="javascript:showModel('正在开发,敬请期待 ☺')"><span class="glyphicon glyphicon-th-list"></span></a>
           </div>
       </div>
   </div>
