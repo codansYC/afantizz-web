@@ -10,12 +10,14 @@ namespace app\controllers;
 
 
 use app\models\Coupon;
+use app\models\LudaMap;
 use app\utils\BizConsts;
 use app\utils\GlobalAction;
 use app\utils\UtilHelper;
 //header("Access-Control-Allow-Origin: *"); # 跨域处理
 class LikingfitController extends BaseController{
 
+    // ========== 优惠券 ===========
     function actionIndex() {
         echo \Yii::$app->view->renderFile('@app/web/m/getCoupon.html');
     }
@@ -76,6 +78,8 @@ class LikingfitController extends BaseController{
             }
             if ($key == 1024) {
                 echo \Yii::$app->view->renderFile('@app/web/m/couponAdmin.html');
+            } else if ($key == 'map') {
+                echo \Yii::$app->view->renderFile('@app/web/m/liking_mapAdmin.html');
             }
         }catch (\Exception $e){
 //            UtilHelper::handleException($e);
@@ -102,7 +106,31 @@ class LikingfitController extends BaseController{
 
     }
 
+    //======== 地图 =========
     function actionMap() {
         echo \Yii::$app->view->renderFile('@app/web/m/ludamap.html');
+    }
+
+    function actionAddPlace() {
+        try {
+            $name = $this->requestParam['name'];
+            $lng = $this->requestParam['lng'];
+            $lat = $this->requestParam['lat'];
+            $typeName = $this->requestParam['type_name'];
+            $typeId = $this->requestParam['type_id'];
+            $isShowInMap = $this->requestParam['is_show'];
+
+            $place = new LudaMap();
+            $place->name = name;
+            $place->lng = lng;
+            $place->lat = $lat;
+            $place->type_name = $typeName;
+            $place->type_id = typeId;
+            $place->is_show = $isShowInMap;
+            $place->save();
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,nil);
+        } catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
     }
 }

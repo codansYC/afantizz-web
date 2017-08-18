@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/ludamap.html" afterPath="$PROJECT_DIR$/web/m/ludamap.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LikingfitController.php" afterPath="$PROJECT_DIR$/controllers/LikingfitController.php" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,28 +28,71 @@
       <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
+            <state relative-caret-position="384">
+              <caret line="132" column="44" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
+      <file leaf-file-name="LudaMap.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/LudaMap.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="release.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/js/release.js">
+      <file leaf-file-name="IndexRecord.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/IndexRecord.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7760">
-              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liking_mapAdmin.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="96" column="61" selection-start-line="96" selection-start-column="61" selection-end-line="96" selection-end-column="61" />
+              <folding>
+                <element signature="e#4813#4819#0" expanded="true" />
+                <element signature="e#4819#4825#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="couponAdmin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="61">
+              <caret line="87" column="65" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2652">
+              <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -59,24 +104,6 @@
             <state relative-caret-position="119">
               <caret line="7" column="37" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1501253213000" expanded="true" signature="1973:1989" ph="..." />
-                <marker date="1501253213000" expanded="true" signature="3520:3585" ph="..." />
-                <marker date="1501253213000" expanded="true" signature="3645:3708" ph="..." />
-                <marker date="1501253213000" expanded="true" signature="3783:3834" ph="..." />
-                <marker date="1501253213000" expanded="true" signature="3895:3958" ph="..." />
-                <marker date="1501253213000" expanded="true" signature="4038:4089" ph="..." />
-                <marker date="1501253213000" expanded="true" signature="4153:4216" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -118,9 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/pc/detail.html" />
-        <option value="$PROJECT_DIR$/web/pc/admin.html" />
-        <option value="$PROJECT_DIR$/web/pc/release.html" />
         <option value="$PROJECT_DIR$/web/m/js/search.js" />
         <option value="$PROJECT_DIR$/web/pc/js/mapManager.js" />
         <option value="$PROJECT_DIR$/web/pc/js/member.js" />
@@ -167,8 +191,11 @@
         <option value="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
         <option value="$PROJECT_DIR$/web/m/js/m_myCollection.js" />
         <option value="$PROJECT_DIR$/web/m/js/m_feedback.js" />
-        <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
         <option value="$PROJECT_DIR$/web/m/ludamap.html" />
+        <option value="$PROJECT_DIR$/web/m/js/liking_mapAdmin.html" />
+        <option value="$PROJECT_DIR$/models/LudaMap.php" />
+        <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
+        <option value="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
       </list>
     </option>
   </component>
@@ -183,7 +210,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="57" />
+    <option name="x" value="74" />
+    <option name="y" value="51" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -258,7 +286,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
+              <option name="myItemId" value="m" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -276,7 +304,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
+              <option name="myItemId" value="m" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -369,8 +397,8 @@
       <recent name="$PROJECT_DIR$/config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/images" />
       <recent name="$PROJECT_DIR$/web/m" />
+      <recent name="$PROJECT_DIR$/web/images" />
       <recent name="$PROJECT_DIR$/views/test" />
       <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/views/site/test" />
@@ -481,7 +509,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="63006000" />
+      <workItem from="1502608095970" duration="72279000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -494,10 +522,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="579738000" />
+    <option name="totallyTimeSpent" value="589011000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="57" width="1146" height="709" extended-state="0" />
+    <frame x="74" y="51" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2853261" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -579,45 +607,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/m/m_release.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/complain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/m_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/complain.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="10" selection-start-line="18" selection-start-column="4" selection-end-line="23" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -861,14 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMEvents.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -982,9 +963,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="-2652">
           <caret line="59" column="22" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/LudaMap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/IndexRecord.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="132" column="44" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="87" column="65" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="96" column="61" selection-start-line="96" selection-start-column="61" selection-end-line="96" selection-end-column="61" />
+          <folding>
+            <element signature="e#4813#4819#0" expanded="true" />
+            <element signature="e#4819#4825#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

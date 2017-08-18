@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LikingFit烟台鲁大店-地图管理</title>
+    <link rel="Shortcut Icon" href="/images/liking.png"/>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style>
+        input[type=text]{
+            display: inline-block;
+            padding-left: 5px;
+        }
+        .container{
+            padding-left: 50px;
+        }
+        .top{
+            position: fixed;
+            background-color: white;
+            padding-bottom: 15px;
+            border-bottom: #34c86c solid 2px;
+            width: 480px;
+            padding-top: 15px;
+        }
+        .action a{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .content{
+            margin-top: 80px;
+            width: 440px;
+        }
+        .add-bg>div{
+            margin-bottom: 15px;
+        }
+        .add-bg>div input[type=text]{
+            width: 240px;
+            height: 30px;
+            outline: none;
+            border: solid 1px gainsboro;
+            /*border-color: gainsboro;*/
+            /*border-width: 1px;*/
+        }
+        .submit-bg{
+            width: 200px;
+            background-color: #34c86c;
+            padding: 3px 0;
+            margin-top: 60px;
+            border-radius: 5px;
+        }
+        .add-bg a{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        $(function () {
+
+        })
+        function insertAddress() {
+            var name = $('.name').val()
+            if (name == null || name == '') {
+                showModel("请输入名称")
+                return
+            }
+            var lng = $('.lng').val()
+            if (lng == null || lng == '') {
+                showModel('请输入经度')
+                return
+            }
+            var lat = $('.lat').val()
+            if (lat == null || lat == '') {
+                showModel('请填入纬度')
+                return
+            }
+            var typeName = $('select option:selected').text()
+            var typeId = $('select option:selected').val()
+            var showInMap = $('.show-bg input[type=radio]').eq(0).prop('checked')
+
+            var param = {
+                name      : name,
+                lng       : lng,
+                lat       : lat,
+                type_name : typeName,
+                type_id   : typeId,
+                is_show   : showInMap
+            }
+
+            request('http://afantizz.com/likingfit/add-place',param,function (resp) {
+                showModel('添加成功',function () {
+                    location.reload()
+                },1000)
+            })
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="top">
+        <div class="action">
+            <a class="add" href="javascript:">添加地址</a>
+            <a class="list" href="javascript:">查看列表</a>
+            <a class="tool" href="http://lbs.amap.com/console/show/picker" target="_blank">地图拾点工具</a>
+        </div>
+    </div>
+    <div class="content">
+        <!--<ul>-->
+        <!--&lt;!&ndash;<li class="clearfix">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="pull-left">&ndash;&gt;-->
+        <!--&lt;!&ndash;<p class="name">袁超</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;<p class="phone">15801569925</p>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="action pull-right">&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="javascript:">兑换</a>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--</ul>-->
+        <div class="add-bg">
+            <div>
+                名称: <input class="name" type="text" placeholder="填写在列表中显示的名称"> 建议简写
+            </div>
+            <div>
+                经度: <input class="lng" type="text" placeholder="填写经度"> 例: 120.000000
+            </div>
+            <div>
+                纬度: <input class="lat" type="text" placeholder="填写纬度"> 例: 30.000000
+            </div>
+            <div>
+                分类: <select name="" id="type">
+                    <option value="0">无</option>
+                    <option value="1">院系</option>
+                    <option value="2">食堂</option>
+                    <option value="3">宿舍楼</option>
+                </select>
+            </div>
+            <div class="show-bg">
+                在地图上显示: <input name="showInmap" type="radio" value="1" checked="checked" /> 是
+                &nbsp;&nbsp;<input name="showInmap" type="radio" value="0" /> 否
+            </div>
+            <div class="submit-bg">
+                <a href="javascript:insertAddress()">添加</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
