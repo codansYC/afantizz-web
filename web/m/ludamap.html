@@ -144,6 +144,32 @@
             background-repeat: no-repeat;
             width: 16px;
         }
+        .search-filter{
+            position: absolute;
+            top: 46px;
+            left: 0px;
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            border-bottom: 1px solid gainsboro;
+            border-top: 1px solid gainsboro;
+        }
+        .search-filter ul{
+            margin-top: 30px;
+            list-style: none;
+            width: 100%;
+            padding-left: 0;
+        }
+        .search-filter ul li{
+            float: left;
+            width: 25%;
+            text-align: center;
+        }
+        .search-filter ul li a{
+            color: #34c86c;
+            display: inline-block;
+            width: 100%;
+        }
     </style>
     <script>
         var map
@@ -319,6 +345,13 @@
             $('form').submit(function () {
                 search()
             })
+
+            $('input[type=search]').focus(function() {
+                $('.search-filter').css('display','block')
+            });
+            $('input[type=search]').blur(function() {
+                $('.search-filter').css('display','none')
+            });
         })
 
         var placeSearch = null
@@ -370,6 +403,14 @@
           <div class="list-bg">
               <a href="javascript:showModel('正在开发,敬请期待 ☺')"><span class="glyphicon glyphicon-th-list"></span></a>
           </div>
+      </div>
+      <div class="search-filter">
+          <ul>
+              <li><a href="">餐饮</a></li>
+              <li><a href="">购物</a></li>
+              <li><a href="">交通</a></li>
+              <li><a href="">健身</a></li>
+          </ul>
       </div>
   </div>
 </body>
