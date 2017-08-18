@@ -121,11 +121,11 @@ class LikingfitController extends BaseController{
             $isShowInMap = $this->requestParam['is_show'];
 
             $place = new LudaMap();
-            $place->name = name;
-            $place->lng = lng;
+            $place->name = $name;
+            $place->lng = $lng;
             $place->lat = $lat;
             $place->type_name = $typeName;
-            $place->type_id = typeId;
+            $place->type_id = $typeId;
             $place->is_show = $isShowInMap;
             $place->save();
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,nil);
