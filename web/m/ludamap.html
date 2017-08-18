@@ -149,18 +149,20 @@
             top: 46px;
             left: 0px;
             width: 100%;
-            height: 80px;
-            background-color: white;
             border-bottom: 1px solid gainsboro;
             border-top: 1px solid gainsboro;
             box-shadow: 0 2px 2px rgba(220, 220, 220, 0.2);
-            display: none;
+            /*display: none;*/
         }
         .search-filter ul{
-            margin-top: 30px;
+            /*margin-top: 30px;*/
             list-style: none;
             width: 100%;
-            padding-left: 0;
+            /*height: 80px;*/
+            background-color: red;
+            margin-bottom: 0px;
+            background-color: white;
+            padding: 25px 0;
         }
         .search-filter ul li{
             float: left;
@@ -172,6 +174,21 @@
             display: inline-block;
             width: 100%;
         }
+        .search-filter-close{
+            /*position: absolute;*/
+            /*bottom: 0;*/
+            /*left: 0;*/
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 4px 0;
+        }
+        .search-filter-close a {
+            color: white;
+            font-size: 10px;
+            display: block;
+            width: 100%;
+        }
+
     </style>
     <script>
         var map
@@ -357,6 +374,7 @@
         })
 
         var placeSearch = null
+        var nearbySearch = null
         function search() {
             $('input[type=search]').blur()
             if (placeSearch == null) {
@@ -366,10 +384,8 @@
                         city: cityCode, //城市
 //                        map: map,
                     });
+                    handleSearch()
                 })
-                console.log(userLoc)
-                console.log(cityCode)
-                handleSearch()
             } else {
                 handleSearch()
             }
@@ -389,6 +405,36 @@
                 }
             });
         }
+        function nearbySearchByKeyword(kw) {
+            console.log(kw)
+//            setTimeout(function () {
+//                $('input[type=search]').blur()
+//            },800)
+//
+            var distance = 2000
+            if (nearbySearch == null) {
+                AMap.service('AMap.PlaceSearch', function () {//回调函数
+                    //分类查询
+                    nearbySearch = new AMap.PlaceSearch({
+                        city: cityCode, //城市
+                        map: map,
+                    });
+                    nearbySearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
+                        if (status === 'complete' && result.info === 'OK') {
+                        } else {
+                            showModel('未搜索到结果')
+                        }
+                    });
+                })
+            } else {
+                nearbySearch.searchNearBy(kw, [userLoc.lng,userLoc.lat], distance, function (status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                    } else {
+                        showModel('未搜索到结果')
+                    }
+                });
+            }
+        }
     </script>
 </head>
 <body>
@@ -407,12 +453,15 @@
           </div>
       </div>
       <div class="search-filter">
-          <ul>
-              <li><a href="">餐饮</a></li>
-              <li><a href="">购物</a></li>
-              <li><a href="">交通</a></li>
-              <li><a href="">健身</a></li>
+          <ul class="clearfix">
+              <li><a href="javascript:nearbySearchByKeyword('餐饮')">餐饮</a></li>
+              <li><a href="javascript:nearbySearchByKeyword('购物')">购物</a></li>
+              <li><a href="javascript:nearbySearchByKeyword('交通')">交通</a></li>
+              <li><a href="javascript:nearbySearchByKeyword('健身')">健身</a></li>
           </ul>
+          <div class="search-filter-close">
+              <a href="">收起<span class="glyphicon glyphicon-menu-up"></span></a>
+          </div>
       </div>
   </div>
 </body>
