@@ -156,7 +156,7 @@ class LikingfitController extends BaseController{
                     array_push($tempPlace, $place);
                     $newPlaceByType = ['type_id'=>$place['type_id'],
                                         'type_name'=>$place['type_name'],
-                                        'place'=>$place];
+                                        'place'=>$tempPlace];
                     array_push($placeByTypes,$newPlaceByType);
                 }
 

@@ -455,6 +455,10 @@
                     var placeByType = placeByTypesArr[i]
                     var li = $("<li>"+placeByType.type_name+"<span class='glyphicon glyphicon-menu-right'></span></li>")
                     type_ul.append(li)
+
+                    for (var j=0; j<placeByType.place.length; j++) {
+                        var place = placeByType.place[j]
+                    }
                 }
             })
 
