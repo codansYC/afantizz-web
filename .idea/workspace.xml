@@ -86,7 +86,7 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="119">
               <caret line="541" column="27" selection-start-line="541" selection-start-column="27" selection-end-line="541" selection-end-column="27" />
               <folding />
             </state>
@@ -96,8 +96,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="704" column="0" selection-start-line="631" selection-start-column="0" selection-end-line="704" selection-end-column="0" />
+            <state relative-caret-position="332">
+              <caret line="646" column="9" selection-start-line="640" selection-start-column="8" selection-end-line="646" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -526,7 +526,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="79123000" />
+      <workItem from="1502608095970" duration="79247000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -539,7 +539,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="595855000" />
+    <option name="totallyTimeSpent" value="595979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="70" y="65" width="1146" height="709" extended-state="0" />
@@ -1010,14 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="704" column="0" selection-start-line="631" selection-start-column="0" selection-end-line="704" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1026,9 +1018,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="646" column="9" selection-start-line="640" selection-start-column="8" selection-end-line="646" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
+        <state relative-caret-position="119">
           <caret line="541" column="27" selection-start-line="541" selection-start-column="27" selection-end-line="541" selection-end-column="27" />
           <folding />
         </state>

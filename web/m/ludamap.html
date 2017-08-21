@@ -536,7 +536,9 @@
         }
 
         function toggleSlide() {
-            if (slideIsAnimating) {
+            if (slideIsAnimating) {return}
+            var show = $('#slideMask').css('display') == 'block'
+            if (show) {
                 hideSlide()
             } else {
                 showSlide()
