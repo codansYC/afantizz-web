@@ -230,6 +230,9 @@
             border-bottom: #edeff3 solid 1px;
             padding: 5px 0;
         }
+        .gym-tag>img{
+            width: 20px;
+        }
     </style>
     <script>
         var map
@@ -287,6 +290,9 @@
         var createGymMarker = function(data, isShowWindow) {
             var div = document.createElement('div');
             div.className = 'gym-tag';
+            var img = document.createElement('img')
+            img.src = '/images/liking.png'
+            div.appendChild(img)
             var span = document.createElement('span')
             span.innerHTML = data.title
             var coor = new Coor(data.coor[0], data.coor[1])
