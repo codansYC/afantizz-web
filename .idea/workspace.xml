@@ -69,8 +69,8 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="324" column="45" selection-start-line="324" selection-start-column="45" selection-end-line="324" selection-end-column="45" />
+            <state relative-caret-position="321">
+              <caret line="310" column="43" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="43" />
               <folding>
                 <element signature="e#7104#7575#0" expanded="false" />
                 <element signature="e#7629#9111#0" expanded="false" />
@@ -186,8 +186,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="98" />
-    <option name="y" value="103" />
+    <option name="x" value="99" />
+    <option name="y" value="41" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -507,7 +507,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="92211000" />
+      <workItem from="1502608095970" duration="92384000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -520,10 +520,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="608943000" />
+    <option name="totallyTimeSpent" value="609116000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="98" y="103" width="1146" height="709" extended-state="0" />
+    <frame x="99" y="41" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2853261" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1012,8 +1012,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="324" column="45" selection-start-line="324" selection-start-column="45" selection-end-line="324" selection-end-column="45" />
+        <state relative-caret-position="321">
+          <caret line="310" column="43" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="43" />
           <folding>
             <element signature="e#7104#7575#0" expanded="false" />
             <element signature="e#7629#9111#0" expanded="false" />
