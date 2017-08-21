@@ -94,7 +94,7 @@
     </style>
     <script>
         $(function () {
-
+            getPlaces()
         })
         //添加
         function insertAddress() {
@@ -136,8 +136,37 @@
         //列表
         function getPlaces() {
             request('http://afantizz.com/likingfit/place-list',param,function (resp) {
-
+                placeByTypes = resp
+                var typeUl = $('.place-bg ul:first-child')
+                for (var i=0; i<placeByTypes.length; i++) {
+                    var placebyType = placeByTypes[i]
+                    var li = $("<li><a href='javascript:changePlaceWithType("+placebyType.type_id+")' class='type'>"+
+                            placebyType.type_name+"<span class='glyphicon glyphicon-menu-right'>" +
+                            "</span></a></li>")
+                    typeUl.append(li)
+                }
+                changePlaceWithType(placeByTypes[0].type_id)
             })
+        }
+        var placeByTypes = new Array()
+        function changePlaceWithType(typeId) {
+            var placeUl = $('.place-bg ul:last-child')
+            for (var i=0; i<placeByTypes.length; i++) {
+                var placeByType = placeByTypes[i]
+                if (placeByType.type_id == typeId) {
+                    var places = placeByType.place
+                    for (var j=0; j<places.length; j++) {
+                        var place = places[j]
+                        var li = $("<li class='l-name clearfix'>" +
+                        "<div class='pull-left'>" +
+                        "<p>"+place.name+"</p>" +
+                        "<p>"+place.lng+"+","+"+place.lat+"</p>" +
+                        "<p>"+place.is_show?在地图上显示:不在地图上显示+"</p></div>" +
+                        "<div class='pull-right'><a href=''>删除</a></div></li>")
+                        placeUl.append(li)
+                    }
+                }
+            }
         }
     </script>
 </head>
