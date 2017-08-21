@@ -70,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="310" column="42" selection-start-line="310" selection-start-column="42" selection-end-line="310" selection-end-column="42" />
+              <caret line="310" column="43" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="43" />
               <folding>
                 <element signature="e#7104#7575#0" expanded="false" />
                 <element signature="e#7629#9111#0" expanded="false" />
@@ -508,7 +508,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="91948000" />
+      <workItem from="1502608095970" duration="91970000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -521,7 +521,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="608680000" />
+    <option name="totallyTimeSpent" value="608702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="98" y="103" width="1146" height="709" extended-state="0" />
@@ -1014,7 +1014,7 @@
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="310" column="42" selection-start-line="310" selection-start-column="42" selection-end-line="310" selection-end-column="42" />
+          <caret line="310" column="43" selection-start-line="310" selection-start-column="43" selection-end-line="310" selection-end-column="43" />
           <folding>
             <element signature="e#7104#7575#0" expanded="false" />
             <element signature="e#7629#9111#0" expanded="false" />
