@@ -447,6 +447,10 @@
             });
 
             setSlideConfigure()
+
+        })
+
+        window.onload(function () {
             //请求数据
             request('http://afantizz.com/likingfit/place-list',{},function (resp) {
                 var type_ul = $("#slide ul:first-child")
@@ -465,7 +469,6 @@
                     }
                 }
             })
-
         })
 
         var placeByTypesArr = new Array()
