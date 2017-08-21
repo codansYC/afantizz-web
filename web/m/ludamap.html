@@ -191,6 +191,29 @@
         .search-filter-close a span{
             font-size: 10px;
         }
+        #slideMask{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 44px;
+            left: 0;
+            background-color: black;
+            opacity: .0;
+            filter: alpha(opacity=0);
+            display: none;
+            z-index: 999;
+        }
+        #slide{
+            width: 0;
+            height: 100%;
+            background-color: white;
+            position: absolute;
+            top: 44px;
+            right: 0;
+            display: none;
+            z-index: 999;
+            padding-top: 20px;
+        }
 
     </style>
     <script>
@@ -497,6 +520,13 @@
           </ul>
           <div class="search-filter-close">
               <a href="javascript:filterBoxClose()"><span class="glyphicon glyphicon-menu-up"></span></a>
+          </div>
+      </div>
+      <div id="slideMask"></div>
+      <div id="slide">
+          <div>
+              <ul></ul>
+              <ul></ul>
           </div>
       </div>
   </div>

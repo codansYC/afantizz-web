@@ -81,6 +81,7 @@
         $(function () {
 
         })
+        //添加
         function insertAddress() {
             var name = $('.name').val()
             if (name == null || name == '') {
@@ -116,6 +117,13 @@
                 },1000)
             })
         }
+
+        //列表
+        function getPlaces() {
+            request('http://afantizz.com/likingfit/place-list',param,function (resp) {
+
+            })
+        }
     </script>
 </head>
 <body>
@@ -141,7 +149,7 @@
             </div>
             <div>
                 分类: <select name="" id="type">
-                    <option value="0">无</option>
+                    <option value="0">其他</option>
                     <option value="1">院系</option>
                     <option value="2">食堂</option>
                     <option value="3">宿舍楼</option>
