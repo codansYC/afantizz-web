@@ -245,6 +245,7 @@
                 }));
             });
             startLocating()
+            requestData()
 //            createMarker(new Data('鲁大东门','',[121.362962,37.523638]),false)
 //            createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]),false)
 //            createGymMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]),false)
@@ -452,6 +453,9 @@
 
         window.onload = function() {
 
+        }
+
+        function requestData() {
             //请求数据
             request('http://afantizz.com/likingfit/place-list',{},function (resp) {
                 var type_ul = $("#slide ul:first-child")
