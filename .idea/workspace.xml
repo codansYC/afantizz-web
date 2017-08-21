@@ -69,12 +69,12 @@
             <state relative-caret-position="145">
               <caret line="220" column="30" selection-start-line="220" selection-start-column="30" selection-end-line="220" selection-end-column="30" />
               <folding>
-                <element signature="e#10724#12099#0" expanded="false" />
-                <element signature="e#12149#12250#0" expanded="false" />
-                <element signature="e#12282#12347#0" expanded="false" />
-                <element signature="e#12394#13736#0" expanded="false" />
-                <element signature="e#13801#14465#0" expanded="false" />
-                <element signature="e#14532#15205#0" expanded="false" />
+                <element signature="e#10723#12098#0" expanded="false" />
+                <element signature="e#12148#12249#0" expanded="false" />
+                <element signature="e#12281#12346#0" expanded="false" />
+                <element signature="e#12393#13735#0" expanded="false" />
+                <element signature="e#13800#14464#0" expanded="false" />
+                <element signature="e#14531#15204#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -503,7 +503,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="84152000" />
+      <workItem from="1502608095970" duration="84182000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -516,7 +516,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="600884000" />
+    <option name="totallyTimeSpent" value="600914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="48" width="1146" height="709" extended-state="0" />
@@ -1008,12 +1008,12 @@
         <state relative-caret-position="145">
           <caret line="220" column="30" selection-start-line="220" selection-start-column="30" selection-end-line="220" selection-end-column="30" />
           <folding>
-            <element signature="e#10724#12099#0" expanded="false" />
-            <element signature="e#12149#12250#0" expanded="false" />
-            <element signature="e#12282#12347#0" expanded="false" />
-            <element signature="e#12394#13736#0" expanded="false" />
-            <element signature="e#13801#14465#0" expanded="false" />
-            <element signature="e#14532#15205#0" expanded="false" />
+            <element signature="e#10723#12098#0" expanded="false" />
+            <element signature="e#12148#12249#0" expanded="false" />
+            <element signature="e#12281#12346#0" expanded="false" />
+            <element signature="e#12393#13735#0" expanded="false" />
+            <element signature="e#13800#14464#0" expanded="false" />
+            <element signature="e#14531#15204#0" expanded="false" />
           </folding>
         </state>
       </provider>
