@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LikingfitController.php" afterPath="$PROJECT_DIR$/controllers/LikingfitController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/liking_mapAdmin.html" afterPath="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
     </list>
     <ignored path="afantizz.iws" />
@@ -58,10 +57,10 @@
         <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="182" column="46" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="46" />
+              <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
               <folding>
-                <element signature="e#7415#7421#0" expanded="true" />
-                <element signature="e#7421#7427#0" expanded="true" />
+                <element signature="e#7417#7423#0" expanded="true" />
+                <element signature="e#7423#7429#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -507,7 +506,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="88596000" />
+      <workItem from="1502608095970" duration="88634000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -520,7 +519,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="605328000" />
+    <option name="totallyTimeSpent" value="605366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="46" width="1146" height="709" extended-state="0" />
@@ -1017,10 +1016,10 @@
     <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="182" column="46" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="46" />
+          <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="97" selection-end-column="24" />
           <folding>
-            <element signature="e#7415#7421#0" expanded="true" />
-            <element signature="e#7421#7427#0" expanded="true" />
+            <element signature="e#7417#7423#0" expanded="true" />
+            <element signature="e#7423#7429#0" expanded="true" />
           </folding>
         </state>
       </provider>
