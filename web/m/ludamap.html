@@ -245,9 +245,9 @@
                 }));
             });
             startLocating()
-            createMarker(new Data('鲁大东门','',[121.362962,37.523638]),false)
-            createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]),false)
-            createGymMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]),false)
+//            createMarker(new Data('鲁大东门','',[121.362962,37.523638]),false)
+//            createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]),false)
+//            createGymMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]),false)
         }
         var createMarker = function(data,infoIsShow) {
             var div = document.createElement('div');
@@ -445,7 +445,22 @@
             $('input[type=search]').blur(function() {
 //                $('.search-filter').css('display','none')
             });
+
+            setSlideConfigure()
+            //请求数据
+            request('http://afantizz.com/likingfit/place-list',{},function (resp) {
+                var type_ul = $("#slide ul:first-child")
+                placeByTypesArr = resp
+                for (var i=0; i<placeByTypesArr.length; i++) {
+                    var placeByType = placeByTypesArr[i]
+                    var li = $("<li>'"+placeByType.type_name+"'<span class='glyphicon glyphicon-menu-right'></span></li>")
+                    type_ul.append(li)
+                }
+            })
+
         })
+
+        var placeByTypesArr = new Array()
 
         var placeSearch = null
         var nearbySearch = null
@@ -590,9 +605,6 @@
             })
             $(document).unbind('touchmove')
         }
-        $(function () {
-            setSlideConfigure()
-        })
     </script>
 </head>
 <body>
