@@ -14,6 +14,8 @@ use app\models\LudaMap;
 use app\utils\BizConsts;
 use app\utils\GlobalAction;
 use app\utils\UtilHelper;
+use phpDocumentor\Reflection\Types\Array_;
+
 //header("Access-Control-Allow-Origin: *"); # 跨域处理
 class LikingfitController extends BaseController{
 
@@ -133,4 +135,36 @@ class LikingfitController extends BaseController{
             UtilHelper::handleException($e);
         }
     }
+
+    function actionPlaceList() {
+        try {
+            $placeByTypes = array();
+            $places = LudaMap::find()->asArray()->all();
+            foreach ($places as $place) {
+                $isExist = false;
+                for ($i=0;$i<count($placeByTypes);$i++) {
+                    if ($placeByTypes[$i]['type_id'] == $place['type_id']) {
+                        $tempPlace = $placeByTypes[$i]['place'];
+                        array_push($tempPlace, $place);
+                        $placeByTypes[$i]['place'] = $tempPlace;
+                        $isExist = true;
+                        break;
+                    }
+                }
+                if (!$isExist) {
+                    $tempPlace = array();
+                    array_push($tempPlace, $place);
+                    $newPlaceByType = ['type_id'=>$place['type_id'],
+                                        'type_name'=>$place['type_name'],
+                                        'place'=>$place];
+                    array_push($placeByTypes,$newPlaceByType);
+                }
+
+            }
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$placeByTypes);
+        } catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
+    }
+
 }

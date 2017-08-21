@@ -60,6 +60,22 @@
             color: white;
             text-decoration: none;
         }
+        /*列表*/
+        .place-bg{
+            width: 500px;
+            height: 600px;
+            padding-left: 0px;
+        }
+        .place-bg ul{
+            list-style: none;
+            margin-left: 0px;
+        }
+        .place-bg ul li{
+            border-bottom: #edeff3 solid 1px ;
+        }
+        .place-bg a.type{
+            line-height: 34px;
+        }
     </style>
     <script>
         $(function () {
@@ -112,17 +128,7 @@
         </div>
     </div>
     <div class="content">
-        <!--<ul>-->
-        <!--&lt;!&ndash;<li class="clearfix">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="pull-left">&ndash;&gt;-->
-        <!--&lt;!&ndash;<p class="name">袁超</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;<p class="phone">15801569925</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="action pull-right">&ndash;&gt;-->
-        <!--&lt;!&ndash;<a href="javascript:">兑换</a>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-        <!--</ul>-->
+        <!--
         <div class="add-bg">
             <div>
                 名称: <input class="name" type="text" placeholder="填写在列表中显示的名称"> 建议简写
@@ -148,6 +154,45 @@
             <div class="submit-bg">
                 <a href="javascript:insertAddress()">添加</a>
             </div>
+        </div>
+        -->
+        <div class="place-bg">
+            <ul class="pull-left">
+                <li>
+                    <a href="javascript:" class="type">院系<span class="glyphicon glyphicon-menu-right"></span></a>
+                </li>
+                <li>
+                    <a href="javascript:" class="type">宿舍<span class="glyphicon glyphicon-menu-right"></span></a>
+                </li>
+                <li>
+                    <a href="javascript:" class="type">食堂<span class="glyphicon glyphicon-menu-right"></span></a>
+                </li>
+                <li>
+                    <a href="javascript:" class="type">其他<span class="glyphicon glyphicon-menu-right"></span></a>
+                </li>
+            </ul>
+            <ul class="pull-left">
+                <li class="l-name">
+                    <p>鲁东大学图书馆</p>
+                    <p>121.363306,37.514801</p>
+                </li>
+                <li class="l-name">
+                    <p>鲁东大学图书馆</p>
+                    <p>121.363306,37.514801</p>
+                </li>
+                <li class="l-name">
+                    <p>鲁东大学图书馆</p>
+                    <p>121.363306,37.514801</p>
+                </li>
+                <li class="l-name">
+                    <p>鲁东大学图书馆</p>
+                    <p>121.363306,37.514801</p>
+                </li>
+                <li class="l-name">
+                    <p>鲁东大学图书馆</p>
+                    <p>121.363306,37.514801</p>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
