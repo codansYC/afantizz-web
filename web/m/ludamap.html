@@ -634,6 +634,12 @@
                 }
             }
         }
+        function showPlaceInMap(typeId,placeIndex) {
+            for (var i=0; i<placeByTypesArr.length; i++) {
+                var place = placeByTypesArr[i].place[placeIndex]
+                createNormalMarker(new Data(place.name,'',[place.lng,place.lat]),true)
+            }
+        }
     </script>
 </head>
 <body>
