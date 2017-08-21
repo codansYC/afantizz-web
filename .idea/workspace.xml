@@ -70,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="636" column="21" selection-start-line="636" selection-start-column="21" selection-end-line="636" selection-end-column="21" />
+              <caret line="599" column="35" selection-start-line="599" selection-start-column="35" selection-end-line="599" selection-end-column="35" />
               <folding>
                 <element signature="e#12046#12147#0" expanded="false" />
                 <element signature="e#12179#12244#0" expanded="false" />
@@ -505,7 +505,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="90512000" />
+      <workItem from="1502608095970" duration="90658000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -518,7 +518,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="607244000" />
+    <option name="totallyTimeSpent" value="607390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="46" width="1146" height="709" extended-state="0" />
@@ -1011,7 +1011,7 @@
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="636" column="21" selection-start-line="636" selection-start-column="21" selection-end-line="636" selection-end-column="21" />
+          <caret line="599" column="35" selection-start-line="599" selection-start-column="35" selection-end-line="599" selection-end-column="35" />
           <folding>
             <element signature="e#12046#12147#0" expanded="false" />
             <element signature="e#12179#12244#0" expanded="false" />
