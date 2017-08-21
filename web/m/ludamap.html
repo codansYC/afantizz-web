@@ -632,7 +632,7 @@
                     var places = placeByType.place
                     for (var j=0; j<places.length; j++) {
                         var place = places[j]
-                        var li = $("<li onclick='showPlaceInMap("+typeId+","+i+")'>"+place.name+"</li>")
+                        var li = $("<li onclick='showPlaceInMap("+typeId+","+j+")'>"+place.name+"</li>")
                         placeUl.append(li)
                     }
                 }
