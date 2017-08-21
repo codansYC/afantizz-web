@@ -535,6 +535,14 @@
             })
         }
 
+        function toggleSlide() {
+            if (slideIsAnimating) {
+                showSlide()
+            } else {
+                hideSlide()
+            }
+        }
+
         function showSlide() {
             slideIsAnimating = true
             var slideMask = $('#slideMask')
@@ -584,7 +592,7 @@
               <a href="javascript:location.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
           </div>
           <div class="list-bg">
-              <a href="javascript:showSlide()"><span class="glyphicon glyphicon-th-list"></span></a>
+              <a href="javascript:toggleSlide()"><span class="glyphicon glyphicon-th-list"></span></a>
           </div>
       </div>
       <div class="search-filter">
