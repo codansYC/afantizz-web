@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LikingfitController.php" afterPath="$PROJECT_DIR$/controllers/LikingfitController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/ludamap.html" afterPath="$PROJECT_DIR$/web/m/ludamap.html" />
     </list>
     <ignored path="afantizz.iws" />
@@ -24,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="158" column="59" selection-start-line="158" selection-start-column="59" selection-end-line="158" selection-end-column="59" />
+            <state relative-caret-position="163">
+              <caret line="149" column="40" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -64,16 +63,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="couponAdmin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="51" column="46" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -84,13 +73,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="459" column="56" selection-start-line="459" selection-start-column="56" selection-end-line="459" selection-end-column="56" />
+            <state relative-caret-position="273">
+              <caret line="461" column="93" selection-start-line="461" selection-start-column="93" selection-end-line="461" selection-end-column="93" />
               <folding>
-                <element signature="e#7557#9039#0" expanded="false" />
                 <element signature="e#9119#10576#0" expanded="false" />
                 <element signature="e#10669#12044#0" expanded="false" />
                 <element signature="e#12094#12195#0" expanded="false" />
@@ -199,8 +187,8 @@
         <option value="$PROJECT_DIR$/web/m/js/liking_mapAdmin.html" />
         <option value="$PROJECT_DIR$/models/LudaMap.php" />
         <option value="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
-        <option value="$PROJECT_DIR$/web/m/ludamap.html" />
         <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
+        <option value="$PROJECT_DIR$/web/m/ludamap.html" />
       </list>
     </option>
   </component>
@@ -536,7 +524,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="82294000" />
+      <workItem from="1502608095970" duration="82565000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -549,7 +537,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="599026000" />
+    <option name="totallyTimeSpent" value="599297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="48" width="1146" height="709" extended-state="0" />
@@ -988,14 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="51" column="46" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1020,6 +1000,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="149" column="40" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1030,10 +1026,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="459" column="56" selection-start-line="459" selection-start-column="56" selection-end-line="459" selection-end-column="56" />
+        <state relative-caret-position="273">
+          <caret line="461" column="93" selection-start-line="461" selection-start-column="93" selection-end-line="461" selection-end-column="93" />
           <folding>
-            <element signature="e#7557#9039#0" expanded="false" />
             <element signature="e#9119#10576#0" expanded="false" />
             <element signature="e#10669#12044#0" expanded="false" />
             <element signature="e#12094#12195#0" expanded="false" />
@@ -1042,14 +1037,6 @@
             <element signature="e#13746#14410#0" expanded="false" />
             <element signature="e#14477#15150#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="158" column="59" selection-start-line="158" selection-start-column="59" selection-end-line="158" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
