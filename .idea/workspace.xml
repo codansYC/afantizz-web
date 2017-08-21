@@ -69,17 +69,17 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="239" column="25" selection-start-line="239" selection-start-column="25" selection-end-line="239" selection-end-column="25" />
+            <state relative-caret-position="173">
+              <caret line="235" column="25" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="25" />
               <folding>
-                <element signature="e#7103#7574#0" expanded="false" />
-                <element signature="e#7628#9110#0" expanded="false" />
-                <element signature="e#11022#12397#0" expanded="false" />
-                <element signature="e#12447#12548#0" expanded="false" />
-                <element signature="e#12580#12645#0" expanded="false" />
-                <element signature="e#12692#14034#0" expanded="false" />
-                <element signature="e#14099#14763#0" expanded="false" />
-                <element signature="e#14830#15503#0" expanded="false" />
+                <element signature="e#7104#7575#0" expanded="false" />
+                <element signature="e#7629#9111#0" expanded="false" />
+                <element signature="e#11023#12398#0" expanded="false" />
+                <element signature="e#12448#12549#0" expanded="false" />
+                <element signature="e#12581#12646#0" expanded="false" />
+                <element signature="e#12693#14035#0" expanded="false" />
+                <element signature="e#14100#14764#0" expanded="false" />
+                <element signature="e#14831#15504#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -187,8 +187,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
-    <option name="y" value="46" />
+    <option name="x" value="98" />
+    <option name="y" value="103" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -508,7 +508,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="91779000" />
+      <workItem from="1502608095970" duration="91812000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -521,10 +521,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="608511000" />
+    <option name="totallyTimeSpent" value="608544000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="46" width="1146" height="709" extended-state="0" />
+    <frame x="98" y="103" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2853261" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1013,17 +1013,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="239" column="25" selection-start-line="239" selection-start-column="25" selection-end-line="239" selection-end-column="25" />
+        <state relative-caret-position="173">
+          <caret line="235" column="25" selection-start-line="235" selection-start-column="25" selection-end-line="235" selection-end-column="25" />
           <folding>
-            <element signature="e#7103#7574#0" expanded="false" />
-            <element signature="e#7628#9110#0" expanded="false" />
-            <element signature="e#11022#12397#0" expanded="false" />
-            <element signature="e#12447#12548#0" expanded="false" />
-            <element signature="e#12580#12645#0" expanded="false" />
-            <element signature="e#12692#14034#0" expanded="false" />
-            <element signature="e#14099#14763#0" expanded="false" />
-            <element signature="e#14830#15503#0" expanded="false" />
+            <element signature="e#7104#7575#0" expanded="false" />
+            <element signature="e#7629#9111#0" expanded="false" />
+            <element signature="e#11023#12398#0" expanded="false" />
+            <element signature="e#12448#12549#0" expanded="false" />
+            <element signature="e#12581#12646#0" expanded="false" />
+            <element signature="e#12693#14035#0" expanded="false" />
+            <element signature="e#14100#14764#0" expanded="false" />
+            <element signature="e#14831#15504#0" expanded="false" />
           </folding>
         </state>
       </provider>
