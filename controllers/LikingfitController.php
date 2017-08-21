@@ -167,4 +167,16 @@ class LikingfitController extends BaseController{
         }
     }
 
+    function actionPlaceDelete() {
+        try {
+            $id = $this->requestParam['id'];
+            $place = LudaMap::findOne($id);
+            $place->delete();
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,null);
+        } catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
+
+    }
+
 }

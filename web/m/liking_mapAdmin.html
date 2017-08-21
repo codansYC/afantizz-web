@@ -95,6 +95,7 @@
     <script>
         $(function () {
             getPlaces()
+            $('placeBg').css('display','none')
         })
         //添加
         function insertAddress() {
@@ -162,11 +163,28 @@
                         "<p>"+place.name+"</p>" +
                         "<p>"+place.lng+","+place.lat+"</p>" +
                         "<p>"+(place.is_show ? '在地图上显示' : '不在地图上显示') +"</p></div>"+
-                        "<div class='pull-right'><a href=''>删除</a></div></li>")
+                        "<div class='pull-right'><a href='javascript:deletePlace("+place.id+")'>删除</a></div></li>")
                         placeUl.append(li)
                     }
                 }
             }
+        }
+        function deletePlace(placeId) {
+            var p = {
+                id: placeId
+            }
+            request('http://afantizz.com/likingfit/place-delete',p,function (resp) {
+                location.reload()
+            })
+
+        }
+        function showAddPlace() {
+            $('.add-bg').css('display','block')
+            $('.place-bg').css('display','none')
+        }
+        function showPlaceList() {
+            $('.add-bg').css('display','none')
+            $('.place-bg').css('display','block')
         }
     </script>
 </head>
@@ -174,13 +192,12 @@
 <div class="container">
     <div class="top">
         <div class="action">
-            <a class="add" href="javascript:">添加地址</a>
-            <a class="list" href="javascript:">查看列表</a>
+            <a class="add" href="javascript:showAddPlace()">添加地址</a>
+            <a class="list" href="javascript:showPlaceList()">查看列表</a>
             <a class="tool" href="http://lbs.amap.com/console/show/picker" target="_blank">地图拾点工具</a>
         </div>
     </div>
     <div class="content">
-        <!--
         <div class="add-bg">
             <div>
                 名称: <input class="name" type="text" placeholder="填写在列表中显示的名称"> 建议简写
@@ -207,7 +224,6 @@
                 <a href="javascript:insertAddress()">添加</a>
             </div>
         </div>
-        -->
         <div class="place-bg">
             <ul class="pull-left">
             </ul>
