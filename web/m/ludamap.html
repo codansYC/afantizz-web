@@ -247,9 +247,6 @@
             });
             startLocating()
             requestData()
-//            createMarker(new Data('鲁大东门','',[121.362962,37.523638]),false)
-//            createMarker(new Data('鲁大图书馆','',[121.361506,37.523633]),false)
-//            createGymMarker(new Data('LikingFit 24h智能健身(烟台鲁大店)','',[121.363306,37.514801]),false)
         }
         var createMarker = function(data,infoIsShow) {
             var div = document.createElement('div');
@@ -459,7 +456,7 @@
                 placeByTypesArr = resp
                 for (var i=0; i<placeByTypesArr.length; i++) {
                     var placeByType = placeByTypesArr[i]
-                    var li = $("<li>"+placeByType.type_name+"<span class='glyphicon glyphicon-menu-right'></span></li>")
+                    var li = $("<li onclick='changePlaceWithType("+placeByType.type_id+")'>"+placeByType.type_name+"<span class='glyphicon glyphicon-menu-right'></span></li>")
                     type_ul.append(li)
 
                     for (var j=0; j<placeByType.place.length; j++) {
@@ -473,6 +470,7 @@
                         }
                     }
                 }
+                changePlaceWithType(placeByTypesArr[0].type_id)
             })
         }
 
@@ -621,6 +619,21 @@
             })
             $(document).unbind('touchmove')
         }
+        function changePlaceWithType(typeId) {
+            var placeUl = $('#slide ul:last-child')
+            placeUl.children('li').remove()
+            for (var i=0; i<placeByTypes.length; i++) {
+                var placeByType = placeByTypes[i]
+                if (placeByType.type_id == typeId) {
+                    var places = placeByType.place
+                    for (var j=0; j<places.length; j++) {
+                        var place = places[j]
+                        var li = $("<li>"+place.name+"</li>")
+                        placeUl.append(li)
+                    }
+                }
+            }
+        }
     </script>
 </head>
 <body>
@@ -658,10 +671,10 @@
               <!--<li>其他<span class="glyphicon glyphicon-menu-right"></span></li>-->
           </ul>
           <ul class="pull-left">
-              <li>北一</li>
-              <li>北二</li>
-              <li>北三</li>
-              <li>北四</li>
+              <!--<li>北一</li>-->
+              <!--<li>北二</li>-->
+              <!--<li>北三</li>-->
+              <!--<li>北四</li>-->
           </ul>
       </div>
   </div>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/liking_mapAdmin.html" afterPath="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/ludamap.html" afterPath="$PROJECT_DIR$/web/m/ludamap.html" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="liking_mapAdmin.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="liking_mapAdmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="154" column="43" selection-start-line="154" selection-start-column="43" selection-end-line="154" selection-end-column="43" />
+            <state relative-caret-position="493">
+              <caret line="171" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="171" selection-end-column="9" />
               <folding>
                 <element signature="e#7461#7467#0" expanded="true" />
                 <element signature="e#7467#7473#0" expanded="true" />
@@ -66,18 +66,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="224" column="23" selection-start-line="224" selection-start-column="23" selection-end-line="224" selection-end-column="23" />
+            <state relative-caret-position="95">
+              <caret line="460" column="0" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
               <folding>
-                <element signature="e#10723#12098#0" expanded="false" />
-                <element signature="e#12148#12249#0" expanded="false" />
-                <element signature="e#12281#12346#0" expanded="false" />
-                <element signature="e#12393#13735#0" expanded="false" />
-                <element signature="e#13800#14464#0" expanded="false" />
-                <element signature="e#14531#15204#0" expanded="false" />
+                <element signature="e#10468#11843#0" expanded="false" />
+                <element signature="e#11893#11994#0" expanded="false" />
+                <element signature="e#12026#12091#0" expanded="false" />
+                <element signature="e#12138#13480#0" expanded="false" />
+                <element signature="e#13545#14209#0" expanded="false" />
+                <element signature="e#14276#14949#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -168,9 +168,9 @@
         <option value="$PROJECT_DIR$/web/m/js/m_feedback.js" />
         <option value="$PROJECT_DIR$/web/m/js/liking_mapAdmin.html" />
         <option value="$PROJECT_DIR$/models/LudaMap.php" />
-        <option value="$PROJECT_DIR$/web/m/ludamap.html" />
         <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
         <option value="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
+        <option value="$PROJECT_DIR$/web/m/ludamap.html" />
       </list>
     </option>
   </component>
@@ -506,7 +506,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="88934000" />
+      <workItem from="1502608095970" duration="89384000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -519,7 +519,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="605666000" />
+    <option name="totallyTimeSpent" value="606116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="46" width="1146" height="709" extended-state="0" />
@@ -998,28 +998,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
+    <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="224" column="23" selection-start-line="224" selection-start-column="23" selection-end-line="224" selection-end-column="23" />
+        <state relative-caret-position="493">
+          <caret line="171" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="171" selection-end-column="9" />
           <folding>
-            <element signature="e#10723#12098#0" expanded="false" />
-            <element signature="e#12148#12249#0" expanded="false" />
-            <element signature="e#12281#12346#0" expanded="false" />
-            <element signature="e#12393#13735#0" expanded="false" />
-            <element signature="e#13800#14464#0" expanded="false" />
-            <element signature="e#14531#15204#0" expanded="false" />
+            <element signature="e#7461#7467#0" expanded="true" />
+            <element signature="e#7467#7473#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
+    <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="154" column="43" selection-start-line="154" selection-start-column="43" selection-end-line="154" selection-end-column="43" />
+        <state relative-caret-position="95">
+          <caret line="460" column="0" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
           <folding>
-            <element signature="e#7461#7467#0" expanded="true" />
-            <element signature="e#7467#7473#0" expanded="true" />
+            <element signature="e#10468#11843#0" expanded="false" />
+            <element signature="e#11893#11994#0" expanded="false" />
+            <element signature="e#12026#12091#0" expanded="false" />
+            <element signature="e#12138#13480#0" expanded="false" />
+            <element signature="e#13545#14209#0" expanded="false" />
+            <element signature="e#14276#14949#0" expanded="false" />
           </folding>
         </state>
       </provider>
