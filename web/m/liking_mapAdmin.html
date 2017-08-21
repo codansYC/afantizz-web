@@ -152,6 +152,7 @@
         var placeByTypes = new Array()
         function changePlaceWithType(typeId) {
             var placeUl = $('.place-bg ul:last-child')
+            placeUl.children('li').remove()
             for (var i=0; i<placeByTypes.length; i++) {
                 var placeByType = placeByTypes[i]
                 if (placeByType.type_id == typeId) {
