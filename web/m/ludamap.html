@@ -214,7 +214,10 @@
             z-index: 999;
             padding-top: 20px;
         }
-
+        #slide>ul{
+            width: 50%;
+            list-style: none;
+        }
     </style>
     <script>
         var map
@@ -610,10 +613,18 @@
       </div>
       <div id="slideMask"></div>
       <div id="slide">
-          <div>
-              <ul></ul>
-              <ul></ul>
-          </div>
+          <ul class="pull-left">
+              <li>院系</li>
+              <li>宿舍</li>
+              <li>食堂</li>
+              <li>其他</li>
+          </ul>
+          <ul class="pull-left">
+              <li>北一</li>
+              <li>北二</li>
+              <li>北三</li>
+              <li>北四</li>
+          </ul>
       </div>
   </div>
 </body>
