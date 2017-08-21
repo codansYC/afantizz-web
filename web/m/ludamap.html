@@ -464,7 +464,11 @@
                     for (var j=0; j<placeByType.place.length; j++) {
                         var place = placeByType.place[j]
                         if (place.is_show) {
-                            createMarker(new Data(place.name,'',[place.lng,place.lat]),false)
+                            if (place.name.toLowerCase().indexOf('liking') > -1) {
+                                createGymMarker(new Data(place.name,'',[place.lng,place.lat]))
+                            } else {
+                                createMarker(new Data(place.name,'',[place.lng,place.lat]),false)
+                            }
                         }
                     }
                 }
