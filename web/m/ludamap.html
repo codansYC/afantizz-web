@@ -640,6 +640,7 @@
         }
         function showPlaceInMap(typeId,placeIndex) {
             for (var i=0; i<placeByTypesArr.length; i++) {
+                if (typeId != placeByTypesArr[i].type_id) { continue }
                 var place = placeByTypesArr[i].place[placeIndex]
                 var data = new Data(place.name,'',[place.lng,place.lat])
                 if (place.name.toLowerCase().indexOf('liking')>-1) {
@@ -647,7 +648,9 @@
                 } else {
                     createNormalMarker(data,true)
                 }
+                break
             }
+            hideSlide()
         }
     </script>
 </head>
