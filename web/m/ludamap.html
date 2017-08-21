@@ -494,6 +494,79 @@
         function filterBoxClose() {
             $('.search-filter').css('display','none')
         }
+        //排序的侧滑视图
+        var slideIsAnimating = false
+        function setSlideConfigure() {
+            var sortBtn = $('#sortBtn')
+            var slideMask = $('#slideMask')
+            var slide = $('#slide')
+            slideMask.height($(document).height()-44-49)
+            slide.height($(document).height()-44-49)
+            sortBtn.click(function () {
+                if (slideIsAnimating) {return}
+                var show = slideMask.css('display') == 'block'
+                if (show) {
+                    hideSlide()
+                } else {
+                    showSlide()
+                }
+            })
+            slideMask.click(function () {
+                hideSlide()
+            })
+
+            var sort = getParams('sort')
+            if (sort == '' || sort == null) {
+                sort = '最新'
+            }
+
+            $('.sortList li').each(function () {
+                var that = $(this)
+                if (that.text() == sort) {
+                    that.addClass('selected')
+                }
+            })
+
+            $('.sortList li').click(function () {
+                $('.sortList li').removeClass('selected')
+                $(this).addClass('selected')
+                hideSlide()
+                reload()
+            })
+        }
+
+        function showSlide() {
+            slideIsAnimating = true
+            var slideMask = $('#slideMask')
+            var slide = $('#slide')
+            slideMask.css('display','block')
+            slide.css('display','block')
+            slide.animate({width:'60%'},200);
+            slideMask.animate({
+                'opacity': .3,
+                'filter': 'alpha(opacity=30)'
+            },200,function () {
+                slideIsAnimating = false
+            })
+            $(document).bind('touchmove',function (event) {
+                event.preventDefault()
+            })
+        }
+        function hideSlide() {
+            slideIsAnimating = true
+            var slideMask = $('#slideMask')
+            var slide = $('#slide')
+            slide.animate({width:'0'},200);
+            slideMask.animate({
+                'opacity': .0,
+                'filter': 'alpha(opacity=60)'
+            },200,function () {
+                slideMask.css('display','none')
+                slide.css('display','none')
+                slideIsAnimating = false
+            })
+            $(document).unbind('touchmove')
+        }
     </script>
 </head>
 <body>
@@ -508,7 +581,7 @@
               <a href="javascript:location.reload()"><span class="glyphicon glyphicon-refresh"></span></a>
           </div>
           <div class="list-bg">
-              <a href="javascript:showModel('正在开发,敬请期待 ☺')"><span class="glyphicon glyphicon-th-list"></span></a>
+              <a href="javascript:showSlide()"><span class="glyphicon glyphicon-th-list"></span></a>
           </div>
       </div>
       <div class="search-filter">
