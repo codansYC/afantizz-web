@@ -458,9 +458,8 @@
 
                     for (var j=0; j<placeByType.place.length; j++) {
                         var place = placeByType.place[j]
-                        console.log(place.is_show)
                         if (place.is_show == '1') {
-                            createMarker(new Data(place.name,'',[place.lng,place.lat],false))
+                            createMarker(new Data(place.name,'',[place.lng,place.lat]),false)
                         }
                     }
                 }
