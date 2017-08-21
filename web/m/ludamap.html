@@ -215,8 +215,13 @@
             padding-top: 20px;
         }
         #slide>ul{
-            width: 50%;
             list-style: none;
+        }
+        #slide>ul:first-child{
+            width: 25%;
+        }
+        #slide>ul:last-child{
+            width: 75%;
         }
         #slide>ul>li{
             border-bottom: #edeff3 solid 1px;
@@ -618,10 +623,10 @@
       <div id="slideMask"></div>
       <div id="slide">
           <ul class="pull-left">
-              <li>院系</li>
-              <li>宿舍</li>
-              <li>食堂</li>
-              <li>其他</li>
+              <li>院系<span class="glyphicon glyphicon-menu-right"></span></li>
+              <li>宿舍<span class="glyphicon glyphicon-menu-right"></span></li>
+              <li>食堂<span class="glyphicon glyphicon-menu-right"></span></li>
+              <li>其他<span class="glyphicon glyphicon-menu-right"></span></li>
           </ul>
           <ul class="pull-left">
               <li>北一</li>
