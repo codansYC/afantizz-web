@@ -283,7 +283,7 @@
             return marker;
         }
         var showInfoWindow = null
-        var createGymMarker = function(data) {
+        var createGymMarker = function(data, isShowWindow) {
             var div = document.createElement('div');
             div.className = 'gym-tag';
             var span = document.createElement('span')
@@ -313,6 +313,10 @@
                 infowindow.open(map, data.coor);
                 showInfoWindow = infowindow
             });
+            if (isShowWindow) {
+                infowindow.open(map, data.coor);
+                showInfoWindow = infowindow
+            }
             return marker;
         }
 
@@ -637,7 +641,12 @@
         function showPlaceInMap(typeId,placeIndex) {
             for (var i=0; i<placeByTypesArr.length; i++) {
                 var place = placeByTypesArr[i].place[placeIndex]
-                createNormalMarker(new Data(place.name,'',[place.lng,place.lat]),true)
+                var data = new Data(place.name,'',[place.lng,place.lat])
+                if (place.name.toLowerCase().indexOf('liking')>-1) {
+                    createGymMarker(data, true)
+                } else {
+                    createNormalMarker(data,true)
+                }
             }
         }
     </script>
