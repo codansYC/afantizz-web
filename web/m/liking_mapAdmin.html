@@ -135,7 +135,7 @@
 
         //列表
         function getPlaces() {
-            request('http://afantizz.com/likingfit/place-list',param,function (resp) {
+            request('http://afantizz.com/likingfit/place-list',{},function (resp) {
                 placeByTypes = resp
                 var typeUl = $('.place-bg ul:first-child')
                 for (var i=0; i<placeByTypes.length; i++) {
