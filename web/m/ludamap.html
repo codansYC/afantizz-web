@@ -622,8 +622,8 @@
         function changePlaceWithType(typeId) {
             var placeUl = $('#slide ul:last-child')
             placeUl.children('li').remove()
-            for (var i=0; i<placeByTypes.length; i++) {
-                var placeByType = placeByTypes[i]
+            for (var i=0; i<placeByTypesArr.length; i++) {
+                var placeByType = placeByTypesArr[i]
                 if (placeByType.type_id == typeId) {
                     var places = placeByType.place
                     for (var j=0; j<places.length; j++) {
