@@ -69,8 +69,8 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="453" column="23" selection-start-line="453" selection-start-column="23" selection-end-line="453" selection-end-column="23" />
+            <state relative-caret-position="188">
+              <caret line="392" column="54" selection-start-line="392" selection-start-column="54" selection-end-line="392" selection-end-column="54" />
               <folding>
                 <element signature="e#7103#7574#0" expanded="false" />
                 <element signature="e#7628#9110#0" expanded="false" />
@@ -78,20 +78,9 @@
                 <element signature="e#11081#12456#0" expanded="false" />
                 <element signature="e#12506#12607#0" expanded="false" />
                 <element signature="e#12639#12704#0" expanded="false" />
-                <element signature="e#12751#14093#0" expanded="false" />
                 <element signature="e#14158#14822#0" expanded="false" />
                 <element signature="e#14889#15562#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="37" column="1" selection-start-line="15" selection-start-column="0" selection-end-line="37" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -509,7 +498,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="93930000" />
+      <workItem from="1502608095970" duration="94202000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -522,7 +511,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="610662000" />
+    <option name="totallyTimeSpent" value="610934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="99" y="41" width="1146" height="709" extended-state="0" />
@@ -607,14 +596,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/m/m_complain.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/css/complain.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1012,10 +993,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1836">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="453" column="23" selection-start-line="453" selection-start-column="23" selection-end-line="453" selection-end-column="23" />
+        <state relative-caret-position="188">
+          <caret line="392" column="54" selection-start-line="392" selection-start-column="54" selection-end-line="392" selection-end-column="54" />
           <folding>
             <element signature="e#7103#7574#0" expanded="false" />
             <element signature="e#7628#9110#0" expanded="false" />
@@ -1023,7 +1012,6 @@
             <element signature="e#11081#12456#0" expanded="false" />
             <element signature="e#12506#12607#0" expanded="false" />
             <element signature="e#12639#12704#0" expanded="false" />
-            <element signature="e#12751#14093#0" expanded="false" />
             <element signature="e#14158#14822#0" expanded="false" />
             <element signature="e#14889#15562#0" expanded="false" />
           </folding>
