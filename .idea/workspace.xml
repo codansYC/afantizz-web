@@ -69,8 +69,8 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="614" column="35" selection-start-line="614" selection-start-column="35" selection-end-line="614" selection-end-column="35" />
+            <state relative-caret-position="272">
+              <caret line="564" column="54" selection-start-line="563" selection-start-column="14" selection-end-line="564" selection-end-column="54" />
               <folding>
                 <element signature="e#7103#7574#0" expanded="false" />
                 <element signature="e#7628#9110#0" expanded="false" />
@@ -507,7 +507,7 @@
       <workItem from="1501666566358" duration="1951000" />
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
-      <workItem from="1502608095970" duration="92977000" />
+      <workItem from="1502608095970" duration="93248000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -520,7 +520,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="609709000" />
+    <option name="totallyTimeSpent" value="609980000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="99" y="41" width="1146" height="709" extended-state="0" />
@@ -1012,8 +1012,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="614" column="35" selection-start-line="614" selection-start-column="35" selection-end-line="614" selection-end-column="35" />
+        <state relative-caret-position="272">
+          <caret line="564" column="54" selection-start-line="563" selection-start-column="14" selection-end-line="564" selection-end-column="54" />
           <folding>
             <element signature="e#7103#7574#0" expanded="false" />
             <element signature="e#7628#9110#0" expanded="false" />
