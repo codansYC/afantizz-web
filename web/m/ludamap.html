@@ -452,8 +452,9 @@
         }
 
         $(function () {
-//            $('#map_container').height(window.screen.availHeight)
-            $('#map_container').css('height','100%')
+            alert(window.screen.availHeight)
+            $('#map_container').height(window.screen.availHeight)
+//            $('#map_container').css('height','100%')
             $('form').submit(function () {
                 search()
             })
