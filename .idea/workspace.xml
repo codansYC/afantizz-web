@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/couponAdmin.html" afterPath="$PROJECT_DIR$/web/m/couponAdmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/coupon.html" afterPath="$PROJECT_DIR$/web/m/coupon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/getCoupon.html" afterPath="$PROJECT_DIR$/web/m/getCoupon.html" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,15 +27,15 @@
       <file leaf-file-name="LikingfitController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+            <state relative-caret-position="187">
+              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coupon.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -43,10 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="couponAdmin.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="coupon.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="156" column="67" selection-start-line="156" selection-start-column="67" selection-end-line="156" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="couponAdmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="-476">
               <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
               <folding />
             </state>
@@ -76,7 +87,7 @@
       <file leaf-file-name="liking_mapAdmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2907">
+            <state relative-caret-position="17">
               <caret line="171" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="171" selection-end-column="9" />
               <folding>
                 <element signature="e#7461#7467#0" expanded="true" />
@@ -106,8 +117,8 @@
       <file leaf-file-name="getCoupon.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/getCoupon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="127" column="28" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+            <state relative-caret-position="182">
+              <caret line="166" column="18" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -162,7 +173,6 @@
         <option value="$PROJECT_DIR$/models/Coupon.php" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
         <option value="$PROJECT_DIR$/config/db.php" />
-        <option value="$PROJECT_DIR$/web/m/coupon.html" />
         <option value="$PROJECT_DIR$/controllers/UploadController.php" />
         <option value="$PROJECT_DIR$/web/m/release.html" />
         <option value="$PROJECT_DIR$/web/m/detail.html" />
@@ -188,9 +198,10 @@
         <option value="$PROJECT_DIR$/models/LudaMap.php" />
         <option value="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
         <option value="$PROJECT_DIR$/web/m/ludamap.html" />
-        <option value="$PROJECT_DIR$/web/m/getCoupon.html" />
         <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
         <option value="$PROJECT_DIR$/web/m/couponAdmin.html" />
+        <option value="$PROJECT_DIR$/web/m/getCoupon.html" />
+        <option value="$PROJECT_DIR$/web/m/coupon.html" />
       </list>
     </option>
   </component>
@@ -205,8 +216,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="34" />
-    <option name="y" value="243" />
+    <option name="x" value="38" />
+    <option name="y" value="23" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -527,7 +538,7 @@
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
       <workItem from="1502608095970" duration="96252000" />
-      <workItem from="1503457537941" duration="5070000" />
+      <workItem from="1503457537941" duration="5387000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -540,10 +551,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="618054000" />
+    <option name="totallyTimeSpent" value="618371000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="243" width="1146" height="709" extended-state="0" />
+    <frame x="38" y="23" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28985506" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -624,16 +635,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7667">
-          <caret line="466" column="39" selection-start-line="466" selection-start-column="39" selection-end-line="466" selection-end-column="39" />
-          <folding>
-            <element signature="e#115#141#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Accusation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -927,17 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="171" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="171" selection-end-column="9" />
-          <folding>
-            <element signature="e#7461#7467#0" expanded="true" />
-            <element signature="e#7467#7473#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1836">
@@ -968,7 +958,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
+    <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-476">
+          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -978,24 +976,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/LikingfitController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        <state relative-caret-position="187">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="171" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="171" selection-end-column="9" />
+          <folding>
+            <element signature="e#7461#7467#0" expanded="true" />
+            <element signature="e#7467#7473#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getCoupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="127" column="28" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+        <state relative-caret-position="182">
+          <caret line="166" column="18" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
+    <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
+        <state relative-caret-position="165">
+          <caret line="156" column="67" selection-start-line="156" selection-start-column="67" selection-end-line="156" selection-end-column="67" />
           <folding />
         </state>
       </provider>
