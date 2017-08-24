@@ -61,6 +61,10 @@
             color: #888b9a;
             font-size: 13px;
         }
+        .price{
+            font-size: 17px;
+            padding-left: 30px;
+        }
         .content ul li .action{
             line-height: 50px;
             height: 50px;
@@ -116,7 +120,7 @@
                 var li = $("<li class='clearfix'></li>")
                 ul.append(li)
                 var div1 = $("<div class='pull-left'></div>")
-                var divPrice = $("<div class='pull-left'>"+coupon.price+"</div>")
+                var divPrice = $("<div class='pull-left price'>"+coupon.price+"</div>")
                 var div2 = $("<div class='action pull-right'></div>")
                 li.append(div1)
                 li.append(divPrice)

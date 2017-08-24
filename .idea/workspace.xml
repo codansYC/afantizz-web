@@ -46,8 +46,8 @@
       <file leaf-file-name="couponAdmin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+            <state relative-caret-position="272">
+              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -205,7 +205,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="84" />
+    <option name="x" value="26" />
     <option name="y" value="45" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
@@ -527,7 +527,7 @@
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
       <workItem from="1502608095970" duration="96252000" />
-      <workItem from="1503457537941" duration="3358000" />
+      <workItem from="1503457537941" duration="3453000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -540,10 +540,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="616342000" />
+    <option name="totallyTimeSpent" value="616437000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="84" y="45" width="1146" height="709" extended-state="0" />
+    <frame x="26" y="45" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28985506" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -994,8 +994,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        <state relative-caret-position="272">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding />
         </state>
       </provider>
