@@ -120,9 +120,12 @@
                 if (phone == null) {
                     phone = ''
                 }
+                var eid = getParams('eid') == null ? '' : getParams('eid')
                 var params = {
                     name: name,
-                    phone: phone
+                    phone: phone,
+                    price: 100,
+                    eid: eid
                 }
                 var pro = true
                 var basicUrl = pro ? "http://afantizz.com" : "http://localhost:8000"

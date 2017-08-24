@@ -118,10 +118,13 @@
                 var p1 = $("<p class='name'></p>")
                 p1.text(coupon.name)
                 var p2 = $("<p class='phone'></p>")
-                p1.text(coupon.name)
                 p2.text(coupon.phone)
                 div1.append(p1)
                 div1.append(p2)
+                if (coupon.eid != null && coupon.eid != '') {
+                    var p3 = $("<p class='employee'>"+coupon.eid+"</p>")
+                    div1.append(p3)
+                }
                 if (coupon.coupon_state == 1) {
                     var a = $("<a href='javascript:'>兑换</a>")
                     div2.append(a)
