@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="" />
+    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/coupon.html" afterPath="$PROJECT_DIR$/web/m/coupon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/ludamap.html" afterPath="$PROJECT_DIR$/web/m/ludamap.html" />
+    </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -41,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coupon.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="coupon.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="157" column="18" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
+            <state relative-caret-position="199">
+              <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -84,8 +88,8 @@
       <file leaf-file-name="liking_mapAdmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="171" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="171" selection-end-column="9" />
+            <state relative-caret-position="442">
+              <caret line="171" column="9" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
               <folding>
                 <element signature="e#7461#7467#0" expanded="true" />
                 <element signature="e#7467#7473#0" expanded="true" />
@@ -94,18 +98,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="187">
+              <caret line="162" column="9" selection-start-line="162" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
               <folding>
-                <element signature="e#7628#9110#0" expanded="false" />
-                <element signature="e#11080#12455#0" expanded="false" />
-                <element signature="e#12505#12606#0" expanded="false" />
-                <element signature="e#12638#12703#0" expanded="false" />
-                <element signature="e#14157#14821#0" expanded="false" />
-                <element signature="e#14888#15561#0" expanded="false" />
+                <element signature="e#7633#9115#0" expanded="false" />
+                <element signature="e#11085#12460#0" expanded="false" />
+                <element signature="e#12510#12611#0" expanded="false" />
+                <element signature="e#12643#12708#0" expanded="false" />
+                <element signature="e#14162#14826#0" expanded="false" />
+                <element signature="e#14893#15566#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -194,11 +198,11 @@
         <option value="$PROJECT_DIR$/web/m/js/liking_mapAdmin.html" />
         <option value="$PROJECT_DIR$/models/LudaMap.php" />
         <option value="$PROJECT_DIR$/web/m/liking_mapAdmin.html" />
-        <option value="$PROJECT_DIR$/web/m/ludamap.html" />
         <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
         <option value="$PROJECT_DIR$/web/m/couponAdmin.html" />
         <option value="$PROJECT_DIR$/web/m/getCoupon.html" />
         <option value="$PROJECT_DIR$/web/m/coupon.html" />
+        <option value="$PROJECT_DIR$/web/m/ludamap.html" />
       </list>
     </option>
   </component>
@@ -535,7 +539,7 @@
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
       <workItem from="1502608095970" duration="96252000" />
-      <workItem from="1503457537941" duration="5492000" />
+      <workItem from="1503457537941" duration="6727000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -548,7 +552,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="618476000" />
+    <option name="totallyTimeSpent" value="619711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1146" height="709" extended-state="0" />
@@ -932,21 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="e#7628#9110#0" expanded="false" />
-            <element signature="e#11080#12455#0" expanded="false" />
-            <element signature="e#12505#12606#0" expanded="false" />
-            <element signature="e#12638#12703#0" expanded="false" />
-            <element signature="e#14157#14821#0" expanded="false" />
-            <element signature="e#14888#15561#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -979,17 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="171" column="9" selection-start-line="152" selection-start-column="8" selection-end-line="171" selection-end-column="9" />
-          <folding>
-            <element signature="e#7461#7467#0" expanded="true" />
-            <element signature="e#7467#7473#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getCoupon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -1000,9 +978,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/coupon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="157" column="18" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
+        <state relative-caret-position="199">
+          <caret line="139" column="24" selection-start-line="139" selection-start-column="24" selection-end-line="139" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/liking_mapAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="171" column="9" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
+          <folding>
+            <element signature="e#7461#7467#0" expanded="true" />
+            <element signature="e#7467#7473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="162" column="9" selection-start-line="162" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
+          <folding>
+            <element signature="e#7633#9115#0" expanded="false" />
+            <element signature="e#11085#12460#0" expanded="false" />
+            <element signature="e#12510#12611#0" expanded="false" />
+            <element signature="e#12643#12708#0" expanded="false" />
+            <element signature="e#14162#14826#0" expanded="false" />
+            <element signature="e#14893#15566#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
