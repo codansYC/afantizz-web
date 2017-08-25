@@ -221,10 +221,10 @@
             padding-bottom: 10px;
         }
 
-        #slide>div:first-child{
+        #slide>div.left-ul-bg{
             width: 30%;
         }
-        #slide>div:last-child{
+        #slide>div.right-ul-bg{
             width: 70%;
             border-left: #34c86c solid 1px;
             height: 400px;
@@ -481,7 +481,7 @@
         function requestData() {
             //请求数据
             request('http://afantizz.com/likingfit/place-list',{},function (resp) {
-                var type_ul = $("#slide>div:first-child ul")
+                var type_ul = $("#slide .left-ul-bg ul")
                 placeByTypesArr = resp
                 for (var i=0; i<placeByTypesArr.length; i++) {
                     var placeByType = placeByTypesArr[i]
@@ -649,7 +649,7 @@
             $(document).unbind('touchmove')
         }
         function changePlaceWithType(typeId) {
-            var placeUl = $('#slide>div:last-child ul')
+            var placeUl = $('#slide .right-ul-bg ul')
             placeUl.children('li').remove()
             for (var i=0; i<placeByTypesArr.length; i++) {
                 var placeByType = placeByTypesArr[i]
@@ -709,7 +709,7 @@
       </div>
       <div id="slideMask"></div>
       <div id="slide">
-          <div class="pull-left">
+          <div class="pull-left left-ul-bg">
               <ul>
                   <!--<li>院系<span class="glyphicon glyphicon-menu-right"></span></li>-->
                   <!--<li>宿舍<span class="glyphicon glyphicon-menu-right"></span></li>-->
@@ -717,7 +717,7 @@
                   <!--<li>其他<span class="glyphicon glyphicon-menu-right"></span></li>-->
               </ul>
           </div>
-          <div class="pull-left">
+          <div class="pull-left right-ul-bg">
               <ul>
                   <!--<li>北一</li>-->
                   <!--<li>北二</li>-->
