@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/couponAdmin.html" afterPath="$PROJECT_DIR$/web/m/couponAdmin.html" />
     </list>
     <ignored path="afantizz.iws" />
@@ -97,8 +96,8 @@
       <file leaf-file-name="couponAdmin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="215" column="36" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
+            <state relative-caret-position="204">
+              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -220,7 +219,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="106" />
+    <option name="x" value="105" />
     <option name="y" value="24" />
     <option name="width" value="1146" />
     <option name="height" value="733" />
@@ -543,7 +542,7 @@
       <workItem from="1502076448441" duration="20715000" />
       <workItem from="1502608095970" duration="96252000" />
       <workItem from="1503457537941" duration="12911000" />
-      <workItem from="1503669103423" duration="261000" />
+      <workItem from="1503669103423" duration="408000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -556,10 +555,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="626156000" />
+    <option name="totallyTimeSpent" value="626303000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="106" y="24" width="1146" height="733" extended-state="0" />
+    <frame x="105" y="24" width="1146" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29528984" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1007,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="215" column="36" selection-start-line="215" selection-start-column="36" selection-end-line="215" selection-end-column="36" />
+        <state relative-caret-position="204">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
           <folding />
         </state>
       </provider>
