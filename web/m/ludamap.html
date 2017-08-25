@@ -481,7 +481,7 @@
         function requestData() {
             //请求数据
             request('http://afantizz.com/likingfit/place-list',{},function (resp) {
-                var type_ul = $("#slide ul:first-child")
+                var type_ul = $("#slide>div:first-child ul")
                 placeByTypesArr = resp
                 for (var i=0; i<placeByTypesArr.length; i++) {
                     var placeByType = placeByTypesArr[i]
@@ -649,7 +649,7 @@
             $(document).unbind('touchmove')
         }
         function changePlaceWithType(typeId) {
-            var placeUl = $('#slide ul:last-child')
+            var placeUl = $('#slide>div:last-child ul')
             placeUl.children('li').remove()
             for (var i=0; i<placeByTypesArr.length; i++) {
                 var placeByType = placeByTypesArr[i]
