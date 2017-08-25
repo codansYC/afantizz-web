@@ -52,7 +52,7 @@ class LikingfitController extends BaseController{
         if ($isExist) {
             UtilHelper::echoExitResult(66666, "您已领取过优惠券");
         }
-        $totolCount = Coupon::find()->count();
+        $totolCount = Coupon::find()->where(['phase' => $this->coupon_phase])->count();
 //        if ($totolCount>=300) {
 //            UtilHelper::echoExitResult(22222, "优惠券已领完");
 //        }
