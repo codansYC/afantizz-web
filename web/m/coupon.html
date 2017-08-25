@@ -98,7 +98,12 @@
 
     </style>
     <script>
+        // 常量
+        var price = 100    //价格 100y元
+
         $(function () {
+            //显示价格
+            $('.price .number').text(price)
             var screenW = $(window).width()
             var screenH = Math.max(504,$(window).height())
             var bigImgW = 458
@@ -141,7 +146,7 @@
                     no = coupon.no
                 }
                 $('.no').text('编号:'+no)
-                $('number').text(coupon.price)
+                $('.number').text(coupon.price)
                 $('.desc span').text('仅限'+coupon.name+'('+coupon.phone+')'+'使用')
 
             });

@@ -92,7 +92,12 @@
         }
     </style>
     <script>
+        // 常量
+        var price = 100    //价格 100元
+        var eid = getParams('eid') == null ? '' : getParams('eid')  //员工id
         $(function () {
+            //设置价格
+            $('.price .number').text(price)
             //设置背景图尺寸
             var screenW = $(window).width()
             var screenH = Math.max(504,$(window).height())
@@ -120,11 +125,10 @@
                 if (phone == null) {
                     phone = ''
                 }
-                var eid = getParams('eid') == null ? '' : getParams('eid')
                 var params = {
                     name: name,
                     phone: phone,
-                    price: 100,
+                    price: price,
                     eid: eid
                 }
                 var pro = true

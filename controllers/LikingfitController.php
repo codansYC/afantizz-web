@@ -19,6 +19,8 @@ use phpDocumentor\Reflection\Types\Array_;
 //header("Access-Control-Allow-Origin: *"); # 跨域处理
 class LikingfitController extends BaseController{
 
+    public $coupon_phase = 2;
+
     // ========== 优惠券 ===========
     function actionIndex() {
         if (isset($this->requestParam['eid'])) {
@@ -33,6 +35,7 @@ class LikingfitController extends BaseController{
         $name = $this->requestParam['name'];
         $phone = $this->requestParam['phone'];
         $price = $this->requestParam['price'];
+        
         //检查用户输入
         if (!isset($name) || $name == "") {
             UtilHelper::echoExitResult(22222, "请输入姓名");
@@ -57,8 +60,8 @@ class LikingfitController extends BaseController{
         $coupon->phone = $phone;
         $coupon->get_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
         $coupon->no = $totolCount+1;
-        $coupon->coupon_state = 1;
         $coupon->price = $price;
+        $coupon->phase = $this->coupon_phase;
         if (isset($this->requestParam['eid'])) {
             $coupon->eid = $this->requestParam['eid'];
         }
