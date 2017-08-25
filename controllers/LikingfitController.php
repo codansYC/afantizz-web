@@ -47,7 +47,8 @@ class LikingfitController extends BaseController{
             UtilHelper::echoExitResult(22222, "手机号格式不正确");
         }
         //检查数据库
-        $isExist = Coupon::find()->where(['phone' => $phone])->count() > 0;
+        $isExist = Coupon::find()->where(['phone' => $phone,
+            'phase' => $this->coupon_phase])->count() > 0;
         if ($isExist) {
             UtilHelper::echoExitResult(66666, "您已领取过优惠券");
         }
