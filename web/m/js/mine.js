@@ -25,6 +25,7 @@ $(function () {
 
     $('.loginOrLogout').click(function () {
         if (isLogin()) {
+            confirm('确定要退出登录?')
             logout()
         } else {
             toLoginPageWhenUnLogin()
