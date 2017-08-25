@@ -209,8 +209,8 @@
                 var phase_usedCoupons_count = 0
                 var phase_unuseCoupons_count = 0
                 for (var i=0; i<allCoupons.length; i++) {
-                    var c = allCoupons[i]
-                    if (c.phase == selectedPhase) {
+                    var coupon = allCoupons[i]
+                    if (coupon.phase == selectedPhase) {
                         phase_allCoupons_count++
                         if (coupon.coupon_state == 1) {
                             phase_unuseCoupons_count++
