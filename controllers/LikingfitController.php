@@ -117,6 +117,9 @@ class LikingfitController extends BaseController{
         if (!$coupon) {
             UtilHelper::echoExitResult(22222, "优惠券不存在");
         }
+        if ($coupon->phase != $this->coupon_phase) {
+            UtilHelper::echoExitResult(22222, "此优惠券已过期");
+        }
         $coupon->coupon_state = 0;
         $coupon->update();
         UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,null);

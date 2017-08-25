@@ -91,10 +91,18 @@
 
     </style>
     <script>
+        var selectedPhase = 1
         $(function () {
             var allCoupons = new Array()
             var unuseCoupons = new Array()
             var usedCoupons = new Array()
+
+            //
+            $('.phase select').change(function () {
+                selectedPhase = $(this).children('option:selected').val()
+                $('.phase select option').removeProp('selected')
+                addCouponList()
+            })
 
             //请求
 //            var url = 'http://localhost:8000/likingfit/coupon-list'
@@ -182,7 +190,11 @@
             function addCouponList(coupons) {
                 $('.content ul li').remove()
                 for (var i=0;i<coupons.length;i++) {
-                    addCoupon(coupons[i])
+                    var coupon = coupons[i]
+                    if (coupon.phase = selectedPhase) {
+                        addCoupon(coupons[i])
+                    }
+
                 }
             }
 
