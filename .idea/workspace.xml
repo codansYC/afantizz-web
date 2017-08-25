@@ -100,14 +100,14 @@
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
+              <caret line="218" column="33" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
               <folding>
-                <element signature="e#7698#9180#0" expanded="false" />
-                <element signature="e#11150#12525#0" expanded="false" />
-                <element signature="e#12575#12676#0" expanded="false" />
-                <element signature="e#12708#12773#0" expanded="false" />
-                <element signature="e#14227#14891#0" expanded="false" />
-                <element signature="e#14958#15631#0" expanded="false" />
+                <element signature="e#7702#9184#0" expanded="false" />
+                <element signature="e#11154#12529#0" expanded="false" />
+                <element signature="e#12579#12680#0" expanded="false" />
+                <element signature="e#12712#12777#0" expanded="false" />
+                <element signature="e#14231#14895#0" expanded="false" />
+                <element signature="e#14962#15635#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -537,7 +537,7 @@
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
       <workItem from="1502608095970" duration="96252000" />
-      <workItem from="1503457537941" duration="6882000" />
+      <workItem from="1503457537941" duration="7026000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -550,7 +550,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="619866000" />
+    <option name="totallyTimeSpent" value="620010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1146" height="709" extended-state="0" />
@@ -996,14 +996,14 @@
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="218" column="35" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
+          <caret line="218" column="33" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
           <folding>
-            <element signature="e#7698#9180#0" expanded="false" />
-            <element signature="e#11150#12525#0" expanded="false" />
-            <element signature="e#12575#12676#0" expanded="false" />
-            <element signature="e#12708#12773#0" expanded="false" />
-            <element signature="e#14227#14891#0" expanded="false" />
-            <element signature="e#14958#15631#0" expanded="false" />
+            <element signature="e#7702#9184#0" expanded="false" />
+            <element signature="e#11154#12529#0" expanded="false" />
+            <element signature="e#12579#12680#0" expanded="false" />
+            <element signature="e#12712#12777#0" expanded="false" />
+            <element signature="e#14231#14895#0" expanded="false" />
+            <element signature="e#14962#15635#0" expanded="false" />
           </folding>
         </state>
       </provider>
