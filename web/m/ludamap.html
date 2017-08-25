@@ -477,6 +477,11 @@
 
             setSlideConfigure()
 
+            //筛选
+            $('#slide .left-ul-bg ul, #slide .right-ul-bg ul').bind("touchmove",function(event) {
+                event.stopPropagation();
+            })
+
         })
 
         function requestData() {
