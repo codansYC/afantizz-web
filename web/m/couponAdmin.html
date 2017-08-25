@@ -106,6 +106,7 @@
             $('#phase-select').change(function () {
                 selectedPhase = $(this).children('option:selected').val()
 //                $('.phase select option').removeProp('selected')
+                handleAmount()
                 addCouponList(allCoupons)
             })
 
@@ -204,9 +205,23 @@
             }
 
             function handleAmount() {
-                $(".amount .all").text("总数量: "+allCoupons.length)
-                $(".amount .used").text("已兑换: "+usedCoupons.length)
-                $(".amount .unused").text("未兑换: "+unuseCoupons.length)
+                var phase_allCoupons_count = 0
+                var phase_usedCoupons_count = 0
+                var phase_unuseCoupons_count = 0
+                for (var i=0; i<allCoupons.length; i++) {
+                    var c = allCoupons[i]
+                    if (c.phase == selectedPhase) {
+                        phase_allCoupons_count++
+                        if (coupon.coupon_state == 1) {
+                            phase_unuseCoupons_count++
+                        } else {
+                            phase_usedCoupons_count++
+                        }
+                    }
+                }
+                $(".amount .all").text("总数量: "+phase_allCoupons_count)
+                $(".amount .used").text("已兑换: "+phase_usedCoupons_count)
+                $(".amount .unused").text("未兑换: "+phase_unuseCoupons_count)
             }
 
             //搜索
