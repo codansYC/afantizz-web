@@ -99,15 +99,15 @@
       <file leaf-file-name="ludamap.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="218" column="33" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
+            <state relative-caret-position="323">
+              <caret line="216" column="12" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="12" />
               <folding>
-                <element signature="e#7696#9178#0" expanded="false" />
-                <element signature="e#11148#12523#0" expanded="false" />
-                <element signature="e#12573#12674#0" expanded="false" />
-                <element signature="e#12706#12771#0" expanded="false" />
-                <element signature="e#14225#14889#0" expanded="false" />
-                <element signature="e#14956#15629#0" expanded="false" />
+                <element signature="e#7689#9171#0" expanded="false" />
+                <element signature="e#11141#12516#0" expanded="false" />
+                <element signature="e#12566#12667#0" expanded="false" />
+                <element signature="e#12699#12764#0" expanded="false" />
+                <element signature="e#14218#14882#0" expanded="false" />
+                <element signature="e#14949#15622#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -537,7 +537,7 @@
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
       <workItem from="1502608095970" duration="96252000" />
-      <workItem from="1503457537941" duration="7126000" />
+      <workItem from="1503457537941" duration="7195000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -550,7 +550,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="620110000" />
+    <option name="totallyTimeSpent" value="620179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1146" height="709" extended-state="0" />
@@ -625,7 +625,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web/m/ludamap.html</url>
-          <line>249</line>
+          <line>250</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
@@ -995,15 +995,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="218" column="33" selection-start-line="218" selection-start-column="33" selection-end-line="218" selection-end-column="33" />
+        <state relative-caret-position="323">
+          <caret line="216" column="12" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="12" />
           <folding>
-            <element signature="e#7696#9178#0" expanded="false" />
-            <element signature="e#11148#12523#0" expanded="false" />
-            <element signature="e#12573#12674#0" expanded="false" />
-            <element signature="e#12706#12771#0" expanded="false" />
-            <element signature="e#14225#14889#0" expanded="false" />
-            <element signature="e#14956#15629#0" expanded="false" />
+            <element signature="e#7689#9171#0" expanded="false" />
+            <element signature="e#11141#12516#0" expanded="false" />
+            <element signature="e#12566#12667#0" expanded="false" />
+            <element signature="e#12699#12764#0" expanded="false" />
+            <element signature="e#14218#14882#0" expanded="false" />
+            <element signature="e#14949#15622#0" expanded="false" />
           </folding>
         </state>
       </provider>
