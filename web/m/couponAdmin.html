@@ -98,9 +98,9 @@
             var usedCoupons = new Array()
 
             //
-            $('.phase select').change(function () {
+            $('phase-select').change(function () {
                 selectedPhase = $(this).children('option:selected').val()
-                $('.phase select option').removeProp('selected')
+//                $('.phase select option').removeProp('selected')
                 addCouponList()
             })
 
@@ -226,9 +226,9 @@
 <div class="container">
     <div class="top">
         <div class="phase">
-            <select name="" id="">
+            <select name="" id="phase-select">
                 <option value="1">第一期</option>
-                <option value="1">第二期</option>
+                <option value="2">第二期</option>
             </select>
         </div>
         <div class="amount clearfix">
