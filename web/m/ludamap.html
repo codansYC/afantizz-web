@@ -216,7 +216,6 @@
             /*overflow: scroll;*/
         /*}*/
         #slide>div{
-            list-style: none;
             padding-left:10px;
             padding-top: 10px;
             padding-bottom: 10px;
@@ -225,11 +224,14 @@
         #slide>div:first-child{
             width: 30%;
         }
-        #slide>ul:last-child{
+        #slide>div:last-child{
             width: 70%;
             border-left: #34c86c solid 1px;
             height: 400px;
             overflow: scroll;
+        }
+        #slide ul{
+            list-style: none;
         }
         #slide ul li{
             border-bottom: #edeff3 solid 1px;
