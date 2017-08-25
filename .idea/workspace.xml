@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="" />
+    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/ludamap.html" afterPath="$PROJECT_DIR$/web/m/ludamap.html" />
+    </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -100,12 +102,12 @@
             <state relative-caret-position="268">
               <caret line="216" column="9" selection-start-line="216" selection-start-column="9" selection-end-line="216" selection-end-column="9" />
               <folding>
-                <element signature="e#7727#9209#0" expanded="false" />
-                <element signature="e#11179#12554#0" expanded="false" />
-                <element signature="e#12604#12705#0" expanded="false" />
-                <element signature="e#12737#12802#0" expanded="false" />
-                <element signature="e#14256#14920#0" expanded="false" />
-                <element signature="e#14987#15660#0" expanded="false" />
+                <element signature="e#7723#9205#0" expanded="false" />
+                <element signature="e#11175#12550#0" expanded="false" />
+                <element signature="e#12600#12701#0" expanded="false" />
+                <element signature="e#12733#12798#0" expanded="false" />
+                <element signature="e#14252#14916#0" expanded="false" />
+                <element signature="e#14983#15656#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -535,7 +537,7 @@
       <workItem from="1501751530288" duration="1445000" />
       <workItem from="1502076448441" duration="20715000" />
       <workItem from="1502608095970" duration="96252000" />
-      <workItem from="1503457537941" duration="7804000" />
+      <workItem from="1503457537941" duration="7839000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -548,7 +550,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="620788000" />
+    <option name="totallyTimeSpent" value="620823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1146" height="709" extended-state="0" />
@@ -996,12 +998,12 @@
         <state relative-caret-position="268">
           <caret line="216" column="9" selection-start-line="216" selection-start-column="9" selection-end-line="216" selection-end-column="9" />
           <folding>
-            <element signature="e#7727#9209#0" expanded="false" />
-            <element signature="e#11179#12554#0" expanded="false" />
-            <element signature="e#12604#12705#0" expanded="false" />
-            <element signature="e#12737#12802#0" expanded="false" />
-            <element signature="e#14256#14920#0" expanded="false" />
-            <element signature="e#14987#15660#0" expanded="false" />
+            <element signature="e#7723#9205#0" expanded="false" />
+            <element signature="e#11175#12550#0" expanded="false" />
+            <element signature="e#12600#12701#0" expanded="false" />
+            <element signature="e#12733#12798#0" expanded="false" />
+            <element signature="e#14252#14916#0" expanded="false" />
+            <element signature="e#14983#15656#0" expanded="false" />
           </folding>
         </state>
       </provider>
