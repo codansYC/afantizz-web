@@ -35,7 +35,7 @@ class LikingfitController extends BaseController{
         $name = $this->requestParam['name'];
         $phone = $this->requestParam['phone'];
         $price = $this->requestParam['price'];
-        
+
         //检查用户输入
         if (!isset($name) || $name == "") {
             UtilHelper::echoExitResult(22222, "请输入姓名");
@@ -77,7 +77,8 @@ class LikingfitController extends BaseController{
         if (!UtilHelper::isPhone($phone)) {
             UtilHelper::echoExitResult(22222, "请求失败");
         }
-        $coupon = Coupon::find()->where(['phone' => $phone])->asArray()->one();
+        $coupon = Coupon::find()->where(['phone' => $phone,
+            'phase' => $this->coupon_phase])->asArray()->one();
         if (!$coupon) {
             UtilHelper::echoExitResult(22222, "暂时没有优惠券");
         }
