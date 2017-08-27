@@ -158,13 +158,16 @@
                     var a = $("<a href='javascript:'>兑换</a>")
                     div2.append(a)
                     a.click(function () {
-                        useCoupon(coupon.id)
+                        useCoupon(coupon.id,function () {
+                            a.remove()
+                            coupon.coupon_state == 0
+                        })
                     })
                 }
 
             }
 
-            function useCoupon(id) {
+            function useCoupon(id,complete) {
 //                var url = 'http://localhost:8000/likingfit/use-coupon'
                 var url = 'http://afantizz.com/likingfit/use-coupon'
                 var params = {
@@ -172,7 +175,8 @@
                 }
                 request(url,params,function () {
                     showModel('兑换成功',function () {
-                        location.reload()
+                        complete()
+//                        location.reload()
                     },1000)
                 })
             }
