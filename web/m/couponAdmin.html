@@ -144,6 +144,8 @@
                 li.append(div1)
                 li.append(divPrice)
                 li.append(div2)
+
+
                 var p1 = $("<p class='name'></p>")
                 p1.text(coupon.name)
                 var p2 = $("<p class='phone'></p>")
@@ -161,6 +163,8 @@
                         useCoupon(coupon.id,function () {
                             a.remove()
                             coupon.coupon_state == 0
+                            handleDataAfterUseCoupon(coupon.id)
+                            handleAmount()
                         })
                     })
                 }
@@ -179,6 +183,21 @@
 //                        location.reload()
                     },1000)
                 })
+            }
+
+            function handleDataAfterUseCoupon(id) {
+                unuseCoupons.pop()
+                usedCoupons.pop()
+                for (var i=0; i<allCoupons.length;i++) {
+                    if (allCoupons[i].id == id) {
+                        allCoupons[i].coupon_state = 0
+                    }
+                    if (allCoupons[i].coupon_state == 1) {
+                        unuseCoupons.push(coupon)
+                    } else {
+                        usedCoupons.push(coupon)
+                    }
+                }
             }
 
             $('.all').click(function () {
@@ -204,7 +223,6 @@
                     if (coupon.phase == selectedPhase) {
                         addCoupon(coupons[i])
                     }
-
                 }
             }
 
