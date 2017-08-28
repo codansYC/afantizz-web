@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/couponAdmin.html" afterPath="$PROJECT_DIR$/web/m/couponAdmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,31 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="couponAdmin.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
+      <file leaf-file-name="layout.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="198" column="21" selection-start-line="198" selection-start-column="21" selection-end-line="198" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.php">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+            <state relative-caret-position="397">
+              <caret line="438" column="35" selection-start-line="426" selection-start-column="12" selection-end-line="451" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -83,11 +73,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/m/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="houseList.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/css/houseList.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="37" />
+            <state relative-caret-position="289">
+              <caret line="54" column="18" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -96,28 +96,18 @@
       <file leaf-file-name="HouseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+            <state relative-caret-position="204">
+              <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/HouseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="133" column="9" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="315">
+              <caret line="157" column="13" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -188,9 +178,9 @@
         <option value="$PROJECT_DIR$/web/m/getCoupon.html" />
         <option value="$PROJECT_DIR$/controllers/LikingfitController.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
-        <option value="$PROJECT_DIR$/services/HouseService.php" />
         <option value="$PROJECT_DIR$/web/m/coupon.html" />
         <option value="$PROJECT_DIR$/web/m/couponAdmin.html" />
+        <option value="$PROJECT_DIR$/services/HouseService.php" />
       </list>
     </option>
   </component>
@@ -205,10 +195,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="19" />
-    <option name="y" value="66" />
+    <option name="x" value="104" />
+    <option name="y" value="23" />
     <option name="width" value="1146" />
-    <option name="height" value="730" />
+    <option name="height" value="709" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -284,6 +274,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="m" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="m" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -504,7 +516,7 @@
       <workItem from="1503457537941" duration="12911000" />
       <workItem from="1503669103423" duration="4723000" />
       <workItem from="1503716772434" duration="1236000" />
-      <workItem from="1503741618593" duration="9066000" />
+      <workItem from="1503741618593" duration="11429000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -517,10 +529,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="640920000" />
+    <option name="totallyTimeSpent" value="643283000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="19" y="66" width="1146" height="730" extended-state="0" />
+    <frame x="104" y="23" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3061594" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -601,13 +613,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/m/css/myRelease.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -798,13 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2363">
-          <caret line="139" column="6" selection-start-line="136" selection-start-column="4" selection-end-line="139" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/ludamap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5304">
@@ -867,14 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -931,6 +921,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="438" column="35" selection-start-line="426" selection-start-column="12" selection-end-line="451" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/css/houseList.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -939,26 +961,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/css/houseList.css">
+    <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="133" column="9" selection-start-line="133" selection-start-column="9" selection-end-line="133" selection-end-column="9" />
+        <state relative-caret-position="237">
+          <caret line="198" column="21" selection-start-line="198" selection-start-column="21" selection-end-line="198" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -971,10 +977,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/couponAdmin.html">
+    <entry file="file://$PROJECT_DIR$/controllers/HouseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="198" column="21" selection-start-line="198" selection-start-column="21" selection-end-line="198" selection-end-column="21" />
+        <state relative-caret-position="204">
+          <caret line="49" column="44" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/HouseService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="157" column="13" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
           <folding />
         </state>
       </provider>

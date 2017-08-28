@@ -153,6 +153,9 @@ class HouseService {
             $houseList[$index]['release_date'] = GlobalAction::computeTime($date);
             $houseList[$index]['images'] = House::getThumbImages($house);
             $houseList[$index]['facilities'] = self::getFacilities($house['house_id']);
+            if ($house['traffic'] == null) {
+                $houseList[$index]['traffic'] = '';
+            }
         }
         return $houseList;
     }
