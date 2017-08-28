@@ -193,9 +193,9 @@
                         allCoupons[i].coupon_state = 0
                     }
                     if (allCoupons[i].coupon_state == 1) {
-                        unuseCoupons.push(coupon)
+                        unuseCoupons.push(allCoupons[i])
                     } else {
-                        usedCoupons.push(coupon)
+                        usedCoupons.push(allCoupons[i])
                     }
                 }
             }
