@@ -93,8 +93,8 @@
       <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/HouseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="286" column="12" selection-start-line="286" selection-start-column="12" selection-end-line="286" selection-end-column="12" />
+            <state relative-caret-position="234">
+              <caret line="283" column="11" selection-start-line="280" selection-start-column="10" selection-end-line="283" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -204,8 +204,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="99" />
-    <option name="y" value="23" />
+    <option name="x" value="102" />
+    <option name="y" value="51" />
     <option name="width" value="1146" />
     <option name="height" value="709" />
   </component>
@@ -544,7 +544,7 @@
       <workItem from="1503669103423" duration="4723000" />
       <workItem from="1503716772434" duration="1236000" />
       <workItem from="1503741618593" duration="12998000" />
-      <workItem from="1503992753358" duration="3427000" />
+      <workItem from="1503992753358" duration="3811000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -557,10 +557,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="648279000" />
+    <option name="totallyTimeSpent" value="648663000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="99" y="23" width="1146" height="709" extended-state="0" />
+    <frame x="102" y="51" width="1146" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3115942" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1005,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/HouseService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="286" column="12" selection-start-line="286" selection-start-column="12" selection-end-line="286" selection-end-column="12" />
+        <state relative-caret-position="234">
+          <caret line="283" column="11" selection-start-line="280" selection-start-column="10" selection-end-line="283" selection-end-column="11" />
           <folding />
         </state>
       </provider>

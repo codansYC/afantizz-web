@@ -276,9 +276,8 @@ class HouseService {
         if (!isset($data['facilities'])) {
             UtilHelper::echoExitResult($err_code,'请选择房间设施--');
         }
-//        UtilHelper::echoExitResult($err_code,'测试');
-//        $facilities = $data['facilities'];
-//
+        $facilities = $data['facilities'];
+
 //        //房间设施
 //        if (self::invalid($facilities) || empty($facilities)) {
 //            UtilHelper::echoExitResult($err_code,'请选择房间设施');
@@ -293,17 +292,6 @@ class HouseService {
         $phone = $data['phone'];
         $wx = $data['wx'];
         $qq = $data['qq'];
-//        $images = $data['images'];
-//        $thumbImages = $data['thumb_images'];
-
-//        //房间图片
-//        if (self::invalid($images)) {
-//            UtilHelper::echoExitResult($err_code,'请上传房间图片');
-//        }
-//       //缩略图
-//        if (self::invalid($thumbImages)) {
-//            UtilHelper::echoExitResult($err_code,'缺少缩略图');
-//        }
 
         //电话、微信、QQ至少填一项
         if (self::invalid($phone) && self::invalid($wx) && self::invalid($qq)) {
@@ -313,7 +301,6 @@ class HouseService {
         if (!self::invalid($phone) && !UtilHelper::isPhone($phone)) {
             UtilHelper::echoExitResult($err_code,'请填写正确的联系电话');
         }
-
 
     }
 
