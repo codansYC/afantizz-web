@@ -272,10 +272,11 @@ class HouseService {
         if (self::invalid($deadline)) {
             UtilHelper::echoExitResult($err_code,'请选择房间到期日期');
         }
-        UtilHelper::echoExitResult($err_code,'测试');
+
         if (!isset($data['facilities'])) {
             UtilHelper::echoExitResult($err_code,'请选择房间设施');
         }
+        UtilHelper::echoExitResult($err_code,'测试');
         $facilities = $data['facilities'];
 
         //房间设施
