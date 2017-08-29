@@ -200,7 +200,17 @@ class HouseService {
         $token = $data['token'];
 //        $village = $data['village'];
 
+        if (self::invalid($token)) {
+            $err_code = BizConsts::UNLOGIN_ERRCODE;
+            $err_msg = BizConsts::UNLOGIN_ERRMSG;
+            UtilHelper::echoExitResult($err_code,$err_msg);
+        }
+
         $address = $data['address'];
+        //地址
+        if (self::invalid($address)) {
+            UtilHelper::echoExitResult($err_code,'请填写详细地址');
+        }
         $style = $data['style'];
         $area = $data['area'];
 
@@ -208,34 +218,8 @@ class HouseService {
         $deadline = $data['deadline_date'];
         $floor = $data['floor'];
         $max_floor = $data['max_floor'];
-
-        if (!isset($data['facilities'])) {
-            UtilHelper::echoExitResult($err_code,'请选择房间设施');
-        }
-        $facilities = $data['facilities'];
-
         $price = $data['price'];
-
         $payMode = $data['pay_mode'];
-
-        $title = $data['title'];
-
-        $phone = $data['phone'];
-        $wx = $data['wx'];
-        $qq = $data['qq'];
-//        $images = $data['images'];
-//        $thumbImages = $data['thumb_images'];
-
-        if (self::invalid($token)) {
-            $err_code = BizConsts::UNLOGIN_ERRCODE;
-            $err_msg = BizConsts::UNLOGIN_ERRMSG;
-            UtilHelper::echoExitResult($err_code,$err_msg);
-        }
-
-        //地址
-        if (self::invalid($address)) {
-            UtilHelper::echoExitResult($err_code,'请填写详细地址');
-        }
 
         //户型
         $room = explode('室',$style);
@@ -288,15 +272,28 @@ class HouseService {
         if (self::invalid($deadline)) {
             UtilHelper::echoExitResult($err_code,'请选择房间到期日期');
         }
+
+        if (!isset($data['facilities'])) {
+            UtilHelper::echoExitResult($err_code,'请选择房间设施');
+        }
+        $facilities = $data['facilities'];
+
         //房间设施
         if (self::invalid($facilities) || isEmpty($facilities)) {
             UtilHelper::echoExitResult($err_code,'请选择房间设施');
         }
 
         //标题
+        $title = $data['title'];
         if (self::invalid($title)) {
             UtilHelper::echoExitResult($err_code,'请填写标题');
         }
+
+        $phone = $data['phone'];
+        $wx = $data['wx'];
+        $qq = $data['qq'];
+//        $images = $data['images'];
+//        $thumbImages = $data['thumb_images'];
 
 //        //房间图片
 //        if (self::invalid($images)) {
