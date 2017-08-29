@@ -279,10 +279,9 @@ class HouseService {
         $facilities = $data['facilities'];
 
         //房间设施
-        if (self::invalid($facilities) || isEmpty($facilities)) {
+        if (self::invalid($facilities) || empty($facilities)) {
             UtilHelper::echoExitResult($err_code,'请选择房间设施');
         }
-        UtilHelper::echoExitResult($err_code,'test');
         //标题
         $title = $data['title'];
         if (self::invalid($title)) {
