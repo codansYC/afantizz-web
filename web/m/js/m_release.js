@@ -509,7 +509,7 @@ function release(subways,traffics) {
         showModel('发布成功',function () {
             if (JSInteraction != null) {
                 alert(resp)
-                JSInteraction.toDetailPage(resp)
+                JSInteraction.toDetailPage(resp.data)
             }
         },1000)
     });
