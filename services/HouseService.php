@@ -303,7 +303,7 @@ class HouseService {
 //        if (self::invalid($thumbImages)) {
 //            UtilHelper::echoExitResult($err_code,'缺少缩略图');
 //        }
-
+        UtilHelper::echoExitResult($err_code,'手机--、微信、QQ至少填一项');
 
         //电话、微信、QQ至少填一项
         if (self::invalid($phone) && self::invalid($wx) && self::invalid($qq)) {
