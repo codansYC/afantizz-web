@@ -284,10 +284,10 @@ class HouseService {
         }
 
         //标题
-        $title = $data['title'];
-        if (self::invalid($title)) {
-            UtilHelper::echoExitResult($err_code,'请填写标题');
-        }
+//        $title = $data['title'];
+//        if (self::invalid($title)) {
+//            UtilHelper::echoExitResult($err_code,'请填写标题');
+//        }
 
         $phone = $data['phone'];
         $wx = $data['wx'];
@@ -303,7 +303,6 @@ class HouseService {
 //        if (self::invalid($thumbImages)) {
 //            UtilHelper::echoExitResult($err_code,'缺少缩略图');
 //        }
-        UtilHelper::echoExitResult($err_code,'手机--、微信、QQ至少填一项');
 
         //电话、微信、QQ至少填一项
         if (self::invalid($phone) && self::invalid($wx) && self::invalid($qq)) {
