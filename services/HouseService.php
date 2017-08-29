@@ -282,12 +282,12 @@ class HouseService {
         if (self::invalid($facilities) || isEmpty($facilities)) {
             UtilHelper::echoExitResult($err_code,'请选择房间设施');
         }
-
+        UtilHelper::echoExitResult($err_code,'test');
         //标题
-//        $title = $data['title'];
-//        if (self::invalid($title)) {
-//            UtilHelper::echoExitResult($err_code,'请填写标题');
-//        }
+        $title = $data['title'];
+        if (self::invalid($title)) {
+            UtilHelper::echoExitResult($err_code,'请填写标题');
+        }
 
         $phone = $data['phone'];
         $wx = $data['wx'];
