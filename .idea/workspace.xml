@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="" />
+    <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
+    </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -91,8 +93,8 @@
       <file leaf-file-name="HouseService.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/HouseService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="279" column="42" selection-start-line="279" selection-start-column="42" selection-end-line="279" selection-end-column="42" />
+            <state relative-caret-position="221">
+              <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -542,7 +544,7 @@
       <workItem from="1503669103423" duration="4723000" />
       <workItem from="1503716772434" duration="1236000" />
       <workItem from="1503741618593" duration="12998000" />
-      <workItem from="1503992753358" duration="3194000" />
+      <workItem from="1503992753358" duration="3274000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -555,7 +557,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="648046000" />
+    <option name="totallyTimeSpent" value="648126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="99" y="23" width="1146" height="709" extended-state="0" />
@@ -1003,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/HouseService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="279" column="42" selection-start-line="279" selection-start-column="42" selection-end-line="279" selection-end-column="42" />
+        <state relative-caret-position="221">
+          <caret line="276" column="59" selection-start-line="276" selection-start-column="59" selection-end-line="276" selection-end-column="59" />
           <folding />
         </state>
       </provider>

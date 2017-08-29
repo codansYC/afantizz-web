@@ -274,7 +274,7 @@ class HouseService {
         }
 
         if (!isset($data['facilities'])) {
-            UtilHelper::echoExitResult($err_code,'请选择房间设施');
+            UtilHelper::echoExitResult($err_code,'请选择房间设施--');
         }
         UtilHelper::echoExitResult($err_code,'测试');
         $facilities = $data['facilities'];
