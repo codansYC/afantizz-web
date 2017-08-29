@@ -494,7 +494,6 @@ function release(subways,traffics) {
         }
     var url = getParams("house_id") == null ? basicUrl + "house/release" : basicUrl + "house/modify";
     $.post(url, params, function (response, status) {
-        alert($.parseJSON(response).err_msg)
         if (JSInteraction != null) {
             JSInteraction.removeLoadingReleaseDone()
         }
