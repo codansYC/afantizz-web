@@ -508,7 +508,7 @@ function release(subways,traffics) {
         }
         showModel('发布成功',function () {
             if (JSInteraction != null) {
-                JSInteraction.turnToHouseListPageAfterReleaseSuccess()
+                JSInteraction.toDetailPage(resp)
             }
         },1000)
     });

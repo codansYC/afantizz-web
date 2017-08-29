@@ -306,8 +306,8 @@ class HouseService {
 
     static function releaseHouse($data) {
         $house = new House();
-        self::saveHouse($house,$data);
-        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+        $houseId = self::saveHouse($house,$data);
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$houseId);
     }
 
     static function modifyHouse($data) {
@@ -369,6 +369,7 @@ class HouseService {
         $house->save();
         $houseId = $house->attributes['house_id'];
         self::saveFacilities($data['facilities'],$houseId);
+        return $houseId;
     }
 
     static function saveFacilities($facilities, $houseId) {
