@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/HouseService.php" afterPath="$PROJECT_DIR$/services/HouseService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/m_release.js" afterPath="$PROJECT_DIR$/web/m/js/m_release.js" />
     </list>
     <ignored path="afantizz.iws" />
@@ -105,9 +104,9 @@
         <entry file="file://$PROJECT_DIR$/web/m/js/m_release.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
-              <caret line="510" column="47" selection-start-line="510" selection-start-column="47" selection-end-line="510" selection-end-column="47" />
+              <caret line="510" column="27" selection-start-line="510" selection-start-column="27" selection-end-line="510" selection-end-column="27" />
               <folding>
-                <marker date="1503998651000" expanded="true" signature="8134:8141" ph="×" />
+                <marker date="1503998851000" expanded="true" signature="8134:8141" ph="×" />
               </folding>
             </state>
           </provider>
@@ -547,7 +546,7 @@
       <workItem from="1503669103423" duration="4723000" />
       <workItem from="1503716772434" duration="1236000" />
       <workItem from="1503741618593" duration="12998000" />
-      <workItem from="1503992753358" duration="5237000" />
+      <workItem from="1503992753358" duration="5346000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -560,7 +559,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="650089000" />
+    <option name="totallyTimeSpent" value="650198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="89" y="54" width="1146" height="709" extended-state="0" />
@@ -1011,9 +1010,9 @@
     <entry file="file://$PROJECT_DIR$/web/m/js/m_release.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
-          <caret line="510" column="47" selection-start-line="510" selection-start-column="47" selection-end-line="510" selection-end-column="47" />
+          <caret line="510" column="27" selection-start-line="510" selection-start-column="27" selection-end-line="510" selection-end-column="27" />
           <folding>
-            <marker date="1503998651000" expanded="true" signature="8134:8141" ph="×" />
+            <marker date="1503998851000" expanded="true" signature="8134:8141" ph="×" />
           </folding>
         </state>
       </provider>
