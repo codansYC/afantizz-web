@@ -391,6 +391,10 @@ function showHouseInfo() {
     //记录收藏状态
     isCollection = house.isCollection
 
+    if (JSInteraction != null) {
+        JSInteraction.getHouseTitle(title)
+    }
+
 }
 
 //收藏
