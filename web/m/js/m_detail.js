@@ -392,7 +392,7 @@ function showHouseInfo() {
     isCollection = house.isCollection
 
     if (JSInteraction != null) {
-        JSInteraction.getHouseTitle(title)
+        JSInteraction.getHouseTitle(house.title)
     }
 
 }
