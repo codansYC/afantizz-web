@@ -266,6 +266,16 @@ function handleTraffic(pois) {
     return traffic
 }
 
+function request(url,params,respBlock) {
+    $.post(basicUrl + url, params, function (response, status) {
+        if (status == 'success') {
+            var resp = $.parseJSON(response);
+            respBlock(resp)
+        } else {
+            showModel('操作失败')
+        }
+    });
+}
 
 /********************统计***********************/
 function record() {
