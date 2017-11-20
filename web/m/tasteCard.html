@@ -136,18 +136,9 @@
                     },1200)
                     return
                 }
-                var coupon = resp.data
-                var no
-                if (coupon.no < 10) {
-                    no = '00'+coupon.no
-                } else if (coupon.no < 100) {
-                    no = '0'+coupon.no
-                } else {
-                    no = coupon.no
-                }
-                $('.no').text('编号:'+no)
-                $('.number').text(coupon.price)
-                $('.desc span').text('仅限'+coupon.name+'('+coupon.phone+')'+'使用')
+                var card = resp.data
+
+                $('.desc span').text('仅限'+card.name+'('+card.phone+')'+'使用')
 
             });
         })
@@ -159,7 +150,7 @@
         <h4 class="title">我的体验卡</h4>
         <div class="coupon-bg">
             <div class="price">
-                <span class="sign">¥</span><span class="number">100</span>
+                <span class="sign"></span><span class="number"></span>
             </div>
             <!--<div class="desc">-->
             <!--<span>仅适用于likingfit烟台鲁大店</span>-->
