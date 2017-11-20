@@ -224,7 +224,7 @@ class LikingfitController extends BaseController{
                 UtilHelper::echoExitResult(22222, "手机号格式不正确");
             }
             //检查数据库
-            $isExist = Coupon::find()->where(['phone' => $phone])->count() > 0;
+            $isExist = TasteCard::find()->where(['phone' => $phone])->count() > 0;
             if ($isExist) {
                 UtilHelper::echoExitResult(66666, "您已领取过体验卡");
             }
@@ -250,7 +250,7 @@ class LikingfitController extends BaseController{
         if (!UtilHelper::isPhone($phone)) {
             UtilHelper::echoExitResult(22222, "请求失败");
         }
-        $card = Coupon::find()->where(['phone' => $phone])->asArray()->one();
+        $card = TasteCard::find()->where(['phone' => $phone])->asArray()->one();
         if (!$card) {
             UtilHelper::echoExitResult(22222, "暂时没有优惠券");
         }
