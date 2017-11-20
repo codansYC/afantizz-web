@@ -98,6 +98,8 @@ class LikingfitController extends BaseController{
                 echo \Yii::$app->view->renderFile('@app/web/m/couponAdmin.html');
             } else if ($key == 'map') {
                 echo \Yii::$app->view->renderFile('@app/web/m/liking_mapAdmin.html');
+            } else if ($key == 'card') {
+                echo \Yii::$app->view->renderFile('@app/web/m/tasteCardAdmin.html');
             }
         }catch (\Exception $e){
 //            UtilHelper::handleException($e);
