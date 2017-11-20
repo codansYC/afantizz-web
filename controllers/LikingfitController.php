@@ -11,6 +11,7 @@ namespace app\controllers;
 
 use app\models\Coupon;
 use app\models\LudaMap;
+use app\models\TasteCard;
 use app\utils\BizConsts;
 use app\utils\GlobalAction;
 use app\utils\UtilHelper;
@@ -199,12 +200,63 @@ class LikingfitController extends BaseController{
 
     //  =============================
     // 体验卡
-    function actionGetTasteCard() {
+    function actionTasteCardPage() {
         try {
             echo \Yii::$app->view->renderFile('@app/web/m/getTasteCard.html');
         } catch (\Exception $e){
             UtilHelper::handleException($e);
         }
     }
+
+    function actionGetTasteCard() {
+        try {
+            $name = $this->requestParam['name'];
+            $phone = $this->requestParam['phone'];
+
+            //检查用户输入
+            if (!isset($name) || $name == "") {
+                UtilHelper::echoExitResult(22222, "请输入姓名");
+            }
+            if (!isset($phone) || $phone == '') {
+                UtilHelper::echoExitResult(22222, "请输入手机号");
+            }
+            if (!UtilHelper::isPhone($phone)) {
+                UtilHelper::echoExitResult(22222, "手机号格式不正确");
+            }
+            //检查数据库
+            $isExist = Coupon::find()->where(['phone' => $phone])->count() > 0;
+            if ($isExist) {
+                UtilHelper::echoExitResult(66666, "您已领取过体验卡");
+            }
+//        if ($totolCount>=300) {
+//            UtilHelper::echoExitResult(22222, "优惠券已领完");
+//        }
+            $card = new TasteCard();
+            $card->name = $name;
+            $card->phone = $phone;
+            $card->create_time = GlobalAction::getTimeStr("Y-m-d H:i:s");
+            $card->save();
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+        } catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
+    }
+
+    function actionTasteCard() {
+        $phone = $this->requestParam['phone'];
+        if (!isset($phone) || $phone == '') {
+            UtilHelper::echoExitResult(22222, "请求失败");
+        }
+        if (!UtilHelper::isPhone($phone)) {
+            UtilHelper::echoExitResult(22222, "请求失败");
+        }
+        $card = Coupon::find()->where(['phone' => $phone])->asArray()->one();
+        if (!$card) {
+            UtilHelper::echoExitResult(22222, "暂时没有优惠券");
+        }
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$card);
+    }
+
+
 
 }

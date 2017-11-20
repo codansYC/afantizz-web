@@ -153,12 +153,10 @@
                 var params = {
                     name: name,
                     phone: phone,
-                    price: price,
-                    eid: eid
                 }
                 var pro = true
                 var basicUrl = pro ? "http://afantizz.com" : "http://localhost:8000"
-                $.post(basicUrl+"/likingfit/get-coupon", params, function (response, status) {
+                $.post(basicUrl+"/likingfit/get-taste-card", params, function (response, status) {
                     isRequest = false
                     if (status != 'success') {
                         showModel('操作失败,请稍后重试')
@@ -167,7 +165,7 @@
                     var resp = $.parseJSON(response);
                     if (resp.err_code == 66666) {
                         showModel(resp.err_msg,function () {
-                            location.href = "/m/coupon.html?phone="+phone
+                            location.href = "/m/tasteCard.html?phone="+phone
                         },1200)
                         return
                     }
@@ -178,7 +176,7 @@
                         return
                     }
                     showModel("领取成功",function () {
-                        location.href = "/m/coupon.html?phone="+phone
+                        location.href = "/m/tasteCard.html?phone="+phone
                     },1200)
 
                 });
