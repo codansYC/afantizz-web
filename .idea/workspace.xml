@@ -106,8 +106,8 @@
       <file leaf-file-name="getTasteCard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="200" column="41" selection-start-line="200" selection-start-column="41" selection-end-line="200" selection-end-column="41" />
+            <state relative-caret-position="282">
+              <caret line="198" column="18" selection-start-line="198" selection-start-column="18" selection-end-line="198" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -524,7 +524,7 @@
       <workItem from="1509785874068" duration="3336000" />
       <workItem from="1509877239511" duration="951000" />
       <workItem from="1511005986808" duration="317000" />
-      <workItem from="1511184744190" duration="1830000" />
+      <workItem from="1511184744190" duration="1876000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -537,7 +537,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="672389000" />
+    <option name="totallyTimeSpent" value="672435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -980,8 +980,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="200" column="41" selection-start-line="200" selection-start-column="41" selection-end-line="200" selection-end-column="41" />
+        <state relative-caret-position="282">
+          <caret line="198" column="18" selection-start-line="198" selection-start-column="18" selection-end-line="198" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
