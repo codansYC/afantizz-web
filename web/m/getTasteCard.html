@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>LikingFit烟台鲁大店</title>
+    <link rel="Shortcut Icon" href="/images/liking.png"/>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style type="text/css">
+        .container{
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+        }
+        .bg{
+            background: url("/images/likingbg.png");
+            height: 736px;
+            background-repeat: no-repeat;
+
+        }
+        .title{
+            color: white;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            margin-top: 0px !important;
+        }
+        .card-container{
+            width: 100%;
+            height: 80px;
+            margin-top: 20px;
+        }
+        .card-container>div{
+            width: 50%;
+            float: left;
+            height: 100%;
+            line-height: 80px;
+        }
+        .card-type>div{
+            background-image: url("/images/empty_card.png");
+            background-repeat: no-repeat;
+            background-size:120px 80px;
+            color: white;
+            width: 120px;
+            height: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .card-container .card-price {
+            color: #34c86c;
+            font-size: 17px;
+        }
+        .coupon-bg{
+            background: url("/images/coupon-background.png");
+            width: 280px;
+            height: 125px;
+            margin: 10px auto;
+            background-size: 280px 125px;
+        }
+        .name-bg,.phone-bg,.submit-bg{
+            margin: 0px auto;
+            width: 280px;
+        }
+        .name-bg{
+            margin-top: 25px;
+        }
+        .phone-bg{
+            margin-top: 25px;
+        }
+        .submit-bg{
+            margin-top: 60px;
+        }
+        input{
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            outline: none;
+            border: none;
+            background-color: white;
+            padding: 0 5px;
+            text-align: center;
+        }
+        button{
+            background-color: #34c86c;
+            outline: none;
+            border: none;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+        }
+        .price{
+            margin: 0px auto;
+            padding-top: 10px;
+            text-align: center;
+            color: white;
+        }
+        .number{
+            font-size: 50px;
+        }
+        .sign{
+            font-size: 28px;
+            padding-right: 5px;
+        }
+        .desc{
+            color: #227b56;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // 常量
+        var price = 100    //价格 100元
+        var eid = getParams('eid') == null ? '' : getParams('eid')  //员工id
+        $(function () {
+            //设置价格
+            $('.price .number').text(price)
+            //设置背景图尺寸
+            var screenW = $(window).width()
+            var screenH = Math.max(504,$(window).height())
+            var bigImgW = 458
+            var bigImgH = 736
+            var bcoX = -(bigImgW - screenW)/2 + 'px'
+            var bcoY = -(bigImgH - screenH)/2 + 'px'
+            $('.bg').height(screenH)
+            $('.bg').css({
+                'background-position-x': bcoX,
+                'background-position-y': bcoY,
+            })
+            var isRequest = false
+            $("button").click(function () {
+//                location.href = "/m/coupon.html"
+                if (isRequest) {
+                    return
+                }
+                isRequest = true
+                var name = $('.name-bg input').val()
+                if (name == null) {
+                    name = ''
+                }
+                var phone = $('.phone-bg input').val()
+                if (phone == null) {
+                    phone = ''
+                }
+                var params = {
+                    name: name,
+                    phone: phone,
+                    price: price,
+                    eid: eid
+                }
+                var pro = true
+                var basicUrl = pro ? "http://afantizz.com" : "http://localhost:8000"
+                $.post(basicUrl+"/likingfit/get-coupon", params, function (response, status) {
+                    isRequest = false
+                    if (status != 'success') {
+                        showModel('操作失败,请稍后重试')
+                        return
+                    }
+                    var resp = $.parseJSON(response);
+                    if (resp.err_code == 66666) {
+                        showModel(resp.err_msg,function () {
+                            location.href = "/m/coupon.html?phone="+phone
+                        },1200)
+                        return
+                    }
+                    if (resp.err_code != 0) {
+                        showModel(resp.err_msg,function () {
+
+                        },1200)
+                        return
+                    }
+                    showModel("领取成功",function () {
+                        location.href = "/m/coupon.html?phone="+phone
+                    },1200)
+
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="bg">
+        <h4 class="title">领取体验卡</h4>
+        <div class="card-container">
+            <div class="card-type">
+                <div>
+                    <span>体验卡</span>
+                </div>
+            </div>
+            <div class="card-price">
+                <span>有效期: 2017.11.21 - 2017.11.30</span>
+            </div>
+        </div>
+        <div class="card-bg">
+            <div class="price">
+                <span class="sign">¥</span><span class="number">100</span>
+            </div>
+            <div class="desc">
+                <span>*仅适用于LikingFit烟台鲁大店</span>
+            </div>
+        </div>
+
+        <div class="name-bg">
+            <input type="text" placeholder="请输入姓名">
+        </div>
+        <div class="phone-bg">
+            <input type="text" placeholder="请输入手机号">
+        </div>
+        <div class="submit-bg">
+            <button class="">提交</button>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

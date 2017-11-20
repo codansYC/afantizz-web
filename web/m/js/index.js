@@ -7,7 +7,7 @@ var page = 1
 $(function () {
 
     //记录用户访问
-    record()
+    // record()
     //监测屏幕滚动
     var headerH = $(".header").outerHeight();  //导航区域高度
     var searchH = $(".search").outerHeight();  //搜索区域高度

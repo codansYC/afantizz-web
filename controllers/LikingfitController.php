@@ -197,4 +197,17 @@ class LikingfitController extends BaseController{
 
     }
 
+    //  =============================
+    // 体验卡
+    function actionGetTasteCard() {
+        try {
+            $id = $this->requestParam['id'];
+            $place = LudaMap::findOne($id);
+            $place->delete();
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,null);
+        } catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
+    }
+
 }
