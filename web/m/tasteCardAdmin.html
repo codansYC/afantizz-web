@@ -98,18 +98,24 @@
     <script>
         $(function () {
             var allCards = new Array()
-
-            //请求
-//            var url = 'http://localhost:8000/likingfit/coupon-list'
             var url = 'http://afantizz.com/likingfit/taste-card-list'
-            request(url,{},function (resp) {
-                allCards = resp
-                for (var i=0; i<resp.length;i++) {
-                    var card = resp[i]
+            $.post(url, {}, function (response, status) {
+                if (status != 'success') {
+                    showModel('操作失败,请稍后重试')
+                    return
                 }
+                var resp = $.parseJSON(response);
+                if (resp.err_code != 0) {
+                    showModel(resp.err_msg,function () {
+
+                    },1200)
+                    return
+                }
+                allCards = resp
                 $(".amount .all").text("总数量: "+allCards.length)
                 addCardList(resp)
-            })
+
+            });
 
             function addCard(coupon) {
                 var ul = $('.content ul')
