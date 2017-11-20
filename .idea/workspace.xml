@@ -106,10 +106,11 @@
       <file leaf-file-name="getTasteCard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="200" column="104" selection-start-line="200" selection-start-column="104" selection-end-line="200" selection-end-column="104" />
+            <state relative-caret-position="197">
+              <caret line="200" column="159" selection-start-line="200" selection-start-column="159" selection-end-line="200" selection-end-column="159" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -525,7 +526,7 @@
       <workItem from="1509785874068" duration="3336000" />
       <workItem from="1509877239511" duration="951000" />
       <workItem from="1511005986808" duration="317000" />
-      <workItem from="1511184744190" duration="2048000" />
+      <workItem from="1511184744190" duration="2140000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -538,7 +539,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="672607000" />
+    <option name="totallyTimeSpent" value="672699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-75" y="23" width="1280" height="709" extended-state="0" />
@@ -981,10 +982,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="200" column="104" selection-start-line="200" selection-start-column="104" selection-end-line="200" selection-end-column="104" />
+        <state relative-caret-position="197">
+          <caret line="200" column="159" selection-start-line="200" selection-start-column="159" selection-end-line="200" selection-end-column="159" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
