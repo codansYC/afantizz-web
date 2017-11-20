@@ -117,15 +117,15 @@
 
             });
 
-            function addCard(coupon) {
+            function addCard(card) {
                 var ul = $('.content ul')
                 var li = $("<li class='clearfix'></li>")
                 ul.append(li)
 
                 var p1 = $("<p class='name'></p>")
-                p1.text(coupon.name)
+                p1.text(card.name)
                 var p2 = $("<p class='phone'></p>")
-                p2.text(coupon.phone)
+                p2.text(card.phone)
                 li.append(p1)
                 li.append(p2)
             }
