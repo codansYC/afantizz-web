@@ -201,7 +201,7 @@ class LikingfitController extends BaseController{
     // 体验卡
     function actionGetTasteCard() {
         try {
-            echo \Yii::$app->view->renderFile('@app/web/m/getCoupon.html');
+            echo \Yii::$app->view->renderFile('@app/web/m/getTasteCard.html');
         } catch (\Exception $e){
             UtilHelper::handleException($e);
         }
