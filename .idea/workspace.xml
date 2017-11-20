@@ -106,8 +106,8 @@
       <file leaf-file-name="getTasteCard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="191" column="36" selection-start-line="191" selection-start-column="36" selection-end-line="191" selection-end-column="36" />
+            <state relative-caret-position="408">
+              <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -505,7 +505,7 @@
       <workItem from="1509785874068" duration="3336000" />
       <workItem from="1509877239511" duration="951000" />
       <workItem from="1511005986808" duration="317000" />
-      <workItem from="1511184744190" duration="1427000" />
+      <workItem from="1511184744190" duration="1482000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -518,7 +518,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="671986000" />
+    <option name="totallyTimeSpent" value="672041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-27" y="34" width="1280" height="709" extended-state="0" />
@@ -961,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="191" column="36" selection-start-line="191" selection-start-column="36" selection-end-line="191" selection-end-column="36" />
+        <state relative-caret-position="408">
+          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
           <folding />
         </state>
       </provider>
