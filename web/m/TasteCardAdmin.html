@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LikingFit烟台鲁大店-体验卡管理页</title>
+    <link rel="Shortcut Icon" href="/images/liking.png"/>
+    <link rel="stylesheet" href="/m/bootstrap/bootstrap.css">
+    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="/m/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/m/css/common.css">
+    <link rel="stylesheet" href="/m/css/layout.css">
+    <script src="/m/js/common.js"></script>
+    <script src="/m/js/layout.js"></script>
+    <style type="text/css">
+        select{
+            border: #34c86c solid 1px;
+            background-color: transparent;
+            outline: none;
+        }
+        .top{
+            position: fixed;
+            background-color: white;
+            padding-bottom: 10px;
+            border-bottom: #34c86c solid 2px;
+            width: 480px;
+        }
+        .phase{
+            line-height: 50px;
+        }
+        .amount{
+            line-height: 50px;
+        }
+        .amount ul{
+            list-style: none;
+        }
+        .amount ul li {
+            float: left;
+            margin-right: 20px;
+        }
+        .search input{
+            display: inline-block;
+            outline: none;
+            border: #34c86c solid 1px;
+            width: 200px;
+            height: 34px;
+            padding-left: 7px;
+        }
+        .search a{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .content{
+            margin-top: 170px;
+            width: 440px;
+        }
+        .content ul{
+            list-style: none;
+        }
+        .content ul li{
+            border-bottom: #edeff3 solid 1px ;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            /*position: relative;*/
+        }
+        .phone{
+            color: #596167;
+        }
+        .employee{
+            color: #888b9a;
+            font-size: 13px;
+        }
+        .price{
+            font-size: 17px;
+            padding-left: 30px;
+            line-height: 40px;
+            color: rgb(229,140,127);
+        }
+        .content ul li .action{
+            line-height: 50px;
+            height: 50px;
+            padding-right: 100px;
+        }
+        .content ul li a{
+            display: inline-block;
+            line-height: 50px;
+            height: 50px;
+        }
+        .content ul li p{
+            line-height: 15px;
+            margin-bottom: 10px;
+        }
+        /*.line{*/
+        /*height: 1px;*/
+        /*color: #edeff3;*/
+        /*}*/
+
+    </style>
+    <script>
+        $(function () {
+            var allCards = new Array()
+
+            //请求
+//            var url = 'http://localhost:8000/likingfit/coupon-list'
+            var url = 'http://afantizz.com/likingfit/taste-card-list'
+            request(url,{},function (resp) {
+                allCards = resp
+                for (var i=0; i<resp.length;i++) {
+                    var card = resp[i]
+                }
+                $(".amount .all").text("总数量: "+allCards.length)
+                addCardList(resp)
+            })
+
+            function addCard(coupon) {
+                var ul = $('.content ul')
+                var li = $("<li class='clearfix'></li>")
+                ul.append(li)
+
+                var p1 = $("<p class='name'></p>")
+                p1.text(coupon.name)
+                var p2 = $("<p class='phone'></p>")
+                p2.text(coupon.phone)
+                li.append(p1)
+                li.append(p2)
+            }
+
+            function addCardList(cards) {
+                $('.content ul li').remove()
+                for (var i=0;i<cards.length;i++) {
+                    var card = cards[i]
+                    addCard(card)
+                }
+            }
+
+            //搜索
+            $('input').bind('input propertychange',function () {
+
+                var searchCards = new Array()
+                var tx = $('input').val()
+                for (var i=0;i<allCards.length;i++){
+                    var card = allCards[i]
+                    if (card.phone.indexOf(tx) > -1) {
+                        searchCards.push(coupon)
+                    }
+                }
+                addCardList(searchCoupons)
+            })
+        })
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="top">
+        <div class="amount clearfix">
+            <ul>
+                <li class="all">总数量:</li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="输入手机号">
+        </div>
+    </div>
+    <div class="content">
+        <ul>
+            <!--<li class="clearfix">-->
+            <!--<div class="pull-left">-->
+            <!--<p class="name">袁超</p>-->
+            <!--<p class="phone">15801569925</p>-->
+            <!--</div>-->
+            <!--<div class="action pull-right">-->
+            <!--<a href="javascript:">兑换</a>-->
+            <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -257,6 +257,11 @@ class LikingfitController extends BaseController{
         UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$card);
     }
 
+    function actionTasteCardList() {
+        $list =  TasteCard::find()->asArray()->all();
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$list);
+    }
+
 
 
 }
