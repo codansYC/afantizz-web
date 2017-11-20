@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/getTasteCard.html" afterPath="$PROJECT_DIR$/web/m/getTasteCard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/tasteCardAdmin.html" afterPath="$PROJECT_DIR$/web/m/tasteCardAdmin.html" />
     </list>
     <ignored path="afantizz.iws" />
@@ -110,8 +109,8 @@
       <file leaf-file-name="tasteCardAdmin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/tasteCardAdmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="117" column="15" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
+            <state relative-caret-position="281">
+              <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -544,7 +543,7 @@
       <workItem from="1509785874068" duration="3336000" />
       <workItem from="1509877239511" duration="951000" />
       <workItem from="1511005986808" duration="317000" />
-      <workItem from="1511184744190" duration="5920000" />
+      <workItem from="1511184744190" duration="5977000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -557,7 +556,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="676479000" />
+    <option name="totallyTimeSpent" value="676536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="15" y="23" width="1280" height="709" extended-state="0" />
@@ -1021,8 +1020,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/tasteCardAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="117" column="15" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
+        <state relative-caret-position="281">
+          <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="26" />
           <folding />
         </state>
       </provider>
