@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/db.php" afterPath="$PROJECT_DIR$/config/db.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/LoginController.php" afterPath="$PROJECT_DIR$/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/REST.php" afterPath="$PROJECT_DIR$/utils/REST.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/getTasteCard.html" afterPath="$PROJECT_DIR$/web/m/getTasteCard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/tasteCard.html" afterPath="$PROJECT_DIR$/web/m/tasteCard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/tasteCardAdmin.html" afterPath="$PROJECT_DIR$/web/m/tasteCardAdmin.html" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,19 +33,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasteCard.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tasteCard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/tasteCard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="166" column="128" selection-start-line="166" selection-start-column="128" selection-end-line="166" selection-end-column="128" />
+            <state relative-caret-position="316">
+              <caret line="167" column="56" selection-start-line="167" selection-start-column="56" selection-end-line="167" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getTasteCard.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getTasteCard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
@@ -205,8 +199,8 @@
         <option value="$PROJECT_DIR$/utils/REST.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/config/db.php" />
-        <option value="$PROJECT_DIR$/web/m/tasteCard.html" />
         <option value="$PROJECT_DIR$/web/m/getTasteCard.html" />
+        <option value="$PROJECT_DIR$/web/m/tasteCard.html" />
       </list>
     </option>
   </component>
@@ -494,7 +488,7 @@
       <workItem from="1512202479376" duration="748000" />
       <workItem from="1512302197281" duration="336000" />
       <workItem from="1512377405055" duration="293000" />
-      <workItem from="1512378086150" duration="77000" />
+      <workItem from="1512378086150" duration="266000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -507,7 +501,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="690803000" />
+    <option name="totallyTimeSpent" value="690992000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1280" height="709" extended-state="6" />
@@ -934,22 +928,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/tasteCard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="166" column="128" selection-start-line="166" selection-start-column="128" selection-end-line="166" selection-end-column="128" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="196" column="139" selection-start-line="196" selection-start-column="139" selection-end-line="196" selection-end-column="139" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/tasteCard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="167" column="56" selection-start-line="167" selection-start-column="56" selection-end-line="167" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
