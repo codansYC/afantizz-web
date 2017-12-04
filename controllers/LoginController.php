@@ -17,21 +17,21 @@ header("Access-Control-Allow-Origin: *"); # 跨域处理
 class LoginController extends BaseController{
 
 	/**
-	 * 获取验证码
-	 */
-	public function actionCaptcha(){
-		try{
-			if (! isset ( $this->requestParam ['phone'] ) || empty ( $this->requestParam ['phone'] )) {
-				UtilHelper::echoExitResult(BizConsts::PARAM_INVALID_ERRCODE, BizConsts::PARAM_INVALID_ERRMSG );
-			}
-			$phone = $this->requestParam['phone'];
+ * 获取验证码
+ */
+    public function actionCaptcha(){
+        try{
+            if (! isset ( $this->requestParam ['phone'] ) || empty ( $this->requestParam ['phone'] )) {
+                UtilHelper::echoExitResult(BizConsts::PARAM_INVALID_ERRCODE, BizConsts::PARAM_INVALID_ERRMSG );
+            }
+            $phone = $this->requestParam['phone'];
 
-			if(!UtilHelper::isPhone($phone)){
-				UtilHelper::echoExitResult(BizConsts::INVALID_PHONE_ERRCODE,BizConsts::INVALID_PHONE_ERRMSG);
-			}
-			/*
-			TokenService::checkPhoneValid($phone);  //检查该手机号权限
-			*/
+            if(!UtilHelper::isPhone($phone)){
+                UtilHelper::echoExitResult(BizConsts::INVALID_PHONE_ERRCODE,BizConsts::INVALID_PHONE_ERRMSG);
+            }
+            /*
+            TokenService::checkPhoneValid($phone);  //检查该手机号权限
+            */
 
 //			$captcha = mt_rand(0,9).mt_rand(10000, 99999)
             if (BizConsts::APPLE_WHITELIST_PHONE == $phone) {
@@ -44,26 +44,26 @@ class LoginController extends BaseController{
 			RedisUtil::setCache(BizConsts::USER_LOGIN_VERIFY.$phone,$captcha,BizConsts::CAPTCHA_AVAILABLE);
             */
 
-			// 发送动态验证码
-			$sms = new Sms();
-			$result = $sms->sendTemplateSMS($phone, [$captcha], BizConsts::SMS_VERIFY_TEMPLATE);
+            // 发送动态验证码
+            $sms = new Sms();
+            $result = $sms->sendTemplateSMS($phone, [$captcha], BizConsts::SMS_VERIFY_TEMPLATE);
 
-			if($result){
-				if(isset($_SERVER['RUNTIME_ENV']) && $_SERVER['RUNTIME_ENV'] == 'dev' ){
-					UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,array('captcha' => $captcha));
-				}else{
-					if(BizConsts::APPLE_WHITELIST_PHONE == $phone){
-						UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,array('captcha' => $captcha));
-					}
-					UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
-				}
-			}
+            if($result){
+                if(isset($_SERVER['RUNTIME_ENV']) && $_SERVER['RUNTIME_ENV'] == 'dev' ){
+                    UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,array('captcha' => $captcha));
+                }else{
+                    if(BizConsts::APPLE_WHITELIST_PHONE == $phone){
+                        UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,array('captcha' => $captcha));
+                    }
+                    UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+                }
+            }
 
-			UtilHelper::echoExitResult(BizConsts::GET_CAPTCHA_ERRCODE,BizConsts::GET_CAPTCHA_ERRMSG);
-		}catch (\Exception $e){
-			UtilHelper::handleException($e);
-		}
-	}
+            UtilHelper::echoExitResult(BizConsts::GET_CAPTCHA_ERRCODE,BizConsts::GET_CAPTCHA_ERRMSG);
+        }catch (\Exception $e){
+            UtilHelper::handleException($e);
+        }
+    }
 	
 	/**
 	 * 登录接口
