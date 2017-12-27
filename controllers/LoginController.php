@@ -25,7 +25,7 @@ class LoginController extends BaseController{
                 UtilHelper::echoExitResult(BizConsts::PARAM_INVALID_ERRCODE, BizConsts::PARAM_INVALID_ERRMSG );
             }
             $phone = $this->requestParam['phone'];
-
+            UtilHelper::echoExitResult(BizConsts::INVALID_PHONE_ERRCODE,$phone);
             if(!UtilHelper::isPhone($phone)){
                 UtilHelper::echoExitResult(BizConsts::INVALID_PHONE_ERRCODE,BizConsts::INVALID_PHONE_ERRMSG);
             }
