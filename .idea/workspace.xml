@@ -36,8 +36,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="380" column="23" selection-start-line="380" selection-start-column="23" selection-end-line="380" selection-end-column="23" />
+            <state relative-caret-position="139">
+              <caret line="352" column="26" selection-start-line="352" selection-start-column="26" selection-end-line="352" selection-end-column="26" />
               <folding>
                 <element signature="e#351#397#0" expanded="false" />
                 <element signature="e#528#726#0" expanded="false" />
@@ -72,8 +72,8 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="281" column="23" selection-start-line="281" selection-start-column="23" selection-end-line="281" selection-end-column="23" />
+            <state relative-caret-position="190">
+              <caret line="286" column="9" selection-start-line="286" selection-start-column="9" selection-end-line="286" selection-end-column="9" />
               <folding>
                 <marker date="1501253213000" expanded="true" signature="1973:1989" ph="..." />
                 <marker date="1501253213000" expanded="true" signature="3520:3585" ph="..." />
@@ -598,7 +598,7 @@
       <workItem from="1514274476513" duration="618000" />
       <workItem from="1514294352875" duration="236000" />
       <workItem from="1514366831221" duration="897000" />
-      <workItem from="1514371473051" duration="1569000" />
+      <workItem from="1514371473051" duration="1633000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -611,7 +611,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="698709000" />
+    <option name="totallyTimeSpent" value="698773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="717" extended-state="6" />
@@ -1038,10 +1038,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="281" column="23" selection-start-line="281" selection-start-column="23" selection-end-line="281" selection-end-column="23" />
+        <state relative-caret-position="190">
+          <caret line="286" column="9" selection-start-line="286" selection-start-column="9" selection-end-line="286" selection-end-column="9" />
           <folding>
             <marker date="1501253213000" expanded="true" signature="1973:1989" ph="..." />
             <marker date="1501253213000" expanded="true" signature="3520:3585" ph="..." />
@@ -1054,18 +1062,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="380" column="23" selection-start-line="380" selection-start-column="23" selection-end-line="380" selection-end-column="23" />
+        <state relative-caret-position="139">
+          <caret line="352" column="26" selection-start-line="352" selection-start-column="26" selection-end-line="352" selection-end-column="26" />
           <folding>
             <element signature="e#351#397#0" expanded="false" />
             <element signature="e#528#726#0" expanded="false" />

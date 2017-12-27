@@ -350,7 +350,7 @@ $(function () {
     }
     request('house/list', params, function (resp) {
         houses = resp
-        console.log(resp.length)
+        console.log(houses)
         var lastPageBtn = $('.btn-group button:first-child')
         var nextPageBtn = $('.btn-group button:last-child')
         var pageStr = getParams('page')
@@ -376,7 +376,7 @@ $(function () {
         } else if (nextPageBtn.hasClass('disabled')) {
             nextPageBtn.removeClass('disabled')
         }
-        console.log(789)
+
         showHouseList(houses)
         console.log(000)
         var paddingLeft = ($('.btnBg').width() - $('.btn-group').width())/2
