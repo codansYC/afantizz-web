@@ -131,6 +131,7 @@ function moveTo(index) {
 
 //请求房源详情
 function requestHouseInfo() {
+    alert("123")
     var houseId = parseInt(getParams("house_id"));
     var token = getParams("token")
     if (token == null) {
