@@ -140,7 +140,7 @@ function requestHouseInfo() {
         token: token,
         house_id: houseId
     }
-    request(basicUrl+'house/detail',params,function (resp) {
+    request('house/detail',params,function (resp) {
         house = resp;
         showHouseInfo();
     })
