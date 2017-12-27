@@ -270,11 +270,20 @@ function request(url,params,respBlock) {
     $.post(basicUrl + url, params, function (response, status) {
         if (status == 'success') {
             var resp = $.parseJSON(response);
-            respBlock(resp)
+            if (resp.err_code == 10000) {
+                toLoginPageWhenUnLogin()
+                return;
+            }
+            if (resp.err_code != 0) {
+                showModel(resp.err_msg)
+                return
+            }
+            respBlock(resp.data)
         } else {
             showModel('操作失败')
         }
     });
+
 }
 
 /********************统计***********************/
