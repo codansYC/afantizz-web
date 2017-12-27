@@ -267,7 +267,6 @@ function handleTraffic(pois) {
 }
 
 function request(url,params,respBlock) {
-    alert(url)
     $.post(basicUrl + url, params, function (response, status) {
         if (status == 'success') {
             var resp = $.parseJSON(response);

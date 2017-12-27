@@ -348,7 +348,7 @@ $(function () {
         sort: sort,
         page: page
     }
-    request(basicUrl+'house/list', params, function (resp) {
+    request('house/list', params, function (resp) {
         houses = resp
         var lastPageBtn = $('.btn-group button:first-child')
         var nextPageBtn = $('.btn-group button:last-child')
