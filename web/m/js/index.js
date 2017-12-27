@@ -350,7 +350,7 @@ $(function () {
     }
     request('house/list', params, function (resp) {
         houses = resp
-        console.log(houses)
+        console.log(houses.length)
         var lastPageBtn = $('.btn-group button:first-child')
         var nextPageBtn = $('.btn-group button:last-child')
         var pageStr = getParams('page')
