@@ -350,14 +350,17 @@ $(function () {
     }
     request('house/list', params, function (resp) {
         houses = resp
+        console.log(resp.length)
         var lastPageBtn = $('.btn-group button:first-child')
         var nextPageBtn = $('.btn-group button:last-child')
         var pageStr = getParams('page')
+        console.log(123)
         if (pageStr == null) {
             page = 1
         } else {
             page = parseInt(pageStr)
         }
+        console.log(456)
         if (page == 1) {
             lastPageBtn.addClass('disabled')
         } else if (lastPageBtn.hasClass('disabled')){
@@ -373,7 +376,9 @@ $(function () {
         } else if (nextPageBtn.hasClass('disabled')) {
             nextPageBtn.removeClass('disabled')
         }
+        console.log(789)
         showHouseList(houses)
+        console.log(000)
         var paddingLeft = ($('.btnBg').width() - $('.btn-group').width())/2
 
         $('.btnBg').css({
