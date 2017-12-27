@@ -34,10 +34,10 @@ class LoginController extends BaseController{
             */
 
 //			$captcha = mt_rand(0,9).mt_rand(10000, 99999)
-            if (BizConsts::APPLE_WHITELIST_PHONE == $phone) {
-                UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
-                return;
-            }
+//            if (BizConsts::APPLE_WHITELIST_PHONE == $phone) {
+//                UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+//                return;
+//            }
             $captcha = CaptchaService::createCaptchaWithPhone($phone);
 
             /*这里有点问题  改为下面存数据库的方式
