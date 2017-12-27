@@ -51,9 +51,9 @@ class LoginController extends BaseController{
                 if(isset($_SERVER['RUNTIME_ENV']) && $_SERVER['RUNTIME_ENV'] == 'dev' ){
                     UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,array('captcha' => $captcha));
                 }else{
-                    if(BizConsts::APPLE_WHITELIST_PHONE == $phone){
-                        UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,array('captcha' => $captcha));
-                    }
+//                    if(BizConsts::APPLE_WHITELIST_PHONE == $phone){
+//                        UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,array('captcha' => $captcha));
+//                    }
                     UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
                 }
             }
