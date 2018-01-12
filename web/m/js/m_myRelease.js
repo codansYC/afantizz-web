@@ -17,7 +17,7 @@ $(function () {
 var releaseHouses
 function requestReleaseHouses() {
 
-    request(basicUrl + 'user/release',{
+    request('user/release',{
         token: token
     }, function (resp) {
         releaseHouses = resp

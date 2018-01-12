@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/netWorker.js" afterPath="$PROJECT_DIR$/web/m/js/netWorker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/m_myRelease.js" afterPath="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,10 +83,10 @@
       <file leaf-file-name="m_myRelease.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="255">
+              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
               <folding>
-                <marker date="1502767069000" expanded="true" signature="3284:3299" ph="..." />
+                <marker date="1515728544000" expanded="true" signature="3273:3288" ph="..." />
               </folding>
             </state>
           </provider>
@@ -159,7 +158,6 @@
         <option value="$PROJECT_DIR$/web/m/m_feedback.html" />
         <option value="$PROJECT_DIR$/web/m/m_myCollection.html" />
         <option value="$PROJECT_DIR$/web/m/m_myRelease.html" />
-        <option value="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
         <option value="$PROJECT_DIR$/web/m/js/m_myCollection.js" />
         <option value="$PROJECT_DIR$/web/m/js/m_feedback.js" />
         <option value="$PROJECT_DIR$/web/m/js/liking_mapAdmin.html" />
@@ -193,6 +191,7 @@
         <option value="$PROJECT_DIR$/utils/REST.php" />
         <option value="$PROJECT_DIR$/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/web/m/js/netWorker.js" />
+        <option value="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
       </list>
     </option>
   </component>
@@ -535,7 +534,7 @@
       <workItem from="1515418440889" duration="3447000" />
       <workItem from="1515426178791" duration="651000" />
       <workItem from="1515502098771" duration="17000" />
-      <workItem from="1515728226568" duration="189000" />
+      <workItem from="1515728226568" duration="310000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -548,7 +547,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="705795000" />
+    <option name="totallyTimeSpent" value="705916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="717" extended-state="6" />
@@ -1000,10 +999,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/m_myRelease.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
           <folding>
-            <marker date="1502767069000" expanded="true" signature="3284:3299" ph="..." />
+            <marker date="1515728544000" expanded="true" signature="3273:3288" ph="..." />
           </folding>
         </state>
       </provider>
