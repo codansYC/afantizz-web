@@ -488,7 +488,6 @@ function release(subways,traffics) {
             location.href = pro ? "http://afantizz.com" : "http://localhost:8000"
         },1000)
 
-
     })
 
 }
