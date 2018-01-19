@@ -81,7 +81,7 @@ $(function () {
             captcha: code,
             platform: 'm'
         }
-        $.post('login/login', params, function (response, status) {
+        $.post(basicUrl+'login/login', params, function (response, status) {
             if (status != 'success') {
                 showModel('操作失败,请稍后重试')
                 return

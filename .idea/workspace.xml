@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/login.js" afterPath="$PROJECT_DIR$/web/m/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/m/js/release.js" afterPath="$PROJECT_DIR$/web/m/js/release.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,8 +80,8 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/m/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+            <state relative-caret-position="183">
+              <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -538,7 +536,7 @@
       <workItem from="1515502098771" duration="17000" />
       <workItem from="1515728226568" duration="4307000" />
       <workItem from="1516087666213" duration="1956000" />
-      <workItem from="1516351184985" duration="307000" />
+      <workItem from="1516351184985" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -551,7 +549,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="712176000" />
+    <option name="totallyTimeSpent" value="712379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="156" y="23" width="1280" height="724" extended-state="0" />
@@ -1023,8 +1021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/m/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+        <state relative-caret-position="183">
+          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
           <folding />
         </state>
       </provider>
