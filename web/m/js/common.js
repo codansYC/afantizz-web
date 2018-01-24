@@ -4,8 +4,8 @@
 
 var pro = true;
 var cityCode = "021" //城市编码,目前只服务上海
-var basicUrl = pro ? "http://afantizz.com/" : "http://localhost:8000/"
-var imageUrl =  pro ? "http://afantizz.com/" : "http://localhost:8000/"
+var basicUrl = pro ? "http://www.afantizz.com/" : "http://localhost:8000/"
+var imageUrl =  pro ? "http://www.afantizz.com/" : "http://localhost:8000/"
 
 $(function () {
     //验证手机号是否输入正确
