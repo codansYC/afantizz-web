@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/js/common.js" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pc/css/index.css" afterPath="$PROJECT_DIR$/web/pc/css/index.css" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +70,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="369" column="22" selection-start-line="369" selection-start-column="22" selection-end-line="369" selection-end-column="22" />
+            <state relative-caret-position="93">
+              <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
               <folding>
                 <marker date="1501054139000" expanded="true" signature="6452:6486" ph="..." />
                 <marker date="1501054139000" expanded="true" signature="7595:7630" ph="..." />
@@ -80,12 +80,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/pc/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="-81">
+              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
               <folding>
+                <element signature="n#!!block;n#showLoginInfo#0" expanded="false" />
+                <element signature="n#!!block;n#showFooter#0" expanded="false" />
+                <element signature="n#!!block;n#showAccusationList#0" expanded="false" />
                 <marker date="1517040286000" expanded="true" signature="1981:1997" ph="..." />
                 <marker date="1517040286000" expanded="true" signature="3528:3593" ph="..." />
                 <marker date="1517040286000" expanded="true" signature="3653:3716" ph="..." />
@@ -135,7 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/models/House.php" />
         <option value="$PROJECT_DIR$/controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/web/pc/css/release.css" />
         <option value="$PROJECT_DIR$/models/Coupon.php" />
@@ -186,6 +198,7 @@
         <option value="$PROJECT_DIR$/web/m/js/login.js" />
         <option value="$PROJECT_DIR$/web/m/js/common.js" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
+        <option value="$PROJECT_DIR$/web/pc/css/index.css" />
       </list>
     </option>
   </component>
@@ -200,8 +213,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-95" />
-    <option name="y" value="56" />
+    <option name="x" value="104" />
+    <option name="y" value="59" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
   </component>
@@ -300,6 +313,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="afantizz" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,7 +536,7 @@
       <workItem from="1516087666213" duration="1956000" />
       <workItem from="1516351184985" duration="2906000" />
       <workItem from="1516588570151" duration="21000" />
-      <workItem from="1516786996526" duration="8211000" />
+      <workItem from="1516786996526" duration="8664000" />
     </task>
     <task id="LOCAL-00001" summary="添加图片">
       <created>1500205810113</created>
@@ -514,10 +549,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="723007000" />
+    <option name="totallyTimeSpent" value="723460000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-95" y="56" width="1280" height="709" extended-state="0" />
+    <frame x="104" y="59" width="1280" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22940226" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -594,13 +629,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/services/CaptchaService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/getTasteCard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3332">
@@ -952,22 +980,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="369" column="22" selection-start-line="369" selection-start-column="22" selection-end-line="369" selection-end-column="22" />
-          <folding>
-            <marker date="1501054139000" expanded="true" signature="6452:6486" ph="..." />
-            <marker date="1501054139000" expanded="true" signature="7595:7630" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state relative-caret-position="-81">
+          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#showLoginInfo#0" expanded="false" />
+            <element signature="n#!!block;n#showFooter#0" expanded="false" />
+            <element signature="n#!!block;n#showAccusationList#0" expanded="false" />
             <marker date="1517040286000" expanded="true" signature="1981:1997" ph="..." />
             <marker date="1517040286000" expanded="true" signature="3528:3593" ph="..." />
             <marker date="1517040286000" expanded="true" signature="3653:3716" ph="..." />
@@ -976,6 +996,25 @@
             <marker date="1517040286000" expanded="true" signature="4046:4097" ph="..." />
             <marker date="1517040286000" expanded="true" signature="4161:4224" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding>
+            <marker date="1501054139000" expanded="true" signature="6452:6486" ph="..." />
+            <marker date="1501054139000" expanded="true" signature="7595:7630" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
