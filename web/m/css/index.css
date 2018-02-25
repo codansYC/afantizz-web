@@ -138,23 +138,6 @@
     overflow: auto;
 }
 
-.styleList>ul{
-    float: left;
-    list-style: none;
-    width: 50%;
-}
-.styleGroupList span.glyphicon{
-    font-size: 10px;
-    color: #a6a6a6;
-    margin-left: 10px;
-    font-weight: 100;
-}
-.styleEntiretyList{
-    display: none;
-    border-left: solid 1px #edeff3;
-    box-sizing: border-box;
-}
-
 
 
 

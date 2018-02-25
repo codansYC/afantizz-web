@@ -63,50 +63,32 @@ class LoginController extends BaseController{
             UtilHelper::handleException($e);
         }
     }
-	
-	/**
-	 * 登录接口
-	 */
-	public function actionLogin(){
-		try {
 
-			$phone = $this->requestParam['phone'];
-			$captcha = $this->requestParam['captcha'];
+    /**
+     * 登录接口
+     */
+    public function actionLogin(){
+        $transaction = \Yii::$app->db->beginTransaction();
+        try {
+            $phone = $this->requestParam['phone'];
+            $captcha = $this->requestParam['captcha'];
             $platform = $this->requestParam['platform'];
             $valid = true;
-			if(BizConsts::APPLE_WHITELIST_PHONE != $phone ){
-				UtilHelper::validLogin($phone,$captcha);//校验手机号及验证码
+            if(BizConsts::APPLE_WHITELIST_PHONE != $phone ){
+                UtilHelper::validLogin($phone,$captcha);//校验手机号及验证码
                 $valid = CaptchaService::checkPhoneAndCaptcha($phone,$captcha);
-			}
-
+            }
             if (!$valid) {
                 UtilHelper::echoExitResult(BizConsts::WRONG_CAPTCHA_ERRCODE,BizConsts::WRONG_CAPTCHA_ERRMSG);
             }
-            $user = UserService::getUserByPhone($phone,$platform);
-            if (!$user) {
-                UserService::addNewUserWithPhone($phone,$platform);
-                $user = UserService::getUserByPhone($phone,$platform);
-            }
-            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$user);
-            /*
-			$manager = TokenService::checkPhoneValid($phone);
-			$token = UtilHelper::generateToken($manager['id'], $manager['phone']);
-			$ts = TokenService::saveToken($manager['id'], $token);
-			if(!$ts){
-				throw new LoginException(LoginException::LOGIN_FAIL_ERRMSG,LoginException::LOGIN_FAIL_ERRCODE);
-			}
-            //插入login log（登录日志）
-            ManagerService::adduserloginlog($manager,$token);
-            TokenService::setTokenCache($manager, $token);
-			RedisUtil::delCache(BizConsts::USER_LOGIN_VERIFY.$phone); //验证码无效
-			$data['token'] = $token;
-			$data['name'] = $manager['name'];
-			UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$data);
-            */
-		} catch (\Exception $e) {
-			UtilHelper::handleException($e);
-		}
-	}
+            $userInfo = UserService::getUserByPhone($phone,$platform);
+            $transaction->commit();
+            UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$userInfo);
+        } catch (\Exception $e) {
+            $transaction->rollBack();
+            UtilHelper::handleException($e);
+        }
+    }
 	/*
 	 * 登出
 	 */

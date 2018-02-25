@@ -8,7 +8,7 @@ body{
 }
 
 .imgBg{
-    background-image: url("http://afantizz.com/images/mineBg.jpg");
+    background-image: url("/images/mineBg.jpg");
     background-position: -300px -130px;
     height: 220px;
 }

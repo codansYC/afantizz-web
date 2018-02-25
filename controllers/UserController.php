@@ -19,33 +19,34 @@ class UserController extends BaseController{
     function actionInfo() {
         try{
             $token = $this->requestParam['token'];
-            $data = UserService::getUserByToken($token);
+            $user = UserService::getUserByToken($token);
+            $data = ['phone'=>$user->phone];
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$data);
         }catch (\Exception $e){
             UtilHelper::handleException($e);
         }
     }
 
-    function actionRelease() {
+    function actionReleaseList() {
         try{
-            $token = $this->requestParam['token'];
-            if (!isset($token) || $token == '') {
+            $userId = $this->getUserIdByParam($this->requestParam);
+            if (!$userId) {
                 UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE,BizConsts::UNLOGIN_ERRMSG);
             }
-            $data = UserService::getUserReleaseHouse($token);
+            $data = UserService::getUserReleaseHouse($userId);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$data);
         }catch (\Exception $e){
             UtilHelper::handleException($e);
         }
     }
 
-    function actionCollection() {
+    function actionFollowList() {
         try{
-            $token = $this->requestParam['token'];
-            if (!isset($token) || $token == '') {
+            $userId = $this->getUserIdByParam($this->requestParam);
+            if (!$userId) {
                 UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE,BizConsts::UNLOGIN_ERRMSG);
             }
-            $data = UserService::getUserCollectionHouse($token);
+            $data = UserService::getUserFollowHouse($userId);
             UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$data);
         }catch (\Exception $e){
             UtilHelper::handleException($e);
@@ -53,4 +54,32 @@ class UserController extends BaseController{
 
     }
 
+    function actionFollow() {
+        $userId = $this->getUserIdByParam($this->requestParam);
+        if (!$userId) {
+            UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE,BizConsts::UNLOGIN_ERRMSG);
+        }
+        $house_id = $this->requestParam['house_id'];
+        UserService::followHouse($house_id,$userId);
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+    }
+
+    function actionCancelFollow() {
+        $userId = $this->getUserIdByParam($this->requestParam);
+        if (!$userId) {
+            UtilHelper::echoExitResult(BizConsts::UNLOGIN_ERRCODE,BizConsts::UNLOGIN_ERRMSG);
+        }
+        $house_id = $this->requestParam['house_id'];
+        UserService::cancelFollowHouse($house_id,$userId);
+        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+    }
+
+    function getUserIdByParam($param) {
+        $token = $param['token'];
+        if (empty($token)) {
+            return null;
+        }
+        $userId = UserService::getUserIdByToken($token);
+        return $userId;
+    }
 }

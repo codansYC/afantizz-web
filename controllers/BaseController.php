@@ -1,6 +1,7 @@
 <?php
 namespace  app\controllers;
 
+use app\services\UserService;
 use Yii;
 use yii\web\Controller;
 use app\utils\UtilHelper;
@@ -223,6 +224,16 @@ class BaseController extends  Controller {
 		
 		return $appkeys[$appVersion];
 	}
+
+    function checkLoginState($token) {
+        if (empty($token)) {
+            return false;
+        }
+        if (!UserService::getUserIdByToken($token)) {
+            return false;
+        }
+        return true;
+    }
 	
 }
 

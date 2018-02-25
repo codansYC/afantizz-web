@@ -38,7 +38,7 @@ $(function () {
 
 //获取用户信息
 function getUserInfo() {
-    request(basicUrl+'user/info',{
+    request('/user/info',{
         token: getToken()
     },function (user) {
         $('.number').text(user.phone)

@@ -13,6 +13,9 @@ use yii\db\ActiveRecord;
 
 class House extends ActiveRecord {
 
+    const HOUSE_AVAILABLE = 1;
+    const HOUSE_UNAVAILABLE = 0;
+
     public static function tableName()
     {
         return 'house';

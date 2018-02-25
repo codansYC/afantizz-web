@@ -2,17 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: lekuai
- * Date: 2017/6/15
- * Time: 下午6:59
+ * Date: 2017/6/18
+ * Time: 下午3:37
  */
 
 namespace app\models;
 
+
 use yii\db\ActiveRecord;
 
-class Image extends ActiveRecord {
+class Complain extends ActiveRecord
+{
     public static function tableName()
     {
-        return 'image';
+        return 'complain';
     }
+
 }

@@ -2,10 +2,11 @@
  * Created by lekuai on 17/2/2.
  */
 
-var pro = true;
+var dev = true;
+var debug = false;
 var cityCode = "021" //城市编码,目前只服务上海
-var basicUrl = pro ? "http://www.afantizz.com/" : "http://localhost:8000/"
-var imageUrl =  pro ? "http://www.afantizz.com/" : "http://localhost:8000/"
+var basicUrl = dev ? "http://dev.afantizz.com" : debug ? "http://test.afantizz.com" : "http://www.afantizz.com"
+var imageUrl = dev ? "http://devimg.afantizz.com" : debug ? "http://testimg.afantizz.com" : "http://img.afantizz.com"
 
 $(function () {
     //验证手机号是否输入正确

@@ -1035,6 +1035,24 @@ class UtilHelper {
 		}
 		return "$year-$month-$day";
 	}
+
+    /** 获取时间字符串
+     * @param string $format 日期格式
+     * @return bool|string    日期
+     */
+    static function getTimeStr($format="YmdHi") {
+        date_default_timezone_set("Asia/Shanghai");
+        return date($format);
+    }
+
+
+    /** 根据district_code 获取 district
+     * @param $code  区县代号
+     */
+    static function getDistrictByCode($code) {
+        $districts = \Yii::$app->params['districts'];
+        return $districts[$code];
+    }
 }
 
 

@@ -4,21 +4,177 @@
 
 var houses = new Array()
 var page = 1
+// 请求参数
+var districtCode = null
+var minPrice = null
+var maxPrice = null
+var rentType = null
+var subway = null
+var sortType = null
+const rentModes = ['合租','整租','公寓']
+const roomTypes = ['主卧','次卧','隔断','床位']
+
 $(function () {
 
-    //记录用户访问
-    // record()
     //监测屏幕滚动
     var headerH = $(".header").outerHeight();  //导航区域高度
     var searchH = $(".search").outerHeight();  //搜索区域高度
     var filterH = $(".filterCondition").outerHeight(); //筛选区域高度
-    $(window).scroll(function(event){
-        adjustFilterConditionPostion()
-    })
-    adjustFilterConditionPostion()
-    setSlideConfigure()
 
-    //处于筛选按钮组的点击事件
+    initViews()
+    initData()
+    initEvents()
+
+    function initViews() {
+        adjustFilterConditionPosition()
+        setSlideConfigure()
+
+        districtCode = getParams('district')
+        subway = getParams('subway')
+        minPrice = getParams('min_price')
+        maxPrice = getParams('max_price')
+        rentType = getParams('rent_type')
+        var pageStr = getParams('page')
+        if (districtCode == '' || districtCode == null) {
+            $('.show-area').text('区域')
+        } else {
+            $('.areaList li').each(function () {
+                if ($(this).data('code') == districtCode) {
+                    console.log($(this).text())
+                    $('.show-area').text($(this).text())
+                }
+            })
+        }
+        highlightDistrict(districtCode)
+
+        if (subway == '' || subway == null || subway == '不限') {
+            $('.show-subway').text('地铁')
+        } else {
+            $('.show-subway').text(subway)
+        }
+        highlightSubway(subway)
+
+        if ((minPrice == '' || minPrice == null) && (maxPrice == '' || maxPrice == null)) {
+            $('.show-price').text('租金')
+        } else {
+            if (minPrice == '' || minPrice == null) {
+                $('.show-price').text(maxPrice+'以下')
+            } else if (maxPrice == '' || maxPrice == null) {
+                $('.show-price').text(minPrice+'以上')
+            } else {
+                $('.show-price').text(minPrice+'~'+maxPrice)
+            }
+        }
+        highlightPrice(minPrice,maxPrice)
+
+        switch (rentType) {
+            case '1':
+                $('.show-style').text('合租')
+                break
+            case '2':
+                $('.show-style').text('整租')
+                break
+            case '3':
+                $('.show-style').text('公寓')
+                break
+            default:
+                $('.show-style').text('户型')
+                break
+        }
+        highlightRentMode(rentType)
+
+        if (pageStr == null) {
+            page = 1
+        } else {
+            page = parseInt(pageStr)
+        }
+
+
+    }
+
+    function initData() {
+        requestData()
+    }
+
+    function initEvents() {
+        $(window).scroll(function(event){
+            adjustFilterConditionPosition()
+        })
+
+        $(".filterCondition>div").click(function () {
+
+            var index = $(this).index()
+            if (filterCurrentIndex() == index) {
+                hideFilterView()
+                return
+            }
+            showFilterView(index)
+            var offsetY = $(document).scrollTop()
+            if (offsetY < headerH + searchH) {
+                $(document).scrollTop(headerH + searchH)
+            }
+        })
+
+        //遮盖层事件
+        $("#mask").click(function (event) {
+            hideFilterView()
+        });
+        $('#mask').bind("touchmove",function(event) {
+            event.preventDefault();
+        })
+
+        //筛选
+        $('.filterCommon').bind("touchmove",function(event) {
+            event.stopPropagation();
+        })
+        $('.areaBg,.styleBg').bind("touchmove",function(event) {
+            event.preventDefault();
+        })
+        //处理区域选择
+        $(".areaBg .areaList li").click(function (event) {
+            //禁止事件冒泡
+            event.stopPropagation();
+            $(".areaBg .areaList li").removeClass("selected");
+            $(this).addClass("selected");
+            $('.show-area').text($(this).text())
+            districtCode = $(this).data('code')
+            reload()
+        });
+        //处理租金选择
+        $(".priceBg .priceList li").click(function (event) {
+            //禁止事件冒泡
+            event.stopPropagation();
+            $(".priceBg .priceList li").removeClass("selected");
+            $(this).addClass("selected");
+            $('.show-price').text($(this).text())
+            minPrice = $(this).data('min-price')
+            maxPrice = $(this).data('max-price')
+            reload()
+        });
+        //处理户型选择
+        $(".styleBg .styleList li").click(function (event) {
+            //禁止事件冒泡
+            event.stopPropagation();
+            $(".styleBg .styleList li").removeClass("selected");
+            $(this).addClass('selected')
+            $('.show-style').text($(this).text())
+            rentType = $(this).data('type')
+            reload()
+        });
+        //处理地铁选择
+        $(".subwayBg .subwayList li").click(function (event) {
+            //禁止事件冒泡
+            event.stopPropagation();
+            $(".subwayBg .subwayList li").removeClass("selected");
+            $(this).addClass("selected");
+            $('.show-subway').text($(this).text())
+            subway = $(this).text()
+            reload()
+        });
+    }
+
+    //记录用户访问
+    // record()
 
     //筛选条件选中下标
     function filterCurrentIndex() {
@@ -39,21 +195,6 @@ $(function () {
         }
     }
 
-    $(".filterCondition>div").click(function () {
-
-        var index = $(this).index()
-        if (filterCurrentIndex() == index) {
-            hideFilterView()
-            return
-        }
-        showFilterView(index)
-        var offsetY = $(document).scrollTop()
-        if (offsetY < headerH + searchH) {
-            $(document).scrollTop(headerH + searchH)
-        }
-
-    })
-
     //显示筛选视图
     function showFilterView(i) {
         $(".filterBox").each(function () {
@@ -66,23 +207,15 @@ $(function () {
         enableScroll(false)
         $('#mask').css('display','block')
 
-        var rentMode = $(".styleGroupList li span:first-child.selected").text()
-
         switch (i) {
             case 0:
                 highlightDistrict(getParams('district'))
                 break
             case 1:
-                highlightPrice(getParams('price'))
+                highlightPrice(getParams('min_price'),getParams('max_price'))
                 break
             case 2:
-                if (rentMode == '合租' || rentMode == '整租') {
-                    $(".styleEntiretyList").css('display', 'block')
-                    highlightStyle(getParams('style'))
-                } else {
-                    $(".styleEntiretyList").css('display', 'none')
-                }
-                highlightRentMode(getParams('rent_mode'))
+                highlightRentMode(getParams('rent_type'))
                 break
             case 3:
                 highlightSubway(getParams('subway'))
@@ -98,7 +231,7 @@ $(function () {
         $(".filterBox").css("display", "none");
         enableScroll(true)
         $('#mask').css('display','none')
-        adjustFilterConditionPostion()
+        adjustFilterConditionPosition()
         $('.caret').removeClass('caretUp')
     }
     //控制滚动
@@ -110,7 +243,7 @@ $(function () {
         }
     }
     //
-    function adjustFilterConditionPostion() {
+    function adjustFilterConditionPosition() {
 
         if ($(document).scrollTop() >= headerH + searchH) {
             if (!$(".filterBg").hasClass('navbar-fixed-top')) {
@@ -126,116 +259,35 @@ $(function () {
             $(".houseBox").css('margin-top','0px')
         }
     }
-    //遮盖层事件
-    $("#mask").click(function (event) {
-        hideFilterView()
-    });
-    $('#mask').bind("touchmove",function(event) {
-        event.preventDefault();
-    })
 
-    //筛选
-    $('.filterCommon').bind("touchmove",function(event) {
-        event.stopPropagation();
-    })
-    $('.areaBg,.styleBg').bind("touchmove",function(event) {
-        event.preventDefault();
-    })
-    //处理区域选择
-    $(".areaBg .areaList li").click(function (event) {
-        //禁止事件冒泡
-        event.stopPropagation();
-        $(".areaBg .areaList li").removeClass("selected");
-        $(this).addClass("selected");
-        $('.show-area').text($(this).text())
-        reload()
-    });
-    //处理租金选择
-    $(".priceBg .priceList li").click(function (event) {
-        //禁止事件冒泡
-        event.stopPropagation();
-        $(".priceBg .priceList li").removeClass("selected");
-        $(this).addClass("selected");
-        $('.show-price').text($(this).text())
-        reload()
-    });
-    //处理户型选择
-    $(".styleBg .styleList .styleGroupList li").click(function (event) {
-        //禁止事件冒泡
-        event.stopPropagation();
-        $(".styleBg .styleList li").children().removeClass("selected");
-        $(this).children().addClass('selected')
-        $(".styleBg .styleList .styleEntiretyList li").removeClass('selected')
-        var select = $(this).children("span:first-child").text()
-        switch (select) {
-            case '不限':
-                $(".styleBg .styleList .styleEntiretyList").css('display', 'none')
-                $('.show-style').text(select)
-                reload()
-                break
-            case '公寓':
-                $(".styleBg .styleList .styleEntiretyList").css('display', 'none')
-                $('.show-style').text(select)
-                reload()
-                break
-            case '合租':
-                $(".styleBg .styleList .styleEntiretyList").css('display', 'block')
-                break
-            case '整租':
-                $(".styleBg .styleList .styleEntiretyList").css('display', 'block')
-                break
-            default:
-                break
-        }
-
-
-    });
-    $(".styleBg .styleList .styleEntiretyList li").click(function (event) {
-        //禁止事件冒泡
-        event.stopPropagation();
-        $(".styleBg .styleList li").removeClass("selected");
-        $(this).addClass("selected");
-        var rentMode = $(".styleGroupList li span:first-child.selected").text()
-        $('.show-style').text(rentMode + $(this).text())
-        reload()
-    });
-    //处理地铁选择
-    $(".subwayBg .subwayList li").click(function (event) {
-        //禁止事件冒泡
-        event.stopPropagation();
-        $(".subwayBg .subwayList li").removeClass("selected");
-        $(this).addClass("selected");
-        $('.show-subway').text($(this).text())
-        reload()
-    });
 
     //高亮选中区域
-    function highlightDistrict(district) {
-        var district = district
-        if (district == null || district == '') {
-           district = '不限'
+    function highlightDistrict(districtCode) {
+        if (districtCode == null) {
+            districtCode = ''
         }
         $(".areaBg .areaList li").each(function () {
-            var that = $(this)
-            if (that.text() == district) {
-                that.addClass('selected')
+            if ($(this).data('code') == districtCode) {
+                $(this).addClass('selected')
             } else {
-                that.removeClass('selected')
+                $(this).removeClass('selected')
             }
         })
     }
     //高亮选中租金
-    function highlightPrice(price) {
-        var price = price
-        if (price == null || price == '') {
-            price = '不限'
+    function highlightPrice(minPrice, maxPrice) {
+        if (minPrice == null || minPrice == '') {
+            minPrice = 0
+        }
+        if (maxPrice == null) {
+            maxPrice = ''
         }
         $(".priceBg .priceList li").each(function () {
-            var that = $(this)
-            if (that.text() == price) {
-                that.addClass('selected')
+            console.log($(this).data('min-price'))
+            if ($(this).data('min-price') == minPrice && $(this).data('max-price') == maxPrice) {
+                $(this).addClass('selected')
             } else {
-                that.removeClass('selected')
+                $(this).removeClass('selected')
             }
         })
     }
@@ -256,31 +308,14 @@ $(function () {
     }
     //高亮选中出租方式
     function highlightRentMode(mode) {
-        var mode = mode
-        if (mode == null || mode == '') {
-            mode = '不限'
+        if (mode == null) {
+            mode = ''
         }
-        $(".styleBg .styleList .styleGroupList li").each(function () {
-            var that = $(this)
-            if (that.children("span:first-child").text() == mode) {
-                that.children().addClass('selected')
+        $(".styleBg .styleList li").each(function () {
+            if ($(this).data('type') == mode) {
+                $(this).addClass('selected')
             } else {
-                that.children().removeClass('selected')
-            }
-        })
-    }
-    //高亮选中户型
-    function highlightStyle(style) {
-        var style = style
-        if (style == null || style == '') {
-            style = '不限'
-        }
-        $(".styleBg .styleList .styleEntiretyList li span").each(function () {
-            var that = $(this)
-            if (that.text() == style) {
-                that.addClass('selected')
-            } else {
-                that.removeClass('selected')
+                $(this).removeClass('selected')
             }
         })
     }
@@ -292,100 +327,69 @@ $(function () {
 
 
     //============================================
-    var district = getParams('district')
-    var subway = getParams('subway')
-    var price = getParams('price')
-    var style = getParams('style')
-    var rentMode = getParams('rent_mode')
-    var sort = getParams('sort')
-    var pageStr = getParams('page')
-    if (district == '' || district == null) {
-        $('.show-area').text('区域')
-    } else {
-        $('.show-area').text(district)
-    }
-    highlightDistrict(district)
-
-    if (subway == '' || subway == null) {
-        $('.show-subway').text('地铁')
-    } else {
-        $('.show-subway').text(subway)
-    }
-    highlightSubway(subway)
-
-    if (price == '' || price == null) {
-        $('.show-price').text('租金')
-    } else {
-        $('.show-price').text(price)
-    }
-    highlightPrice(price)
-
-    if (rentMode == '' || rentMode == null) {
-        $('.show-style').text('户型')
-    } else {
-        if (style == null) {
-            style = ''
+    function requestData() {
+        //处理网络请求
+        var params = {
+            page: page
         }
-        $('.show-style').text(rentMode+style)
-    }
-    highlightRentMode(rentMode)
-    highlightStyle(style)
-
-    if (pageStr == null) {
-        page = 1
-    } else {
-        page = parseInt(pageStr)
-    }
-
-    //处理网络请求
-    var params = {
-        token: getToken(),
-        district: district,
-        subway: subway,
-        price: price,
-        style: style,
-        rent_mode: rentMode,
-        sort: sort,
-        page: page
-    }
-    request('house/list', params, function (resp) {
-        houses = resp
-        console.log(houses.length)
-        var lastPageBtn = $('.btn-group button:first-child')
-        var nextPageBtn = $('.btn-group button:last-child')
-        var pageStr = getParams('page')
-        console.log(123)
-        if (pageStr == null) {
-            page = 1
-        } else {
-            page = parseInt(pageStr)
+        if (districtCode != null && districtCode != '') {
+            params['district_code'] = districtCode
         }
-        console.log(456)
-        if (page == 1) {
-            lastPageBtn.addClass('disabled')
-        } else if (lastPageBtn.hasClass('disabled')){
-            lastPageBtn.removeClass('disabled')
+        if (minPrice != null && minPrice != '') {
+            params['min_price'] = minPrice
         }
-        if (houses.length == 0) {
-            showModel('没有更多房源了')
-            nextPageBtn.addClass('disabled')
-            return
+        if (maxPrice != null && maxPrice != '') {
+            params['max_price'] = maxPrice
         }
-        if (houses.length<21) {
-            nextPageBtn.addClass('disabled')
-        } else if (nextPageBtn.hasClass('disabled')) {
-            nextPageBtn.removeClass('disabled')
+        if (rentType != null && rentType != '') {
+            params['rent_type'] = rentType
+        }
+        if (subway != null && subway != '' && subway != '不限') {
+            params['subway'] = subway
+        }
+        if (sortType != null && sortType != '') {
+            params['sort_type'] = sortType
         }
 
-        showHouseList(houses)
-        console.log(000)
-        var paddingLeft = ($('.btnBg').width() - $('.btn-group').width())/2
+        request('/house/list', params, function (resp) {
+            houses = resp
+            console.log(houses.length)
+            var lastPageBtn = $('.btn-group button:first-child')
+            var nextPageBtn = $('.btn-group button:last-child')
+            var pageStr = getParams('page')
+            if (pageStr == null) {
+                page = 1
+            } else {
+                page = parseInt(pageStr)
+            }
 
-        $('.btnBg').css({
-            'padding-left':paddingLeft+'px',
-            'visibility': 'visible'
+            if (page == 1) {
+                lastPageBtn.addClass('disabled')
+            } else if (lastPageBtn.hasClass('disabled')){
+                lastPageBtn.removeClass('disabled')
+            }
+            if (houses.length == 0) {
+                showModel('没有更多房源了')
+                nextPageBtn.addClass('disabled')
+                return
+            }
+            if (houses.length<21) {
+                nextPageBtn.addClass('disabled')
+            } else if (nextPageBtn.hasClass('disabled')) {
+                nextPageBtn.removeClass('disabled')
+            }
+
+            showHouseList(houses)
+            var paddingLeft = ($('.btnBg').width() - $('.btn-group').width())/2
+
+            $('.btnBg').css({
+                'padding-left':paddingLeft+'px',
+                'visibility': 'visible'
+            })
         })
-    })
+    }
+
+
 
     function showHouseList(houses) {
         var ul = $('ul.houseList')
@@ -397,7 +401,7 @@ $(function () {
             var mainInfo = $("<div class='mainInfo clearfix'></div>")
             li.append(mainInfo)
             var img = $("<img class='pull-left'/>")
-            img.attr("src", imageUrl + house.images[0])
+            img.attr("src", house.image)
             var desc = $("<div class='pull-left desc'></div>")
             mainInfo.append(img, desc)
             /*标题*/
@@ -424,33 +428,29 @@ $(function () {
             address.text(addressDesc)
             var rentMode = $("<div class='rent-mode'></div>")
             var rentModeDesc = $("<span class='rent-mode-span'></span>")
-            rentModeDesc.text(house.rent_mode)
+            rentModeDesc.text(rentModes[house.rent_type-1])
             rentMode.append(rentModeDesc)
             addressAndRentMode.append(rentMode)
             var tags = $("<div class='tags'></div>")
             desc.append(tags)
             //房间结构(几室几厅)
-            if (house.style != null || house.style != '') {
-                var mainStyle = house.style.split('厅')[0] + '厅'
-                var oStyle = $("<span class='mainStyle'></span>");
-                oStyle.text(mainStyle)
-                tags.append(oStyle)
-            }
+            var oStyle1 = $("<span class='mainStyle'></span>");
+            oStyle1.text(house.room_num+'室'+house.hall_num+'厅')
+            tags.append(oStyle1)
             //主卧或次卧
-            if (house.rent_mode == '合租') {
-                var secondStyle = house.style.slice(-2)
-                var oStyle = $("<span class='secondStyle'></span>");
-                oStyle.text(secondStyle)
-                tags.append(oStyle)
+            if (house.rent_type == 1 && house.room_type != 0) {
+                var oStyle2 = $("<span class='secondStyle'></span>");
+                oStyle2.text(roomTypes[house.room_type-1])
+                tags.append(oStyle2)
             }
             //独立卫生间
-            if (house.facilities.indexOf('独立卫生间') > -1) {
+            if (house.is_toilet_single != 0) {
                 var oToilet = $("<span class='toilet'></span>");
                 oToilet.text('独卫')
                 tags.append(oToilet)
             }
             //转租优惠
-            if (house.benefit != "" && house.benefit != null) {
+            if (house.is_benefit != 0) {
                 var benefit = $("<span class='benefit'></span>")
                 benefit.text('转租优惠')
                 tags.append(benefit)
@@ -459,7 +459,7 @@ $(function () {
             desc.append(priceAndDate)
             //发布时间
             var releaseTime = $("<span class='releaseTime pull-right'></span>")
-            releaseTime.text(house.release_date)
+            releaseTime.text(house.date)
             priceAndDate.append(releaseTime)
             //价格
             var price = $("<div class='price'></div>")
@@ -513,9 +513,7 @@ $(function () {
 })
 
 function reload() {
-
     location.href = getBasicSplitUrl();
-
 }
 function lookLastPage() {
     if (page == 1) {
@@ -545,93 +543,50 @@ function reloadWithPage() {
 function getBasicSplitUrl() {
     var url = basicUrl
     //地址不为空
-    if (getDistrict() != '') {
-        url = url + '?district=' + getDistrict()
+    if (districtCode != '' && districtCode != null) {
+        url = url + '?district=' + districtCode
     }
     //地铁线不为空
-    if (getSubway() != '') {
-        if (url.length == basicUrl.length) {
-            url = url + '?subway='+getSubway()
+    if (subway != '' && subway != null && subway != '不限') {
+        if (url.indexOf('?')<0) {
+            url = url + '?subway='+subway
         } else {
-            url = url + '&subway='+getSubway()
+            url = url + '&subway='+subway
         }
     }
     //价格不为空
-    if (getPrice() != '') {
-        if (url.length == basicUrl.length) {
-            url = url + '?price='+getPrice()
+    if (minPrice != '' && minPrice != null) {
+        if (url.indexOf('?')<0) {
+            url = url + '?min_price='+minPrice
         } else {
-            url = url + '&price='+getPrice()
+            url = url + '&min_price='+minPrice
+        }
+    }
+    if (maxPrice != '' && maxPrice != null) {
+        if (url.indexOf('?')<0) {
+            url = url + '?max_price='+maxPrice
+        } else {
+            url = url + '&max_price='+maxPrice
         }
     }
     //出租方式不为空
-    if (getRentMode() != '') {
-        if (url.length == basicUrl.length) {
-            url = url + '?rent_mode='+getRentMode()
+    if (rentType != '' && rentType != null) {
+        if (url.indexOf('?')<0) {
+            url = url + '?rent_type='+rentType
         } else {
-            url = url + '&rent_mode='+getRentMode()
+            url = url + '&rent_type='+rentType
         }
     }
-    //房型不为空
-    if (getStyle() != '') {
-        if (url.length == basicUrl.length) {
-            url = url + '?style='+getStyle()
-        } else {
-            url = url + '&style='+getStyle()
-        }
-    }
+
     //排序方式不为空且不为最新
-    if (getSort() != '' && getSort() != "最新") {
-        if (url.length == basicUrl.length) {
-            url = url + '?sort='+getSort()
+    if (sortType != '' && sortType != null) {
+        if (url.indexOf('?')<0) {
+            url = url + '?sort_type='+sortType
         } else {
-            url = url + '&sort='+getSort()
+            url = url + '&sort_type'+sortType
         }
     }
     return url;
-}
-
-function getDistrict() {
-    var txt = $('.show-area').text()
-    if (txt == '区域' || txt == '不限') {
-        return ''
-    }
-    return txt
-}
-function getSubway() {
-    var txt = $('.show-subway').text()
-    if (txt == '地铁' || txt == '不限') {
-        return ''
-    }
-    return txt
-}
-function getPrice() {
-    var txt = $('.show-price').text()
-    if (txt == '租金' || txt == '不限') {
-        return ''
-    }
-    return txt
-}
-function getRentMode() {
-    var txt = $(".styleGroupList li span:first-child.selected").text()
-    if (txt == '不限') {
-        return ''
-    }
-    return txt
-}
-function getStyle() {
-    var txt = $(".styleBg .styleList .styleEntiretyList li.selected span").text()
-    if (txt == '不限') {
-        return ''
-    }
-    return txt
-}
-function getSort() {
-    var txt = $('.sortList li.selected').text()
-    if (txt == null) {
-        txt = ''
-    }
-    return txt
 }
 
 //排序的侧滑视图

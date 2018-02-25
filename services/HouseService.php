@@ -9,284 +9,256 @@
 namespace app\services;
 
 use app\models\Collection;
+use app\models\Complain;
 use app\models\Facility;
 use app\models\House;
 use app\models\Accusation;
+use app\models\HouseFollow;
 use app\models\Image;
-use app\utils\ErrorCode;
-use phpDocumentor\Reflection\Types\Array_;
-use Yii;
 use app\utils\GlobalAction;
 use app\utils\BizConsts;
 use app\utils\UtilHelper;
 
-class HouseService {
+class HouseService
+{
 
-    static function getHouseList($district,$subway,$price,$style,$rentMode,$sort,$page) {
+    const SORT_BY_RELEASE_DATE = 0;
+    const SORT_BY_PRICE = 1;
+    const SORT_BY_AREA = 2;
+    const SORT_BY_USABLE_DATE = 3;
+    const PAGE_NUM = 10;
 
-//        $field = [
-//            'house_id',
-//            'rent_mode',
-//            'district',
-//            'address',
-//            'style',
-//        ];
-        $houseList = House::find()->where(['sell_state' => '在架']);
-
-        if (isset($district) && $district != null) {
-            $houseList = $houseList->andWhere(['like', 'district', $district]);
+    /**
+     * @param $params
+     * @return 房源列表
+     */
+    static function getHouseList($params)
+    {
+        $selCondition = [
+            'house_id',
+            'title',
+            'price',
+            'district' => 'house.district_code',
+            'address',
+            'rent_type',
+            'traffic',
+            'date' => 'house.update_time',
+            'is_benefit' => 'LENGTH(trim(benefit))>0',
+            'room_num',
+            'hall_num',
+            'room_type',
+            'kitchen_type',
+            'is_toilet_single' => "FIND_IN_SET('toilet',installation)>0"
+        ];
+        $query = House::find()->select($selCondition)
+            ->where(['status' => House::HOUSE_AVAILABLE]);
+        if (isset($params['district_code']) && !empty($params['district_code'])) {
+            $query->andWhere(['district_code' => $params['district_code']]);
         }
-        if (isset($subway) && $subway != null) {
-            $houseList = $houseList->andWhere(['like', 'subways', $subway]);
-
+        if (isset($params['subway']) && !empty($params['subway'])) {
+            $query->andWhere(['like', 'subways', $params['subway']]);
         }
-        if (isset($rentMode) && $rentMode != null) {
-            $houseList = $houseList->andWhere(['rent_mode' => $rentMode]);
+        if (isset($params['min_price']) && !empty($params['min_price'])) {
+            $query->andWhere(['>', 'price', $params['min_price']]);
         }
-
-        if (isset($style) && $style != null) {
-            $transformStyle = '';
-            switch ($style) {
-                case '一居':
-                    $transformStyle = '1室';
+        if (isset($params['max_price']) && !empty($params['max_price'])) {
+            $query->andWhere(['<', 'price', $params['max_price']]);
+        }
+        if (isset($params['rent_type']) && !empty($params['rent_type'])) {
+            $query->andWhere(['rent_type' => $params['rent_type']]);
+        }
+        $page = 1;
+        if (isset($params['page']) && !empty($params['page'])) {
+            $page = $params['page'];
+        }
+        $query->limit(self::PAGE_NUM)->offset(($page - 1) * self::PAGE_NUM);
+        $sort = 'update_time DESC';
+        if (isset($params['sort_type']) && !empty($params['sort_type'])) {
+            switch ($params['sort_type']) {
+                case '1':
+                    $sort = 'price ASC';
                     break;
-                case '二居':
-                    $transformStyle = '2室';
+                case '2':
+                    $query->andWhere(['>', 'area', 0]);
+                    $sort = 'area ASC';
                     break;
-                case '三居':
-                    $transformStyle = '3室';
+                case '3':
+                    $sort = 'usable_date ASC';
                     break;
                 default:
                     break;
             }
-            if ($transformStyle == '') {
-
-                $houseList = $houseList->andWhere(['not like', 'style', '1室'])
-                                       ->andWhere(['not like', 'style', '2室'])
-                                       ->andWhere(['not like', 'style', '3室']);
-            } else {
-
-                $houseList = $houseList->andWhere(['like','style',$transformStyle]);
-
-            }
         }
-
-        //价格
-        if (isset($price) && $price != null) {
-            $priceRange = explode('~',$price);
-
-            if (count($priceRange) == 2) {
-
-                $min_price = (double)$priceRange[0];
-                $max_price = (double)$priceRange[1];
-
-            } else {
-                $priceRange = explode('以', $price);
-                if (next($priceRange) == "上") {
-                    $min_price = (double)$priceRange[0];
-                    $max_price = 9999999999.9;
-                } else {
-                    $min_price = 0.0;
-                    $max_price = (double)$priceRange[0];
-                }
-            }
-
-            $houseList = $houseList->andWhere(['between','price',$min_price,$max_price]);
-
-        }
-
-        //页码
-        if (!isset($page) && $page != null) {
-            $page = 1;
-        }
-        $pageNum = 21;
-        //排序方式
-        $orderDes = 'release_date DESC';
-        switch ($sort) {
-            case '价格':
-                $orderDes = 'price ASC';
-                break;
-            case '面积':
-                $houseList = $houseList->andWhere(['>','area',0]);
-                $orderDes = 'area ASC';
-                break;
-            case '入住时间':
-                $orderDes = 'usable_date ASC';
-                break;
-            default:
-                break;
-
-        }
-
-        $houseList = $houseList->limit( $pageNum )
-                  ->offset( ( $page - 1 ) * $pageNum )
-                  ->orderBy($orderDes)
-                  ->asArray()
-                  ->all();
+        $houseList = $query->orderBy($sort)->asArray()->all();
         foreach ($houseList AS $index => $house) {
-            $date = $house['release_date'];
-            $houseList[$index]['release_date'] = GlobalAction::computeTime($date);
-            $houseList[$index]['images'] = House::getThumbImages($house);
-            $houseList[$index]['facilities'] = self::getFacilities($house['house_id']);
-            if ($house['traffic'] == null) {
-                $houseList[$index]['traffic'] = '';
-            }
-        }
-
-        return $houseList;
-    }
-
-    static function getHousesByKeyword($keyword) {
-
-        $houseList = House::find()->where(['sell_state' => '在架'])
-                                  ->andWhere(['or',
-                                      ['like','subways',$keyword],
-                                      ['like','district',$keyword],
-                                      ['like','village',$keyword],
-                                      ['like','address',$keyword]
-                                  ])
-                                  ->orderBy('release_date DESC')
-                                  ->asArray()
-                                  ->all();
-        foreach ($houseList AS $index => $house) {
-            $date = $house['release_date'];
-            $houseList[$index]['release_date'] = GlobalAction::computeTime($date);
-            $houseList[$index]['images'] = House::getThumbImages($house);
-            $houseList[$index]['facilities'] = self::getFacilities($house['house_id']);
-            if ($house['traffic'] == null) {
-                $houseList[$index]['traffic'] = '';
-            }
+            $houseList[$index]['date'] = explode(' ', $house['date'])[0];
+            $houseList[$index]['district'] = UtilHelper::getDistrictByCode($house['district']);
+            $imageObj = Image::find()->where(['source_id' => $house['house_id']])->asArray()->one();
+            $houseList[$index]['image'] = $imageObj == null ? "" : $imageObj['thumb_url'];
         }
         return $houseList;
     }
 
-    static function getHouseInfo($houseId,$token) {
-
-        $house = House::find()->where(['house_id' => $houseId])
-                                  ->asArray()
-                                  ->one();
-        /*
-        记录浏览量
-        */
-        $updateHouse = House::find()->where(['house_id' => $houseId])->one();
-        $today = $house['today'];
-        $updateHouse->browse_count = $house['browse_count']+1;
-        $updateHouse->today_browse_count = $house['today_browse_count']+1;
-        if ($today != date("Y-m-d")) {
-            $updateHouse->today = date("Y-m-d");
-            $updateHouse->today_browse_count = 1;
+    static function getHousesByKeyword($keyword)
+    {
+        $selCondition = [
+            'house_id',
+            'title',
+            'price',
+            'district' => 'house.district_code',
+            'address',
+            'rent_type',
+            'traffic',
+            'date' => 'house.update_time',
+            'is_benefit' => 'LENGTH(trim(benefit))>0',
+            'room_num',
+            'hall_num',
+            'room_type',
+            'kitchen_type',
+            'is_toilet_single' => "FIND_IN_SET('toilet',installation)"
+        ];
+        $houseList = House::find()->select($selCondition)
+            ->where(['status' => House::HOUSE_AVAILABLE])
+            ->where(['or',
+                ['like', 'subways', $keyword],
+                ['like', 'village', $keyword],
+                ['like', 'address', $keyword]])
+            ->orderBy('update_time DESC')
+            ->asArray()
+            ->all();
+        foreach ($houseList AS $index => $house) {
+            $houseList[$index]['date'] = explode(' ', $house['date'])[0];
+            $houseList[$index]['district'] = UtilHelper::getDistrictByCode($house['district']);
+            $imageObj = Image::find()
+                ->where(['source_id' => $house['house_id']])
+                ->one();
+            $houseList[$index]['image'] = $imageObj == null ? "" : $imageObj->thumb_url;
         }
-        $updateHouse->update();
-        if ($house['images'] == BizConsts::DEFAULT_HOUSE_IMAGE) {
-            $house["images"] = array();
+        return $houseList;
+    }
+
+    /**
+     * @param $houseId
+     * @param $token
+     * @return mixed 房源详情
+     */
+    static function getHouseInfo($houseId, $token)
+    {
+        $house = House::find()
+            ->where(['house_id' => $houseId])
+            ->one();
+
+        $houseInfo['title'] = $house->title;
+        $houseInfo['address'] = $house->address;
+        $houseInfo['district'] = UtilHelper::getDistrictByCode($house->district_code);
+        $houseInfo['price'] = $house->price . '元/月';
+        $houseInfo['rent_type'] = $house->rent_type;
+        $houseInfo['date'] = explode(' ', $house->update_time)[0];
+        $houseInfo['benefit'] = $house->benefit;
+        $houseInfo['room_num'] = $house->room_num;
+        $houseInfo['hall_num'] = $house->hall_num;
+        $houseInfo['toilet_num'] = $house->toilet_num;
+        $houseInfo['pay_mode'] = $house->pay_mode;
+        $houseInfo['village'] = $house->village;
+        $houseInfo['floor'] = $house->floor;
+        $houseInfo['max_floor'] = $house->max_floor;
+        $houseInfo['orientation'] = \Yii::$app->params['orientation'][$house->orientation];
+        $houseInfo['area'] = $house->area . 'm²';
+        $houseInfo['usable_time'] = explode(' ', $house->usable_time)[0];
+        $houseInfo['deadline_time'] = explode(' ', $house->deadline_time)[0];
+        $houseInfo['contact'] = $house->contact;
+        $houseInfo['phone'] = $house->phone;
+        $houseInfo['wx'] = $house->wx;
+        $houseInfo['qq'] = $house->qq;
+        $houseInfo['house_desc'] = $house->house_desc;
+        if (empty($token)) {
+            $houseInfo['is_follow'] = false;
         } else {
-            $house["images"] = House::handleImages($house);
+            $houseInfo['is_follow'] = HouseFollow::find()
+                ->where(['house_id' => $houseId,
+                    'user_id' => UserService::getUserIdByToken($token), 'status' => 1])
+                ->exists();
         }
-        $house["release_date"] = GlobalAction::computeTime($house['release_date']);
-        if ($token != '') {
-            $house["isCollection"] = Collection::find()->where(['house_id' => $houseId, 'token' => $token])
-                                                       ->count() > 0;
+
+        $installation = explode(",", $house->installation);
+        $facilities = array();
+        foreach ($installation AS $in) {
+            $facility = \Yii::$app->params['facilities'][$in];
+            array_push($facilities, $facility);
         }
-        $house['facilities'] = self::getFacilities($house['house_id']);
+        $houseInfo['facilities'] = $facilities;
+        $houseInfo['is_toilet_single'] = in_array('toilet', $installation);
+        $houseInfo['images'] = Image::find()->select(['url', 'middle_url'])
+            ->where(['source_id' => $houseId])
+            ->asArray()
+            ->all();
+        return $houseInfo;
+    }
+
+    static function getRestoreInfo($houseId)
+    {
+        $house = House::find()
+            ->where(['house_id' => $houseId])
+            ->asArray()
+            ->one();
+        $house['images'] = Image::find()->select(['url', 'thumb_url'])
+            ->where(['source_id' => $houseId])
+            ->asArray()
+            ->all();
         return $house;
     }
 
-    static function validData($data) {
+    static function validData($data)
+    {
 
         //错误码和错误信息
         $err_code = BizConsts::RELEASE_HOUSE_ERRCODE;
         $err_msg = BizConsts::RELEASE_HOUSE_ERRMSG;
 
-        $token = $data['token'];
-//        $village = $data['village'];
-
-        if (self::invalid($token)) {
+        if (!isset($data['token']) || !UserToken::find()->where(['token' => $data['token']])->exists()) {
             $err_code = BizConsts::UNLOGIN_ERRCODE;
             $err_msg = BizConsts::UNLOGIN_ERRMSG;
-            UtilHelper::echoExitResult($err_code,$err_msg);
+            UtilHelper::echoExitResult($err_code, $err_msg);
+        }
+        if (empty($data['images'])) {
+            UtilHelper::echoExitResult($err_code, '请上传房间图片');
+        }
+        if (empty($data['address'])) {
+            UtilHelper::echoExitResult($err_code, '请填写详细地址');
+        }
+        if (!is_numeric($data['room_num'])
+            || !is_numeric($data['hall_num'])
+            || !is_numeric($data['toilet_num'])
+        ) {
+            UtilHelper::echoExitResult($err_code, '请正确填写房间户型');
         }
 
-        $address = $data['address'];
-        //地址
-        if (self::invalid($address)) {
-            UtilHelper::echoExitResult($err_code,'请填写详细地址');
-        }
-        $style = $data['style'];
-        $area = $data['area'];
-
-        $usableDate = $data['usable_date'];
-        $deadline = $data['deadline_date'];
-        $floor = $data['floor'];
-        $max_floor = $data['max_floor'];
-        $price = $data['price'];
-        $payMode = $data['pay_mode'];
-
-        //户型
-        $room = explode('室',$style);
-        if (count($room) < 2) {
-            UtilHelper::echoExitResult($err_code,'请完善房间户型');
-        } else if (!GlobalAction::isNumber($room[0])) {
-            UtilHelper::echoExitResult($err_code,'房间户型请填入正确的数字');
+        if (empty($data['area']) || !is_numeric($data['area'])) {
+            UtilHelper::echoExitResult($err_code, '请正确填写面积');
         }
 
-        $hall = explode('厅',$room[1]);
-        if (count($hall) < 2)  {
-            UtilHelper::echoExitResult($err_code,'请完善房间户型');
-        } else if (!GlobalAction::isNumber($hall[0])) {
-            UtilHelper::echoExitResult($err_code,'房间户型请填入正确的数字');
+        if (empty($data['floor']) || !is_numeric($data['floor'])) {
+            UtilHelper::echoExitResult($err_code, '请正确填写楼层');
+        }
+        if (empty($data['max_floor']) || !is_numeric($data['max_floor'])) {
+            UtilHelper::echoExitResult($err_code, '请正确填写最高楼层');
+        }
+        if (empty($data['price']) || !is_numeric($data['price'])) {
+            UtilHelper::echoExitResult($err_code, '请正确填写价格');
+        }
+        if (empty($data['usable_date'])) {
+            UtilHelper::echoExitResult($err_code, '请选择入住日期');
+        }
+        if (empty($data['deadline_date'])) {
+            UtilHelper::echoExitResult($err_code, '请选择房间到期日期');
         }
 
-        $toilet = explode('卫',$hall[1]);
-        if (count($hall) < 2) {
-            UtilHelper::echoExitResult($err_code,'请完善房间户型');
-        } else if (!GlobalAction::isNumber($toilet[0])) {
-            UtilHelper::echoExitResult($err_code,'房间户型请填入正确的数字');
-        }
-        //楼层
-        if (self::invalid($floor)) {
-            UtilHelper::echoExitResult($err_code,'请填写您的房间所在楼层');
-        }
-        //最高楼层
-        if (self::invalid($max_floor)) {
-            UtilHelper::echoExitResult($err_code,'请填写最高楼层');
-        }
-        //面积
-        if (!self::invalid($area) && !self::areaIsValid($area)) {
-            UtilHelper::echoExitResult($err_code,'请填写正确的房间面积');
-        }
-        //价格
-        if (self::invalid($price)) {
-            UtilHelper::echoExitResult($err_code,'请填写房间租金');
-        } else if (!self::priceIsValid($price)) {
-            UtilHelper::echoExitResult($err_code,'请填写正确的房间租金');
-        }
-        //支付方式
-        if (self::invalid($payMode)) {
-            UtilHelper::echoExitResult($err_code,'请填写支付方式');
-        }
-        //可入住时间
-        if (self::invalid($usableDate)) {
-            UtilHelper::echoExitResult($err_code,'请选择可入住日期');
-        }
-        //到期时间
-        if (self::invalid($deadline)) {
-            UtilHelper::echoExitResult($err_code,'请选择房间到期日期');
+        if (empty($data['installation'])) {
+            UtilHelper::echoExitResult($err_code, '请选择房间设施');
         }
 
-        if (!isset($data['facilities'])) {
-            UtilHelper::echoExitResult($err_code,'请选择房间设施');
-        }
-        $facilities = $data['facilities'];
-
-        //房间设施
-        if (self::invalid($facilities) || empty($facilities)) {
-            UtilHelper::echoExitResult($err_code,'请选择房间设施');
-        }
-
-        //标题
-        $title = $data['title'];
-        if (self::invalid($title)) {
-            UtilHelper::echoExitResult($err_code,'请填写标题');
+        if (empty($data['title'])) {
+            UtilHelper::echoExitResult($err_code, '请填写标题');
         }
 
         $phone = $data['phone'];
@@ -294,197 +266,170 @@ class HouseService {
         $qq = $data['qq'];
 
         //电话、微信、QQ至少填一项
-        if (self::invalid($phone) && self::invalid($wx) && self::invalid($qq)) {
-            UtilHelper::echoExitResult($err_code,'手机、微信、QQ至少填一项');
+        if (empty($phone) && empty($wx) && empty($qq)) {
+            UtilHelper::echoExitResult($err_code, '手机、微信、QQ至少填一项');
         }
         //电话
-        if (!self::invalid($phone) && !UtilHelper::isPhone($phone)) {
-            UtilHelper::echoExitResult($err_code,'请填写正确的联系电话');
+        if (!UtilHelper::isPhone($phone)) {
+            UtilHelper::echoExitResult($err_code, '请填写正确的联系电话');
         }
 
     }
 
-    static function releaseHouse($data) {
+    /**
+     * @param $data 发布房源
+     */
+    static function releaseHouse($data)
+    {
         $house = new House();
-        $houseId = self::saveHouse($house,$data);
-        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG,$houseId);
+        $house->house_id = UtilHelper::getGuid();
+        $houseId = self::saveHouse($house, $data);
+        UtilHelper::echoResult(BizConsts::SUCCESS, BizConsts::SUCCESS_MSG, ['house_id' => $houseId]);
     }
 
-    static function modifyHouse($data) {
+    /**
+     * @param $data  修改房源
+     */
+    static function modifyHouse($data)
+    {
 
         $houseId = $data['house_id'];
         $house = House::find()->where(["house_id" => $houseId])->one();
-        self::saveHouse($house,$data);
-        UtilHelper::echoResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
+        self::saveHouse($house, $data);
+        UtilHelper::echoResult(BizConsts::SUCCESS, BizConsts::SUCCESS_MSG);
     }
 
-    static function saveHouse($house,$data) {
-
-        $house->rent_mode = $data['rent_mode'];
-        $house->token = $data['token'];
-        $house->village = isset($data['village']) ? $data['village'] : '未知';
+    static function saveHouse($house, $data)
+    {
+        $userId = UserToken::find()->where(['token' => $data['token']])->one()->user_id;
+        $house->user_id = $userId;
+        $house->rent_type = $data['rent_type'];
+        $house->village = isset($data['village']) ? $data['village'] : '';
+        $house->district_code = $data['district_code'];
         $house->address = $data['address'];
-        $house->district = $data['district'];
-        $house->style = $data['style'];
+        $house->room_num = $data['room_num'];
+        $house->hall_num = $data['hall_num'];
+        $house->toilet_num = $data['toilet_num'];
         $house->kitchen_type = $data['kitchen_type'];
-
-        $area = $data['area'];
-        if (isset($area) && is_numeric($area)) {
-            $house->area = $area;
-        }else{
-            $house->area = 0;
-        }
-
-        $house->usable_date = $data['usable_date'];
-        $house->deadline_date = $data['deadline_date'];
+        $house->area = $data['area'];
+        $house->usable_time = $data['usable_date'];
+        $house->deadline_time = $data['deadline_date'];
+        $house->orientation = $data['orientation'];
         $house->floor = $data['floor'];
         $house->max_floor = $data['max_floor'];
+        $house->installation = $data['installation'];
+        $house->floor = $data['floor'];
         $house->price = $data['price'];
         $house->pay_mode = $data['pay_mode'];
         $house->title = $data['title'];
-        $house->benefit = isset($data['benefit']) ? $data['benefit'] : '';
-        $house->house_desc = isset($data['house_desc']) ? $data['house_desc'] : '';
-        $house->contact = isset($data['contact']) ? $data['contact'] : '';
+        $house->contact = $data['contact'];
         $house->phone = $data['phone'];
         $house->wx = $data['wx'];
         $house->qq = $data['qq'];
-
-        $images = $data['images'];
-        $DEFAULT_HOUSE_IMAGE = 'upload/defaultHouseImage.png';
-        if (!isset($images) || $images == null || $images == '') {
-            $images = $DEFAULT_HOUSE_IMAGE;
-        }
-        $house->images = $images;
-        $thumb_images = $data['thumb_images'];
-        if (!isset($thumb_images) || $thumb_images == null || $thumb_images == '') {
-            $thumb_images = $DEFAULT_HOUSE_IMAGE;
-        }
-        $house->thumb_images = $thumb_images;
-
-        $house->orientation = $data['orientation'];
-        $house->subways = isset($data['subways']) ? $data['subways'] : "";
-        $house->traffic = isset($data['traffic']) ? $data['traffic'] : "";
-        $house->sell_state = '在架';
-        $house->release_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
+        $house->subways = $data['subways'];
+        $house->traffic = $data['traffic'];
+        $house->create_time = UtilHelper::getTimeStr('YmdHis');
+        $house->status = 1;
+        $images = explode(',', $data['images']);
+        self::updateImages($images, $house->house_id);
         $house->save();
-        $houseId = $house->attributes['house_id'];
-        self::saveFacilities($data['facilities'],$houseId);
-        return $houseId;
+        return $house->house_id;
     }
 
-    static function saveFacilities($facilities, $houseId) {
-        foreach ($facilities AS $index => $f) {
-            $facility = new Facility();
-            $facility->house_id = $houseId;
-            $facility->name = $f;
-            $facility->save();
-        }
-    }
-
-    static function getFacilities($houseId) {
-        $facilityArr = array();
-        $facilities = Facility::find()->where(['house_id' => $houseId])->all();
-        foreach ($facilities AS $index => $facility) {
-            array_push($facilityArr,$facility->name);
-        }
-        return $facilityArr;
-    }
-
-    static function stickHouse($houseId) {
-        $house = House::findOne($houseId);
-        $house->release_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
-        $house->save();
-    }
-
-    static function deleteHouse($houseId) {
-        $house = House::findOne($houseId);
-        $house->user_delete = true;
-        $house->sell_state = "已下架";
-        $house->save();
-    }
-
-    static function changeSellState($houseId,$sell) {
-        $house = House::findOne($houseId);
-        $sellStateDesc = $sell == 0 ? "已下架" : "在架";
-        $house->sell_state = $sellStateDesc;
-        if ($sell == 1) {
-            $house->release_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
-        }
-        $house->save();
-    }
-
-    static function collectionHouse($params) {
-        $token = $params['token'];
-        $houseId = $params['house_id'];
-        $count = Collection::find()->where(['house_id' => $houseId, 'token' => $token])
-                                   ->count();
-        if ($count > 0) {
-            UtilHelper::echoExitResult(BizConsts::House_Has_Collected_ERRCODE,BizConsts::House_Has_Collected_ERRMSG);
-        }
-
-        $collectionHouse = new Collection();
-        $collectionHouse->token = $token;
-        $collectionHouse->house_id = $houseId;
-        $collectionHouse->collection_date = GlobalAction::getTimeStr("Y-m-d H:i:s");
-        $collectionHouse->save();
-    }
-
-    static function cancelCollectionHouse($params)
+    static function updateImages($images, $houseId)
     {
-        $token = $params['token'];
-        $houseId = $params['house_id'];
-        $count = Collection::find()->where(['house_id' => $houseId, 'token' => $token])
-                                   ->count();
-        if ($count == 0) {
-            UtilHelper::echoExitResult(BizConsts::House_UnCollected_ERRCODE, BizConsts::House_UnCollected_ERRMSG);
+        $imgs = Image::find()->where(['in', 'url', $images])->all();
+        foreach ($imgs AS $index => $img) {
+            $img->source_id = $houseId;
+            $img->save();
         }
-        Collection::deleteAll('house_id = :house_id AND token = :token', [':house_id' => $houseId, ':token' => $token]);
+    }
 
+
+    static function stickHouse($token, $houseId)
+    {
+        $userId = UserService::getUserIdByToken($token);
+        $house = House::find()
+            ->where(['user_id' => $userId, 'house_id' => $houseId])
+            ->one();
+        $house->update_time = UtilHelper::getTimeStr('YmdHis');
+        $house->save();
+    }
+
+    static function deleteHouse($token, $houseId)
+    {
+        $userId = UserService::getUserIdByToken($token);
+        $house = House::find()
+            ->where(['user_id' => $userId, 'house_id' => $houseId])
+            ->one();
+        $house->user_delete = true;
+        $house->status = 0;
+        $house->save();
+    }
+
+    static function changeSellState($token, $houseId, $sell)
+    {
+        $userId = UserService::getUserIdByToken($token);
+        $house = House::find()
+            ->where(['user_id' => $userId, 'house_id' => $houseId])
+            ->one();
+        $house->status = $sell;
+        if ($sell) {
+            $house->update_time = UtilHelper::getTimeStr("Y-m-d H:i:s");
+        }
+        $house->save();
     }
 
     /** 举报房源
      * @param $params
      */
-    static function complainHouse($params) {
+    static function complainHouse($params)
+    {
+
         $houseId = $params['house_id'];
         $reason = $params['reason'];
-        $token = $params['token'];
         $phone = $params['phone'];
         $desc = $params['desc'];
-        if ((!isset($reason) || empty($reason)) && (!isset($desc) || empty($desc))) {
-            UtilHelper::echoExitResult(BizConsts::ABSENCE_COMPLAIN_REASON_ERRCODE,BizConsts::ABSENCE_COMPLAIN_REASON_ERRMSG);
+
+        $complain = new Complain();
+        $complain->house_id = $houseId;
+        if (isset($params['token']) && !empty($params['token'])) {
+            $userId = UserService::getUserIdByToken($params['token']);
+            if ($userId != null) {
+                $complain->user_id = $userId;
+            }
         }
-        $accusateDate = GlobalAction::getTimeStr("Y-m-d H:i:s");
-        $accusation = new Accusation();
-        $accusation->house_id = $houseId;
-        $accusation->reason = isset($reason) ? $reason : "无理由举报";
-        $accusation->token = $token;
-        $accusation->phone = $phone;
-        $accusation->desc = $desc;
-        $accusation->accusate_date = $accusateDate;
-        $accusation->save();
+        $complain->reason = $reason;
+        $complain->desc = $desc;
+        $complain->phone = $phone;
+        $complain->create_time = UtilHelper::getTimeStr("Y-m-d H:i:s");
+        $complain->save();
 
     }
 
-    static function invalid($val) {
+    static function invalid($val)
+    {
         if (isset($val) && $val != "" && $val != "NaN") {
             return false;
         }
         return true;
     }
 
-    static function priceIsValid($price) {
+    static function priceIsValid($price)
+    {
         $pattern = '/^(([1-9]{1})[0-9]*)$/';
-        return preg_match($pattern,$price);
+        return preg_match($pattern, $price);
     }
-    static function areaIsValid($area) {
+
+    static function areaIsValid($area)
+    {
         $pattern = '/^(([1-9]{1})[0-9]*)$/';
-        return preg_match($pattern,$area);
+        return preg_match($pattern, $area);
     }
-    static function styleIsValid($style) {
+
+    static function styleIsValid($style)
+    {
         $pattern = '/^[0-9]*$/';
-        return preg_match($pattern,$style);
+        return preg_match($pattern, $style);
     }
-
 }
-

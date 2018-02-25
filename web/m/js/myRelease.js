@@ -1,12 +1,23 @@
 /**
  * Created by lekuai on 17/4/5.
  */
+var token = getToken()
 $(function () {
 
-    //监听横竖屏
-    window.addEventListener("resize", function(event) {
-        updateLayout()
-    }, false);
+    initViews()
+
+    initEvents()
+
+    function initViews() {
+
+    }
+
+    function initEvents() {
+        //监听横竖屏
+        window.addEventListener("resize", function(event) {
+            updateLayout()
+        }, false);
+    }
 
     requestReleaseHouses()
 })
@@ -14,7 +25,7 @@ $(function () {
 var releaseHouses
 function requestReleaseHouses() {
 
-    request(basicUrl + 'user/release',{
+    request('/user/release-list',{
         token: getToken()
     }, function (resp) {
         releaseHouses = resp
@@ -36,29 +47,26 @@ function getReleaseHouseLi(house) {
     var li = $("<li class='clearfix'></li>")
     var basicInfo = $("<div class='basicInfo clearfix'></div>")
     li.append(basicInfo)
-    var img = $("<img alt='' class='pull-left'/>")
-    img.attr('src',basicUrl + house.images[0])
+    var img = $("<img src='"+house.image+"' alt='' class='pull-left'/>")
     basicInfo.append(img)
     var desc = $("<div class='basicInfo clearfix pull-left desc'></div>")
     basicInfo.append(desc)
     var title = house.title
-    var oTitle = $("<div class='house-title'></div>")
-    oTitle.text(title)
+    var oTitle = $("<div class='house-title'>"+house.title+"</div>")
     desc.append(oTitle)
     var address = $("<div class='address'></div>")
     address.text(house.district+"-"+house.address)
     desc.append(address)
     var price = $("<div class='price'></div>")
-    price.text('¥'+house.price)
+    price.text(house.price)
     desc.append(price)
     var date = $("<div class='date'></div>")
     desc.append(date)
-    var releaseTime = $("<span class='releaseTime'></span>")
-    releaseTime.text(house.release_date)
+    var releaseTime = $("<span class='releaseTime'>"+house.date+"</span>")
     date.append(releaseTime)
     var tag = $("<div class='tag'></div>")
     desc.append(tag)
-    if (house.sell_state == '在架') {
+    if (house.status == 1) {
         tag.text('转租中')
         tag.addClass('sell')
     } else {
@@ -72,22 +80,19 @@ function getReleaseHouseLi(house) {
     count.append(collectionNum)
     var collectionNumSpan1 = $("<span class='text-muted'>收藏</span>")
     collectionNum.append(collectionNumSpan1)
-    var collectionNumSpan2 = $("<span class='center-block'></span>")
-    collectionNumSpan2.text(house.collection_count)
+    var collectionNumSpan2 = $("<span class='center-block'>"+house.follow_num+"</span>")
     collectionNum.append(collectionNumSpan2)
     var totalBrowseNum = $("<div class='col-xs-4 totalBrowseNum text-center'></div>")
     count.append(totalBrowseNum)
     var totalBrowseNumSpan1 = $("<span class='text-muted'>浏览</span>")
     totalBrowseNum.append(totalBrowseNumSpan1)
-    var totalBrowseNumSpan2 = $("<span class='center-block'></span>")
-    totalBrowseNumSpan2.text(house.browse_count)
+    var totalBrowseNumSpan2 = $("<span class='center-block'>"+house.browse_total_num+"</span>")
     totalBrowseNum.append(totalBrowseNumSpan2)
     var todayBrowseNum = $("<div class='col-xs-4 todayBrowseNum text-center'></div>")
     count.append(todayBrowseNum)
     var todayBrowseNumSpan1 = $("<span class='text-muted'>今日浏览</span>")
     todayBrowseNum.append(todayBrowseNumSpan1)
-    var todayBrowseNumSpan2 = $("<span class='center-block'></span>")
-    todayBrowseNumSpan2.text(house.today_browse_count)
+    var todayBrowseNumSpan2 = $("<span class='center-block'>"+house.browse_today_num+"</span>")
     todayBrowseNum.append(todayBrowseNumSpan2)
 
     var actionBtns = $("<div class='clearfix actionBtns' style='margin-top: 5px'></div>")
@@ -101,24 +106,32 @@ function getReleaseHouseLi(house) {
     var editLi = $("<li><button class='btn btn-default' type='button'>编辑</button></li>")
     ul.append(editLi)
     var sellLi = $("<li><button class='btn btn-default' type='button'></button></li>")
-    if (house.sell_state == "在架") {
+    if (house.status == 1) {
         sellLi.children('button').text('下架')
     } else {
         sellLi.children('button').text('上架')
     }
     ul.append(sellLi)
 
-    stickLi.children('button').click(function () {
+    stickLi.children('button').click(function (e) {
+        e.cancelBubble = true;
+        e.stopPropagation();
         stickTop(house.house_id)
     })
-    deleteLi.children('button').click(function () {
+    deleteLi.children('button').click(function (e) {
+        e.cancelBubble = true;
+        e.stopPropagation();
         remove(house.house_id)
     })
-    editLi.children('button').click(function () {
-        location.href = 'release.html?house_id='+house.house_id
+    editLi.children('button').click(function (e) {
+        e.cancelBubble = true;
+        e.stopPropagation();
+        edit(house.house_id)
     })
-    sellLi.children('button').click(function () {
-        var sell = house.sell_state == "在架" ? 0 : 1
+    sellLi.children('button').click(function (e) {
+        e.cancelBubble = true;
+        e.stopPropagation();
+        var sell = house.status != 1
         toggleSell(house.house_id,sell)
     })
 
@@ -159,11 +172,17 @@ function updateLayout() {
 
 /*===================================*/
 //添加事件
+
+// 点击查看详情
 function addEvents() {
-    $('.releaseList>li>.basicInfo>img').click(function () {
-        var i = $(this).parents('li').index();
+    $('.releaseList>li').click(function () {
+        var i = $(this).index();
         var houseId = releaseHouses[i].house_id
-        location.href = 'detail.html?house_id=' + houseId
+        if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+            JSInteraction.toDetailPage(houseId)
+        } else {
+            location.href = 'detail.html?house_id='+houseId
+        }
     })
 }
 
@@ -173,20 +192,30 @@ function stickTop(houseId) {
         token: getToken(),
         house_id: houseId
     }
-    request(basicUrl+'house/stick',params,function (resp) {
+    request('/house/stick',params,function (resp) {
         showModel('置顶成功')
         setTimeout(function () {
             location.reload()
-        },500)
+        },800)
     })
 }
+
+//编辑
+function edit(houseId) {
+    if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+        JSInteraction.edit(houseId)
+    } else {
+        location.href = 'release.html?house_id='+houseId
+    }
+}
+
 //删除
 function remove(houseId) {
     var params = {
         token: getToken(),
         house_id: houseId
     }
-    request(basicUrl+'house/delete',params,function (resp) {
+    request('/house/delete',params,function (resp) {
         showModel('删除成功')
         setTimeout(function () {
             location.reload()
@@ -199,13 +228,13 @@ function toggleSell(houseId,sell) {
     var params = {
         token: getToken(),
         house_id: houseId,
-        sell: sell
+        sell: sell ? 1 : 0
     }
-    request(basicUrl+'house/change-sell-state',params,function (resp) {
-        if (sell==0) {
-            showModel('下架成功')
-        } else {
+    request('/house/change-sell-state',params,function (resp) {
+        if (sell) {
             showModel('上架成功')
+        } else {
+            showModel('下架成功')
         }
 
         setTimeout(function () {

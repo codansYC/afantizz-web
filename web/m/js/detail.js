@@ -3,7 +3,7 @@
  */
 var house
 
-var isCollection = false // true->已收藏; false->未收藏
+var isFollow = false // true->已收藏; false->未收藏
 var imgW = 0
 var imgH = 0
 var carousel
@@ -17,8 +17,18 @@ var isMove = false
 var imageCount = 3
 $(function () {
 
-    setCarousel()
+
+    initViews()
+    initEvents()
     requestHouseInfo()
+
+    function initViews() {
+
+    }
+
+    function initEvents() {
+        setCarousel()
+    }
 
 })
 
@@ -131,7 +141,7 @@ function moveTo(index) {
 
 //请求房源详情
 function requestHouseInfo() {
-    var houseId = parseInt(getParams("house_id"));
+    var houseId = getParams("house_id");
     var token = getParams("token")
     if (token == null) {
         token = getToken()
@@ -140,7 +150,7 @@ function requestHouseInfo() {
         token: token,
         house_id: houseId
     }
-    request('house/detail',params,function (resp) {
+    request('/house/info',params,function (resp) {
         house = resp;
         showHouseInfo();
     })
@@ -149,7 +159,7 @@ function requestHouseInfo() {
 //原图
 var originImages = new Array();
 //缩略图
-var thumbImages = new Array();
+var middleImages = new Array();
 
 //显示房源信息
 function showHouseInfo() {
@@ -158,8 +168,8 @@ function showHouseInfo() {
     var images = house.images
     for (var i = 0; i < images.length; i++) {
         var image = images[i];
-        originImages[i] = image.origin_url
-        thumbImages[i] = image.thumb_url;
+        originImages[i] = image.url
+        middleImages[i] = image.middle_url
     }
 
     //幻灯片
@@ -171,68 +181,64 @@ function showHouseInfo() {
     $('.titleInfo .house-title').text(title)
     $('.titleInfo .address .district').text(house.district + " -")
     $('.titleInfo .address .detail').text(house.address)
-    $('.releaseDate .date').text(house.release_date)
+    $('.releaseDate .date').text(house.date)
     /*标签*/
     var tags = $('.tags')
     //出租方式
-    var rentMode = $("<span class='rent-mode'></span>")
-    rentMode.text(house.rent_mode)
+    var rentMode = $("<span class='rent-mode'>"+rentTypeDesc(house.rent_type)+"</span>")
     tags.append(rentMode)
-    //房间结构(几室几厅)
-    if (house.style != null || house.style != '') {
-        var mainStyle = house.style.split('厅')[0] + '厅'
-        var oStyle = $("<span class='mainStyle'></span>");
-        oStyle.text(mainStyle)
-        tags.append(oStyle)
+    var style = house.room_num+'室'+house.hall_num+'厅'
+    if (house.toilet_num > 0) {
+        style += (house.toilet_num+'卫')
     }
+    var oStyle = $("<span class='mainStyle'>"+style+"</span>");
+    tags.append(oStyle)
 
     //主卧或次卧
-    if (house.rent_mode == '合租') {
-        var secondStyle = house.style.slice(-2)
-        var oStyle = $("<span class='secondStyle'></span>");
-        oStyle.text(secondStyle)
-        tags.append(oStyle)
+    if (house.rent_type == 1) {
+        var oStyle1 = $("<span class='secondStyle'>"+roomTypeDesc(house.room_type)+"</span>");
+        tags.append(oStyle1)
     }
     //独立卫生间
-    if (house.facilities.indexOf('独立卫生间') > -1) {
-        var oToilet = $("<span class='toilet'></span>");
-        oToilet.text('独卫')
+    if (house.is_toilet_single) {
+        var oToilet = $("<span class='toilet'>独卫</span>");
         tags.append(oToilet)
     }
     //转租优惠
     if (house.benefit != "" && house.benefit != null) {
-        var benefit = $("<span class='benefit'></span>")
-        benefit.text('转租优惠')
+        var benefit = $("<span class='benefit'>转租优惠</span>")
         tags.append(benefit)
     }
-
     //是否收藏
-    if (house.isCollection) {
+    if (house.is_follow) {
         $('.collection .glyphicon').addClass('glyphicon-star')
         $('.collection span:last-child').text('已收藏')
     } else {
         $('.collection .glyphicon').addClass('glyphicon-star-empty')
         $('.collection span:last-child').text('收藏')
     }
+    //记录收藏状态
+    isFollow = house.is_follow
+
 
     // 房间概况
     var generalList = new Array()
     var oPrice = $("<div class='col-xs-6 price'>" +
         "<span class='key'>租金:</span>" +
-        "<span class='value'></span>" +
+        "<span class='value'>"+house.price+"</span>" +
         "</div>")
     generalList.push(oPrice);
 
     var oPayMode = $("<div class='col-xs-6 pay-mode'>" +
         "<span class='key'>付款:</span>" +
-        "<span class='value'></span>" +
+        "<span class='value'>"+house.pay_mode+"</span>" +
         "</div>")
     generalList.push(oPayMode);
 
     if (house.village != null && house.village != '') {
         var oVillage = $("<div class='col-xs-6 village'>" +
             "<span class='key'>小区:</span>" +
-            "<span class='value'></span>" +
+            "<span class='value'>"+house.village+"</span>" +
             "</div>")
         generalList.push(oVillage);
     }
@@ -240,34 +246,34 @@ function showHouseInfo() {
     if (house.floor != null && house.floor != '') {
         var oFloor = $("<div class='col-xs-6 floor'>" +
             "<span class='key'>楼层:</span>" +
-            "<span class='value'></span>" +
+            "<span class='value'>"+house.floor+"/"+house.max_floor+"</span>" +
             "</div>")
         generalList.push(oFloor);
     }
     var oOrientation = $("<div class='col-xs-6 orientation'>" +
         "<span class='key'>朝向:</span>" +
-        "<span class='value'></span>" +
+        "<span class='value'>"+house.orientation+"</span>" +
         "</div>")
     generalList.push(oOrientation);
 
     if (house.area > 0) {
         var oArea = $("<div class='col-xs-6 area'>" +
             "<span class='key'>面积:</span>" +
-            "<span class='value'></span>" +
+            "<span class='value'>"+house.area+"</span>" +
             "</div>")
         generalList.push(oArea);
     }
 
     var oUsableDate = $("<div class='col-xs-6 usableDate'>" +
         "<span class='key'>入住:</span>" +
-        "<span class='value'></span>" +
+        "<span class='value'>"+house.usable_time+"</span>" +
         "</div>")
     generalList.push(oUsableDate);
 
-    if (house.deadline_date != null && house.deadline_date != '') {
+    if (house.deadline_time != null && house.deadline_time != '') {
         var oDeadline = $("<div class='col-xs-6 deadline'>" +
             "<span class='key'>到期:</span>" +
-            "<span class='value'></span>" +
+            "<span class='value'>"+house.deadline_time+"</span>" +
             "</div>")
         generalList.push(oDeadline);
     }
@@ -282,25 +288,6 @@ function showHouseInfo() {
             oRow.append(generalList[i*2+1])
         }
     }
-
-    var price = house.price+"元/月"
-    if (house.price == '' || house.price == null) {
-        price = '面议';
-    }
-    $('.general .price .value').text(price)
-    $('.general .pay-mode .value').text(house.pay_mode)
-    $('.general .village .value').text(house.village)
-    var floorDesc = house.floor
-    if (house.max_floor == null || house.max_floor == '') {
-        floorDesc = house.floor + '楼';
-    } else {
-        floorDesc = house.floor+'/'+house.max_floor
-    }
-    $('.general .floor .value').text(floorDesc)
-    $('.general .orientation .value').text(house.orientation)
-    $('.general .area .value').text(house.area+'㎡')
-    $('.general .usableDate .value').text(house.usable_date)
-    $('.general .deadline .value').text(house.deadline_date)
 
     //联系人
     $('.contact-accusation .name').text(house.contact)
@@ -337,15 +324,15 @@ function showHouseInfo() {
 
     //房间配套
     var facilities = house.facilities
-    var facilityLis = $('.facilities>ul>li')
-    facilityLis.each(function () {
-        var name = $(this).children('p').text();
-        if (facilities.indexOf(name) >= 0) {
-            $(this).css('display','block')
-        } else {
-            $(this).css('display','none')
-        }
-    })
+    var facilityUl = $('.facilities>ul')
+    for (var i = 0; i < facilities.length; i++) {
+        var f = facilities[i]
+        var oLi = $("<li>" +
+            "<img class='facility-image' src='"+f.image+"' alt=''>" +
+            "<p class='text-center'>"+f.title+"</p>" +
+            "</li>")
+        facilityUl.append(oLi)
+    }
 
     //转租优惠
     if (house.benefit == null || house.benefit == '') {
@@ -387,28 +374,37 @@ function showHouseInfo() {
         }
     })
 
-
-    //记录收藏状态
-    isCollection = house.isCollection
+    if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+        JSInteraction.getHouseTitle(house.title)
+    }
 
 }
 
 //收藏
 function collectionRequest() {
     //判断是否登录
-    if (getToken() == null || getToken() == '') {
-
+    var token
+    if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+        var app_token = JSInteraction.getAppToken()
+        if (app_token == "") {
+            return
+        }
+        token = app_token
+    } else if (getToken() == null || getToken() == '') {
         location.href = 'login.html'
         return
+    } else {
+        token = getToken()
     }
+
     var houseId = parseInt(getParams("house_id"));
     var params = {
-        token: getToken(),
+        token: token,
         house_id: houseId
     }
-    var url = isCollection ? basicUrl+'house/cancel-collection' : basicUrl+'house/collection'
+    var url = isFollow ? '/user/cancel-follow' : '/user/follow'
     request(url,params,function (resp) {
-        if (isCollection) {
+        if (isFollow) {
             showModel('取消收藏成功')
             $('.collection .glyphicon').removeClass('glyphicon-star')
             $('.collection .glyphicon').addClass('glyphicon-star-empty')
@@ -419,20 +415,24 @@ function collectionRequest() {
             $('.collection .glyphicon').addClass('glyphicon-star')
             $('.collection span:last-child').text('已收藏')
         }
-        isCollection = !isCollection
+        isFollow = !isFollow
     })
 
 }
 
 //举报
 function accusate() {
-    location.href = "/m/complain.html?house_id="+house.house_id
+    if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+        JSInteraction.turnToComplainPage()
+    } else {
+        location.href = "complain.html?house_id="+house.house_id
+    }
 }
 
 //处理小图幻灯片
 function handleSmallImageCarousel() {
     //幻灯片
-    var images = thumbImages
+    var images = middleImages
     imgList.children().remove()
     imageCount = images.length
     imgList.width(imgW*imageCount)
@@ -444,7 +444,7 @@ function handleSmallImageCarousel() {
         var li = $("<li class='pull-left'></li>")
         imgList.append(li)
         var oImg = $("<img alt=''>")
-        oImg.attr('src',imageUrl+img)
+        oImg.attr('src',img)
         li.append(oImg)
         oImg.click(function () {
             var bigCarousel = $('.bigCarousel')
@@ -475,12 +475,40 @@ function handleBigImageCarousel() {
         var li = $("<li class='pull-left'></li>")
         bigImgList.append(li)
         var oImg = $("<img alt=''>")
-        oImg.attr('src', imageUrl + img)
+        oImg.attr('src', img)
         li.append(oImg)
         oImg.click(function () {
             bigCarousel.addClass('hidden')
         })
         oImg.width(imgW)
+    }
+}
+
+function rentTypeDesc(rentType) {
+    switch (rentType) {
+        case 1:
+            return '合租'
+        case 2:
+            return '整租'
+        case 3:
+            return '公寓'
+        default:
+            return ''
+    }
+}
+
+function roomTypeDesc(roomType) {
+    switch (roomType) {
+        case 1:
+            return '主卧'
+        case 2:
+            return '次卧'
+        case 3:
+            return '隔断'
+        case 4:
+            return '床位'
+        default:
+            return ''
     }
 }
 

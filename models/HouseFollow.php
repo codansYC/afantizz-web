@@ -2,17 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: lekuai
- * Date: 2017/6/15
- * Time: 下午6:59
+ * Date: 2018/1/26
+ * Time: 上午10:19
  */
 
 namespace app\models;
 
+
 use yii\db\ActiveRecord;
 
-class Image extends ActiveRecord {
+class HouseFollow extends ActiveRecord
+{
+    const HAS_FOLLOWED = true;
     public static function tableName()
     {
-        return 'image';
+        return 'house_follow';
     }
+
 }

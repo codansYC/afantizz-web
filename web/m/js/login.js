@@ -81,7 +81,7 @@ $(function () {
             captcha: code,
             platform: 'm'
         }
-        $.post(basicUrl+'login/login', params, function (response, status) {
+        $.post(basicUrl+'/login/login', params, function (response, status) {
             if (status != 'success') {
                 showModel('操作失败,请稍后重试')
                 return
@@ -157,7 +157,7 @@ $(function () {
         var params = {
             phone: phoneField.val()
         }
-        request('login/captcha',params,function (resp) {
+        request('/login/captcha',params,function (resp) {
 
         })
     }

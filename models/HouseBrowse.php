@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: lekuai
- * Date: 2017/6/18
- * Time: 下午3:37
+ * Date: 2018/1/24
+ * Time: 下午11:28
  */
 
 namespace app\models;
@@ -11,11 +11,11 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Accusation extends ActiveRecord
+class HouseBrowse extends ActiveRecord
 {
+
     public static function tableName()
     {
-        return 'accusation';
+        return 'house_browse';
     }
-
 }

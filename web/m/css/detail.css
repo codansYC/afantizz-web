@@ -132,7 +132,7 @@ body{
 
 /*房间概况*/
 .general {
-   font-size: 13px;
+    font-size: 13px;
 }
 .general .row{
     height: 25px;
@@ -157,7 +157,6 @@ body{
     /*margin-right: 5px;*/
     margin-bottom: 10px;
     width: 25%;
-    display: none;
 }
 .facilities ul li .okSign {
     font-size: 11px;

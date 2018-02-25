@@ -2,6 +2,8 @@
  * Created by lekuai on 2017/5/2.
  */
 
+const rentModes = ['合租','整租','公寓']
+const roomTypes = ['主卧','次卧','隔断','床位']
 $(function () {
     // $("#cancelBtn").click(function () {
     //     history.go('index.html')
@@ -12,8 +14,8 @@ $(function () {
     })
 
     function requestByKeyword(kw) {
-        request(basicUrl+'house/search',{
-            search_keyword: kw
+        request('/house/search',{
+            keyword: kw
         },function (resp) {
             showHouseList(resp)
         })
@@ -29,7 +31,7 @@ $(function () {
             var mainInfo = $("<div class='mainInfo clearfix'></div>")
             li.append(mainInfo)
             var img = $("<img class='pull-left'/>")
-            img.attr("src", imageUrl + house.images[0])
+            img.attr("src", house.image)
             var desc = $("<div class='pull-left desc'></div>")
             mainInfo.append(img, desc)
             /*标题*/
@@ -56,33 +58,29 @@ $(function () {
             address.text(addressDesc)
             var rentMode = $("<div class='rent-mode'></div>")
             var rentModeDesc = $("<span class='rent-mode-span'></span>")
-            rentModeDesc.text(house.rent_mode)
+            rentModeDesc.text(rentModes[house.rent_type-1])
             rentMode.append(rentModeDesc)
             addressAndRentMode.append(rentMode)
             var tags = $("<div class='tags'></div>")
             desc.append(tags)
             //房间结构(几室几厅)
-            if (house.style != null || house.style != '') {
-                var mainStyle = house.style.split('厅')[0] + '厅'
-                var oStyle = $("<span class='mainStyle'></span>");
-                oStyle.text(mainStyle)
-                tags.append(oStyle)
-            }
+            var oStyle1 = $("<span class='mainStyle'></span>");
+            oStyle1.text(house.room_num+'室'+house.hall_num+'厅')
+            tags.append(oStyle1)
             //主卧或次卧
-            if (house.rent_mode == '合租') {
-                var secondStyle = house.style.slice(-2)
-                var oStyle = $("<span class='secondStyle'></span>");
-                oStyle.text(secondStyle)
-                tags.append(oStyle)
+            if (house.rent_type == 1 && house.room_type != 0) {
+                var oStyle2 = $("<span class='secondStyle'></span>");
+                oStyle2.text(roomTypes[house.room_type-1])
+                tags.append(oStyle2)
             }
             //独立卫生间
-            if (house.facilities.indexOf('独立卫生间') > -1) {
+            if (house.is_toilet_single != 0) {
                 var oToilet = $("<span class='toilet'></span>");
                 oToilet.text('独卫')
                 tags.append(oToilet)
             }
             //转租优惠
-            if (house.benefit != "" && house.benefit != null) {
+            if (house.is_benefit != 0) {
                 var benefit = $("<span class='benefit'></span>")
                 benefit.text('转租优惠')
                 tags.append(benefit)
@@ -91,7 +89,7 @@ $(function () {
             desc.append(priceAndDate)
             //发布时间
             var releaseTime = $("<span class='releaseTime pull-right'></span>")
-            releaseTime.text(house.release_date)
+            releaseTime.text(house.date)
             priceAndDate.append(releaseTime)
             //价格
             var price = $("<div class='price'></div>")
@@ -136,7 +134,7 @@ $(function () {
         //点击cell查看房源详情
         $('.houseList>li').click(function () {
             var houseId = houses[$(this).index()].house_id
-            location.href = 'm/detail.html?house_id=' + houseId
+            location.href = 'detail.html?house_id=' + houseId
         })
     }
 
