@@ -1,12 +1,19 @@
 /**
  * Created by lekuai on 17/4/5.
  */
+
+var token = getToken()
 $(function () {
 
+    if (getParams('token') != null) {
+        token = getParams('token')
+    }
     //监听横竖屏
     window.addEventListener("resize", function(event) {
         updateLayout()
     }, false);
+
+    $('.collectionList').css('margin-top','0px')
 
     requestCollectionHouses()
 
@@ -17,8 +24,8 @@ $(function () {
 var collectionHouses
 function requestCollectionHouses() {
 
-    request(basicUrl + 'user/collection',{
-        token: getToken()
+    request('/user/follow-list',{
+        token: token
     }, function (resp) {
         collectionHouses = resp
         showCollectionHouses()
@@ -37,25 +44,20 @@ function showCollectionHouses() {
 }
 function getCollectionHouseLi(house) {
     var li = $("<li class='clearfix'></li>")
-    var img = $("<img alt='' class='pull-left'/>")
-    img.attr('src',basicUrl + house.images[0])
+    var img = $("<img src='"+house.image+"' alt='' class='pull-left'/>")
     li.append(img)
     var desc = $("<div class='pull-left desc'></div>")
     li.append(desc)
-    var title = "转租芦恒路三室一厅主卧"
-    var oTitle = $("<div class='house-title'></div>")
-    oTitle.text(title)
+    var oTitle = $("<div class='house-title'>"+house.title+"</div>")
     desc.append(oTitle)
     var address = $("<div class='address'></div>")
     address.text(house.district+"-"+house.address)
     desc.append(address)
-    var price = $("<div class='price'></div>")
-    price.text(house.price+'元/月')
+    var price = $("<div class='price'>"+house.price+"</div>")
     desc.append(price)
     var date = $("<div class='date'></div>")
     desc.append(date)
-    var releaseTime = $("<span class='releaseTime'></span>")
-    releaseTime.text(house.release_date)
+    var releaseTime = $("<span class='releaseTime'>"+house.date+"</span>")
     date.append(releaseTime)
 
     var collection = $("<div class='collection'><a href='javascript:'>" +
@@ -100,13 +102,17 @@ function updateLayout() {
 /*===================================*/
 //添加事件
 function addEvents() {
-    $('.collectionList>li>img').click(function () {
-        var i = $(this).parents('li').index();
+    $('.collectionList>li').click(function () {
+        var i = $(this).index();
         var houseId = collectionHouses[i].house_id
-        location.href = 'detail.html?house_id=' + houseId
+        if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+            JSInteraction.toDetailPage(houseId)
+        }
     })
 
-    $('.collection>a').click(function () {
+    $('.collection>a').click(function (e) {
+        e.cancelBubble = true;
+        e.stopPropagation();
         var i = $(this).parents('li').index()
         var houseId = collectionHouses[i].house_id
         cancelCollection(houseId)
@@ -117,13 +123,13 @@ function addEvents() {
 function cancelCollection(houseId) {
 
     var params = {
-        token: getToken(),
+        token: token,
         house_id: houseId
     }
-    request(basicUrl+'house/cancel-collection',params,function (resp) {
+    request('user/cancel-follow',params,function (resp) {
         showModel('取消收藏成功',function () {
             location.reload()
-        },500)
+        },800)
 
     })
 }

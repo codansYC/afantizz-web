@@ -13,7 +13,7 @@ $(function () {
     })
     $('#myCollection').click(function () {
         if (isLogin()) {
-            location.href = 'myCollection.html'
+            location.href = 'myFollow.html'
         } else {
             location.href = 'login.html'
         }
