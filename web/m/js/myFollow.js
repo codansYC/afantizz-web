@@ -13,7 +13,6 @@ $(function () {
         updateLayout()
     }, false);
 
-    $('.collectionList').css('margin-top','0px')
 
     requestCollectionHouses()
 
@@ -107,6 +106,8 @@ function addEvents() {
         var houseId = collectionHouses[i].house_id
         if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
             JSInteraction.toDetailPage(houseId)
+        } else {
+            location.href = 'detail.html?house_id='+houseId
         }
     })
 
@@ -126,7 +127,7 @@ function cancelCollection(houseId) {
         token: token,
         house_id: houseId
     }
-    request('user/cancel-follow',params,function (resp) {
+    request('/user/cancel-follow',params,function (resp) {
         showModel('取消收藏成功',function () {
             location.reload()
         },800)

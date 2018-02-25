@@ -1,51 +1,58 @@
 /**
  * Created by lekuai on 17/4/1.
  */
+var url_token = null
+var isModify = false
 $(function () {
 
     //先判断是否有房源id传过来,如果有,即为编辑,否则为新发布
+    initViews()
+    initEvents()
+    initData()
+    addMoveEventForImgUl()
     restoreHouseIfModify();
 
-    $(".facility .checkBox").click(function () {
-        if ($(this).find("i").hasClass("check")) {
-            $(this).find("i").removeClass("check");
-        } else {
-            $(this).find("i").addClass("check");
-        }
-    });
+    function initViews() {
 
-    //
-    $("#rentMode").change(function () {
-        var rentMode = $(this).children('option:selected').text()
-        $('#kitchen-type option').removeProp('selected')
-        if (rentMode == '合租') {
-            $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','block')
-            $('#kitchen-type option').eq(0).prop('selected','selected');
-        } else {
-            $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','none')
-            $('#kitchen-type option').eq(1).prop('selected','selected');
-        }
-        adjustTitle()
-    })
-
-    /*标题*/
-    //监测区域、出租方式改变
-    $('#district,#jointRentStyle').change(function () {
-        adjustTitle()
-    })
-    //监测户型、地址改变
-    $('#detailAddress,.hall,.room').bind('input propertychange',function () {
-        adjustTitle()
-    })
-
-
-    //判断url中是否带有token
-    var url_token = getParams('token')
-    if (!isLogin()) {
-        location.href = 'login.html'
     }
 
-    addMoveEventForImgUl()
+    function initEvents() {
+        $(".facility .checkBox").click(function () {
+            if ($(this).find("i").hasClass("check")) {
+                $(this).find("i").removeClass("check");
+            } else {
+                $(this).find("i").addClass("check");
+            }
+        });
+
+        //
+        $("#rentMode").change(function () {
+            var rentMode = $(this).children('option:selected').val()
+            $('#kitchen-type option').removeProp('selected')
+            if (rentMode == '1') {
+                $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','block')
+                $('#kitchen-type option').eq(0).prop('selected','selected');
+            } else {
+                $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','none')
+                $('#kitchen-type option').eq(1).prop('selected','selected');
+            }
+            adjustTitle()
+        })
+
+        /*标题*/
+        //监测区域、出租方式改变
+        $('#district,#jointRentStyle').change(function () {
+            adjustTitle()
+        })
+        //监测户型、地址改变
+        $('#detailAddress,.hall,.room').bind('input propertychange',function () {
+            adjustTitle()
+        })
+    }
+
+    function initData() {
+        url_token = getParams('token')
+    }
 
 })
 
@@ -85,35 +92,38 @@ function adjustTitle() {
 //先判断是否有房源id传过来,如果有,即为编辑,否则为新发布
 function restoreHouseIfModify() {
     //房源id
-    var houseId = parseInt(getParams("house_id"));
-    if (isNaN(houseId) || houseId == 'undefined') {
+    var houseId = getParams("house_id");
+    if (houseId === null || houseId.length == 0) {
+        isModify = false
         return
     }
+    isModify = true
     //根据houseId获取房源详情
     requestHouseDetail(houseId);
 }
 function requestHouseDetail(houseId) {
     var token = url_token
-    if (url_token == null || url_token == "") {
+    if (token === null || token.length == 0) {
         token = getToken()
     }
     var params = {
         house_id: houseId,
         token: token
     }
-    request(basicUrl+'house/detail',params,function (resp) {
+    request('house/restore',params,function (resp) {
         var house = resp;
-        loadHouseDetailInfo(house);
+        loadHouseInfo(house);
     })
 }
-function loadHouseDetailInfo(house) {
+function loadHouseInfo(house) {
+
     //图片
     var images = house.images
     var originImages = new Array()
     var thumbImages = new Array()
     for (var i = 0; i < images.length; i++) {
         var image = images[i];
-        originImages.push(image.origin_url)
+        originImages.push(image.url)
         thumbImages.push(image.thumb_url)
     }
 
@@ -121,40 +131,39 @@ function loadHouseDetailInfo(house) {
         var img = thumbImages[i]
         previewImage(img)
     }
-    preUploadOriginImages = originImages.reverse()
-    preUploadThumbImages = thumbImages.reverse()
+    preUploadImages = originImages.reverse()
     //小区
     $(".village input").val(house.village)
     //区域
-    $("#district option").removeProp('selected')
+    $("#district option:selected").removeProp('selected')
     $("#district option").each(function () {
-        if ($(this).text() == house.district) {
+        if ($(this).val() == house.district_code) {
             $(this).prop('selected','selected');
         }
     })
     //地址
     $("#detailAddress").val(house.address);
     //出租方式
-    $("#rentMode option").removeProp('selected')
+    $("#rentMode option:selected").removeProp('selected')
     $("#rentMode option").each(function () {
-        if ($(this).text() == house.rent_mode) {
+        if ($(this).val() == house.rent_type) {
             $(this).prop('selected','selected');
         }
     })
     //户型
-    var roomSplit = house.style.split('室')
-    $(".styleDesc .room").val(roomSplit[0])
-    var hallSplit = roomSplit[1].split('厅')
-    $(".styleDesc .hall").val(hallSplit[0])
-    var toiletSplit = hallSplit[1].split('卫')
-    $(".styleDesc .toilet").val(toiletSplit[0])
+    $(".styleDesc .room").val(house.room_num)
+    $(".styleDesc .hall").val(house.hall_num)
+    $(".styleDesc .toilet").val(house.toilet_num)
     $('#kitchen-type option').removeAttr('selected')
-    if (house.rent_mode == '合租') {
+    $('#kitchen-type option').each(function () {
+        if ($(this).val() == house.kitchen_type) {
+            $(this).prop('selected','selected');
+        }
+    })
+    if (house.rent_type == 1) {
         $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','block')
-        $('#kitchen-type option').eq(0).prop('selected','selected');
     } else {
         $(".jointRentStyle li:last-child,.jointRentStyle .lineInner").css('display','none')
-        $('#kitchen-type option').eq(1).prop('selected','selected');
     }
     //面积
     $("#areaInput").val(house.area);
@@ -163,9 +172,9 @@ function loadHouseDetailInfo(house) {
     //最高楼层
     var max_floor = $(".max_floor").val(house.max_floor);
     //朝向
-    $("#orientation option").removeProp('selected')
+    $("#orientation option:selected").removeProp('selected')
     $("#orientation option").each(function () {
-        if ($(this).text() == house.orientation) {
+        if ($(this).val() == house.orientation) {
             $(this).prop('selected','selected')
         }
     })
@@ -179,13 +188,13 @@ function loadHouseDetailInfo(house) {
         }
     })
     //可入住日期
-    $(".usableDate").val(house.usable_date);
+    $(".usableDate").val(house.usable_time.split(' ')[0]);
     //到期日期
-    $(".deadline").val(house.deadline_date);
+    $(".deadline").val(house.deadline_time.split(' ')[0]);
     //设施
-    var facilities = house.facilities
+    var facilities = house.installation
     $(".facility .checkBox i").each(function () {
-        if (facilities.indexOf($(this).next("label").text())>-1) {
+        if (facilities.indexOf($(this).next("label").data('fid'))>-1) {
             $(this).addClass('check')
         }
     })
@@ -206,12 +215,13 @@ function loadHouseDetailInfo(house) {
 $(function () {
     //图片上传
     $("#file_input").change(function () {
+
         var file = $("#file_input")[0].files[0]
         var data = new FormData();
-        data.append('file0', file)
+        data.append('file', file)
         var img
         $.ajax({
-            url: basicUrl + 'upload/upload',
+            url: imageUrl + 'upload/image',
             type: 'POST',
             data: data,
             cache: false,
@@ -230,17 +240,17 @@ $(function () {
                     img.parents('li.uploadImgLi').remove()
                     return
                 }
-                var image = resp.data[0];
-                img.attr('src',basicUrl+image.thumb_url)
+                var imageUrl = resp.data.url;
+                img.attr('src',imageUrl)
                 img.click(function () {
                     // lookBigImg(basicUrl+image.origin_url)
                 })
                 // previewImage(basicUrl+data)
                 //保存上传成功的图片
-                preUploadOriginImages.splice(0,0,image.origin_url)
-                preUploadThumbImages.splice(0,0,image.thumb_url)
+                preUploadImages.splice(0,0,imageUrl)
             },
             error: function (resp) {
+                console.log(resp)
                 showModel('上传图片失败',function () {
                     img.parents('li.uploadImgLi').remove()
                 })
@@ -254,16 +264,15 @@ $(function () {
 /*上传图片*/
 
 //保存准备上传的原图
-var preUploadOriginImages = new Array();
+var preUploadImages = new Array();
 //保存准备上传的缩略图
-var preUploadThumbImages = new Array();
 //选中图片时预览
 function previewImage(file) {
     var imgUl = $("#img-container");
     var cameraLi = $("li.camera")
     var img = $("<img alt=''/>")
     if (file) {
-        img.attr('src',imageUrl+file)
+        img.attr('src',file)
         img.click(function () {
             // lookBigImg(basicUrl+file)
         })
@@ -288,8 +297,7 @@ function previewImage(file) {
             })
             for (var index = 0; index < uploadDoneIndexArr.length; index++) {
                 if (uploadDoneIndexArr[index] == li.index()) {
-                    preUploadOriginImages.splice(index,1);
-                    preUploadThumbImages.splice(index,1);
+                    preUploadImages.splice(index,1);
                     break
                 }
             }
@@ -370,9 +378,17 @@ function addMoveEventForImgUl() {
 
 //发布房源
 function sureRelease() {
+    //检查移动端是否有与js交互相关的对象传过来
+
+    if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+        JSInteraction.showLoadingWhileReleasing()
+    }
     var address = $("#detailAddress").val();
     if (address == '') {
         showModel('请输入详细地址')
+        if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+            JSInteraction.removeLoadingReleaseDone()
+        }
         return
     }
     searchSubway(address,function (subways,traffics) {
@@ -384,18 +400,18 @@ function release(subways,traffics) {
     //地址
     var address = $("#detailAddress").val();
     //出租方式
-    var rentMode = $("#rentMode option:selected").text();
+    var rentType = $("#rentMode option:selected").val();
     //小区名字
     var village = $(".village input").val();
     //区域
-    var district = $("#district option:selected").text();
+    var district = $("#district option:selected").val();
     //户型
-    var style = $(".styleDesc .room").val() + "室" + $(".styleDesc .hall").val() + "厅" + $(".styleDesc .toilet").val() + "卫";
-    if (rentMode == "合租") {
-        style += $("#jointRentStyle option:selected").text();
-    }
+    var roomNum = $(".styleDesc .room").val()
+    var hallNum = $(".styleDesc .hall").val()
+    var toiletNum = $(".styleDesc .toilet").val()
+    var roomType = $("#jointRentStyle option:selected").val()
     //厨房
-    var kitchenType = $('#kitchen-type option:selected').index()+1
+    var kitchenType = $('#kitchen-type option:selected').val()
     //面积
     var area = $("#areaInput").val();
     //可入住日期
@@ -403,7 +419,7 @@ function release(subways,traffics) {
     //到期日期
     var deadline = $(".deadline").val();
     //朝向
-    var orientation = $("#orientation option:selected").text();
+    var orientation = $("#orientation option:selected").val();
     //楼层
     var floor = $(".floor").val();
     //最高楼层
@@ -411,35 +427,25 @@ function release(subways,traffics) {
     //设施
     var facilities = new Array();
     $(".facility .checkBox i.check").each(function () {
-        facilities.push($(this).next("label").text())
+        facilities.push($(this).next("label").data('fid'))
     })
+    var facilitiesStr = facilities.join(',')
     //租金
     var price = $("#priceInput").val();
     //支付方式
-    var selectPayMode = $("#pay-mode option:selected").text();
-    var payMode = selectPayMode != "其他" ? selectPayMode : $(".other-mode-input").val();
+    var payMode = $("#pay-mode option:selected").text();
     //发布标题
     var title = $('.titleArea').val()
     //转租优惠
     var benefit = $(".benefit textarea").val();
-    if (!benefit) {
-        benefit = ''
-    }
     //房源描述
     var houseDesc = $(".extra-desc textarea").val();
-    if (!houseDesc) {
-        houseDesc = ''
-    }
     //图片
-    var images = preUploadOriginImages.reverse().join(";");
-    //缩略图
-    var thumbImages = preUploadThumbImages.reverse().join(";");
+    var images = preUploadImages.join(',')
     //联系人
     var contact = $(".contact").val();
     //电话
     var phone = $(".phone").val();
-    //验证码
-    var code = '0000';
     //微信号
     var wx = $(".wx").val();
     //QQ号
@@ -449,24 +455,32 @@ function release(subways,traffics) {
     //附近交通
     var traffic = traffics
     //房源id
-    var houseId = parseInt(getParams("house_id"));
+    var houseId = getParams("house_id");
+    // token
+    var token = url_token
+    if (url_token == null || url_token == "") {
+        token = getToken()
+    }
     //所有参数
     var params = {
-            token: getToken(),
+            token: token,
             house_id: houseId,
-            rent_mode: rentMode,
+            rent_type: rentType,
             village: village,
-            district: district,
+            district_code: district,
             address: address,
-            style: style,
+            room_num: roomNum,
+            hall_num: hallNum,
+            toilet_num: toiletNum,
             kitchen_type: kitchenType,
+            room_type: roomType,
             area: area,
             usable_date: usableDate,
             deadline_date: deadline,
             orientation: orientation,
             floor: floor,
             max_floor: max_floor,
-            facilities: facilities,
+            installation: facilitiesStr,
             price: price,
             pay_mode: payMode,
             title: title,
@@ -474,22 +488,44 @@ function release(subways,traffics) {
             house_desc: houseDesc,
             contact: contact,
             phone: phone,
-            code: code,
             wx: wx,
             qq: qq,
             subways:subway,
             traffic: traffic,
             images:images,
-            thumb_images: thumbImages
+            platform: 'js'
         }
-    var url = getParams("house_id") == null ? basicUrl + "house/release" : basicUrl + "house/modify";
-    request(url, params, function (resp) {
+    var url = isModify ? basicUrl + "house/modify" : basicUrl + "house/release" ;
+    $.post(url, params, function (response, status) {
+        if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
+            JSInteraction.removeLoadingReleaseDone()
+        }
+        if (status != 'success') {
+            showModel('操作失败,请稍后重试')
+            return
+        }
+        var resp = $.parseJSON(response);
+        if (resp.err_code != 0) {
+            showModel(resp.err_msg)
+            return
+        }
         showModel('发布成功',function () {
-            location.href = pro ? "http://afantizz.com" : "http://localhost:8000"
+            location.reload()
+            var params = (decodeURIComponent(location.href).split("?")[1]).split("&")
+            var destUrl = getMainPath()
+            for (var i = 0; i < params.length; i++) {
+                var param = params[i]
+                if (param.indexOf("house_id") < 0) {
+                    if (destUrl.indexOf("?") < 0) {
+                        destUrl += ("?" + param)
+                    } else {
+                        destUrl += ("&" + param)
+                    }
+                }
+            }
+            location.href = destUrl
         },1000)
-
-    })
-
+    });
 }
 
 

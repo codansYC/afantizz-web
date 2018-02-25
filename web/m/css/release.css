@@ -87,7 +87,7 @@ button{
 .imgBg li.camera .localUpload{
     width: 100%;
     height: 100%;
-    background: url("http://afantizz.com/images/camera.png");
+    background: url("/images/camera.png");
     background-repeat: no-repeat;
     background-position: 10px 15px;
     background-size: 50px 39px;
@@ -116,7 +116,7 @@ button{
 }
 .imgBg li.uploadImgLi{
     position: relative;
-    background: url("http://afantizz.com/images/upimg_loading.gif");
+    background: url("/images/upimg_loading.gif");
     background-size: 70px 70px;
     background-repeat: no-repeat;
 }
@@ -179,7 +179,7 @@ input.room,input.hall,input.toilet{
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-image: url("http://afantizz.com/images/icons.png");
+    background-image: url("/images/icons.png");
     background-position: -32px 0px;
 }
 .facility .checkBox i.check{

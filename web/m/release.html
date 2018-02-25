@@ -7,13 +7,14 @@
     <link rel="Shortcut Icon" href="/images/logo.png"/>
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cbaec5d29d4bc79098e74433bc52cdb5"></script>
-    <script src="/common/jquery-3.1.1.min.js"></script>
+    <script src="../common/jquery-3.1.1.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/release.css">
+    <script src="../common/exif.js"></script>
     <script src="js/common.js"></script>
     <script src="js/layout.js"></script>
     <script src="js/release.js"></script>
@@ -21,10 +22,6 @@
 </head>
 <body>
 <div class="container">
-    <div class="header bg-primary equalScreenWidth">
-        <div class="serviceCity">上海</div>
-        <div class="text-center title">发布房源</div>
-    </div>
     <div class="releaseBg">
         <div class="content">
             <ul class="list-unstyled">
@@ -56,24 +53,23 @@
                             <li class="clearfix">
                                 <span class="glyphicon glyphicon-menu-right pull-right inputHeight" style="display: inline-block"></span>
                                 <select name="district" id="district" class="pull-right inputHeight">
-                                    <option value="pudong">浦东新区</option>
-                                    <option value="xuhui">徐汇区</option>
-                                    <option value="huangpu">黄浦区</option>
-                                    <option value="jingan">静安区</option>
-                                    <option value="minhang">闵行区</option>
-                                    <option value="baoshan">宝山区</option>
-                                    <option value="putuo">普陀区</option>
-                                    <option value="yangpu">杨浦区</option>
-                                    <option value="changning">长宁区</option>
-                                    <option value="songjiang">松江区</option>
-                                    <option value="jiading">嘉定区</option>
-                                    <option value="jiabei">闸北区</option>
-                                    <option value="hongkou">虹口区</option>
-                                    <option value="qingpu">青浦区</option>
-                                    <option value="fengxian">奉贤区</option>
-                                    <option value="jingshan">金山区</option>
-                                    <option value="congming">崇明区</option>
-                                    <option value="shanghaizhoubian">上海周边</option>
+                                    <option value="310101">黄浦区</option>
+                                    <option value="310104">徐汇区</option>
+                                    <option value="310105">长宁区</option>
+                                    <option value="310106">静安区</option>
+                                    <option value="310107">普陀区</option>
+                                    <option value="310108">闸北区</option>
+                                    <option value="310109">虹口区</option>
+                                    <option value="310110">杨浦区</option>
+                                    <option value="310112">闵行区</option>
+                                    <option value="310113">宝山区</option>
+                                    <option value="310114">嘉定区</option>
+                                    <option value="310115">浦东新区</option>
+                                    <option value="310116">金山区</option>
+                                    <option value="310117">松江区</option>
+                                    <option value="310118">青浦区</option>
+                                    <option value="310120">奉贤区</option>
+                                    <option value="310130">崇明区</option>
                                 </select>
                             </li>
                             <div class="lineInner"></div>
@@ -91,9 +87,9 @@
                             <div class="layout-dynamic">
                                 <span class="glyphicon glyphicon-menu-right pull-right inputHeight" style="display: inline-block"></span>
                                 <select name="rentMode" id="rentMode" class="inputHeight pull-right">
-                                    <option value="hezu">合租</option>
-                                    <option value="zhengzu">整租</option>
-                                    <option value="gongyu">公寓</option>
+                                    <option value="1">合租</option>
+                                    <option value="2">整租</option>
+                                    <option value="3">公寓</option>
                                 </select>
                             </div>
                         </li>
@@ -104,9 +100,9 @@
                                 <li class="clearfix">
                                     <span class="glyphicon glyphicon-menu-right pull-right inputHeight" style="display: inline-block"></span>
                                     <select name="kitchen-type" id="kitchen-type" class="inputHeight pull-right">
-                                        <option value="common">公共厨房</option>
-                                        <option value="private">独立厨房</option>
-                                        <option value="absence">无厨房</option>
+                                        <option value="1">公共厨房</option>
+                                        <option value="2">独立厨房</option>
+                                        <option value="0">无厨房</option>
                                     </select>
                                     <div class="pull-right">
                                         <input type="number" class="inputHeight toilet"><span>卫</span>
@@ -122,10 +118,10 @@
                                 <li class="clearfix">
                                     <span class="glyphicon glyphicon-menu-right pull-right inputHeight" style="display: inline-block"></span>
                                     <select name="jointRentStyle" id="jointRentStyle" class="inputHeight pull-right">
-                                        <option value="zhuwo">主卧</option>
-                                        <option value="ciwo">次卧</option>
-                                        <option value="geduan">隔断</option>
-                                        <option value="chuangwei">床位</option>
+                                        <option value="1">主卧</option>
+                                        <option value="2">次卧</option>
+                                        <option value="3">隔断</option>
+                                        <option value="4">床位</option>
                                     </select>
                                 </li>
                             </ul>
@@ -157,15 +153,15 @@
                             <div class="layout-dynamic">
                                 <span class="glyphicon glyphicon-menu-right pull-right inputHeight" style="display: inline-block"></span>
                                 <select name="" id="orientation" class="inputHeight pull-right">
-                                    <option value="chaodong">朝东</option>
-                                    <option value="chaonan">朝南</option>
-                                    <option value="chaoxi">朝西</option>
-                                    <option value="chaobei">朝北</option>
-                                    <option value="dongbei">东北朝向</option>
-                                    <option value="dongnan">东南朝向</option>
-                                    <option value="xinan">西南朝向</option>
-                                    <option value="xibei">西北朝向</option>
-                                    <option value="weizhi">未知朝向</option>
+                                    <option value="1">朝东</option>
+                                    <option value="2">朝南</option>
+                                    <option value="3">朝西</option>
+                                    <option value="4">朝北</option>
+                                    <option value="5">东南朝向</option>
+                                    <option value="6">东北朝向</option>
+                                    <option value="7">西南朝向</option>
+                                    <option value="8">西北朝向</option>
+                                    <option value="0">未知朝向</option>
                                 </select>
                             </div>
                         </li>
@@ -187,13 +183,19 @@
                             <div class="layout-dynamic">
                                 <span class="glyphicon glyphicon-menu-right pull-right inputHeight" style="display: inline-block"></span>
                                 <select id="pay-mode" name="pay-mode" class="inputHeight pull-right">
-                                    <option value="yayifuyi">押一付一</option>
-                                    <option value="yayifuer">押一付二</option>
-                                    <option value="yayifusan">押一付三</option>
-                                    <option value="yaerfuyi">押二付一</option>
-                                    <option value="yaerfuer">押二付二</option>
-                                    <option value="yaerfusan">押二付三</option>
-                                    <option value="kemaintan">可面谈</option>
+                                    <option value="0">免押金</option>
+                                    <option value="1">押一付一</option>
+                                    <option value="2">押一付二</option>
+                                    <option value="3">押一付三</option>
+                                    <option value="4">押二付一</option>
+                                    <option value="5">押二付二</option>
+                                    <option value="6">押二付三</option>
+                                    <option value="7">押三付一</option>
+                                    <option value="8">押三付二</option>
+                                    <option value="9">押三付三</option>
+                                    <option value="10">半年付</option>
+                                    <option value="11">年付</option>
+                                    <option value="12">可面谈</option>
                                 </select>
                             </div>
                         </li>
@@ -223,43 +225,43 @@
                     <div class="lineInner"></div>
                     <div class="facility clearfix">
                         <div class="checkBox">
-                            <i></i><label>床</label>
+                            <i></i><label data-fid="bed">床</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>衣柜</label>
+                            <i></i><label data-fid="wardrobe">衣柜</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>沙发</label>
+                            <i></i><label data-fid="sofa">沙发</label>
                         </div>
                         <div class="checkBox">
-                        <i></i><label>电视</label>
+                        <i></i><label data-fid="tv">电视</label>
                     </div>
                         <div class="checkBox">
-                            <i></i><label>冰箱</label>
+                            <i></i><label data-fid="fridge">冰箱</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>洗衣机</label>
+                            <i></i><label data-fid="washer">洗衣机</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>空调</label>
+                            <i></i><label data-fid="air-conditioning">空调</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>热水器</label>
+                            <i></i><label data-fid="water-heater">热水器</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>宽带</label>
+                            <i></i><label data-fid="wifi">宽带</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>暖气</label>
+                            <i></i><label data-fid="heating-installation">暖气</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>可做饭</label>
+                            <i></i><label data-fid="kitchen">可做饭</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>阳台</label>
+                            <i></i><label data-fid="balcony">阳台</label>
                         </div>
                         <div class="checkBox">
-                            <i></i><label>独立卫生间</label>
+                            <i></i><label data-fid="toilet">独立卫生间</label>
                         </div>
                         <!--<div class="select_all pull-right"><span>全选</span></div>-->
                     </div>
@@ -317,29 +319,6 @@
         </div>
         <div class="sureRelease">
             <button class="btn-success btn-block" onclick="sureRelease()">发布</button>
-        </div>
-    </div>
-    <!--footer-->
-    <div class="footer navbar-fixed-bottom clearfix">
-        <div class="row">
-            <div class="text-center col-xs-4">
-                <a id="main" href="http://afantizz.com" class="text-muted">
-                    <span class="glyphicon glyphicon-home" aria-readonly="true"></span>
-                    <span class="center-block title">首页</span>
-                </a>
-            </div>
-            <div class="text-center col-xs-4">
-                <a id="release" href="release.html" class="active">
-                    <span class="glyphicon glyphicon-edit" aria-readonly="true"></span>
-                    <span class="center-block title">发布</span>
-                </a>
-            </div>
-            <div class="text-center col-xs-4">
-                <a id="mine" href="mine.html" class="text-muted">
-                    <span class="glyphicon glyphicon-user" aria-readonly="true"></span>
-                    <span class="center-block title">我的</span>
-                </a>
-            </div>
         </div>
     </div>
 </div>
