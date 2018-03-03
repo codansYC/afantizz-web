@@ -221,7 +221,7 @@ $(function () {
         data.append('file', file)
         var img
         $.ajax({
-            url: imageUrl + 'upload/image',
+            url: imageUrl + '/upload/image',
             type: 'POST',
             data: data,
             cache: false,
@@ -495,7 +495,7 @@ function release(subways,traffics) {
             images:images,
             platform: 'js'
         }
-    var url = isModify ? basicUrl + "house/modify" : basicUrl + "house/release" ;
+    var url = isModify ? basicUrl + "/house/modify" : basicUrl + "/house/release" ;
     $.post(url, params, function (response, status) {
         if (typeof(JSInteraction) != "undefined" && JSInteraction != null) {
             JSInteraction.removeLoadingReleaseDone()
