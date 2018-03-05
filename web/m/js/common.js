@@ -2,7 +2,7 @@
  * Created by lekuai on 17/2/2.
  */
 
-var dev = true;
+var dev = false;
 var debug = false;
 var cityCode = "021" //城市编码,目前只服务上海
 var basicUrl = dev ? "http://dev.afantizz.com" : debug ? "http://test.afantizz.com" : "http://www.afantizz.com"

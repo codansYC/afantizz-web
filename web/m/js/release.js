@@ -52,6 +52,9 @@ $(function () {
 
     function initData() {
         url_token = getParams('token')
+        if (!isLogin()) {
+            location.href = 'login.html'
+        }
     }
 
 })
@@ -110,7 +113,7 @@ function requestHouseDetail(houseId) {
         house_id: houseId,
         token: token
     }
-    request('house/restore',params,function (resp) {
+    request('/house/restore',params,function (resp) {
         var house = resp;
         loadHouseInfo(house);
     })
@@ -203,7 +206,7 @@ function loadHouseInfo(house) {
     //转租优惠
     $(".benefit textarea").val(house.benefit);
     //房源描述
-    $(".extra-desc textarea").val(house.house_desc);
+    $("textarea.descArea").val(house.house_desc);
     //联系人
     $(".contact").val(house.contact);
     //电话

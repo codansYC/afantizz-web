@@ -15,6 +15,7 @@ use app\models\House;
 use app\models\Accusation;
 use app\models\HouseFollow;
 use app\models\Image;
+use app\models\UserToken;
 use app\utils\GlobalAction;
 use app\utils\BizConsts;
 use app\utils\UtilHelper;
@@ -328,6 +329,12 @@ class HouseService
         $house->qq = $data['qq'];
         $house->subways = $data['subways'];
         $house->traffic = $data['traffic'];
+        if (isset($data['benefit'])) {
+            $house->benefit = $data['benefit'];
+        }
+        if (isset($data['house_desc'])) {
+            $house->house_desc = $data['house_desc'];
+        }
         $house->create_time = UtilHelper::getTimeStr('YmdHis');
         $house->status = 1;
         $images = explode(',', $data['images']);
