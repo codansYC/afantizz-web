@@ -442,7 +442,7 @@ function release(subways,traffics) {
     //转租优惠
     var benefit = $(".benefit textarea").val();
     //房源描述
-    var houseDesc = $(".extra-desc textarea").val();
+    var houseDesc = $("textarea.extra-desc").val();
     //图片
     var images = preUploadImages.join(',')
     //联系人
