@@ -271,7 +271,7 @@ class HouseService
             UtilHelper::echoExitResult($err_code, '手机、微信、QQ至少填一项');
         }
         //电话
-        if (!UtilHelper::isPhone($phone)) {
+        if (!empty($phone) && !UtilHelper::isPhone($phone)) {
             UtilHelper::echoExitResult($err_code, '请填写正确的联系电话');
         }
 
