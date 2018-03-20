@@ -7,7 +7,7 @@ var cellW = 300
 $(function () {
 
     //记录用户访问
-    record()
+    // record()
 
     var isLogin = getToken() != "" && getToken() != null;
 
