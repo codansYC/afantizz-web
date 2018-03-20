@@ -61,55 +61,55 @@ return [
     'facilities' => [
         'bed' => [
             'title' => '床',
-            'image' => 'http://testimg.afantizz.com/facility/bed.png'
+            'image' => 'http://img.afantizz.com/facility/bed.png'
         ],
         'wardrobe' => [
             'title' => '衣柜',
-            'image' => 'http://testimg.afantizz.com/facility/wardrobe.png'
+            'image' => 'http://img.afantizz.com/facility/wardrobe.png'
         ],
         'sofa' => [
             'title' => '沙发',
-            'image' => 'http://testimg.afantizz.com/facility/sofa.png'
+            'image' => 'http://img.afantizz.com/facility/sofa.png'
         ],
         'tv' => [
             'title' => '电视',
-            'image' => 'http://testimg.afantizz.com/facility/tv.png'
+            'image' => 'http://img.afantizz.com/facility/tv.png'
         ],
         'fridge' => [
             'title' => '冰箱',
-            'image' => 'http://testimg.afantizz.com/facility/fridge.png'
+            'image' => 'http://img.afantizz.com/facility/fridge.png'
         ],
         'washer' => [
             'title' => '洗衣机',
-            'image' => 'http://testimg.afantizz.com/facility/washer.png'
+            'image' => 'http://img.afantizz.com/facility/washer.png'
         ],
         'air-conditioning' => [
             'title' => '空调',
-            'image' => 'http://testimg.afantizz.com/facility/airconditioning.png'
+            'image' => 'http://img.afantizz.com/facility/airconditioning.png'
         ],
         'water-heater' => [
             'title' => '热水器',
-            'image' => 'http://testimg.afantizz.com/facility/shower.png'
+            'image' => 'http://img.afantizz.com/facility/shower.png'
         ],
         'wifi' => [
             'title' => '宽带',
-            'image' => 'http://testimg.afantizz.com/facility/wifi.png'
+            'image' => 'http://img.afantizz.com/facility/wifi.png'
         ],
         'heating-installation' => [
             'title' => '暖气',
-            'image' => 'http://testimg.afantizz.com/facility/heating.png'
+            'image' => 'http://img.afantizz.com/facility/heating.png'
         ],
         'kitchen' => [
             'title' => '可做饭',
-            'image' => 'http://testimg.afantizz.com/facility/kitchen.png'
+            'image' => 'http://img.afantizz.com/facility/kitchen.png'
         ],
         'balcony' => [
             'title' => '阳台',
-            'image' => 'http://testimg.afantizz.com/facility/balcony.png'
+            'image' => 'http://img.afantizz.com/facility/balcony.png'
         ],
         'toilet' => [
             'title' => '独立卫生间',
-            'image' => 'http://testimg.afantizz.com/facility/toilet.png'
+            'image' => 'http://img.afantizz.com/facility/toilet.png'
         ]
     ]
 ];
