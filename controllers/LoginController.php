@@ -19,9 +19,11 @@ class LoginController extends BaseController{
  */
     public function actionCaptcha(){
         try{
+            echo "+++++++";
             if (! isset ( $this->requestParam ['phone'] ) || empty ( $this->requestParam ['phone'] )) {
                 UtilHelper::echoExitResult(BizConsts::PARAM_INVALID_ERRCODE, BizConsts::PARAM_INVALID_ERRMSG );
             }
+            echo "-------";
             $phone = $this->requestParam['phone'];
             if(!UtilHelper::isPhone($phone)){
                 UtilHelper::echoExitResult(BizConsts::INVALID_PHONE_ERRCODE,BizConsts::INVALID_PHONE_ERRMSG);
