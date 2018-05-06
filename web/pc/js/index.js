@@ -172,7 +172,7 @@ $(function () {
             $(".gio_subway a.selected").removeClass("selected");
             $(this).addClass("selected");
             subway = $(this).text()
-            if (subway === '') {
+            if (subway === '' || subway === '不限') {
                 subway = null
             }
             reloadWithNewItems()
