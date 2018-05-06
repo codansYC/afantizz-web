@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/web/pc/js/index.js" afterPath="$PROJECT_DIR$/web/pc/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/web/pc/css/index.css" afterPath="$PROJECT_DIR$/web/pc/css/index.css" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="150" column="42" lean-forward="true" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
+            <state relative-caret-position="71">
+              <caret line="80" column="22" lean-forward="false" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
               <folding>
                 <element signature="e#500#1368#0" expanded="false" />
                 <element signature="e#2158#3641#0" expanded="false" />
@@ -118,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="184" column="1" lean-forward="false" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,7 +170,6 @@
         <option value="$PROJECT_DIR$/web/m/js/netWorker.js" />
         <option value="$PROJECT_DIR$/web/m/js/m_myRelease.js" />
         <option value="$PROJECT_DIR$/web/pc/js/common.js" />
-        <option value="$PROJECT_DIR$/web/pc/css/index.css" />
         <option value="$PROJECT_DIR$/models/House.php" />
         <option value="$PROJECT_DIR$/models/Image.php" />
         <option value="$PROJECT_DIR$/config/db.php" />
@@ -205,6 +204,7 @@
         <option value="$PROJECT_DIR$/config/params.php" />
         <option value="$PROJECT_DIR$/web/pc/index.html" />
         <option value="$PROJECT_DIR$/web/pc/js/index.js" />
+        <option value="$PROJECT_DIR$/web/pc/css/index.css" />
       </list>
     </option>
   </component>
@@ -338,6 +338,13 @@
               <item name="afantizz-web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pc" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="afantizz-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="afantizz-web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="afantizz-web" type="b2602c69:ProjectViewProjectNode" />
@@ -570,7 +577,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="756656000" />
+    <option name="totallyTimeSpent" value="756912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="151" y="30" width="1280" height="709" extended-state="0" />
@@ -979,14 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="184" column="1" lean-forward="false" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/m/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1540">
@@ -1058,8 +1057,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="150" column="42" lean-forward="true" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
+        <state relative-caret-position="71">
+          <caret line="80" column="22" lean-forward="false" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
           <folding>
             <element signature="e#500#1368#0" expanded="false" />
             <element signature="e#2158#3641#0" expanded="false" />
@@ -1073,6 +1072,14 @@
             <marker date="1525596176176" expanded="true" signature="10405:10439" ph="..." />
             <marker date="1525596176176" expanded="true" signature="11506:11541" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
