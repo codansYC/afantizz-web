@@ -56,15 +56,15 @@ $(function () {
         }
         for (var i=0; i<thumbImages.length; i++) {
             var bigImg = $('<img/>');
-            bigImg.attr('src',imageUrl+thumbImages[i]);
+            bigImg.attr('src',thumbImages[i]);
             var bigLi = $('<li></li>').append(bigImg);
             bigImgUl.append(bigLi);
             var smallImg = $('<img/>');
-            smallImg.attr('src',imageUrl+thumbImages[i]);
+            smallImg.attr('src',thumbImages[i]);
             var smallLi = $('<li></li>').append(smallImg);
             smallImgUl.append(smallLi);
             var originImg = $('<img/>');
-            originImg.attr('src',imageUrl+originImages[i]);
+            originImg.attr('src',originImages[i]);
             originImgBg.append(originImg);
         }
         //租金
@@ -112,7 +112,7 @@ $(function () {
             }
         }
         //朝向
-        $('.orientation').text(house.orientation)
+        $('.orientation').text(house.orientation+'朝向')
         //入住
         $('.usable-date-desc').text(house.usable_time)
         //到期
