@@ -410,7 +410,7 @@ $(function () {
     }
 
     function getBasicSplitUrl() {
-        var url = basicUrl.replace('/','')
+        var url = basicUrl
         //地址不为空
         if (districtCode != null) {
             url = url + '?district=' + districtCode
