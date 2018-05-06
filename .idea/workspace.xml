@@ -4,8 +4,6 @@
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/web/m/js/common.js" afterPath="$PROJECT_DIR$/web/m/js/common.js" />
       <change beforePath="$PROJECT_DIR$/web/pc/js/common.js" afterPath="$PROJECT_DIR$/web/pc/js/common.js" />
-      <change beforePath="$PROJECT_DIR$/web/pc/js/detail.js" afterPath="$PROJECT_DIR$/web/pc/js/detail.js" />
-      <change beforePath="$PROJECT_DIR$/web/pc/js/index.js" afterPath="$PROJECT_DIR$/web/pc/js/index.js" />
     </list>
     <ignored path="afantizz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="detail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+            <state relative-caret-position="71">
+              <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -90,15 +88,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="299" column="19" lean-forward="true" selection-start-line="299" selection-start-column="19" selection-end-line="299" selection-end-column="19" />
+            <state relative-caret-position="264">
+              <caret line="290" column="5" lean-forward="false" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
               <folding>
                 <element signature="n#!!block;n#showLoginInfo#0" expanded="false" />
                 <element signature="n#!!block;n#showFooter#0" expanded="false" />
                 <element signature="n#!!block;n#showAccusationList#0" expanded="false" />
+                <marker date="1525599732189" expanded="true" signature="1977:1993" ph="..." />
+                <marker date="1525599732189" expanded="true" signature="3524:3589" ph="..." />
+                <marker date="1525599732189" expanded="true" signature="3649:3712" ph="..." />
+                <marker date="1525599732189" expanded="true" signature="3787:3838" ph="..." />
+                <marker date="1525599732189" expanded="true" signature="3899:3962" ph="..." />
+                <marker date="1525599732189" expanded="true" signature="4042:4093" ph="..." />
+                <marker date="1525599732189" expanded="true" signature="4157:4220" ph="..." />
               </folding>
             </state>
           </provider>
@@ -108,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="283">
-              <caret line="273" column="5" lean-forward="true" selection-start-line="270" selection-start-column="4" selection-end-line="273" selection-end-column="5" />
+              <caret line="273" column="5" lean-forward="true" selection-start-line="271" selection-start-column="4" selection-end-line="273" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -221,10 +226,10 @@
         <option value="$PROJECT_DIR$/config/params.php" />
         <option value="$PROJECT_DIR$/web/pc/index.html" />
         <option value="$PROJECT_DIR$/web/pc/css/index.css" />
-        <option value="$PROJECT_DIR$/web/m/js/common.js" />
-        <option value="$PROJECT_DIR$/web/pc/js/common.js" />
         <option value="$PROJECT_DIR$/web/pc/js/index.js" />
         <option value="$PROJECT_DIR$/web/pc/js/detail.js" />
+        <option value="$PROJECT_DIR$/web/m/js/common.js" />
+        <option value="$PROJECT_DIR$/web/pc/js/common.js" />
       </list>
     </option>
   </component>
@@ -602,7 +607,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="758276000" />
+    <option name="totallyTimeSpent" value="758519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="118" y="23" width="1280" height="709" extended-state="0" />
@@ -1060,26 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="273" column="5" lean-forward="true" selection-start-line="270" selection-start-column="4" selection-end-line="273" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="299" column="19" lean-forward="true" selection-start-line="299" selection-start-column="19" selection-end-line="299" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!block;n#showLoginInfo#0" expanded="false" />
-            <element signature="n#!!block;n#showFooter#0" expanded="false" />
-            <element signature="n#!!block;n#showAccusationList#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1102,9 +1087,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        <state relative-caret-position="71">
+          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/m/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="273" column="5" lean-forward="true" selection-start-line="271" selection-start-column="4" selection-end-line="273" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pc/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="290" column="5" lean-forward="false" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!block;n#showLoginInfo#0" expanded="false" />
+            <element signature="n#!!block;n#showFooter#0" expanded="false" />
+            <element signature="n#!!block;n#showAccusationList#0" expanded="false" />
+            <marker date="1525599732189" expanded="true" signature="1977:1993" ph="..." />
+            <marker date="1525599732189" expanded="true" signature="3524:3589" ph="..." />
+            <marker date="1525599732189" expanded="true" signature="3649:3712" ph="..." />
+            <marker date="1525599732189" expanded="true" signature="3787:3838" ph="..." />
+            <marker date="1525599732189" expanded="true" signature="3899:3962" ph="..." />
+            <marker date="1525599732189" expanded="true" signature="4042:4093" ph="..." />
+            <marker date="1525599732189" expanded="true" signature="4157:4220" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

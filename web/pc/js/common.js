@@ -286,7 +286,7 @@ function accusate(houseId,reason) {
 
 function request(url,params,respBlock) {
     var requestUrl = url
-    if (!requestUrl.index('http://')) {
+    if (requestUrl.indexOf('http://') < 0) {
         requestUrl = basicUrl + url
     }
     $.post(requestUrl, params, function (response, status) {
