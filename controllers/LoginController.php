@@ -35,6 +35,8 @@ class LoginController extends BaseController{
 //                UtilHelper::echoExitResult(BizConsts::SUCCESS,BizConsts::SUCCESS_MSG);
 //                return;
 //            }
+            echo 0000;
+            echo "=====";
             $captcha = CaptchaService::createCaptchaWithPhone($phone);
 
             /*这里有点问题  改为下面存数据库的方式
