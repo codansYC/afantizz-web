@@ -201,7 +201,7 @@ function captchaRequest() {
     var params = {
         phone: $("#login_phone_tf").val()
     }
-    $.post(basicUrl + 'login/captcha', params, function (response, status) {
+    $.post('/login/captcha', params, function (response, status) {
         resetImageCode()
         if (status != 'success') {
             showModel('操作失败,请稍后重试')
@@ -224,7 +224,7 @@ function loginRequest() {
         captcha: $("#login_code_tf").val(),
         platform: 'pc'
     }
-    $.post(basicUrl + 'login/login', params, function (response, status) {
+    $.post('/login/login', params, function (response, status) {
         resetImageCode()
         if (status != 'success') {
             showModel('操作失败,请稍后重试')
