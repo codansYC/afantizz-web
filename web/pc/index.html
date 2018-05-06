@@ -54,25 +54,24 @@
             <dt>区域：</dt>
             <dd>
                 <div class="option-list">
-                    <a href="#" class="">不限</a>
-                    <a href="#" class="">浦东</a>
-                    <a href="#" class="">闵行</a>
-                    <a href="#" class="">宝山</a>
-                    <a href="#" class="">徐汇</a>
-                    <a href="#" class="">普陀</a>
-                    <a href="#" class="">杨浦</a>
-                    <a href="#" class="">长宁</a>
-                    <a href="#" class="">松江</a>
-                    <a href="#" class="">嘉定</a>
-                    <a href="#" class="">黄浦</a>
-                    <a href="#" class="">静安</a>
-                    <a href="#" class="">闸北</a>
-                    <a href="#" class="">虹口</a>
-                    <a href="#" class="">青浦</a>
-                    <a href="#" class="">奉贤</a>
-                    <a href="#" class="">金山</a>
-                    <a href="#" class="">崇明</a>
-                    <a href="#" class="">上海周边</a>
+                    <a data-code="" class="selected">不限</a>
+                    <a data-code="310115">浦东</a>
+                    <a data-code="310112">闵行</a>
+                    <a data-code="310113">宝山</a>
+                    <a data-code="310104">徐汇</a>
+                    <a data-code="310107">普陀</a>
+                    <a data-code="310110">杨浦</a>
+                    <a data-code="310105">长宁</a>
+                    <a data-code="310117">松江</a>
+                    <a data-code="310114">嘉定</a>
+                    <a data-code="310101">黄埔</a>
+                    <a data-code="310106">静安</a>
+                    <a data-code="310108">闸北</a>
+                    <a data-code="310109">虹口</a>
+                    <a data-code="310118">青浦</a>
+                    <a data-code="310120">奉贤</a>
+                    <a data-code="310116">金山</a>
+                    <a data-code="310130">崇明</a>
                 </div>
             </dd>
         </dl>
@@ -80,7 +79,7 @@
             <dt>地铁：</dt>
             <dd>
                 <div class="option-list">
-                    <a href="#" class="">不限</a>
+                    <a href="#" class="selected">不限</a>
                     <a href="#" class="">1号线</a>
                     <a href="#" class="">2号线</a>
                     <a href="#" class="">3号线</a>
@@ -106,18 +105,19 @@
             <dt>价格：</dt>
             <dd>
                 <div class="option-list">
-                    <a href="#" class="">不限</a>
-                    <a href="#" class="">1000以下</a>
-                    <a href="#" class="">1000~1500</a>
-                    <a href="#" class="">1500~2000</a>
-                    <a href="#" class="">2000~2500</a>
-                    <a href="#" class="">2500~3000</a>
-                    <a href="#" class="">3000~4000</a>
-                    <a href="#" class="">4000~5000</a>
-                    <a href="#" class="">5000以上</a>
+                    <a href="#" data-min-price="" data-max-price="" class="selected">不限</a>
+                    <a href="#" data-min-price="0" data-max-price="1000">1000以下</a>
+                    <a href="#" data-min-price="1000" data-max-price="1500">1000~1500</a>
+                    <a href="#" data-min-price="1500" data-max-price="2000">1500~2000</a>
+                    <a href="#" data-min-price="2000" data-max-price="2500">2000~2500</a>
+                    <a href="#" data-min-price="2500" data-max-price="3000">2500~3000</a>
+                    <a href="#" data-min-price="3000" data-max-price="4000">3000~4000</a>
+                    <a href="#" data-min-price="4000" data-max-price="5000">4000~5000</a>
+                    <a href="#" data-min-price="5000" data-max-price="">5000以上</a>
                 </div>
             </dd>
         </dl>
+        <!--
         <dl class="dl-lst gio_houselayout">
             <dt>房型：</dt>
             <dd>
@@ -130,14 +130,15 @@
                 </div>
             </dd>
         </dl>
+        -->
         <dl class="dl-lst gio_mode">
             <dt>方式：</dt>
             <dd>
                 <div class="option-list">
-                    <a href="#" class="">不限</a>
-                    <a href="#" class="">整租</a>
-                    <a href="#" class="">合租</a>
-                    <a href="#" class="">公寓</a>
+                    <a href="#" data-type="" class="selected">不限</a>
+                    <a href="#" data-type="1">合租</a>
+                    <a href="#" data-type="2">整租</a>
+                    <a href="#" data-type="3">公寓</a>
                 </div>
             </dd>
         </dl>
@@ -151,16 +152,16 @@
         <div class="sort">
             <ul id="sort-menu">
                 <li>
-                    <a href="javascript:" class="">最新</a>
+                    <a href="javascript:" data-type="0" class="selected">最新</a>
                 </li>
                 <li>
-                    <a href="javascript:">面积</a>
+                    <a href="javascript:" data-type="1">面积</a>
                 </li>
                 <li>
-                    <a href="javascript:">价格</a>
+                    <a href="javascript:" data-type="2">价格</a>
                 </li>
                 <li>
-                    <a href="javascript:">入住时间</a>
+                    <a href="javascript:" data-type="3">入住时间</a>
                 </li>
             </ul>
         </div>

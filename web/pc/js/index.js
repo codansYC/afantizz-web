@@ -2,102 +2,249 @@
  * Created by lekuai on 16/12/18.
  */
 
+var houses = new Array()
 var page = 1
+// 请求参数
+var districtCode = null
+var minPrice = null
+var maxPrice = null
+var rentType = null
+var subway = null
+var sortType = null
+
 var cellW = 300
 const rentModes = ['合租','整租','公寓']
 const roomTypes = ['主卧','次卧','隔断','床位']
 $(function () {
 
-    //记录用户访问
-    // record()
-
     var isLogin = getToken() != "" && getToken() != null;
 
-    //根据登录态显示header
-    if (isLogin) {
-        var logoutLi = $("<li><div id='' class='header_menu_item'><a href='javascript:' id='resource-page-logout'>退出登录</a></div></li>");
-        var memberLi = $("<li><div id='' class='header_menu_item'><a href='javascript:' id='to-memberCenter'>个人中心</a></div></li>");
-        $("#header_menu_ul").prepend(logoutLi,memberLi);
-        var loginLi = $("#resource-page-login");
-        loginLi.remove();
-        //获取用户信息
-        getUserInfo();
+    initData()
+    initViews()
+    initEvents()
 
-        logoutLi.click(function () {
-            logout(function (flag) {
-                location.reload();
+    function initViews() {
+        //根据登录态显示header
+        if (isLogin) {
+            var logoutLi = $("<li><div id='' class='header_menu_item'><a href='javascript:' id='resource-page-logout'>退出登录</a></div></li>");
+            var memberLi = $("<li><div id='' class='header_menu_item'><a href='javascript:' id='to-memberCenter'>个人中心</a></div></li>");
+            $("#header_menu_ul").prepend(logoutLi,memberLi);
+            var loginLi = $("#resource-page-login");
+            loginLi.remove();
+            //获取用户信息
+            getUserInfo();
+
+            logoutLi.click(function () {
+                logout(function (flag) {
+                    location.reload();
+                })
             })
-        })
 
-        memberLi.click(function () {
-            if (getToken() == "") {
-                location.reload();
-                return
-            }
-            location.href = "/pc/member.html";
-        })
+            memberLi.click(function () {
+                if (getToken() == "") {
+                    location.reload();
+                    return
+                }
+                location.href = "/pc/member.html";
+            })
+        }
+
+        showHighlightFliter()
+        showHighlightSort()
     }
 
-    //搜索
-    $('#search').click(function () {
-        var kw = $('#keyword-box').val()
-        if (kw == null || kw == '') {
-            location.href = getMainPath()
+    function initEvents() {
+        //搜索
+        handleSearchEvent()
+        //筛选
+        handleFilterEvent()
+        //排序
+        handleSortEvent()
+    }
+
+    function initData() {
+        var search = getParams('search')
+        if (search != null) {
+            showSearchStateUI()
+            $('#keyword-box').val(search)
+            requestByKeyword(search)
             return
         }
-        location.href = getMainPath() + '?search_keyword=' + kw
-    })
 
-    if (getParams('search_keyword') == null) {
+        districtCode = getParams('district')
+        subway = getParams('subway')
+        minPrice = getParams('min_price')
+        maxPrice = getParams('max_price')
+        rentType = getParams('rent_type')
+        sortType = getParams('sort_type')
 
         requestHouse();
-    } else {
-        showSearchStateUI()
-        $('#keyword-box').val(getParams('search_keyword'))
-        showSelectedTypes('','','','','')
-        requestByKeyword(getParams('search_keyword'))
+
     }
 
-    //筛选
-    //鼠标点击
-    $(".gio_district a").click(function () {
-        $(".gio_district a.selected").removeClass("selected");
-        $(this).addClass("selected");
-        reloadWithNewItems('district')
-    });
+    //高亮筛选
+    function showHighlightFliter() {
 
-    $(".gio_subway a").click(function () {
-        $(".gio_subway a.selected").removeClass("selected");
-        $(this).addClass("selected");
-        reloadWithNewItems('subway')
-    });
-
-    $(".gio_price a").click(function () {
-        $(".gio_price a.selected").removeClass("selected");
-        $(this).addClass("selected");
-        reloadWithNewItems('price')
-    });
-
-    $(".gio_houselayout a").click(function () {
-        $(".gio_houselayout a.selected").removeClass("selected");
-        $(this).addClass("selected");
-        reloadWithNewItems('style')
-    });
-
-    $(".gio_mode a").click(function () {
-        $(".gio_mode a.selected").removeClass("selected");
-        $(this).addClass("selected");
-        reloadWithNewItems('rent_mode')
-    });
-
-    //鼠标移入移出
-    $(".filter a").hover(function () {
-        if (!$(this).hasClass("selected")) {
-            $(this).addClass("text_highlight");
+        if (districtCode != null) {
+            $(".gio_district a").each(function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
+                }
+                if ($(this).data('code') == districtCode) {
+                    $(this).addClass('selected')
+                }
+            })
         }
-    },function () {
-        $(this).removeClass("text_highlight");
-    });
+
+        if (subway != null) {
+            $(".gio_subway a").each(function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
+                }
+                if ($(this).text() == subway) {
+                    $(this).addClass('selected')
+                }
+            })
+        }
+
+        if (minPrice != null || maxPrice != null) {
+            $(".gio_price a").each(function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
+                }
+                if ($(this).data('min_price') == minPrice || $(this).data('max_price') == maxPrice) {
+                    $(this).addClass('selected')
+                }
+            })
+        }
+
+        if (rentType != null) {
+            $(".gio_mode a").each(function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
+                }
+                if ($(this).data('type') == rentType) {
+                    $(this).addClass('selected')
+                }
+            })
+        }
+
+    }
+
+    //高亮排序
+    function showHighlightSort() {
+        if (sortType != null) {
+            $('#sort-menu li a').each(function () {
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected')
+                }
+                if ($(this).data('type') == sortType) {
+                    $(this).addClass('selected')
+                }
+            })
+        }
+    }
+
+    function handleSearchEvent() {
+        $('#search').click(function () {
+            var kw = $('#keyword-box').val()
+            if (kw == null || kw == '') {
+                location.href = getMainPath()
+                return
+            }
+            location.href = getMainPath() + '?search=' + kw
+        })
+    }
+
+    function handleFilterEvent() {
+        $(".gio_district a").click(function () {
+            $(".gio_district a.selected").removeClass("selected");
+            $(this).addClass("selected");
+
+            districtCode = $(this).data('code')
+            if (districtCode === '') {
+                districtCode = null
+            }
+            reloadWithNewItems()
+        });
+
+        $(".gio_subway a").click(function () {
+            $(".gio_subway a.selected").removeClass("selected");
+            $(this).addClass("selected");
+            subway = $(this).text()
+            if (subway === '') {
+                subway = null
+            }
+            reloadWithNewItems()
+        });
+
+        $(".gio_price a").click(function () {
+            $(".gio_price a.selected").removeClass("selected");
+            $(this).addClass("selected");
+            minPrice = $(this).data('min_price')
+            maxPrice = $(this).data('max_price')
+            if (minPrice === '') {
+                minPrice = null
+            }
+            if (maxPrice === '') {
+                maxPrice = null
+            }
+            reloadWithNewItems()
+        });
+
+        $(".gio_mode a").click(function () {
+            $(".gio_mode a.selected").removeClass("selected");
+            $(this).addClass("selected");
+            rentType = $(this).data('type')
+            if (rentType === '') {
+                rentType = null
+            }
+            reloadWithNewItems()
+        });
+
+        //鼠标移入移出
+        $(".filter a").hover(function () {
+            if (!$(this).hasClass("selected")) {
+                $(this).addClass("text_highlight");
+            }
+        },function () {
+            $(this).removeClass("text_highlight");
+        });
+    }
+
+    function handleSortEvent() {
+        //排序 事件处理
+        $('#sort-menu li a').hover(function () {
+            if (!$(this).hasClass('selected')) {
+                $(this).addClass('text_highlight')
+            }
+        },function () {
+            $(this).removeClass('text_highlight')
+        })
+
+        $('#sort-menu li a').click(function () {
+            $('#sort-menu li a.selected').removeClass('selected')
+            $(this).addClass('selected')
+            //排序
+            sortType = $(this).data('type')
+            reloadWithNewItems()
+        });
+    }
+
+    //处于搜索状态时的页面
+    function showSearchStateUI() {
+        $('.filter,.sort').css('display','none')
+        $('.look-more').css('visibility','hidden')
+        $('.search-notice').css('display','block')
+    }
+
+    //处于列表状态时的页面
+    function showListStateUI() {
+        $('.filter,.sort').css('display','block')
+        $('.look-more').css('visibility','visible')
+        $('#keyword-box').val('')
+        $('.search-notice').css('display','none')
+    }
 
     //每个房源,鼠标移入时添加阴影效果,鼠标移除时去掉阴影效果
      function addShadowEffect() {
@@ -105,17 +252,6 @@ $(function () {
             $(this).addClass("shadow");
         },function () {
             $(this).removeClass("shadow");
-        })
-    }
-
-    //高亮当前排序方式
-    if (getParams('sort') == null) {
-        $('#sort-menu li:first-child a').addClass('selected')
-    } else {
-        $('#sort-menu li a').each(function () {
-            if ($(this).text() == getParams('sort')) {
-                $(this).addClass('selected')
-            }
         })
     }
 
@@ -254,119 +390,104 @@ $(function () {
     //点击查看更多房源
     $("#loadHouse").click(function () {
         reloadWithNewPage()
-        // addShadowEffect()
 
     })
 
     addShadowEffect();
-
-    //排序 事件处理
-    $('#sort-menu li a').hover(function () {
-        if (!$(this).hasClass('selected')) {
-            $(this).addClass('text_highlight')
-        }
-    },function () {
-        $(this).removeClass('text_highlight')
-    })
-
-    $('#sort-menu li a').click(function () {
-        $('#sort-menu li a').removeClass('selected')
-        $(this).addClass('selected')
-        //排序
-        sortByType($(this).text())
-    });
 
     //处理发布房源的跳转
     $("#release-house").click(function () {
         location.href = "/pc/release.html";
     });
 
-    function reloadWithNewItems(key) {
+    function reloadWithNewItems() {
         page = 1
-        reload(key)
+        location.href = getBasicSplitUrl()
     }
     function reloadWithNewPage() {
         page++
         requestHouse()
     }
-    //根据筛选类型获取房源
-    /*
-     区域      key district
-     地铁      key subway
-     价格      key price
-     房型      key style
-     出租方式  key rent_mode
-     * */
-    function reload(key) {
 
-        var all = '不限';
-        var district = $(".gio_district a.selected").text()
-        var subway = $(".gio_subway a.selected").text()
-        var price = $(".gio_price a.selected").text()
-        var style = $(".gio_houselayout a.selected").text()
-        var rent_mode = $(".gio_mode a.selected").text()
-        var url = getMainPath()
-        var subUrl = ''
-        if (district != all && (key == 'district' || getParams('district') != null)) {
-            subUrl += ('district='+district)
+    function getBasicSplitUrl() {
+        var url = basicUrl.replace('/','')
+        //地址不为空
+        if (districtCode != null) {
+            url = url + '?district=' + districtCode
         }
-        if (subway != all && (key == 'subway' || getParams('subway') != null)) {
-            if (subUrl != '') {
-                subUrl += '&'
+        //地铁线不为空
+        if (subway != null) {
+            if (url.indexOf('?')<0) {
+                url = url + '?subway='+subway
+            } else {
+                url = url + '&subway='+subway
             }
-            subUrl += ('subway='+subway)
         }
-
-        if (price != all && (key == 'price' || getParams('price') != null)) {
-            if (subUrl != '') {
-                subUrl += '&'
+        //价格不为空
+        if (minPrice != null) {
+            if (url.indexOf('?')<0) {
+                url = url + '?min_price='+minPrice
+            } else {
+                url = url + '&min_price='+minPrice
             }
-            subUrl += ('price='+price)
         }
-        if (style != all && (key == 'style' || getParams('style') != null)) {
-            if (subUrl != '') {
-                subUrl += '&'
+        if (maxPrice != null) {
+            if (url.indexOf('?')<0) {
+                url = url + '?max_price='+maxPrice
+            } else {
+                url = url + '&max_price='+maxPrice
             }
-            subUrl += ('style='+style)
         }
-        if (rent_mode != all && (key == 'rent_mode' || getParams('rent_mode') != null)) {
-            if (subUrl != '') {
-                subUrl += '&'
+        //出租方式不为空
+        if (rentType != null) {
+            if (url.indexOf('?')<0) {
+                url = url + '?rent_type='+rentType
+            } else {
+                url = url + '&rent_type='+rentType
             }
-            subUrl += ('rent_mode='+rent_mode)
         }
 
-        if (subUrl != '') {
-            url += ("?"+subUrl)
-        } else {
-            // url += "?"
+        //排序方式不为空且不为最新
+        if (sortType != null) {
+            if (url.indexOf('?')<0) {
+                url = url + '?sort_type='+sortType
+            } else {
+                url = url + '&sort_type'+sortType
+            }
         }
-
-        location.href = url;
-
+        return url;
     }
+
+
     /*----------------------------------------------------------------*/
 
-//请求房源
+    //请求房源
     function requestHouse() {
-        var district = getParams('district')
-        var subway = getParams('subway')
-        var price = getParams('price')
-        var style = getParams('style')
-        var rent_mode = getParams('rent_mode')
-        var sort = getParams('sort')
+
+        //处理网络请求
         var params = {
-            token: getToken(),
-            district: district,
-            subway: subway,
-            price: price,
-            style: style,
-            rent_mode: rent_mode,
-            sort: sort,
             page: page
         }
+        if (districtCode != null) {
+            params['district_code'] = districtCode
+        }
+        if (minPrice != null) {
+            params['min_price'] = minPrice
+        }
+        if (maxPrice != null) {
+            params['max_price'] = maxPrice
+        }
+        if (rentType != null ) {
+            params['rent_type'] = rentType
+        }
+        if (subway != null) {
+            params['subway'] = subway
+        }
+        if (sortType != null) {
+            params['sort_type'] = sortType
+        }
+
         request(basicUrl + "house/list", params, function (resp) {
-            showSelectedTypes(district, subway, price, style, rent_mode);
             showListStateUI()
             if (jQuery.isEmptyObject(resp) && page > 1) {
                 showModel('亲,没有更多房源了~')
@@ -377,80 +498,11 @@ $(function () {
         })
     }
 
-    //显示选中类型
-    function showSelectedTypes(district,subway,price,style,rent_mode) {
-        var all = '不限'
-        var allDistrict
-        $(".gio_district a").each(function () {
-            if ($(this).text() == district) {
-                $(this).addClass('selected')
-            }
-            if ($(this).text() == all) {
-                allDistrict = $(this)
-            }
-        })
-        if ($(".gio_district a.selected").length == 0) {
-            allDistrict.addClass('selected')
-        }
-
-        var allSubway
-        $(".gio_subway a").each(function () {
-            if ($(this).text() == subway) {
-                $(this).addClass('selected')
-            }
-            if ($(this).text() == all) {
-                allSubway = $(this)
-            }
-        })
-        if ($(".gio_subway a.selected").length == 0) {
-            allSubway.addClass('selected')
-        }
-
-        var allPrice
-        $(".gio_price a").each(function () {
-            if ($(this).text() == price) {
-                $(this).addClass('selected')
-            }
-            if ($(this).text() == all) {
-                allPrice = $(this)
-            }
-        })
-        if ($(".gio_price a.selected").length == 0) {
-            allPrice.addClass('selected')
-        }
-
-        var allStyle
-        $(".gio_houselayout a").each(function () {
-            if ($(this).text() == style) {
-                $(this).addClass('selected')
-            }
-            if ($(this).text() == all) {
-                allStyle = $(this)
-            }
-        })
-        if ($(".gio_houselayout a.selected").length == 0) {
-            allStyle.addClass('selected')
-        }
-
-        var allMode
-        $(".gio_mode a").each(function () {
-            if ($(this).text() == rent_mode) {
-                $(this).addClass('selected')
-
-            }
-            if ($(this).text() == all) {
-                allMode = $(this)
-            }
-        })
-        if ($(".gio_mode a.selected").length == 0) {
-            allMode.addClass('selected')
-        }
-    }
 
     //关键字搜索
     function requestByKeyword(keyword) {
         var params = {
-            search_keyword: keyword
+            keyword: keyword
         }
         request(basicUrl + "house/search",params,function (houses) {
             var allHouse = houses;
@@ -468,43 +520,8 @@ $(function () {
         })
     }
 
-     //排序
-     function sortByType(type) {
-         var href = location.href
-         var url
-         if (getParams('sort') == null) {
-             if (href.indexOf("?") > -1 && href.indexOf("?_") <= -1) {
-                 url = href + '&sort=' + type
-             } else  {
-                 url = getMainPath() + '?sort=' + type
-             }
-         } else {
-             var hrefStr = decodeURIComponent(href);
-             url = (hrefStr.replace(/最新|价格|面积|入住时间/,type))
-         }
-
-         location.href = url
-
-     }
-
 
 });
-
-
-//处于搜索状态时的页面
-function showSearchStateUI() {
-    $('.filter,.sort').css('display','none')
-    $('.look-more').css('visibility','hidden')
-    $('.search-notice').css('display','block')
-}
-
-//处于列表状态时的页面
-function showListStateUI() {
-    $('.filter,.sort').css('display','block')
-    $('.look-more').css('visibility','visible')
-    $('#keyword-box').val('')
-    $('.search-notice').css('display','none')
-}
 
 
 
