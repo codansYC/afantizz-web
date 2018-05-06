@@ -148,11 +148,11 @@ $(function () {
     function handleSearchEvent() {
         $('#search').click(function () {
             var kw = $('#keyword-box').val()
-            if (kw == null || kw == '') {
-                location.href = getMainPath()
+            if (kw == null || kw === '') {
+                location.href = basicUrl
                 return
             }
-            location.href = getMainPath() + '?search=' + kw
+            location.href = basicUrl + '?search=' + kw
         })
     }
 
