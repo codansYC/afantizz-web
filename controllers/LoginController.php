@@ -18,6 +18,7 @@ class LoginController extends BaseController{
  * 获取验证码
  */
     public function actionCaptcha(){
+        echo "==========";
         try{
             echo "+++++++";
             if (! isset ( $this->requestParam ['phone'] ) || empty ( $this->requestParam ['phone'] )) {
