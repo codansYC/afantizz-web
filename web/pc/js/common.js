@@ -3,8 +3,8 @@
  */
 var pro = true;
 var cityCode = "021" //城市编码,目前只服务上海
-var basicUrl = pro ? "http://www.afantizz.com/" : "http://localhost:8000/"
-var imageUrl = pro ? "http://www.afantizz.com/" : "http://localhost:8000/"
+var basicUrl = pro ? "http://www.afantizz.com" : "http://localhost:8000"
+var imageUrl = pro ? "http://www.afantizz.com" : "http://localhost:8000"
 
 $(function () {
     //验证手机号是否输入正确
@@ -285,7 +285,11 @@ function accusate(houseId,reason) {
 }
 
 function request(url,params,respBlock) {
-    $.post(url, params, function (response, status) {
+    var requestUrl = url
+    if (!requestUrl.index('http://')) {
+        requestUrl = basicUrl + url
+    }
+    $.post(requestUrl, params, function (response, status) {
         if (status != 'success') {
             showModel('操作失败,请稍后重试')
             return

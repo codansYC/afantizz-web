@@ -487,7 +487,7 @@ $(function () {
             params['sort_type'] = sortType
         }
 
-        request(basicUrl + "house/list", params, function (resp) {
+        request("/house/list", params, function (resp) {
             showListStateUI()
             if (jQuery.isEmptyObject(resp) && page > 1) {
                 showModel('亲,没有更多房源了~')
@@ -504,7 +504,7 @@ $(function () {
         var params = {
             keyword: keyword
         }
-        request(basicUrl + "house/search",params,function (houses) {
+        request("/house/search",params,function (houses) {
             var allHouse = houses;
 
             var desc

@@ -20,7 +20,7 @@ $(function () {
             house_id: houseId,
             token: getToken()
         }
-        request(basicUrl + "house/detail",params,function (resp) {
+        request("/house/info",params,function (resp) {
             $('.detail-content').css('display','block')
             $('.footer').css('display','block')
             house = resp
@@ -43,7 +43,7 @@ $(function () {
         if (house.village != null && house.village != '' && house.village != '未知') {
             $('.village').text(house.village)
         }
-        $('.date').text('最后更新 '+house.release_date);
+        $('.date').text('最后更新 '+house.date);
         //图片
         var bigImgUl = $('#big-img-ul');
         var smallImgUl = $('#small-img-ul');
@@ -785,8 +785,8 @@ function handleNavEvent() {
 //关注或者取消关注
 //if collction == 1 关注 else 取消关注
 function reportCollectionState(collection,success) {
-    var url = collection == 1 ? "house/collection" : "house/cancel-collection"
-    request(basicUrl + url,{
+    var url = collection == 1 ? "/house/collection" : "/house/cancel-collection"
+    request(url,{
         token: getToken(),
         house_id: parseInt(getParams("house_id")),
     },function (resp) {
