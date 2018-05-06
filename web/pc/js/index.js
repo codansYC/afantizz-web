@@ -4,6 +4,8 @@
 
 var page = 1
 var cellW = 300
+const rentModes = ['合租','整租','公寓']
+const roomTypes = ['主卧','次卧','隔断','床位']
 $(function () {
 
     //记录用户访问
@@ -143,7 +145,7 @@ $(function () {
     //动态添加房源列表中的li标签
     function insertOneHouse(house) {
 
-        var img = imageUrl + house.images[0]
+        var img = house.image
         var houseId = house.house_id + "";
 
         var oHouseUl = $("#house_list")
@@ -182,24 +184,26 @@ $(function () {
         oIntro.append(oTags)
         //出租方式
         var oRentMode = $("<div class='house-rentMode'></div>");
-        oRentMode.text(house.rent_mode)
+        oRentMode.text(rentModes[house.rent_type-1])
         oTags.append(oRentMode)
-        //房间结构(几室几厅)
-        if (house.style != null || house.style != '') {
-            var mainStyle = house.style.split('厅')[0] + '厅'
-            var oStyle = $("<div class='mainStyle'></div>");
-            oStyle.text(mainStyle)
-            oTags.append(oStyle)
+        //转租优惠
+        if (house.is_benefit != 0) {
+            var benefit = $("<span class='benefit'></span>")
+            benefit.text('转租优惠')
+            tags.append(benefit)
         }
+        //房间结构(几室几厅)
+        var oStyle = $("<div class='mainStyle'></div>");
+        oStyle.text(house.room_num+'室'+house.hall_num+'厅')
+        oTags.append(oStyle)
         //主卧或次卧
-        if (house.rent_mode == '合租') {
-            var secondStyle = house.style.slice(-2)
+        if (house.rent_type == 1 && house.room_type != 0) {
             var oStyle = $("<div class='secondStyle'></div>");
-            oStyle.text(secondStyle)
+            oStyle.text(roomTypes[house.room_type-1])
             oTags.append(oStyle)
         }
         //独立卫生间
-        if (house.facilities.indexOf('独立卫生间') > -1) {
+        if (house.is_toilet_single != 0) {
             var oToilet = $("<div class='toilet'></div>");
             oToilet.text('独卫')
             oTags.append(oToilet)
@@ -214,18 +218,18 @@ $(function () {
 
         /*发布时间*/
         var oTimeDiv = $("<div class='release-time'></div>");
-        oTimeDiv.text(house.release_date);
+        oTimeDiv.text(house.date);
         oIntro.append(oTimeDiv);
 
         /*转租优惠*/
-        if (house.benefit != "" && house.benefit != null) {
+        if (house.is_benefit != 0) {
             var oBenefitA = $("<a>转租优惠</a>");
             oBenefitA.addClass("benefit");
             oBenefitA.attr("href","javascript:");
             oIntro.append(oBenefitA);
             var oBenefitDesc = $("<div class='benefit-desc'></div>");
             var p = $("<p></p>");
-            p.text(house.benefit);
+            p.text("");
             oBenefitDesc.append(p);
             oHouseInfoDiv.append(oBenefitDesc);
         }
