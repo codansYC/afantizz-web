@@ -11,11 +11,11 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class ImageCaptcha extends ActiveRecord
+class Captcha extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'imageCaptcha';
+        return 'captcha';
     }
 
 }

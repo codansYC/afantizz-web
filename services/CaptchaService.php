@@ -8,7 +8,7 @@
 
 namespace app\services;
 
-use app\models\ImageCaptcha;
+use app\models\Captcha;
 use app\utils\BizConsts;
 use app\utils\GlobalAction;
 
@@ -21,23 +21,23 @@ class CaptchaService
      */
     public static function createCaptchaWithPhone($phone) {
         $currentDate = GlobalAction::getTimeStr("Y-m-d H:i:s");
-        $captchaObjc = ImageCaptcha::find()->where(['phone' => $phone])->one();
+        $captchaObjc = Captcha::find()->where(['phone' => $phone])->one();
 //
         if ($captchaObjc) {
-            $interval = strtotime($currentDate) - strtotime($captchaObjc->create_date);
+            $interval = strtotime($currentDate) - strtotime($captchaObjc->create_time);
             if ($interval <= BizConsts::CAPTCHA_LIFE) {
-                $captchaObjc->create_date = $currentDate;
+                $captchaObjc->create_time = $currentDate;
                 $captchaObjc->save();
                 return $captchaObjc->code;
             }
             //重新生成
             $captcha = mt_rand(0,9).mt_rand(10000, 99999);
             $captchaObjc->code = $captcha;
-            $captchaObjc->create_date = $currentDate;
+            $captchaObjc->create_time = $currentDate;
             $captchaObjc->save();
             return $captcha;
         }
-        $newCaptchaObjc = new ImageCaptcha();
+        $newCaptchaObjc = new Captcha();
         $newCaptchaObjc->phone = $phone;
         $captcha = mt_rand(0,9).mt_rand(10000, 99999);
         //测试手机号
@@ -45,7 +45,7 @@ class CaptchaService
             $captcha = 123456;
         }
         $newCaptchaObjc->code = $captcha;
-        $newCaptchaObjc->create_date = $currentDate;
+        $newCaptchaObjc->create_time = $currentDate;
         $newCaptchaObjc->save();
 
         return $captcha;
@@ -56,7 +56,7 @@ class CaptchaService
      * @param $captcha
      */
     public static function deleteCaptcha($phone,$captcha) {
-        $captchaObjc = ImageCaptcha::find()->where(['phone' => $phone, 'code' => $captcha])->one();
+        $captchaObjc = Captcha::find()->where(['phone' => $phone, 'code' => $captcha])->one();
         $captchaObjc->delete();
     }
 
@@ -66,12 +66,12 @@ class CaptchaService
      * @return bool
      */
     public static function checkPhoneAndCaptcha($phone,$captcha) {
-        $captchaObjc = ImageCaptcha::find()->where(['phone' => $phone, 'code' => $captcha])->one();
+        $captchaObjc = Captcha::find()->where(['phone' => $phone, 'code' => $captcha])->one();
         if (!$captchaObjc) {
             return false;
         }
         $currentDate = GlobalAction::getTimeStr("Y-m-d H:i:s");
-        $interval = strtotime($currentDate) - strtotime($captchaObjc->create_date);
+        $interval = strtotime($currentDate) - strtotime($captchaObjc->create_time);
         if ($interval > BizConsts::CAPTCHA_LIFE) {
             echo $interval;
             return false;
