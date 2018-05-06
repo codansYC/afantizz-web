@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4742c39-c67e-4271-99a6-6a1d583063ac" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/web/pc/js/index.js" afterPath="$PROJECT_DIR$/web/pc/js/index.js" />
     </list>
     <ignored path="afantizz.iws" />
@@ -74,11 +71,11 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4772">
-              <caret line="301" column="22" lean-forward="true" selection-start-line="301" selection-start-column="22" selection-end-line="301" selection-end-column="22" />
+            <state relative-caret-position="177">
+              <caret line="187" column="31" lean-forward="false" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="31" />
               <folding>
-                <marker date="1525588874605" expanded="true" signature="6582:6616" ph="..." />
-                <marker date="1525588874605" expanded="true" signature="7683:7718" ph="..." />
+                <marker date="1525589261059" expanded="true" signature="6393:6427" ph="..." />
+                <marker date="1525589261059" expanded="true" signature="7494:7529" ph="..." />
               </folding>
             </state>
           </provider>
@@ -563,7 +560,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="749668000" />
+    <option name="totallyTimeSpent" value="749844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="104" y="59" width="1280" height="709" extended-state="0" />
@@ -1036,11 +1033,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pc/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4772">
-          <caret line="301" column="22" lean-forward="true" selection-start-line="301" selection-start-column="22" selection-end-line="301" selection-end-column="22" />
+        <state relative-caret-position="177">
+          <caret line="187" column="31" lean-forward="false" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="31" />
           <folding>
-            <marker date="1525588874605" expanded="true" signature="6582:6616" ph="..." />
-            <marker date="1525588874605" expanded="true" signature="7683:7718" ph="..." />
+            <marker date="1525589261059" expanded="true" signature="6393:6427" ph="..." />
+            <marker date="1525589261059" expanded="true" signature="7494:7529" ph="..." />
           </folding>
         </state>
       </provider>

@@ -186,12 +186,6 @@ $(function () {
         var oRentMode = $("<div class='house-rentMode'></div>");
         oRentMode.text(rentModes[house.rent_type-1])
         oTags.append(oRentMode)
-        //转租优惠
-        if (house.is_benefit != 0) {
-            var benefit = $("<span class='benefit'></span>")
-            benefit.text('转租优惠')
-            tags.append(benefit)
-        }
         //房间结构(几室几厅)
         var oStyle = $("<div class='mainStyle'></div>");
         oStyle.text(house.room_num+'室'+house.hall_num+'厅')
