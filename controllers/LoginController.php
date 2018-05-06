@@ -3,8 +3,6 @@ namespace app\controllers;
 
 use app\services\CaptchaService;
 use app\services\UserService;
-use app\utils\GlobalAction;
-use Yii;
 use app\utils\UtilHelper;
 use app\utils\BizConsts;
 use app\utils\RedisUtil;
@@ -42,9 +40,12 @@ class LoginController extends BaseController{
             /*这里有点问题  改为下面存数据库的方式
 			RedisUtil::setCache(BizConsts::USER_LOGIN_VERIFY.$phone,$captcha,BizConsts::CAPTCHA_AVAILABLE);
             */
-
+            echo 123;
+            echo "=====";
             // 发送动态验证码
             $sms = new Sms();
+            echo 234;
+            echo "=====";
             $result = $sms->sendTemplateSMS($phone, [$captcha], BizConsts::SMS_VERIFY_TEMPLATE);
 
             if($result){
